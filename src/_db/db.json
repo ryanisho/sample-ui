@@ -1,0 +1,2540 @@
+{
+  "network_domains": [
+    {
+      "metadata": {
+        "name": "ML Training(GCP)"
+      },
+      "type": "VRF",
+      "id": "1747121394098482639",
+      "provider": "GCP"
+    },
+    {
+      "metadata": {
+        "name": "ML Dataset (AWS)"
+      },
+      "type": "vpc",
+      "id": "vpc-8448551e",
+      "provider": "AWS"
+    },
+    {
+      "metadata": {
+        "name": "Staging Environment"
+      },
+      "type": "vpc",
+      "provider": "GCP",
+      "id": "8528197605643627928",
+      "site_id": "us-east1-b"
+    },
+    {
+      "metadata": {
+        "name": "Development Environment"
+      },
+      "type": "vpc",
+      "provider": "GCP",
+      "id": "1747121394098482639",
+      "site_id": "us-central1-c"
+    },
+    {
+      "metadata": {
+        "name": "Staging Environment - E-commerce"
+      },
+      "type": "vpc",
+      "provider": "GCP",
+      "id": "vpc-123456",
+      "site_id": "us-west1-a"
+    },
+    {
+      "metadata": {
+        "name": "Development VPC - Finance"
+      },
+      "type": "vpc",
+      "provider": "AWS",
+      "id": "vpc-789012",
+      "site_id": "us-east-1c"
+    },
+    {
+      "metadata": {
+        "name": "Production VPC - Healthcare"
+      },
+      "type": "vpc",
+      "provider": "Azure",
+      "id": "vnet-345678",
+      "site_id": "eastus"
+    },
+    {
+      "metadata": {
+        "name": "Testing VPC - Marketing"
+      },
+      "type": "vpc",
+      "provider": "IBM Cloud",
+      "id": "vpc-901234",
+      "site_id": "us-south"
+    },
+    {
+      "metadata": {
+        "name": "Customer VPC - Technology"
+      },
+      "type": "vpc",
+      "provider": "AWS",
+      "id": "vpc-901234"
+    },
+    {
+      "metadata": {
+        "name": "Business VNet - Finance"
+      },
+      "type": "vnet",
+      "provider": "Azure",
+      "id": "vnet-5678"
+    },
+    {
+      "metadata": {
+        "name": "Research VPC - Science"
+      },
+      "type": "vpc",
+      "provider": "GCP",
+      "id": "vpc-5678"
+    },
+    {
+      "metadata": {
+        "name": "Management VCN - Admin"
+      },
+      "type": "vcn",
+      "provider": "Oracle Cloud",
+      "id": "vcn-3210"
+    },
+    {
+      "metadata": {
+        "name": "Sales VPC - Marketing"
+      },
+      "type": "vpc",
+      "provider": "IBM Cloud",
+      "id": "vpc-8765"
+    },
+    {
+      "metadata": {
+        "name": "Backup VPC - Retail"
+      },
+      "type": "vpc",
+      "provider": "Oracle",
+      "id": "vcn-567890",
+      "site_id": "us-ashburn-1"
+    },
+    {
+      "metadata": {
+        "name": "Corporate VPC - Manufacturing"
+      },
+      "type": "vpc",
+      "provider": "GCP",
+      "id": "vpc-234567",
+      "site_id": "us-central1-a"
+    },
+    {
+      "metadata": {
+        "name": "Customer VPC - Technology"
+      },
+      "type": "vpc",
+      "provider": "AWS",
+      "id": "vpc-901234",
+      "site_id": "us-west-2b"
+    },
+    {
+      "metadata": {
+        "name": "Internal VPC - Hospitality"
+      },
+      "type": "vpc",
+      "provider": "Azure",
+      "id": "vnet-123456",
+      "site_id": "westus2"
+    },
+    {
+      "metadata": {
+        "name": "Cisco VRF 1 - Logistics"
+      },
+      "type": "vrf",
+      "provider": "Cisco",
+      "id": "vrf-987654",
+      "site_id": "site-1"
+    },
+    {
+      "metadata": {
+        "name": "Cisco VRF 2 - Education"
+      },
+      "type": "vrf",
+      "provider": "Cisco",
+      "id": "vrf-876543",
+      "site_id": "site-2"
+    },
+    {
+      "metadata": {
+        "name": "Research VPC - Research"
+      },
+      "type": "vpc",
+      "provider": "GCP",
+      "id": "vpc-567890",
+      "site_id": "us-east1-c"
+    },
+    {
+      "metadata": {
+        "name": "Test VPC - Insurance"
+      },
+      "type": "vpc",
+      "provider": "AWS",
+      "id": "vpc-345678",
+      "site_id": "us-west-1a"
+    },
+    {
+      "metadata": {
+        "name": "Experimental VPC - Energy"
+      },
+      "type": "vpc",
+      "provider": "Azure",
+      "id": "vnet-901234",
+      "site_id": "centralus"
+    },
+    {
+      "metadata": {
+        "name": "Lab VPC - Telecommunications"
+      },
+      "type": "vpc",
+      "provider": "GCP",
+      "id": "vpc-111222",
+      "site_id": "us-west2-b"
+    },
+    {
+      "metadata": {
+        "name": "Backup VRF - Financial Services"
+      },
+      "type": "vrf",
+      "provider": "Cisco",
+      "id": "vrf-333444",
+      "site_id": "site-3"
+    },
+    {
+      "metadata": {
+        "name": "Testing VRF - Healthcare"
+      },
+      "type": "vrf",
+      "provider": "Cisco",
+      "id": "vrf-555666",
+      "site_id": "site-4"
+    },
+    {
+      "metadata": {
+        "name": "Corporate VRF - Retail"
+      },
+      "type": "vrf",
+      "provider": "Cisco",
+      "id": "vrf-777888",
+      "site_id": "site-5"
+    },
+    {
+      "metadata": {
+        "name": "Experimental VRF - Technology"
+      },
+      "type": "vrf",
+      "provider": "Cisco",
+      "id": "vrf-999000",
+      "site_id": "site-6"
+    },
+    {
+      "metadata": {
+        "name": "Customer VRF - Logistics"
+      },
+      "type": "vrf",
+      "provider": "Cisco",
+      "id": "vrf-111222",
+      "site_id": "site-7"
+    },
+    {
+      "metadata": {
+        "name": "Internal VRF - Hospitality"
+      },
+      "type": "vrf",
+      "provider": "Cisco",
+      "id": "vrf-333444",
+      "site_id": "site-8"
+    },
+    {
+      "metadata": {
+        "name": "Research VRF - Education"
+      },
+      "type": "vrf",
+      "provider": "Cisco",
+      "id": "vrf-555666",
+      "site_id": "site-9"
+    },
+    {
+      "metadata": {
+        "name": "Production VRF - Manufacturing"
+      },
+      "type": "vrf",
+      "provider": "Cisco",
+      "id": "vrf-777888",
+      "site_id": "site-10"
+    },
+    {
+      "metadata": {
+        "name": "Cisco Catalyst SDWAN - Retail"
+      },
+      "type": "vlan",
+      "provider": "Cisco Catalyst SDWAN",
+      "id": "vlan-111222",
+      "site_id": "site-11"
+    },
+    {
+      "metadata": {
+        "name": "Cisco Meraki SDWAN - Hospitality"
+      },
+      "type": "vlan",
+      "provider": "Cisco Meraki SDWAN",
+      "id": "vlan-333444",
+      "site_id": "site-12"
+    },
+    {
+      "metadata": {
+        "name": "Cisco Catalyst SDWAN - Manufacturing"
+      },
+      "type": "vlan",
+      "provider": "Cisco Catalyst SDWAN",
+      "id": "vlan-555666",
+      "site_id": "site-13"
+    },
+    {
+      "metadata": {
+        "name": "Cisco Meraki SDWAN - Education"
+      },
+      "type": "vlan",
+      "provider": "Cisco Meraki SDWAN",
+      "id": "vlan-777888",
+      "site_id": "site-14"
+    },
+    {
+      "metadata": {
+        "name": "Cisco Catalyst SDWAN - Retail"
+      },
+      "type": "vlan",
+      "provider": "Cisco Catalyst SDWAN",
+      "id": "vlan-999000",
+      "site_id": "site-15"
+    },
+    {
+      "metadata": {
+        "name": "Cisco Meraki SDWAN - Logistics"
+      },
+      "type": "vlan",
+      "provider": "Cisco Meraki SDWAN",
+      "id": "vlan-111222",
+      "site_id": "site-16"
+    },
+    {
+      "metadata": {
+        "name": "Cisco Catalyst SDWAN - Hospitality"
+      },
+      "type": "vlan",
+      "provider": "Cisco Catalyst SDWAN",
+      "id": "vlan-333444",
+      "site_id": "site-17"
+    },
+    {
+      "metadata": {
+        "name": "Cisco Meraki SDWAN - Technology"
+      },
+      "type": "vlan",
+      "provider": "Cisco Meraki SDWAN",
+      "id": "vlan-555666",
+      "site_id": "site-18"
+    },
+    {
+      "metadata": {
+        "name": "Cisco Catalyst SDWAN - Manufacturing"
+      },
+      "type": "vlan",
+      "provider": "Cisco Catalyst SDWAN",
+      "id": "vlan-777888",
+      "site_id": "site-19"
+    },
+    {
+      "metadata": {
+        "name": "Cisco Meraki SDWAN - Retail"
+      },
+      "type": "vlan",
+      "provider": "Cisco Meraki SDWAN",
+      "id": "vlan-999000",
+      "site_id": "site-20"
+    },
+    {
+      "metadata": {
+        "name": "my-vpc-123"
+      },
+      "type": "vpc",
+      "provider": "AWS",
+      "id": "vpc-3424223",
+      "site_id": "us-west-2a"
+    },
+    {
+      "metadata": {
+        "name": "test"
+      },
+      "type": "vpc",
+      "provider": "AZURE",
+      "networkId": "fadsf",
+      "id": "YjrGcMy"
+    },
+    {
+      "metadata": {
+        "name": "alan"
+      },
+      "type": "vpc",
+      "provider": "AZURE",
+      "networkId": "vpc-iiiii",
+      "id": "JnBEtbj"
+    },
+    {
+      "metadata": {
+        "name": "alan"
+      },
+      "type": "vpc",
+      "provider": "AZURE",
+      "networkId": "vpc-iiiii",
+      "id": "FPwc6U7"
+    }
+  ],
+  "custom_sla_profiles": [
+    {
+      "id": 1,
+      "metadata": {
+        "name": "test",
+        "description": "sdfa",
+        "category": "business-critical",
+        "trafficType": ""
+      },
+      "trafficSLO": {
+        "priority": 0,
+        "QoSParams": {
+          "bandwidth": 20,
+          "jitter": 5,
+          "latency": 60,
+          "loss": 0.5
+        },
+        "enforcementRequest": "soft"
+      }
+    },
+    {
+      "metadata": {
+        "name": "test2",
+        "description": "fdsfa",
+        "category": "business-critical",
+        "trafficType": "006"
+      },
+      "trafficSLO": {
+        "priority": 0,
+        "QoSParams": {
+          "bandwidth": 20,
+          "jitter": 5,
+          "latency": 60,
+          "loss": 0.5
+        },
+        "enforcementRequest": "soft"
+      },
+      "id": 2
+    },
+    {
+      "id": 3,
+      "metadata": {
+        "name": "Email Servers - Operational",
+        "description": "This policy is for operational email servers traffic.",
+        "category": "operational",
+        "trafficType": "Email Servers"
+      },
+      "trafficSLO": {
+        "priority": 4,
+        "QoSParams": {
+          "bandwidth": 15,
+          "jitter": 4,
+          "latency": 50,
+          "loss": 0.4
+        },
+        "enforcementRequest": "soft"
+      }
+    },
+    {
+      "id": 4,
+      "metadata": {
+        "name": "Database Systems - Business Critical",
+        "description": "This policy is for business-critical database systems traffic.",
+        "category": "business-critical",
+        "trafficType": "Database Systems"
+      },
+      "trafficSLO": {
+        "priority": 7,
+        "QoSParams": {
+          "bandwidth": 30,
+          "jitter": 7,
+          "latency": 70,
+          "loss": 0.7
+        },
+        "enforcementRequest": "soft"
+      }
+    },
+    {
+      "id": 5,
+      "metadata": {
+        "name": "File Sharing - Essential",
+        "description": "This policy is for essential file sharing and storage traffic.",
+        "category": "essential",
+        "trafficType": "File Sharing and Storage"
+      },
+      "trafficSLO": {
+        "priority": 3,
+        "QoSParams": {
+          "bandwidth": 10,
+          "jitter": 3,
+          "latency": 40,
+          "loss": 0.3
+        },
+        "enforcementRequest": "soft"
+      }
+    },
+    {
+      "id": 6,
+      "metadata": {
+        "name": "Virtual Meetings - Customer-Facing",
+        "description": "This policy is for customer-facing virtual meeting platforms traffic.",
+        "category": "customer-facing",
+        "trafficType": "Virtual Meeting Platforms"
+      },
+      "trafficSLO": {
+        "priority": 8,
+        "QoSParams": {
+          "bandwidth": 35,
+          "jitter": 8,
+          "latency": 75,
+          "loss": 0.8
+        },
+        "enforcementRequest": "soft"
+      }
+    },
+    {
+      "id": 7,
+      "metadata": {
+        "name": "Collaboration Tools - Strategic",
+        "description": "This policy is for strategic collaboration tools traffic.",
+        "category": "strategic",
+        "trafficType": "Collaboration Tools"
+      },
+      "trafficSLO": {
+        "priority": 2,
+        "QoSParams": {
+          "bandwidth": 5,
+          "jitter": 2,
+          "latency": 30,
+          "loss": 0.2
+        },
+        "enforcementRequest": "soft"
+      }
+    },
+    {
+      "id": 8,
+      "metadata": {
+        "name": "BI Tools - Business Critical",
+        "description": "This policy is for business-critical business intelligence tools traffic.",
+        "category": "business-critical",
+        "trafficType": "Business Intelligence Tools"
+      },
+      "trafficSLO": {
+        "priority": 9,
+        "QoSParams": {
+          "bandwidth": 40,
+          "jitter": 9,
+          "latency": 80,
+          "loss": 0.9
+        },
+        "enforcementRequest": "soft"
+      }
+    },
+    {
+      "id": 9,
+      "metadata": {
+        "name": "Intranet - Operational",
+        "description": "This policy is for operational intranet and internal web applications traffic.",
+        "category": "operational",
+        "trafficType": "Intranet and Internal Web Applications"
+      },
+      "trafficSLO": {
+        "priority": 1,
+        "QoSParams": {
+          "bandwidth": 1,
+          "jitter": 1,
+          "latency": 10,
+          "loss": 0.1
+        },
+        "enforcementRequest": "soft"
+      }
+    },
+    {
+      "id": 10,
+      "metadata": {
+        "name": "Network Management - Operational",
+        "description": "This policy is for operational network management and monitoring traffic.",
+        "category": "operational",
+        "trafficType": "Network Management and Monitoring"
+      },
+      "trafficSLO": {
+        "priority": 10,
+        "QoSParams": {
+          "bandwidth": 50,
+          "jitter": 10,
+          "latency": 100,
+          "loss": 1
+        },
+        "enforcementRequest": "soft"
+      }
+    },
+    {
+      "id": 11,
+      "metadata": {
+        "name": "VPN - Essential",
+        "description": "This policy is for essential virtual private network traffic.",
+        "category": "essential",
+        "trafficType": "Virtual Private Network (VPN)"
+      },
+      "trafficSLO": {
+        "priority": 4,
+        "QoSParams": {
+          "bandwidth": 15,
+          "jitter": 4,
+          "latency": 50,
+          "loss": 0.4
+        },
+        "enforcementRequest": "soft"
+      }
+    },
+    {
+      "id": 12,
+      "metadata": {
+        "name": "Software Development - Strategic",
+        "description": "This policy is for strategic software development and version control traffic.",
+        "category": "strategic",
+        "trafficType": "Software Development and Version Control"
+      },
+      "trafficSLO": {
+        "priority": 6,
+        "QoSParams": {
+          "bandwidth": 25,
+          "jitter": 6,
+          "latency": 65,
+          "loss": 0.6
+        },
+        "enforcementRequest": "soft"
+      }
+    },
+    {
+      "id": 13,
+      "metadata": {
+        "name": "Identity Management - Business Critical",
+        "description": "This policy is for business-critical identity and access management traffic.",
+        "category": "business-critical",
+        "trafficType": "Identity and Access Management"
+      },
+      "trafficSLO": {
+        "priority": 7,
+        "QoSParams": {
+          "bandwidth": 30,
+          "jitter": 7,
+          "latency": 70,
+          "loss": 0.7
+        },
+        "enforcementRequest": "soft"
+      }
+    },
+    {
+      "id": 14,
+      "metadata": {
+        "name": "VoIP - Customer-Facing",
+        "description": "This policy is for customer-facing voice over IP systems traffic.",
+        "category": "customer-facing",
+        "trafficType": "VoIP Systems"
+      },
+      "trafficSLO": {
+        "priority": 8,
+        "QoSParams": {
+          "bandwidth": 35,
+          "jitter": 8,
+          "latency": 75,
+          "loss": 0.8
+        },
+        "enforcementRequest": "soft"
+      }
+    },
+    {
+      "id": 15,
+      "metadata": {
+        "name": "Streaming Services - Customer-Facing",
+        "description": "This policy is for customer-facing enterprise video streaming traffic.",
+        "category": "customer-facing",
+        "trafficType": "Streaming Services"
+      },
+      "trafficSLO": {
+        "priority": 9,
+        "QoSParams": {
+          "bandwidth": 40,
+          "jitter": 9,
+          "latency": 80,
+          "loss": 0.9
+        },
+        "enforcementRequest": "hard"
+      }
+    },
+    {
+      "id": 16,
+      "metadata": {
+        "name": "Learning Management Systems - Essential",
+        "description": "This policy is for essential learning management systems traffic.",
+        "category": "essential",
+        "trafficType": "Learning Management Systems (LMS)"
+      },
+      "trafficSLO": {
+        "priority": 3,
+        "QoSParams": {
+          "bandwidth": 15,
+          "jitter": 4,
+          "latency": 50,
+          "loss": 0.4
+        },
+        "enforcementRequest": "hard"
+      }
+    },
+    {
+      "id": 17,
+      "metadata": {
+        "name": "Financial Services - Business Critical",
+        "description": "This policy is for business-critical financial services traffic.",
+        "category": "business-critical",
+        "trafficType": "Financial Services"
+      },
+      "trafficSLO": {
+        "priority": 7,
+        "QoSParams": {
+          "bandwidth": 30,
+          "jitter": 7,
+          "latency": 70,
+          "loss": 0.7
+        },
+        "enforcementRequest": "hard"
+      }
+    },
+    {
+      "id": 18,
+      "metadata": {
+        "name": "Messaging Services - Operational",
+        "description": "This policy is for operational messaging services traffic.",
+        "category": "operational",
+        "trafficType": "Messaging Services"
+      },
+      "trafficSLO": {
+        "priority": 5,
+        "QoSParams": {
+          "bandwidth": 20,
+          "jitter": 5,
+          "latency": 60,
+          "loss": 0.5
+        },
+        "enforcementRequest": "soft"
+      }
+    },
+    {
+      "id": 19,
+      "metadata": {
+        "name": "Security Services - Strategic",
+        "description": "This policy is for strategic security services traffic.",
+        "category": "strategic",
+        "trafficType": "Security Services"
+      },
+      "trafficSLO": {
+        "priority": 6,
+        "QoSParams": {
+          "bandwidth": 25,
+          "jitter": 6,
+          "latency": 65,
+          "loss": 0.6
+        },
+        "enforcementRequest": "soft"
+      }
+    },
+    {
+      "id": 20,
+      "metadata": {
+        "name": "Service Mesh - Operational",
+        "description": "This policy is for operational service mesh traffic.",
+        "category": "operational",
+        "trafficType": "Service Mesh"
+      },
+      "trafficSLO": {
+        "priority": 4,
+        "QoSParams": {
+          "bandwidth": 15,
+          "jitter": 4,
+          "latency": 50,
+          "loss": 0.4
+        },
+        "enforcementRequest": "hard"
+      }
+    },
+    {
+      "id": 21,
+      "metadata": {
+        "name": "Generic Traffic - Essential",
+        "description": "This policy is for essential generic traffic.",
+        "category": "essential",
+        "trafficType": "Generic"
+      },
+      "trafficSLO": {
+        "priority": 2,
+        "QoSParams": {
+          "bandwidth": 10,
+          "jitter": 3,
+          "latency": 40,
+          "loss": 0.3
+        },
+        "enforcementRequest": "soft"
+      }
+    },
+    {
+      "id": 22,
+      "metadata": {
+        "name": "AR/VR Traffic - Customer-Facing",
+        "description": "This policy is for customer-facing AR/VR traffic.",
+        "category": "customer-facing",
+        "trafficType": "AR/VR Traffic"
+      },
+      "trafficSLO": {
+        "priority": 8,
+        "QoSParams": {
+          "bandwidth": 35,
+          "jitter": 8,
+          "latency": 75,
+          "loss": 0.8
+        },
+        "enforcementRequest": "soft"
+      }
+    },
+    {
+      "id": 23,
+      "metadata": {
+        "name": "ML Training Traffic - Strategic",
+        "description": "This policy is for strategic machine learning training traffic.",
+        "category": "strategic",
+        "trafficType": "ML Training Traffic"
+      },
+      "trafficSLO": {
+        "priority": 9,
+        "QoSParams": {
+          "bandwidth": 40,
+          "jitter": 9,
+          "latency": 80,
+          "loss": 0.9
+        },
+        "enforcementRequest": "soft"
+      }
+    },
+    {
+      "id": 24,
+      "metadata": {
+        "name": "IoT Devices Traffic - Operational",
+        "description": "This policy is for operational Internet of Things devices traffic.",
+        "category": "operational",
+        "trafficType": "IoT Devices Traffic"
+      },
+      "trafficSLO": {
+        "priority": 5,
+        "QoSParams": {
+          "bandwidth": 20,
+          "jitter": 5,
+          "latency": 60,
+          "loss": 0.5
+        },
+        "enforcementRequest": "hard"
+      }
+    },
+    {
+      "id": 25,
+      "metadata": {
+        "name": "Cloud Services Traffic - Business Critical",
+        "description": "This policy is for business-critical cloud services traffic.",
+        "category": "business-critical",
+        "trafficType": "Cloud Services Traffic"
+      },
+      "trafficSLO": {
+        "priority": 7,
+        "QoSParams": {
+          "bandwidth": 30,
+          "jitter": 7,
+          "latency": 70,
+          "loss": 0.7
+        },
+        "enforcementRequest": "soft"
+      }
+    },
+    {
+      "metadata": {
+        "name": "1Gbps-Inter-VPC",
+        "description": "Guarantee 1 Gbps across VPC connection",
+        "category": "mission-critical",
+        "trafficType": "ERP Systems"
+      },
+      "trafficSLO": {
+        "priority": 1,
+        "QoSParams": {
+          "bandwidth": 1000,
+          "jitter": 5,
+          "latency": 40,
+          "loss": 0.5
+        },
+        "enforcementRequest": "soft"
+      },
+      "id": 26
+    },
+    {
+      "metadata": {
+        "name": "brian's SLA",
+        "description": "Pretty SLA ",
+        "category": "business-critical",
+        "trafficType": "Virtual Private Network (VPN)"
+      },
+      "trafficSLO": {
+        "priority": 6,
+        "QoSParams": {
+          "bandwidth": 20,
+          "jitter": 5,
+          "latency": 60,
+          "loss": 0.5
+        },
+        "enforcementRequest": "soft"
+      },
+      "id": 27
+    },
+    {
+      "metadata": {
+        "name": "new slo1",
+        "description": "new slo1",
+        "category": "business-critical",
+        "trafficType": "Artificial Intelligence (AI) Applications"
+      },
+      "trafficSLO": {
+        "priority": 10,
+        "QoSParams": {
+          "bandwidth": 20,
+          "jitter": 5,
+          "latency": 60,
+          "loss": 0.5
+        },
+        "enforcementRequest": "hard"
+      },
+      "id": 28
+    }
+  ],
+  "monitoring_policies": [
+    {
+      "id": 1,
+      "metadata": {
+        "name": "Test-1"
+      },
+      "policy": {
+        "frequency": 5,
+        "metrics": [
+          "bandwidth",
+          "loss"
+        ],
+        "detectAnomalies": true,
+        "baselineProfile": 7,
+        "anomalyThreshold": {
+          "metrics": {
+            "bandwidth": {
+              "increasePercentage": 50
+            },
+            "loss": {
+              "increasePercentage": 20
+            }
+          }
+        },
+        "alertConfig": {
+          "alertLevel": "WARNING",
+          "alertMechanisms": [
+            "Email",
+            "SMS",
+            "Slack",
+            "Webex"
+          ]
+        }
+      }
+    },
+    {
+      "metadata": {
+        "name": ""
+      },
+      "policy": {
+        "frequency": 0,
+        "metrics": [],
+        "detectAnomalies": true,
+        "baselineProfile": 0,
+        "anomalyThreshold": {
+          "metrics": {
+            "bandwidth": {
+              "increasePercentage": 0
+            },
+            "loss": {
+              "increasePercentage": 0
+            },
+            "latency": {
+              "increasePercentage": 0
+            },
+            "jitter": {
+              "increasePercentage": 0
+            }
+          }
+        },
+        "alertConfig": {
+          "alertLevel": "",
+          "alertMechanisms": []
+        }
+      },
+      "id": 2
+    },
+    {
+      "metadata": {
+        "name": ""
+      },
+      "policy": {
+        "frequency": 89,
+        "metrics": [],
+        "detectAnomalies": true,
+        "baselineProfile": 8,
+        "anomalyThreshold": {
+          "metrics": {
+            "bandwidth": {
+              "increasePercentage": 0
+            },
+            "loss": {
+              "increasePercentage": 0
+            },
+            "latency": {
+              "increasePercentage": 0
+            },
+            "jitter": {
+              "increasePercentage": 0
+            }
+          }
+        },
+        "alertConfig": {
+          "alertLevel": "",
+          "alertMechanisms": []
+        }
+      },
+      "id": 3
+    },
+    {
+      "metadata": {
+        "name": "test-4"
+      },
+      "policy": {
+        "frequency": 242,
+        "metrics": [
+          "bandwidth",
+          "latency",
+          "loss",
+          "jitter"
+        ],
+        "detectAnomalies": true,
+        "baselineProfile": 7,
+        "anomalyThreshold": {
+          "metrics": {
+            "bandwidth": {
+              "increasePercentage": 0
+            },
+            "loss": {
+              "increasePercentage": 0
+            },
+            "latency": {
+              "increasePercentage": 0
+            },
+            "jitter": {
+              "increasePercentage": 0
+            }
+          }
+        },
+        "alertConfig": {
+          "alertLevel": "",
+          "alertMechanisms": [
+            "email",
+            "sms"
+          ]
+        }
+      },
+      "id": 4
+    },
+    {
+      "metadata": {
+        "name": "tst5"
+      },
+      "policy": {
+        "frequency": 0,
+        "metrics": [
+          "loss",
+          "jitter"
+        ],
+        "detectAnomalies": true,
+        "baselineProfile": 0,
+        "anomalyThreshold": {
+          "metrics": {
+            "bandwidth": {
+              "increasePercentage": 0
+            },
+            "loss": {
+              "increasePercentage": 0
+            },
+            "latency": {
+              "increasePercentage": 0
+            },
+            "jitter": {
+              "increasePercentage": 0
+            }
+          }
+        },
+        "alertConfig": {
+          "alertLevel": "",
+          "alertMechanisms": [
+            "email",
+            "sms"
+          ]
+        }
+      },
+      "id": 5
+    },
+    {
+      "metadata": {
+        "name": "test 10"
+      },
+      "policy": {
+        "frequency": 323,
+        "metrics": [
+          "bandwidth",
+          "latency",
+          "loss",
+          "jitter"
+        ],
+        "detectAnomalies": true,
+        "baselineProfile": 0,
+        "anomalyThreshold": {
+          "metrics": {
+            "bandwidth": {
+              "increasePercentage": 10
+            },
+            "loss": {
+              "increasePercentage": 0
+            },
+            "latency": {
+              "increasePercentage": 0
+            },
+            "jitter": {
+              "increasePercentage": 0
+            }
+          }
+        },
+        "alertConfig": {
+          "alertLevel": "",
+          "alertMechanisms": [
+            "Email",
+            "SMS",
+            "email"
+          ]
+        }
+      },
+      "id": 6
+    },
+    {
+      "metadata": {
+        "name": "saswat"
+      },
+      "policy": {
+        "frequency": 10,
+        "metrics": [
+          "bandwidth",
+          "latency",
+          "loss",
+          "jitter"
+        ],
+        "detectAnomalies": true,
+        "baselineProfile": 23,
+        "anomalyThreshold": {
+          "metrics": {
+            "bandwidth": {
+              "increasePercentage": 20
+            },
+            "loss": {
+              "increasePercentage": 0
+            },
+            "latency": {
+              "increasePercentage": 0
+            },
+            "jitter": {
+              "increasePercentage": 0
+            }
+          }
+        },
+        "alertConfig": {
+          "alertLevel": "WARNING",
+          "alertMechanisms": [
+            "Email",
+            "SMS",
+            "email",
+            "sms"
+          ]
+        }
+      },
+      "id": 7
+    },
+    {
+      "metadata": {
+        "name": "dsfds"
+      },
+      "policy": {
+        "frequency": 10,
+        "metrics": [
+          "bandwidth",
+          "latency",
+          "loss",
+          "jitter"
+        ],
+        "detectAnomalies": true,
+        "baselineProfile": 4,
+        "anomalyThreshold": {
+          "metrics": {
+            "bandwidth": {
+              "increasePercentage": 10
+            },
+            "loss": {
+              "increasePercentage": 0
+            },
+            "latency": {
+              "increasePercentage": 0
+            },
+            "jitter": {
+              "increasePercentage": 0
+            }
+          }
+        },
+        "alertConfig": {
+          "alertLevel": "",
+          "alertMechanisms": [
+            "Email",
+            "SMS",
+            "email"
+          ]
+        }
+      },
+      "id": 8
+    },
+    {
+      "metadata": {
+        "name": "test234"
+      },
+      "policy": {
+        "frequency": 32,
+        "metrics": [
+          "bandwidth",
+          "latency",
+          "loss",
+          "jitter"
+        ],
+        "detectAnomalies": true,
+        "baselineProfile": 3,
+        "anomalyThreshold": {
+          "metrics": {
+            "bandwidth": {
+              "increasePercentage": 32
+            },
+            "loss": {
+              "increasePercentage": 50
+            },
+            "latency": {
+              "increasePercentage": 32
+            },
+            "jitter": {
+              "increasePercentage": 32
+            }
+          }
+        },
+        "alertConfig": {
+          "alertLevel": "CRITICAL",
+          "alertMechanisms": [
+            "Email",
+            "SMS",
+            "email"
+          ]
+        }
+      },
+      "id": 9
+    },
+    {
+      "metadata": {
+        "name": "32"
+      },
+      "policy": {
+        "frequency": 34,
+        "metrics": [
+          "bandwidth",
+          "latency",
+          "loss",
+          "jitter"
+        ],
+        "detectAnomalies": true,
+        "baselineProfile": 3,
+        "anomalyThreshold": {
+          "metrics": {
+            "bandwidth": {
+              "increasePercentage": 34
+            },
+            "loss": {
+              "increasePercentage": 34
+            },
+            "latency": {
+              "increasePercentage": 34
+            },
+            "jitter": {
+              "increasePercentage": 34
+            }
+          }
+        },
+        "alertConfig": {
+          "alertLevel": "INFO",
+          "alertMechanisms": [
+            "Email",
+            "SMS"
+          ]
+        }
+      },
+      "id": 10
+    },
+    {
+      "metadata": {
+        "name": "launchpad-test"
+      },
+      "policy": {
+        "frequency": 10,
+        "metrics": [
+          "bandwidth",
+          "latency"
+        ],
+        "detectAnomalies": true,
+        "baselineProfile": 10,
+        "anomalyThreshold": {
+          "metrics": {
+            "bandwidth": {
+              "increasePercentage": 10
+            },
+            "loss": {
+              "increasePercentage": 20
+            },
+            "latency": {
+              "increasePercentage": 29
+            },
+            "jitter": {
+              "increasePercentage": 5
+            }
+          }
+        },
+        "alertConfig": {
+          "alertLevel": "WARNING",
+          "alertMechanisms": [
+            "Email",
+            "SMS"
+          ]
+        }
+      },
+      "id": 11
+    }
+  ],
+  "access_policies": [
+    {
+      "metadata": {
+        "name": "sdfa",
+        "description": "sdfasd",
+        "labels": {}
+      },
+      "accessProtocols": [
+        {
+          "protocol": "TCP",
+          "port": "80"
+        }
+      ],
+      "accessType": "deny",
+      "id": 1
+    },
+    {
+      "metadata": {
+        "name": "new policy -1",
+        "description": "new policy - 1 description",
+        "labels": {}
+      },
+      "accessProtocols": [
+        {
+          "protocol": "UDP",
+          "port": "353"
+        }
+      ],
+      "accessType": "deny",
+      "id": 2
+    },
+    {
+      "metadata": {
+        "name": "Test",
+        "description": "test access",
+        "labels": {}
+      },
+      "accessProtocols": [
+        {
+          "protocol": "TCP",
+          "port": "80"
+        },
+        {
+          "protocol": "ICMP",
+          "port": ""
+        },
+        {
+          "protocol": "UDP",
+          "port": "53"
+        }
+      ],
+      "accessType": "allow",
+      "id": 3
+    },
+    {
+      "metadata": {
+        "name": "test",
+        "description": "test",
+        "labels": {}
+      },
+      "accessProtocols": [
+        {
+          "protocol": "TCP",
+          "port": "80"
+        },
+        {
+          "protocol": "ICMP",
+          "port": ""
+        }
+      ],
+      "accessType": "allow",
+      "id": 4
+    },
+    {
+      "metadata": {
+        "name": "se",
+        "description": "dfadfs",
+        "labels": {}
+      },
+      "accessProtocols": [
+        {
+          "protocol": "TCP",
+          "port": "80"
+        },
+        {
+          "protocol": "HTTPS",
+          "port": "443"
+        }
+      ],
+      "accessType": "deny",
+      "id": 5
+    },
+    {
+      "metadata": {
+        "name": "test-1",
+        "description": "test",
+        "labels": {}
+      },
+      "accessProtocols": [
+        {
+          "protocol": "TCP",
+          "port": "8000"
+        },
+        {
+          "protocol": "UDP",
+          "port": "5300"
+        }
+      ],
+      "accessType": "allow",
+      "id": 6
+    },
+    {
+      "metadata": {
+        "name": "test-1",
+        "description": "test1",
+        "labels": {}
+      },
+      "accessProtocols": [
+        {
+          "protocol": "TCP",
+          "port": "80"
+        },
+        {
+          "protocol": "",
+          "port": ""
+        }
+      ],
+      "accessType": "allow",
+      "id": 7
+    }
+  ],
+  "network_domain_connections": [
+    {
+      "id": "998197605643627928:vpc-8448551e",
+      "name": "ML Training(GCP)->ML Dataset(AWS)",
+      "source": {
+        "metadata": {
+          "name": "ML Training VPC"
+        },
+        "type": "VPC",
+        "network_id": "1747121394098482639",
+        "provider": "GCP"
+      },
+      "destination": {
+        "metadata": {
+          "name": "ML Dataset VPC"
+        },
+        "type": "VPC",
+        "network_id": "vpc-8448551e",
+        "provider": "AWS"
+      },
+      "controller": "Cisco Catalyst SDWAN",
+      "status": 1
+    },
+    {
+      "id": "1747121394098482639:8528197605643627928",
+      "name": "development to staging",
+      "source": {
+        "metadata": {
+          "name": "development"
+        },
+        "type": "VPC",
+        "network_id": "1747121394098482639",
+        "provider": "GCP"
+      },
+      "destination": {
+        "metadata": {
+          "name": "staging"
+        },
+        "type": "VPC",
+        "network_id": "8528197605643627928",
+        "provider": "GCP"
+      },
+      "controller": "Cisco Catalyst SDWAN",
+      "status": 1
+    },
+    {
+      "id": "5792151095598867388:7353759886839084744",
+      "name": "ml-training-network to ml-dataset-network",
+      "source": {
+        "metadata": {
+          "name": "ml-training-network"
+        },
+        "type": "VPC",
+        "network_id": "5792151095598867388",
+        "provider": "GCP"
+      },
+      "destination": {
+        "metadata": {
+          "name": "ml-dataset-network"
+        },
+        "type": "VPC",
+        "network_id": "7353759886839084744",
+        "provider": "GCP"
+      },
+      "controller": "Cisco Catalyst SDWAN",
+      "status": 1
+    },
+    {
+      "id": "7353759886839084744:5792151095598867388",
+      "name": "ml-dataset-network to ml-training-network",
+      "source": {
+        "metadata": {
+          "name": "ml-dataset-network"
+        },
+        "type": "VPC",
+        "network_id": "7353759886839084744",
+        "provider": "GCP"
+      },
+      "destination": {
+        "metadata": {
+          "name": "ml-training-network"
+        },
+        "type": "VPC",
+        "network_id": "5792151095598867388",
+        "provider": "GCP"
+      },
+      "controller": "Cisco Catalyst SDWAN",
+      "status": 1
+    },
+    {
+      "id": "8528197605643627928:1747121394098482639",
+      "name": "staging to development",
+      "source": {
+        "metadata": {
+          "name": "staging"
+        },
+        "type": "VPC",
+        "network_id": "8528197605643627928",
+        "provider": "GCP"
+      },
+      "destination": {
+        "metadata": {
+          "name": "development"
+        },
+        "type": "VPC",
+        "network_id": "1747121394098482639",
+        "provider": "GCP"
+      },
+      "controller": "Cisco Catalyst SDWAN",
+      "status": 1
+    },
+    {
+      "id": "vpc-003643f14c9e5a38d:vpc-067cfa335f9a2e657",
+      "name": "sandbox to infra",
+      "source": {
+        "metadata": {
+          "name": "sandbox"
+        },
+        "type": "VPC",
+        "network_id": "vpc-003643f14c9e5a38d",
+        "provider": "AWS"
+      },
+      "destination": {
+        "metadata": {
+          "name": "infra"
+        },
+        "type": "VPC",
+        "network_id": "vpc-067cfa335f9a2e657",
+        "provider": "AWS"
+      },
+      "controller": "Cisco Catalyst SDWAN",
+      "status": 1
+    },
+    {
+      "id": "vpc-067cfa335f9a2e657:vpc-003643f14c9e5a38d",
+      "name": "infra to sandbox",
+      "source": {
+        "metadata": {
+          "name": "infra"
+        },
+        "type": "VPC",
+        "network_id": "vpc-067cfa335f9a2e657",
+        "provider": "AWS"
+      },
+      "destination": {
+        "metadata": {
+          "name": "sandbox"
+        },
+        "type": "VPC",
+        "network_id": "vpc-003643f14c9e5a38d",
+        "provider": "AWS"
+      },
+      "controller": "Cisco Catalyst SDWAN",
+      "status": 1
+    },
+    {
+      "name": "My connection 1",
+      "destination": {
+        "defaultAccessControl": false,
+        "metadata": {
+          "name": "Development VPC - Finance"
+        },
+        "type": "vpc",
+        "provider": "AWS",
+        "id": "vpc-789012",
+        "site_id": "us-east-1c"
+      },
+      "source": {
+        "metadata": {
+          "name": "Staging Environment - E-commerce"
+        },
+        "type": "vpc",
+        "provider": "GCP",
+        "id": "vpc-123456",
+        "site_id": "us-west1-a",
+        "vendorController": "Cisco SD-WAN"
+      },
+      "network_sla": {
+        "value": "Inter-network-domain-sla-1.5Gbps",
+        "bandwidth": "1500",
+        "jitter": "15",
+        "latency": "15",
+        "loss": "15",
+        "type": "hard"
+      },
+      "id": "0IjDXPP"
+    },
+    {
+      "name": "fadsf",
+      "destination": {
+        "defaultAccessControl": false,
+        "metadata": {
+          "name": "Corporate VPC - Manufacturing"
+        },
+        "type": "vpc",
+        "provider": "GCP",
+        "id": "vpc-234567",
+        "site_id": "us-central1-a"
+      },
+      "source": {
+        "vendorController": "Cisco SD-WAN",
+        "metadata": {
+          "name": "Development VPC - Finance"
+        },
+        "type": "vpc",
+        "provider": "AWS",
+        "id": "vpc-789012",
+        "site_id": "us-east-1c"
+      },
+      "network_sla": {
+        "value": "Inter-network-domain-sla-1Gbps",
+        "bandwidth": "1000",
+        "jitter": "10",
+        "latency": "10",
+        "loss": "10",
+        "type": "hard"
+      },
+      "id": "4a1pD32"
+    },
+    {
+      "name": "",
+      "destination": {
+        "defaultAccessControl": false,
+        "metadata": {
+          "name": "Production VPC - Healthcare"
+        },
+        "type": "vpc",
+        "provider": "Azure",
+        "id": "vnet-345678",
+        "site_id": "eastus"
+      },
+      "source": {
+        "vendorController": "Cisco SD-WAN",
+        "metadata": {
+          "name": "Staging Environment - E-commerce"
+        },
+        "type": "vpc",
+        "provider": "GCP",
+        "id": "vpc-123456",
+        "site_id": "us-west1-a"
+      },
+      "network_sla": {
+        "value": "Inter-network-domain-sla-2Gbps",
+        "bandwidth": "2000",
+        "jitter": "20",
+        "latency": "20",
+        "loss": "20",
+        "type": "hard"
+      },
+      "id": "KShU604"
+    },
+    {
+      "name": "net-con-gcp-aws-1",
+      "destination": {
+        "defaultAccessControl": false,
+        "metadata": {
+          "name": "ML Training(GCP)"
+        },
+        "type": "VRF",
+        "id": "1747121394098482639",
+        "provider": "GCP"
+      },
+      "source": {
+        "vendorController": "Cisco SD-WAN",
+        "metadata": {
+          "name": "Internal VPC - Hospitality"
+        },
+        "type": "vpc",
+        "provider": "Azure",
+        "id": "vnet-123456",
+        "site_id": "westus2"
+      },
+      "network_sla": {
+        "value": "Inter-network-domain-sla-4Gbps",
+        "bandwidth": "4000",
+        "jitter": "40",
+        "latency": "40",
+        "loss": "40"
+      },
+      "id": "JvYL59e"
+    },
+    {
+      "name": "net-con-gcp-aws-1",
+      "destination": {
+        "defaultAccessControl": false,
+        "metadata": {
+          "name": "ML Training(GCP)"
+        },
+        "type": "VRF",
+        "id": "1747121394098482639",
+        "provider": "GCP"
+      },
+      "source": {
+        "vendorController": "Cisco SD-WAN",
+        "metadata": {
+          "name": "Internal VPC - Hospitality"
+        },
+        "type": "vpc",
+        "provider": "Azure",
+        "id": "vnet-123456",
+        "site_id": "westus2"
+      },
+      "network_sla": {
+        "value": "Inter-network-domain-sla-4Gbps",
+        "bandwidth": "4000",
+        "jitter": "40",
+        "latency": "40",
+        "loss": "40"
+      },
+      "id": "VM56lDK"
+    },
+    {
+      "name": "Ashton's",
+      "destination": {
+        "defaultAccessControl": false,
+        "metadata": {
+          "name": "Internal VPC - Hospitality"
+        },
+        "type": "vpc",
+        "provider": "Azure",
+        "id": "vnet-123456",
+        "site_id": "westus2"
+      },
+      "source": {
+        "metadata": {
+          "name": "ML Dataset (AWS)"
+        },
+        "type": "vpc",
+        "provider": "AWS",
+        "id": "vpc-8448551e",
+        "site_id": "us-west1-a",
+        "vendorController": "Cisco SD-WAN"
+      },
+      "network_sla": {
+        "value": "Inter-network-domain-sla-3Gbps",
+        "bandwidth": "3000",
+        "jitter": "30",
+        "latency": "30",
+        "loss": "30",
+        "type": "hard"
+      },
+      "id": "1qU87Do"
+    },
+    {
+      "name": "alan",
+      "destination": {
+        "defaultAccessControl": false,
+        "metadata": {
+          "name": "ML Dataset (AWS)"
+        },
+        "type": "vpc",
+        "id": "vpc-8448551e",
+        "provider": "AWS"
+      },
+      "source": {
+        "vendorController": "Cisco SD-WAN",
+        "metadata": {
+          "name": "Production VPC - Healthcare"
+        },
+        "type": "vpc",
+        "provider": "Azure",
+        "id": "vnet-345678",
+        "site_id": "eastus"
+      },
+      "network_sla": {
+        "value": "Inter-network-domain-sla-1Gbps",
+        "bandwidth": "1000",
+        "jitter": "10",
+        "latency": "10",
+        "loss": "10",
+        "type": "hard"
+      },
+      "id": "2oZU5Sw"
+    },
+    {
+      "name": "omars",
+      "destination": {
+        "defaultAccessControl": false,
+        "metadata": {
+          "name": "Production VPC - Healthcare"
+        },
+        "type": "vpc",
+        "provider": "Azure",
+        "id": "vnet-345678",
+        "site_id": "eastus"
+      },
+      "source": {
+        "vendorController": "Cisco SD-WAN",
+        "metadata": {
+          "name": "Testing VPC - Marketing"
+        },
+        "type": "vpc",
+        "provider": "IBM Cloud",
+        "id": "vpc-901234",
+        "site_id": "us-south"
+      },
+      "network_sla": {
+        "value": "Inter-network-domain-sla-1Gbps",
+        "bandwidth": "1000",
+        "jitter": "10",
+        "latency": "10",
+        "loss": "10",
+        "type": "hard"
+      },
+      "id": "LVwNUAd"
+    },
+    {
+      "name": "test-connection",
+      "destination": {
+        "defaultAccessControl": false,
+        "metadata": {
+          "name": "Staging Environment - E-commerce"
+        },
+        "type": "vpc",
+        "provider": "GCP",
+        "id": "vpc-123456",
+        "site_id": "us-west1-a"
+      },
+      "source": {
+        "vendorController": "Cisco SD-WAN",
+        "metadata": {
+          "name": "Production VPC - Healthcare"
+        },
+        "type": "vpc",
+        "provider": "Azure",
+        "id": "vnet-345678",
+        "site_id": "eastus"
+      },
+      "network_sla": {
+        "value": "Inter-network-domain-sla-1.2Gbps",
+        "bandwidth": "1200",
+        "jitter": "12",
+        "latency": "12",
+        "loss": "12",
+        "type": "hard"
+      },
+      "id": "MMwHNLq"
+    },
+    {
+      "name": "kureli's connection",
+      "destination": {
+        "defaultAccessControl": false,
+        "metadata": {
+          "name": "Production VPC - Healthcare"
+        },
+        "type": "vpc",
+        "provider": "Azure",
+        "id": "vnet-345678",
+        "site_id": "eastus"
+      },
+      "source": {
+        "vendorController": "Cisco SD-WAN",
+        "metadata": {
+          "name": "Staging Environment - E-commerce"
+        },
+        "type": "vpc",
+        "provider": "GCP",
+        "id": "vpc-123456",
+        "site_id": "us-west1-a"
+      },
+      "network_sla": {
+        "value": "Inter-network-domain-sla-2Gbps",
+        "bandwidth": "2000",
+        "jitter": "20",
+        "latency": "20",
+        "loss": "20",
+        "type": "hard"
+      },
+      "id": "QNwNPpu"
+    }
+  ],
+  "application_connections": [
+    {
+      "name": "staging-db-to-development-db",
+      "id": "dazzling_visvesvaraya",
+      "NetworkDomainConnectionName": "Discovered awi-staging to awi-development",
+      "appConnectionConfig": {
+        "controller": "Cisco_vManage",
+        "metadata": {
+          "name": "staging-db-to-development-db",
+          "description": "Access from staging database instances to development database instances",
+          "labelMap": []
+        },
+        "from": {
+          "endpoint": {
+            "kind": "",
+            "selector": {
+              "matchlabelsMap": [
+                [
+                  "app_type",
+                  "database"
+                ],
+                [
+                  "environment",
+                  "staging"
+                ]
+              ],
+              "matchexpressionsList": []
+            }
+          }
+        },
+        "to": {
+          "endpoint": {
+            "kind": "",
+            "selector": {
+              "matchlabelsMap": [
+                [
+                  "app_type",
+                  "database"
+                ],
+                [
+                  "environment",
+                  "development"
+                ]
+              ],
+              "matchexpressionsList": []
+            }
+          },
+          "externalentitiesList": []
+        },
+        "accesspolicy": {
+          "networkaccesscontrolList": [
+            {
+              "protocol": "ICMP",
+              "port": ""
+            },
+            {
+              "protocol": "TCP",
+              "port": "80"
+            },
+            {
+              "protocol": "TCP",
+              "port": "3306-3310"
+            }
+          ],
+          "accesstype": "allow"
+        },
+        "networkdomainconnection": {
+          "selector": {
+            "matchname": "vpc-0fe7d06b468142a7e:vpc-0560432f280802f67"
+          }
+        }
+      },
+      "status": 1,
+      "sourceMatched": {
+        "matchedInstances": [
+          {
+            "ID": "i-02441861e9926986e",
+            "Name": "db1",
+            "PublicIP": "XXXXXXX",
+            "PrivateIP": "10.200.0.110",
+            "SubnetID": "subnet-0916b88e60751efd1",
+            "VPCID": "vpc-0fe7d06b468142a7e",
+            "State": "running",
+            "Labels": {}
+          }
+        ],
+        "matchedPods": [],
+        "matchedSubnets": [
+          {
+            "SubnetId": "subnet-0916b88e60751efd1",
+            "CidrBlock": "10.200.0.0/24",
+            "VpcId": "vpc-0fe7d06b468142a7e",
+            "Zone": "us-west-2b",
+            "Name": "awi-staging-subnet-1",
+            "Labels": {}
+          }
+        ],
+        "matchedServices": []
+      },
+      "destinationMatched": {
+        "matchedInstances": [
+          {
+            "ID": "i-0595345b7321d663a",
+            "Name": "dev-db",
+            "PublicIP": "52.11.148.164",
+            "PrivateIP": "10.100.0.112",
+            "SubnetID": "subnet-083ae43aeaa89cb62",
+            "VPCID": "vpc-0560432f280802f67",
+            "State": "running",
+            "Labels": {}
+          }
+        ],
+        "matchedPods": [],
+        "matchedSubnets": [
+          {
+            "SubnetId": "subnet-083ae43aeaa89cb62",
+            "CidrBlock": "10.100.0.0/24",
+            "VpcId": "vpc-0560432f280802f67",
+            "Zone": "us-west-2b",
+            "Name": "awi-development-subnet-1",
+            "Labels": {}
+          }
+        ],
+        "matchedServices": []
+      }
+    },
+    {
+      "name": "production-mysql-to-staging-mysql",
+      "id": "elegant_babbage",
+      "NetworkDomainConnectionName": "Discovered awi-production to awi-staging",
+      "status": 1,
+      "appConnectionConfig": {
+        "controller": "Cisco_vManage",
+        "metadata": {
+          "name": "production-db-to-staging-db",
+          "description": "Access from production database instances to staging database instances",
+          "labelMap": []
+        },
+        "from": {
+          "endpoint": {
+            "kind": "",
+            "selector": {
+              "matchlabelsMap": [
+                [
+                  "app_type",
+                  "database"
+                ],
+                [
+                  "environment",
+                  "production"
+                ]
+              ],
+              "matchexpressionsList": []
+            }
+          }
+        },
+        "to": {
+          "endpoint": {
+            "kind": "",
+            "selector": {
+              "matchlabelsMap": [
+                [
+                  "app_type",
+                  "database"
+                ],
+                [
+                  "environment",
+                  "staging"
+                ]
+              ],
+              "matchexpressionsList": []
+            }
+          },
+          "externalentitiesList": []
+        },
+        "accesspolicy": {
+          "networkaccesscontrolList": [
+            {
+              "protocol": "ICMP",
+              "port": ""
+            },
+            {
+              "protocol": "TCP",
+              "port": "443"
+            },
+            {
+              "protocol": "TCP",
+              "port": "3306-3310"
+            }
+          ],
+          "accesstype": "allow"
+        },
+        "networkdomainconnection": {
+          "selector": {
+            "matchname": "vpc-0ab1d07b468142a7e:vpc-0c60743f281802f67"
+          }
+        }
+      },
+      "sourceMatched": {
+        "matchedInstances": [
+          {
+            "ID": "i-02451861e9926986f",
+            "Name": "db2",
+            "PublicIP": "52.11.148.165",
+            "PrivateIP": "10.300.0.111",
+            "SubnetID": "subnet-1916b88e60751efd2",
+            "VPCID": "vpc-0ab1d07b468142a7e",
+            "State": "running"
+          }
+        ],
+        "matchedPods": [],
+        "matchedSubnets": [
+          {
+            "SubnetId": "subnet-1916b88e60751efd2",
+            "CidrBlock": "10.300.0.0/24",
+            "VpcId": "vpc-0ab1d07b468142a7e",
+            "Zone": "us-west-2c",
+            "Name": "awi-production-subnet-1"
+          }
+        ],
+        "matchedServices": []
+      },
+      "destinationMatched": {
+        "matchedInstances": [
+          {
+            "ID": "i-02441861e9926986e",
+            "Name": "db1",
+            "PublicIP": "",
+            "PrivateIP": "10.200.0.110",
+            "SubnetID": "subnet-0916b88e60751efd1",
+            "VPCID": "vpc-0fe7d06b468142a7e",
+            "State": "running"
+          }
+        ],
+        "matchedPods": [],
+        "matchedSubnets": [
+          {
+            "SubnetId": "subnet-0916b88e60751efd1",
+            "CidrBlock": "10.200.0.0/24",
+            "VpcId": "vpc-0fe7d06b468142a7e",
+            "Zone": "us-west-2b",
+            "Name": "awi-staging-subnet-1"
+          }
+        ],
+        "matchedServices": []
+      }
+    },
+    {
+      "name": "development-postgresl-to-production-postgresql",
+      "id": "jovial_shannon",
+      "NetworkDomainConnectionName": "Discovered awi-development to awi-production",
+      "status": 2,
+      "appConnectionConfig": {
+        "controller": "Cisco_vManage",
+        "metadata": {
+          "name": "development-db-to-production-db",
+          "description": "Access from development database instances to production database instances",
+          "labelMap": []
+        },
+        "from": {
+          "endpoint": {
+            "kind": "",
+            "selector": {
+              "matchlabelsMap": [
+                [
+                  "app_type",
+                  "database"
+                ],
+                [
+                  "environment",
+                  "development"
+                ]
+              ],
+              "matchexpressionsList": []
+            }
+          }
+        },
+        "to": {
+          "endpoint": {
+            "kind": "",
+            "selector": {
+              "matchlabelsMap": [
+                [
+                  "app_type",
+                  "database"
+                ],
+                [
+                  "environment",
+                  "production"
+                ]
+              ],
+              "matchexpressionsList": []
+            }
+          },
+          "externalentitiesList": []
+        },
+        "accesspolicy": {
+          "networkaccesscontrolList": [
+            {
+              "protocol": "ICMP",
+              "port": ""
+            },
+            {
+              "protocol": "TCP",
+              "port": "22"
+            },
+            {
+              "protocol": "TCP",
+              "port": "3306-3310"
+            }
+          ],
+          "accesstype": "allow"
+        },
+        "networkdomainconnection": {
+          "selector": {
+            "matchname": "vpc-0560432f280802f67:vpc-0ab1d07b468142a7e"
+          }
+        }
+      },
+      "sourceMatched": {
+        "matchedInstances": [
+          {
+            "ID": "i-0595345b7321d663a",
+            "Name": "dev-db",
+            "PublicIP": "52.11.148.164",
+            "PrivateIP": "10.100.0.112",
+            "SubneID": "subnet-083ae43aeaa89cb62",
+            "VPCID": "vpc-0560432f280802f67",
+            "State": "running"
+          }
+        ],
+        "matchedPods": [],
+        "matchedSubnets": [
+          {
+            "SubnetId": "subnet-083ae43aeaa89cb62",
+            "CidrBlock": "10.100.0.0/24",
+            "VpcId": "vpc-0560432f280802f67",
+            "Zone": "us-west-2b",
+            "Name": "awi-development-subnet-1"
+          }
+        ],
+        "matchedServices": []
+      },
+      "destinationMatched": {
+        "matchedInstances": [
+          {
+            "ID": "i-02451861e9926986f",
+            "Name": "db2",
+            "PublicIP": "52.11.148.165",
+            "PrivateIP": "10.300.0.111",
+            "SubnetID": "subnet-1916b88e60751efd2",
+            "VPCID": "vpc-0ab1d07b468142a7e",
+            "State": "running"
+          }
+        ],
+        "matchedPods": [],
+        "matchedSubnets": [
+          {
+            "SubnetId": "subnet-1916b88e60751efd2",
+            "CidrBlock": "10.300.0.0/24",
+            "VpcId": "vpc-0ab1d07b468142a7e",
+            "Zone": "us-west-2c",
+            "Name": "awi-production-subnet-1"
+          }
+        ],
+        "matchedServices": []
+      }
+    },
+    {
+      "name": "backend-to-ml-cluster",
+      "id": "holy-elephant",
+      "NetworkDomainConnectionName": "web-app-vpc-to-ml-clusters",
+      "status": 1,
+      "appConnectionConfig": {
+        "controller": "Cisco_vManage",
+        "metadata": {
+          "name": "backend-to-messaging-cluster",
+          "description": "Description goes here",
+          "labelMap": []
+        },
+        "from": {
+          "endpoint": {
+            "kind": "",
+            "selector": {
+              "matchlabelsMap": [],
+              "matchexpressionsList": []
+            }
+          }
+        },
+        "to": {
+          "namespace": {
+            "selector": {
+              "matchlabelsMap": [],
+              "matchexpressionsList": []
+            }
+          },
+          "externalentitiesList": []
+        },
+        "accesspolicy": {
+          "networkaccesscontrolList": [],
+          "accesstype": "deny"
+        },
+        "networkdomainconnection": {
+          "selector": {
+            "matchname": "vpc-0fe7d06b468142a7e:vpc-0560432f280802f67"
+          }
+        }
+      },
+      "sourceMatched": {
+        "matchedInstances": [],
+        "matchedPods": [],
+        "matchedSubnets": [],
+        "matchedServices": []
+      },
+      "destinationMatched": {
+        "matchedInstances": [],
+        "matchedPods": [],
+        "matchedSubnets": [],
+        "matchedServices": []
+      }
+    },
+    {
+      "name": "analytics-to-data-cluster",
+      "id": "giant-mammoth",
+      "NetworkDomainConnectionName": "analytics-vpc-to-data-clusters",
+      "status": 0,
+      "appConnectionConfig": {
+        "controller": "Cisco_vManage",
+        "metadata": {
+          "name": "analytics-to-data-cluster",
+          "description": "Access from analytics to data clusters",
+          "labelMap": []
+        },
+        "from": {
+          "endpoint": {
+            "kind": "",
+            "selector": {
+              "matchlabelsMap": [],
+              "matchexpressionsList": []
+            }
+          }
+        },
+        "to": {
+          "namespace": {
+            "selector": {
+              "matchlabelsMap": [],
+              "matchexpressionsList": []
+            }
+          },
+          "externalentitiesList": []
+        },
+        "accesspolicy": {
+          "networkaccesscontrolList": [],
+          "accesstype": "deny"
+        },
+        "networkdomainconnection": {
+          "selector": {
+            "matchname": "vpc-0ab1d07b468142a7e:vpc-0c60743f281802f67"
+          }
+        }
+      },
+      "sourceMatched": {
+        "matchedInstances": [],
+        "matchedPods": [],
+        "matchedSubnets": [],
+        "matchedServices": []
+      },
+      "destinationMatched": {
+        "matchedInstances": [],
+        "matchedPods": [],
+        "matchedSubnets": [],
+        "matchedServices": []
+      }
+    },
+    {
+      "name": "frontend-to-messaging",
+      "id": "wild-kangaroo",
+      "NetworkDomainConnectionName": "frontend-vpc-to-messaging-clusters",
+      "status": 1,
+      "appConnectionConfig": {
+        "controller": "Cisco_vManage",
+        "metadata": {
+          "name": "frontend-to-messaging",
+          "description": "Access from frontend to messaging clusters",
+          "labelMap": []
+        },
+        "from": {
+          "endpoint": {
+            "kind": "",
+            "selector": {
+              "matchlabelsMap": [],
+              "matchexpressionsList": []
+            }
+          }
+        },
+        "to": {
+          "namespace": {
+            "selector": {
+              "matchlabelsMap": [],
+              "matchexpressionsList": []
+            }
+          },
+          "externalentitiesList": []
+        },
+        "accesspolicy": {
+          "networkaccesscontrolList": [],
+          "accesstype": "deny"
+        },
+        "networkdomainconnection": {
+          "selector": {
+            "matchname": "vpc-1c60743f281802f67:vpc-2fe7d06b468142a7e"
+          }
+        }
+      },
+      "sourceMatched": {
+        "matchedInstances": [],
+        "matchedPods": [],
+        "matchedSubnets": [],
+        "matchedServices": []
+      },
+      "destinationMatched": {
+        "matchedInstances": [],
+        "matchedPods": [],
+        "matchedSubnets": [],
+        "matchedServices": []
+      }
+    },
+    {
+      "name": "api-to-cache",
+      "id": "brave-rhino",
+      "NetworkDomainConnectionName": "api-vpc-to-cache-clusters",
+      "status": 2,
+      "appConnectionConfig": {
+        "controller": "Cisco_vManage",
+        "metadata": {
+          "name": "api-to-cache",
+          "description": "Access from API to cache clusters",
+          "labelMap": []
+        },
+        "from": {
+          "endpoint": {
+            "kind": "",
+            "selector": {
+              "matchlabelsMap": [],
+              "matchexpressionsList": []
+            }
+          }
+        },
+        "to": {
+          "namespace": {
+            "selector": {
+              "matchlabelsMap": [],
+              "matchexpressionsList": []
+            }
+          },
+          "externalentitiesList": []
+        },
+        "accesspolicy": {
+          "networkaccesscontrolList": [],
+          "accesstype": "deny"
+        },
+        "networkdomainconnection": {
+          "selector": {
+            "matchname": "vpc-2fe7d06b468142a7e:vpc-3b1d07b468142a7e"
+          }
+        }
+      },
+      "sourceMatched": {
+        "matchedInstances": [],
+        "matchedPods": [],
+        "matchedSubnets": [],
+        "matchedServices": []
+      },
+      "destinationMatched": {
+        "matchedInstances": [],
+        "matchedPods": [],
+        "matchedSubnets": [],
+        "matchedServices": []
+      }
+    }
+  ]
+}

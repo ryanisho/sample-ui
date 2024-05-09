@@ -1,0 +1,93 @@
+/**
+ * Copyright (c) 2023 Cisco Systems, Inc. and its affiliates
+ * All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http:www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+/* styles.css */
+.container {
+  margin-top: 100px;
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.container h1 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 1.2em;
+}
+
+.form-group>label {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+}
+
+
+.input-row,
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.input-row>*,
+.checkbox-group>* {
+  margin-right: 10px;
+}
+
+.container input,
+.container select,
+.container button {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.container button {
+  background-color: #007BFF;
+  color: white;
+  cursor: pointer;
+}
+
+.container button:hover {
+  background-color: #0056b3;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+}
