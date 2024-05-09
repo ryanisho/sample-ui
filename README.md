@@ -1,16 +1,15 @@
-# awi-ui
+# Sample UI
 
-CISCO SD-WAN Application
+This UI provides visualization of resources and interface to deploy connectivity workflows.
 
-The client is responsible for managing connections between different network domains. 
 
 It allows you to:
 
-1. discover network domains (either stub or vmanage)
-2. create new network domains (currently static stub only)
-3. create connections between aforementioned connections (either stub or vmanage)
-4. view connections between network domains (either stub or vmanage)
-5. create SLA profiles for aforementioned connections (currently static stub only)
+1. discover network domains 
+2. create new network domains (stub only) 
+3. create connections between two network domains
+4. view connections between network domains 
+5. create SLA profiles for aforementioned connections
 
 
 # Tech stack
@@ -19,7 +18,7 @@ It allows you to:
 2. CRA + Craco
 3. Ant Design, ag-grid community
 4. React Router
-5. grpc-web
+5. grpc
 
 # How to run
 
@@ -33,26 +32,20 @@ In both cases you should follow the steps bellow.
 
 UI should be available at http://localhost:5001/
 
-# Work flow
-
-1. Each cycle a `develop` branch is setup, as starting point for functionality development
-2. To create a feature branch first checkout `develop` branch and then create the branch by `git checkout -b CIS21-[changes name]`
-3. After finishing the work create a PR to `develop` branch
-4. After each cycle `develop` is merged into `master`
 
 # Building docker image
 
 To build your image simply run
 
 ```
-docker build -t awi-ui:1.0 .
+docker build -t sample-ui:1.0 .
 ```
 
 To push your image to ECR registry tag it and then push
 
 ```
-docker tag awi-ui:1.0 229451923406.dkr.ecr.us-west-2.amazonaws.com/awi/awi-ui:1.0
-docker push 229451923406.dkr.ecr.us-west-2.amazonaws.com/awi/awi-ui:1.0
+docker tag sample-ui:1.0 229451923406.dkr.ecr.us-west-2.amazonaws.com/awi/sample-ui:1.0
+docker push 229451923406.dkr.ecr.us-west-2.amazonaws.com/awi/sample-ui:1.0
 ```
 
 The current image uses nginx as a base which helped decreasing the
@@ -143,3 +136,16 @@ For that reason, we have introduced a `/grpc` prefix for all
 GRPC backend calls so that we can configure Envoy Proxy to
 distinguish backend requests starting with `/grpc` prefix from
 the rest of the calls that should be redirected to the UI.
+
+## Contributing
+
+Thank you for interest in contributing! Please refer to our
+[contributing guide](CONTRIBUTING.md).
+
+## License
+
+sample-ui is released under the Apache 2.0 license. See
+[LICENSE](./LICENSE).
+
+sample-ui is also made possible thanks to[third party open source projects](NOTICE).
+
