@@ -147,5 +147,4 @@ Thank you for interest in contributing! Please refer to our
 sample-ui is released under the Apache 2.0 license. See
 [LICENSE](./LICENSE).
 
-sample-ui is also made possible thanks to[third party open source projects](NOTICE).
 
