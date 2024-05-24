@@ -32,7 +32,7 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 
 const resourceCategories: { id: number; name: string; resources: ResourceCount[] }[] = [
   { id: 1, name: "Cloud Provider Accounts", resources: ["Accounts","UserGroups","Users","IdentityProviders"] },
-  { id: 2, name: "Cloud Resources", resources: ["VPC","VM",  "Subnets", "RouteTables", "ACL", "SecurityGroups", "NATGateways", "InternetGateways","CloudRouters","VPCEndpoints",] },
+  { id: 2, name: "Cloud Resources", resources: ["VPC","VM",  "Subnets", "RouteTables", "ACL", "SecurityGroups", "NATGateways", "InternetGateways","CloudRouters","VPCEndpoints","PublicIPAddresses"] },
   { id: 3, name: "Kubernetes Resources", resources: ["Clusters", "Services", "Pods", "Namespaces"] },
   { id: 4, name: "Enterprise Resources [ DC | Campus | Edge | User ] ", resources: ["SGT", "VRF", "VLAN"] },
 ];

@@ -39,6 +39,7 @@ export type ResourceCount =
   | 'CloudRouters'
   | 'InternetGateways'
   | 'VPCEndpoints'
+  | 'PublicIPAddresses'
   | 'Clusters'
   | 'Services'
   | 'Pods'
@@ -83,6 +84,7 @@ const initialState: State = {
       CloudRouters:0,
       InternetGateways:0,
       VPCEndpoints:0,
+      PublicIPAddresses:0,
       Clusters: 0,
       Services: 0,
       Pods: 0,
@@ -106,6 +108,7 @@ const initialState: State = {
       CloudRouters:0,
       InternetGateways:0,
       VPCEndpoints:0,
+      PublicIPAddresses:0,
       Clusters: 0,
       Services: 0,
       Pods: 0,
@@ -129,6 +132,7 @@ const initialState: State = {
       CloudRouters:0,
       InternetGateways:0,
       VPCEndpoints:0,
+      PublicIPAddresses:0,
       Clusters: 0,
       Services: 0,
       Pods: 0,
@@ -152,6 +156,7 @@ const initialState: State = {
       CloudRouters:0,
       InternetGateways:0,
       VPCEndpoints:0,
+      PublicIPAddresses:0,
       Clusters: 0,
       Services: 0,
       Pods: 0,
@@ -175,6 +180,7 @@ const initialState: State = {
       'CloudRouters':0,
       'InternetGateways':0,
       'VPCEndpoints':0,
+      'PublicIPAddresses':0,
       'Clusters': 0,
       'Services': 0,
       'Pods': 0,

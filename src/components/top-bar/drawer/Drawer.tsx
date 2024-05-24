@@ -71,12 +71,12 @@ export const Drawer: FC<AntDDrawerProps> = () => {
         variant={ButtonVariants.TERTIARY}
         customClass={styles.mainButton}
         //iconSrc={logo}
-        text={applicationName}
+        //text={applicationName}
       />
       <AntDDrawer
         className={styles.mainBackground}
         placement="left"
-        title={<img src={logo} alt="AWI" style={{ width: '100%', height: 'auto' }} />}
+        title={<img src={logo} alt="AWI" style={{ width: '40%' }} />}
         //width={370}
         closable={false}
         onClose={linkOnClick}
@@ -95,7 +95,6 @@ export const Drawer: FC<AntDDrawerProps> = () => {
           <ObservabilitySubmenu linkOnClick={linkOnClick}/>
           <SecuritySubmenu linkOnClick={linkOnClick}/>
           <SLOSubmenu linkOnClick={linkOnClick}/>
-          
         </FlexColumn>
       </AntDDrawer>
     </>

@@ -19,5 +19,7 @@
 
 //export const applicationName = "Applications & User Service Mesh (AUSM): Cloud Delivered Connectivity Service for Users, Applications and Endpoints";
 //export const applicationName = "Applications & User Service Mesh (AUSM)";
-export const applicationName = "Application WAN Interface";
+//export const applicationName = "Application WAN Interface";
+export const applicationName = "AUSM";
+
 

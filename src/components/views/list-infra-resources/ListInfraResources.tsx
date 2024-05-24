@@ -33,9 +33,11 @@ export const ListInfraResources = () => {
         <ProviderAndAccountId />
         <div style={{ display: "flex", justifyContent: "space-between" }}>
           <NetworkDomains setIsClusterDrawerVisible={setIsClusterDrawerVisible} />
-          <Clusters isClusterDrawerVisible={isClusterDrawerVisible} setIsClusterDrawerVisible={setIsClusterDrawerVisible} />
         </div>
       </FormProvider>
     </Wrapper>
   );
 };
+
+// <Clusters isClusterDrawerVisible={isClusterDrawerVisible} setIsClusterDrawerVisible={setIsClusterDrawerVisible} />
+

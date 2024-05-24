@@ -31,6 +31,7 @@ import {
   ApplicationConnections,
   LoginPage,
   ListInfraResources,
+  ListClusterResources,
 } from "@/components";
 import { Layout } from "@/layout";
 
@@ -55,6 +56,7 @@ import { MonitoringPolicy } from "./components/views/monitoring-policy/Monitorin
 
 
 function App() {
+  
   return (
     <Layout>
       <Suspense fallback={<span>Fetching data, please wait.</span>}>
@@ -65,6 +67,8 @@ function App() {
           <Route path={RoutePaths.NETWORK_DOMAINS} element={<NetworkDomains />} />
           <Route path={RoutePaths.DEFINE_NETWORK_DOMAIN} element={<DefineNetworkDomain />} />
           <Route path={RoutePaths.NETWORK_DOMAIN_CONNECTIONS} element={<NetworkDomainsConnections />} />
+
+
           <Route path={RoutePaths.CONNECTION_CREATOR} element={<NetworkDomainsConnectionCreator />} />
           <Route path={RoutePaths.APPLICATION_CONNECTIONS} element={<ApplicationConnections />} />
           <Route path={RoutePaths.APPLICATION_CONNECTION_POLICIES} element={<ApplicationConnectionPolicies />} />
@@ -75,6 +79,9 @@ function App() {
           <Route path={RoutePaths.SLA_PROFILE_CREATOR} element={<SlaProfileCreator/>} />
           <Route path={RoutePaths.SLA_PROFILES} element={<SlaProfiles />} />
           <Route path={RoutePaths.LIST_INFRA_RESOURCES} element={<ListInfraResources />} />
+          <Route path={RoutePaths.LIST_CLUSTER_RESOURCES} element={<ListClusterResources />} />
+
+
           <Route path={RoutePaths.ACCESS_CONTROL_POLICIES_CREATOR} element={<AccessControlPolicyCreator/>} />
           <Route path={RoutePaths.TRAFFIC_INSPECTION_POLICIES_CREATOR} element={<TrafficInspectionPolicyCreator/>} />
           <Route path={RoutePaths.ACCESS_CONTROL_POLICIES} element={<AccessControlPolicies/>} />

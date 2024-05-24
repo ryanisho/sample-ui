@@ -55,22 +55,37 @@ export const useFetchVpcResourceVms = (provider: string, region: string, id: str
             const state     = instance.getState();
             const labels: any = {};
             const labelsMap = instance.getLabelsMap();
+            let project = ""
+            let owner = ""
+            let compliant = "No"
 
             labelsMap.forEach((value: string, key: string) => {
               labels[key] = value;
             });
-
+            if (labels && (("project" in labels) || ("Project" in labels))) {
+              project = labels["project"];
+            }
+              if (labels && (("owner" in labels)|| ("Owner" in labels))) {
+                owner = labels["owner"];
+            }
+            if ( owner && project ) {
+              compliant = "Yes"
+            }
+            
             return {
               name,
               id,
               accountId,
               provider,
+              owner,
+              project,
               type,
               subnetId,
               publicIp,
               privateIp,
               state,
               labels,
+              compliant,
             };
           });
 

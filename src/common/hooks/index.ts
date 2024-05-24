@@ -31,6 +31,7 @@ export * from "./useFetchVpcResourceVpcEndpoints";
 export * from "./useFetchVpcResourceRouters";
 export * from "./useFetchVpcResourceNATGateways";
 export * from "./useFetchVpcResourceInternetGateways";
+export * from "./useFetchVpcResourcePublicIPs";
 export * from "./useFetchVpcResourceACLs";
 export * from "./useFetchVpcAccounts";
 
