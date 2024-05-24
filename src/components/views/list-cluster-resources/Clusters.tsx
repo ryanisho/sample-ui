@@ -30,16 +30,16 @@ import { capitalizeStrings, extractKeysFromObjects, parseThisToString, muiButton
 import { AppDispatch, RootState } from "@/store/store";
 import { InfraClusterSubResources, InfraResourceType, Tooltips } from "@/common/enum";
 import { setInfraClusterSelectedRow } from "@/store/infra-resources-slice/infraResourcesSlice";
-import { SubResources } from "@/components/views/list-infra-resources/_components/clusters/_components";
+import { SubResources } from ".";
 
 interface ClustersProps {
-  setIsClusterDrawerVisible: (value: ((prevState: boolean) => boolean) | boolean) => void;
-  isClusterDrawerVisible: boolean;
-}
-
+    setIsClusterDrawerVisible: (value: ((prevState: boolean) => boolean) | boolean) => void;
+    isClusterDrawerVisible: boolean;
+  }
 export const Clusters: FC<ClustersProps> = ({ setIsClusterDrawerVisible, isClusterDrawerVisible }) => {
-  const [selectedSubResourceType, setSelectedSubResourceType] = useState<string>();
-  const { resources, selectedClusterRow } = useSelector((state: RootState) => state.infraResources);
+ 
+const [selectedSubResourceType, setSelectedSubResourceType] = useState<string>();
+const { resources, selectedClusterRow } = useSelector((state: RootState) => state.infraResources);
 
   const dispatch = useDispatch<AppDispatch>();
 
@@ -118,7 +118,7 @@ export const Clusters: FC<ClustersProps> = ({ setIsClusterDrawerVisible, isClust
     if (selectedRow) {
       const name = selectedRow.name;
 
-      setIsClusterDrawerVisible(false);
+      //setIsClusterDrawerVisible(true);
       setSelectedSubResourceType("");
       dispatch(setInfraClusterSelectedRow({ name }));
     }
@@ -160,15 +160,15 @@ export const Clusters: FC<ClustersProps> = ({ setIsClusterDrawerVisible, isClust
         <Tooltip title={Tooltips.CLUSTERS_RESOURCES} />
       </div>
       <div style={{ padding: "25px", width: "80%" }}>
-        <DataGrid
-          rowData={dynamicRowData}
-          columnDefs={dynamicColDefs}
-          heightAndWidth={{
-            height: "500px",
-            width: "900px",
-          }}
-          onRowSelected={onRowSelected}
-        />
+      <DataGrid
+        rowData={dynamicRowData}
+        columnDefs={dynamicColDefs}
+        heightAndWidth={{
+          height: "500px",
+          width: "140000px",
+        }}
+        onRowSelected={onRowSelected}
+      />
       </div>
       <BottomDrawer
         isDrawerVisible={isClusterDrawerVisible}

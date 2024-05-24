@@ -16,14 +16,10 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  */
-
-// SlaProfileCreator.tsx
 import React, { useState } from 'react';
 import "./Styles.css"
 import { fetchDataClient, openNotification } from "@/common/utils";
 import { ApiEndpoints } from "@/common/enum";
-
-
 
 export const SlaProfileCreator: React.FC = () => {
   const [name, setName] = useState('');
@@ -36,6 +32,17 @@ export const SlaProfileCreator: React.FC = () => {
   const [latency, setLatency] = useState(60);
   const [loss, setLoss] = useState(0.5);
   const [enforcementRequest, setEnforcementRequest] = useState('hard');
+  const [schedule, setSchedule] = useState([{ days: '', startTime: '', endTime: '' }]);
+
+  const handleScheduleChange = (index: number, field: string, value: string) => {
+    const newSchedule = [...schedule];
+    newSchedule[index] = { ...newSchedule[index], [field]: value };
+    setSchedule(newSchedule);
+  };
+
+  const addSchedulePeriod = () => {
+    setSchedule([...schedule, { days: '', startTime: '', endTime: '' }]);
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -56,6 +63,7 @@ export const SlaProfileCreator: React.FC = () => {
         },
         enforcementRequest,
       },
+      schedule,
     };
     console.log(networkSLOPolicy);
     // TODO: Send networkSLOPolicy to the backend
@@ -74,7 +82,7 @@ export const SlaProfileCreator: React.FC = () => {
 
   return (
     <div className="container">
-      <h1>Connection SLO </h1>
+      <h1>Connection SLO</h1>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="name">Name</label>
@@ -123,6 +131,7 @@ export const SlaProfileCreator: React.FC = () => {
             <option value="ERP Systems" />
             <option value="File Sharing and Storage" />
             <option value="Financial Services" />
+            <option value="Gaming" />
             <option value="Generic" />
             <option value="Human Resources Management (HRM)" />
             <option value="Identity and Access Management" />
@@ -172,6 +181,45 @@ export const SlaProfileCreator: React.FC = () => {
               <input type="number" id="loss" value={loss} onChange={(e) => setLoss(Number(e.target.value))} required step="0.1" />
             </div>
           </div>
+        </div>
+        
+        <div className="form-group">
+          <label>Schedule</label>
+          {schedule.map((period, index) => (
+            <div key={index} className="schedule-period">
+              <div>
+                <label htmlFor={`days-${index}`}>Days</label>
+                <input
+                  type="text"
+                  id={`days-${index}`}
+                  value={period.days}
+                  onChange={(e) => handleScheduleChange(index, 'days', e.target.value)}
+                  placeholder="e.g., Monday,Wednesday,Friday"
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor={`startTime-${index}`}>Start Time</label>
+                <input
+                  type="time"
+                  id={`startTime-${index}`}
+                  value={period.startTime}
+                  onChange={(e) => handleScheduleChange(index, 'startTime', e.target.value)}
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor={`endTime-${index}`}>End Time</label>
+                <input
+                  type="time"
+                  id={`endTime-${index}`}
+                  value={period.endTime}
+                  onChange={(e) => handleScheduleChange(index, 'endTime', e.target.value)}
+                  required
+                />
+              </div>
+            </div>
+          ))}
         </div>
         <div className="form-group">
           <label htmlFor="enforcementRequest">Enforcement Request</label>

@@ -58,6 +58,7 @@ export const useFetchSummary = () => {
           'CloudRouters': count.getRouters(),
           'InternetGateways':count.getIgws(),
           'VPCEndpoints': count.getVpcEndpoints(),
+          'PublicIPAddresses': count.getPublicIps(),
           'Clusters': count.getClusters(),
           'Services': count.getServices(),
           'Pods': count.getPods(),

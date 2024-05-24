@@ -29,12 +29,13 @@ export * from "./user-policy-attachment";
 export * from "./applications-connections";
 export * from "./login-page";
 export * from "./list-infra-resources";
-export * from "./dashboard"
-export * from "./vpc-connection-dashboard"
-export * from "./access-control-policy-creator"
-export * from "./monitoring-policy-creator"
-export * from "./logging-policy-creator"
-export * from "./monitoring-policy"
+export * from "./list-cluster-resources";
+export * from "./dashboard";
+export * from "./vpc-connection-dashboard";
+export * from "./access-control-policy-creator";
+export * from "./monitoring-policy-creator";
+export * from "./logging-policy-creator";
+export * from "./monitoring-policy";
 
 
 

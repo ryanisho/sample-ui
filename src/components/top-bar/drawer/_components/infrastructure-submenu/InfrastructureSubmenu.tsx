@@ -66,7 +66,10 @@ export const InfrastructureSubmenu: FC<NavigationSubmenuProps> = ({ linkOnClick 
       >
         <FlexColumn>
           <Link className={styles.link} onClick={closeSubmenu} to={RoutePaths.LIST_INFRA_RESOURCES}>
-            Discover
+            Discover Cloud Resources
+          </Link>
+          <Link className={styles.link} onClick={closeSubmenu} to={RoutePaths.LIST_CLUSTER_RESOURCES}>
+            Discover K8S Clusters
           </Link>
         </FlexColumn>
       </AntDDrawer>

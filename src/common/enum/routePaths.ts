@@ -24,6 +24,7 @@ export enum RoutePaths {
   INFRA_RESOURCE_DASHBOARD = "/infra-resource-dashboard",
   VPC_CONNECTION_DASHBOARD = "/vpc-connection-dashboard",
   LIST_INFRA_RESOURCES = "/list-infra-resources",
+  LIST_CLUSTER_RESOURCES = "/list-cluster-resources",
 
   NETWORK_DOMAINS = "/network-domains",
   DEFINE_NETWORK_DOMAIN = "/define-network-domain",

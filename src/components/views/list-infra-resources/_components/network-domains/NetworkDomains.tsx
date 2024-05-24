@@ -21,8 +21,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useFormContext } from "react-hook-form";
 import React, { FC, useEffect, useMemo, useState } from "react";
 import { ColDef, RowSelectedEvent } from "ag-grid-community";
-
-import { BottomDrawer, DataGrid, TextRowCell, Tooltip } from "@/components";
+import { CopyToClipboard } from "react-copy-to-clipboard";
+import { BottomDrawer, DataGrid, LabelText, Popover, TextRowCell, Tooltip } from "@/components";
 import { VmsAndSubnets } from "@/components/views/list-infra-resources/_components/network-domains/_components";
 import { fetchNetworkDomains } from "@/store/network-domains-slice/thunk/networkDomainsThunk";
 import {
@@ -35,8 +35,8 @@ import { AppDispatch, RootState } from "@/store/store";
 import { serverStatus } from "@/common/constants";
 import { Button, ButtonGroup } from "@mui/material";
 import { InfraResourceType, Tooltips } from "@/common/enum";
-import { useFetchVpcResourceClusters, useFetchVpcResourceSubnets, useFetchVpcResourceVms,useFetchVpcResourceSecurityGroups,useFetchVpcResourceRouteTables,useFetchVpcResourceACLs,useFetchVpcResourceVpcEndpoints,useFetchVpcResourceRouters, useFetchVpcResourceNATGateways,useFetchVpcResourceInternetGateways} from "@/common/hooks";
-import { muiButtonColorHandler } from "@/common/utils";
+import { useFetchVpcResourceClusters, useFetchVpcResourceSubnets, useFetchVpcResourceVms, useFetchVpcResourceSecurityGroups, useFetchVpcResourceRouteTables, useFetchVpcResourceACLs, useFetchVpcResourceVpcEndpoints, useFetchVpcResourceRouters, useFetchVpcResourceNATGateways, useFetchVpcResourceInternetGateways, useFetchVpcResourcePublicIPs, } from "@/common/hooks";
+import { muiButtonColorHandler, parseThisToString } from "@/common/utils";
 
 interface NetworkDomainsProps {
   setIsClusterDrawerVisible: (value: ((prevState: boolean) => boolean) | boolean) => void;
@@ -57,6 +57,9 @@ export const NetworkDomains: FC<NetworkDomainsProps> = ({ setIsClusterDrawerVisi
       dispatch(fetchNetworkDomains());
     }
   }, []);
+  function convertObjectToLabelTextComponents(obj: any) {
+    return Object.entries(obj).map(([label, value]) => <LabelText key={label} label={label} value={value as string} />);
+  }
 
   const selectedProvider = watch("provider");
 
@@ -64,7 +67,7 @@ export const NetworkDomains: FC<NetworkDomainsProps> = ({ setIsClusterDrawerVisi
     const networkDomains = serverStatus === "stub" ? data : vpcs;
 
     if (!selectedProvider) {
-      console.log("VPCs =",vpcs)
+      console.log("VPCs =", vpcs)
       return networkDomains;
     }
 
@@ -90,6 +93,16 @@ export const NetworkDomains: FC<NetworkDomainsProps> = ({ setIsClusterDrawerVisi
       editable: true,
       width: 220,
     },
+
+    {
+      field: "accountId",
+      headerName: "Account Id",
+      cellRenderer: (params: any) => {
+        return <TextRowCell value={params.data.accountId} />;
+      },
+      editable: true,
+      width: 130,
+    },
     /* {
       field: "network_domain_type",
       headerName: "Network Domain Type",
@@ -107,12 +120,40 @@ export const NetworkDomains: FC<NetworkDomainsProps> = ({ setIsClusterDrawerVisi
       width: 130,
     },
     {
+      field: "owner",
+      headerName: "Owner",
+      cellRenderer: (params: any) => {
+        const value = params.data["labels"];
+        if (value && "owner" in value) {
+          const ownerValue = value["owner"];
+          return <TextRowCell value={ownerValue} />;
+        }
+        return ""; // Or return a placeholder if the owner key is not present
+        //return <TextRowCell value={params.data.label} />;
+      },
+      width: 100,
+    },
+    {
+      field: "project",
+      headerName: "Project",
+      cellRenderer: (params: any) => {
+        const value = params.data["labels"];
+        if (value && "project" in value) {
+          const projectValue = value["project"];
+          return <TextRowCell value={projectValue} />;
+        }
+        return ""; // Or return a placeholder if the owner key is not present
+        //return <TextRowCell value={params.data.label} />;
+      },
+      width: 100,
+    },
+    {
       field: "ipv4_cidr",
       headerName: "IPv4 CIDR",
       cellRenderer: (params: any) => {
         return <TextRowCell value={params.data.ipv4_cidr} />;
       },
-      width: 130,
+      width: 110,
     },
     {
       field: "ipv6_cidr",
@@ -120,10 +161,66 @@ export const NetworkDomains: FC<NetworkDomainsProps> = ({ setIsClusterDrawerVisi
       cellRenderer: (params: any) => {
         return <TextRowCell value={params.data.ipv6_cidr} />;
       },
-      width: 130,
+      width: 110,
     },
+    {
+      field: "labels",
+      headerName: "Labels",
+      cellRenderer: (params: any) => {
+        const value = params.data["labels"];
+        return (<Popover
+          content={
+            <div style={{ width: "fit-content" }}>
+              {convertObjectToLabelTextComponents(value)}
+              <CopyToClipboard text={parseThisToString(JSON.stringify(value))}>
+                <button>Copy to clipboard</button>
+              </CopyToClipboard>
+            </div>
+          }
+          title={"Labels"}
+        >
+          {/*<span>{convertObjectToLabelTextComponents(value)}</span> */}
+          <span> Hover over for labels </span>
+        </Popover>)
+        //return <TextRowCell value={params.data.label} />;
+      },
+      width: 230,
+    },
+    {
+      field: "compliant",
+      headerName: "Compliant Tags ?",
+      cellRenderer: (params: any) => {
+        const value = params.data["labels"];
+        if (value && "project" in value && "owner" in value) {
+          const projectValue = value["project"];
+          return <TextRowCell value={"Yes"} />;
+        }
+        return <TextRowCell value={"No"} />
+      },
+      width: 150,
+    },
+    {
+      field: "notify",
+      headerName: "Notify Account Owner",
+      cellRenderer: (params: any) => {
+        const value = params.data["labels"];
+        if (value && "project" in value && "owner" in value) {
+          console.log("Notification not needed")
+        } else {
+          const handleNotifyClick = () => {
+            // Implement the notification logic here, for example:
+            alert(`Tag violation notification for resource Id ${params.data.id} sent to account owner for account ID: ${params.data.accountId}`);
+          };
+          return (
+            <button onClick={handleNotifyClick}>
+              Notify
+            </button>
+          );
 
-    
+        }
+      },
+      width: 180,
+    },
   ];
 
   const stubServerColDefs: ColDef[] = [
@@ -230,6 +327,13 @@ export const NetworkDomains: FC<NetworkDomainsProps> = ({ setIsClusterDrawerVisi
     selectedRow.accountId
   );
 
+  const { fetchVpcResourcePublicIPs } = useFetchVpcResourcePublicIPs(
+    selectedRow.provider,
+    selectedRow.region,
+    selectedRow.id,
+    selectedRow.accountId
+  );
+
   const { fetchVpcResourceACLs } = useFetchVpcResourceACLs(
     selectedRow.provider,
     selectedRow.region,
@@ -318,6 +422,13 @@ export const NetworkDomains: FC<NetworkDomainsProps> = ({ setIsClusterDrawerVisi
         setIsClusterDrawerVisible(false);
         setSelectedResourceType(InfraResourceType.INTERNET_GATEWAYS);
         break;
+      case InfraResourceType.PUBLIC_IPS:
+        dispatch(setResourceFetchedEntities([]));
+        fetchVpcResourcePublicIPs();
+        setIsDrawerVisible(true);
+        setIsClusterDrawerVisible(false);
+        setSelectedResourceType(InfraResourceType.PUBLIC_IPS);
+        break;
     }
   };
 
@@ -383,8 +494,8 @@ export const NetworkDomains: FC<NetworkDomainsProps> = ({ setIsClusterDrawerVisi
             Internet Gateways
           </Button>
           <Button
-            sx={muiButtonColorHandler(selectedResourceType, InfraResourceType.INTERNET_GATEWAYS)}
-            onClick={() => handleResourceChange(InfraResourceType.INTERNET_GATEWAYS)}
+            sx={muiButtonColorHandler(selectedResourceType, InfraResourceType.PUBLIC_IPS)}
+            onClick={() => handleResourceChange(InfraResourceType.PUBLIC_IPS)}
           >
             Public IP Addresses
           </Button>
@@ -394,13 +505,15 @@ export const NetworkDomains: FC<NetworkDomainsProps> = ({ setIsClusterDrawerVisi
           >
             Overlapping IP CIDR
           </Button>
-          <Button
+          {/*<Button
             sx={muiButtonColorHandler(selectedResourceType, InfraResourceType.CLUSTERS)}
             onClick={() => handleResourceChange(InfraResourceType.CLUSTERS)}
           >
             K8S Clusters
-          </Button>
-         
+  </Button> */}
+  
+
+
         </ButtonGroup>
         <Tooltip title={Tooltips.RESOURCE_TYPE} />
       </div>
@@ -410,7 +523,7 @@ export const NetworkDomains: FC<NetworkDomainsProps> = ({ setIsClusterDrawerVisi
         onRowSelected={onRowSelected}
         heightAndWidth={{
           height: "690px",
-          width: "810px",
+          width: "1750px",
         }}
       />
       <BottomDrawer

@@ -35,6 +35,7 @@ export const useFetchNetworkDomainsConnections = () => {
   const dispatch = useDispatch();
 
   const fetchConnections = () => {
+    console.log("Fetch connections called")
     connectionClient.listConnections(request).then((response) => {
       if (response?.error) {
         console.log(response?.error, "Static response");

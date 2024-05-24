@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 Cisco Systems, Inc. and its affiliates
+ * Copyright (c) 2024 Cisco Systems, Inc. and its affiliates
  * All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -26,13 +26,13 @@ import { ComboBox, Tooltip } from "@/components";
 
 import { muiButtonColorHandler } from "@/common/utils";
 import { AppDispatch, RootState } from "@/store/store";
-import { useFetchVpcAccounts, useFetchRegions, useFetchVpcsResources } from "@/common/hooks";
-import { ComboBoxVariants, Tooltips } from "@/common/enum";
-import { setInfraVpcs } from "@/store/infra-resources-slice/infraResourcesSlice";
+import { useFetchVpcAccounts, useFetchRegions, useFetchVpcResourceClusters } from "@/common/hooks";
+import { ComboBoxVariants, InfraResourceType, Tooltips } from "@/common/enum";
+import { setInfraClusterSelectedRow, setInfraVpcs, setResourceFetchedEntities, setResourceType } from "@/store/infra-resources-slice/infraResourcesSlice";
 import { InfraResourceProvider } from "@/common/enum";
-import { DisabledByDefault } from "@mui/icons-material";
+import { DataGrid } from "@mui/x-data-grid/DataGrid";
 
-export const ProviderAndAccountId = () => {
+export const ClusterProviderAndAccount = () => {
   const { accounts } = useSelector((state: RootState) => state.infraResources);
   const { regions } = useSelector((state: RootState) => state.infraResources);
 
@@ -40,6 +40,7 @@ export const ProviderAndAccountId = () => {
   const dispatch = useDispatch<AppDispatch>();
   const [selectedAccountId, setSelectedAccountId] = useState('');
   const [selectedRegion, setSelectedRegion] = useState('');
+
   const selectedProvider = watch("provider");
   const [lastClickedProvider, setLastClickedProvider] = useState('');
   const { fetchAccounts } = useFetchVpcAccounts(lastClickedProvider);
@@ -48,13 +49,8 @@ export const ProviderAndAccountId = () => {
   const { setValue } = useFormContext();
 
 
-  const { fetchVpcs } = useFetchVpcsResources(selectedProvider, selectedAccountId, selectedRegion);
+  const { fetchVpcResourcesClusters } = useFetchVpcResourceClusters(selectedProvider, selectedRegion, "", selectedAccountId);
   const { fetchRegions } = useFetchRegions(lastClickedProvider);
-
-
-  useEffect(() => {
-    fetchAccounts();
-  }, []);
 
   const accountIds: any[] = accounts.reduce((uniqueIds: any[], account: any, index: number) => {
     const accountId = account.accountId;
@@ -96,13 +92,15 @@ export const ProviderAndAccountId = () => {
     } else {
       switch (value) {
         case InfraResourceProvider.AWS:
-          dispatch(setInfraVpcs([]));
           setValue("provider", value);
           setLastClickedProvider("aws");
           setTimeout(() => {
             fetchAccounts()
-            fetchVpcs();
+            dispatch(setResourceFetchedEntities([]));
+            dispatch(setResourceType(InfraResourceType.CLUSTERS));
+            fetchVpcResourcesClusters();
             fetchRegions();
+
           }, 1000);
           break;
         case InfraResourceProvider.GCP:
@@ -111,7 +109,9 @@ export const ProviderAndAccountId = () => {
           setLastClickedProvider("gcp");
           setTimeout(() => {
             fetchAccounts()
-            fetchVpcs();
+            dispatch(setResourceFetchedEntities([]));
+            dispatch(setResourceType(InfraResourceType.CLUSTERS));
+            fetchVpcResourcesClusters();
             fetchRegions();
           }, 1000);
           break;
@@ -121,23 +121,12 @@ export const ProviderAndAccountId = () => {
           setLastClickedProvider("azure");
           setTimeout(() => {
             fetchAccounts()
-            fetchVpcs();
+            dispatch(setResourceFetchedEntities([]));
+            dispatch(setResourceType(InfraResourceType.CLUSTERS));
+            fetchVpcResourcesClusters();
             fetchRegions();
           }, 1000);
           break;
-
-        case InfraResourceProvider.CISCO_ISE:
-          dispatch(setInfraVpcs([]));
-          setValue("provider", value);
-          setLastClickedProvider(InfraResourceProvider.CISCO_ISE);
-          break;
-
-        case InfraResourceProvider.ALL_PROVIDERS:
-          dispatch(setInfraVpcs([]));
-          setValue("provider", value);
-          setLastClickedProvider(InfraResourceProvider.ALL_PROVIDERS);
-          break;
-
         default:
           console.log(`Unhandled exception, value is ${value}`);
           setValue("provider", value);
@@ -167,20 +156,7 @@ export const ProviderAndAccountId = () => {
         >
           Azure
         </Button>
-        <Button
-          disabled={true}
-          sx={muiButtonColorHandler(lastClickedProvider, InfraResourceProvider.CISCO_ISE)}
-          onClick={() => handleProviderSelect(InfraResourceProvider.CISCO_ISE)}
-        >
-          Cisco ISE
-        </Button>
-        <Button
-          disabled={true}
-          sx={muiButtonColorHandler(lastClickedProvider, InfraResourceProvider.ALL_PROVIDERS)}
-          onClick={() => handleProviderSelect(InfraResourceProvider.ALL_PROVIDERS)}
-        >
-          All Providers
-        </Button>
+
       </ButtonGroup>
       <div>
         <ComboBox
@@ -202,6 +178,9 @@ export const ProviderAndAccountId = () => {
           tooltip={<Tooltip title={Tooltips.REGION} />}
         />
       </div>
+
     </div>
+
   );
 };
+
