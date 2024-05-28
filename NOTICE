@@ -1,0 +1,7744 @@
+NOTICE FILE
+
+This project includes dependencies with the following licenses:
+
+Package: @adobe/css-tools@4.2.0
+Version: undefined
+License: MIT
+Repository: https://github.com/adobe/css-tools
+
+Package: @ampproject/remapping@2.2.0
+Version: undefined
+License: Apache-2.0
+Repository: https://github.com/ampproject/remapping
+
+Package: @ant-design/colors@7.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/ant-design/ant-design-colors
+
+Package: @ant-design/cssinjs@1.16.1
+Version: undefined
+License: MIT
+Repository: https://github.com/ant-design/cssinjs
+
+Package: @ant-design/icons-svg@4.3.0
+Version: undefined
+License: MIT
+Repository: https://github.com/ant-design/ant-design-icons
+
+Package: @ant-design/icons@5.2.5
+Version: undefined
+License: MIT
+Repository: https://github.com/ant-design/ant-design-icons/tree/master/packages/icons-react
+
+Package: @ant-design/react-slick@1.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/ant-design/react-slick
+
+Package: @apideck/better-ajv-errors@0.3.6
+Version: undefined
+License: MIT
+Repository: https://github.com/apideck-libraries/better-ajv-errors
+
+Package: @babel/cli@7.22.10
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/code-frame@7.18.6
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/compat-data@7.21.0
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/core@7.21.3
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/eslint-parser@7.21.3
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/generator@7.21.3
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/helper-annotate-as-pure@7.18.6
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/helper-builder-binary-assignment-operator-visitor@7.18.9
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/helper-compilation-targets@7.20.7
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/helper-create-class-features-plugin@7.21.0
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/helper-create-regexp-features-plugin@7.21.0
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/helper-define-polyfill-provider@0.3.3
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel-polyfills
+
+Package: @babel/helper-environment-visitor@7.18.9
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/helper-explode-assignable-expression@7.18.6
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/helper-function-name@7.21.0
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/helper-hoist-variables@7.18.6
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/helper-member-expression-to-functions@7.21.0
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/helper-module-imports@7.18.6
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/helper-module-transforms@7.21.2
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/helper-optimise-call-expression@7.18.6
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/helper-plugin-utils@7.22.5
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/helper-remap-async-to-generator@7.18.9
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/helper-replace-supers@7.20.7
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/helper-simple-access@7.20.2
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/helper-skip-transparent-expression-wrappers@7.20.0
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/helper-split-export-declaration@7.18.6
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/helper-string-parser@7.19.4
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/helper-validator-identifier@7.19.1
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/helper-validator-option@7.21.0
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/helper-wrap-function@7.20.5
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/helpers@7.21.0
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/highlight@7.18.6
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/parser@7.21.3
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-bugfix-safari-id-destructuring-collision-in-function-expression@7.18.6
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-bugfix-v8-spread-parameters-in-optional-chaining@7.20.7
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-external-helpers@7.22.5
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-proposal-async-generator-functions@7.20.7
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-proposal-class-properties@7.18.6
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-proposal-class-static-block@7.21.0
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-proposal-decorators@7.21.0
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-proposal-dynamic-import@7.18.6
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-proposal-export-namespace-from@7.18.9
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-proposal-json-strings@7.18.6
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-proposal-logical-assignment-operators@7.20.7
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-proposal-nullish-coalescing-operator@7.18.6
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-proposal-numeric-separator@7.18.6
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-proposal-object-rest-spread@7.20.7
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-proposal-optional-catch-binding@7.18.6
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-proposal-optional-chaining@7.21.0
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-proposal-private-methods@7.18.6
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-proposal-private-property-in-object@7.21.0
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-proposal-unicode-property-regex@7.18.6
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-syntax-async-generators@7.8.4
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-async-generators
+
+Package: @babel/plugin-syntax-bigint@7.8.3
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-bigint
+
+Package: @babel/plugin-syntax-class-properties@7.12.13
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-syntax-class-static-block@7.14.5
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-syntax-decorators@7.21.0
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-syntax-dynamic-import@7.8.3
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-dynamic-import
+
+Package: @babel/plugin-syntax-export-namespace-from@7.8.3
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-export-namespace-from
+
+Package: @babel/plugin-syntax-flow@7.18.6
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-syntax-import-assertions@7.20.0
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-syntax-import-meta@7.10.4
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-syntax-json-strings@7.8.3
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-json-strings
+
+Package: @babel/plugin-syntax-jsx@7.18.6
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-syntax-logical-assignment-operators@7.10.4
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-syntax-nullish-coalescing-operator@7.8.3
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-nullish-coalescing-operator
+
+Package: @babel/plugin-syntax-numeric-separator@7.10.4
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-syntax-object-rest-spread@7.8.3
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-object-rest-spread
+
+Package: @babel/plugin-syntax-optional-catch-binding@7.8.3
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-optional-catch-binding
+
+Package: @babel/plugin-syntax-optional-chaining@7.8.3
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-optional-chaining
+
+Package: @babel/plugin-syntax-private-property-in-object@7.14.5
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-syntax-top-level-await@7.14.5
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-syntax-typescript@7.20.0
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-transform-arrow-functions@7.20.7
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-transform-async-to-generator@7.20.7
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-transform-block-scoped-functions@7.18.6
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-transform-block-scoping@7.21.0
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-transform-classes@7.21.0
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-transform-computed-properties@7.20.7
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-transform-destructuring@7.21.3
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-transform-dotall-regex@7.18.6
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-transform-duplicate-keys@7.18.9
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-transform-exponentiation-operator@7.18.6
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-transform-flow-strip-types@7.21.0
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-transform-for-of@7.21.0
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-transform-function-name@7.18.9
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-transform-literals@7.18.9
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-transform-member-expression-literals@7.18.6
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-transform-modules-amd@7.20.11
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-transform-modules-commonjs@7.21.2
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-transform-modules-systemjs@7.20.11
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-transform-modules-umd@7.18.6
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-transform-named-capturing-groups-regex@7.20.5
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-transform-new-target@7.18.6
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-transform-object-super@7.18.6
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-transform-parameters@7.21.3
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-transform-property-literals@7.18.6
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-transform-react-constant-elements@7.21.3
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-transform-react-display-name@7.18.6
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-transform-react-jsx-development@7.18.6
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-transform-react-jsx@7.21.0
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-transform-react-pure-annotations@7.18.6
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-transform-regenerator@7.20.5
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-transform-reserved-words@7.18.6
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-transform-runtime@7.21.0
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-transform-shorthand-properties@7.18.6
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-transform-spread@7.20.7
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-transform-sticky-regex@7.18.6
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-transform-template-literals@7.18.9
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-transform-typeof-symbol@7.18.9
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-transform-typescript@7.21.3
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-transform-unicode-escapes@7.18.10
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/plugin-transform-unicode-regex@7.18.6
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/preset-env@7.20.2
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/preset-modules@0.1.5
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/preset-modules
+
+Package: @babel/preset-react@7.18.6
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/preset-typescript@7.21.0
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/regjsgen@0.8.0
+Version: undefined
+License: MIT
+Repository: https://github.com/bnjmnt4n/regjsgen
+
+Package: @babel/runtime@7.24.5
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/template@7.20.7
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/traverse@7.21.3
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @babel/types@7.21.3
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel
+
+Package: @bcoe/v8-coverage@0.2.3
+Version: undefined
+License: MIT
+Repository: https://github.com/demurgos/v8-coverage
+
+Package: @craco/craco@7.1.0
+Version: undefined
+License: Apache-2.0
+Repository: https://github.com/dilanx/craco
+
+Package: @cspotcode/source-map-support@0.8.1
+Version: undefined
+License: MIT
+Repository: https://github.com/cspotcode/node-source-map-support
+
+Package: @csstools/normalize.css@12.0.0
+Version: undefined
+License: CC0-1.0
+Repository: https://github.com/csstools/normalize.css
+
+Package: @csstools/postcss-cascade-layers@1.1.1
+Version: undefined
+License: CC0-1.0
+Repository: https://github.com/csstools/postcss-plugins
+
+Package: @csstools/postcss-color-function@1.1.1
+Version: undefined
+License: CC0-1.0
+Repository: https://github.com/csstools/postcss-plugins
+
+Package: @csstools/postcss-font-format-keywords@1.0.1
+Version: undefined
+License: CC0-1.0
+Repository: https://github.com/csstools/postcss-plugins
+
+Package: @csstools/postcss-hwb-function@1.0.2
+Version: undefined
+License: CC0-1.0
+Repository: https://github.com/csstools/postcss-plugins
+
+Package: @csstools/postcss-ic-unit@1.0.1
+Version: undefined
+License: CC0-1.0
+Repository: https://github.com/csstools/postcss-plugins
+
+Package: @csstools/postcss-is-pseudo-class@2.0.7
+Version: undefined
+License: CC0-1.0
+Repository: https://github.com/csstools/postcss-plugins
+
+Package: @csstools/postcss-nested-calc@1.0.0
+Version: undefined
+License: CC0-1.0
+Repository: https://github.com/csstools/postcss-plugins
+
+Package: @csstools/postcss-normalize-display-values@1.0.1
+Version: undefined
+License: CC0-1.0
+Repository: https://github.com/csstools/postcss-plugins
+
+Package: @csstools/postcss-oklab-function@1.1.1
+Version: undefined
+License: CC0-1.0
+Repository: https://github.com/csstools/postcss-plugins
+
+Package: @csstools/postcss-progressive-custom-properties@1.3.0
+Version: undefined
+License: CC0-1.0
+Repository: https://github.com/csstools/postcss-plugins
+
+Package: @csstools/postcss-stepped-value-functions@1.0.1
+Version: undefined
+License: CC0-1.0
+Repository: https://github.com/csstools/postcss-plugins
+
+Package: @csstools/postcss-text-decoration-shorthand@1.0.0
+Version: undefined
+License: CC0-1.0
+Repository: https://github.com/csstools/postcss-plugins
+
+Package: @csstools/postcss-trigonometric-functions@1.0.2
+Version: undefined
+License: CC0-1.0
+Repository: https://github.com/csstools/postcss-plugins
+
+Package: @csstools/postcss-unset-value@1.0.2
+Version: undefined
+License: CC0-1.0
+Repository: https://github.com/csstools/postcss-plugins
+
+Package: @csstools/selector-specificity@2.2.0
+Version: undefined
+License: CC0-1.0
+Repository: https://github.com/csstools/postcss-plugins
+
+Package: @ctrl/tinycolor@3.6.0
+Version: undefined
+License: MIT
+Repository: https://github.com/scttcper/tinycolor
+
+Package: @emotion/babel-plugin@11.11.0
+Version: undefined
+License: MIT
+Repository: https://github.com/emotion-js/emotion/tree/main/packages/babel-plugin
+
+Package: @emotion/cache@11.11.0
+Version: undefined
+License: MIT
+Repository: https://github.com/emotion-js/emotion/tree/main/packages/cache
+
+Package: @emotion/hash@0.8.0
+Version: undefined
+License: MIT
+Repository: https://github.com/emotion-js/emotion/tree/master/packages/hash
+
+Package: @emotion/hash@0.9.1
+Version: undefined
+License: MIT
+Repository: https://github.com/emotion-js/emotion/tree/main/packages/hash
+
+Package: @emotion/is-prop-valid@1.2.2
+Version: undefined
+License: MIT
+Repository: https://github.com/emotion-js/emotion/tree/main/packages/is-prop-valid
+
+Package: @emotion/memoize@0.8.1
+Version: undefined
+License: MIT
+Repository: https://github.com/emotion-js/emotion/tree/main/packages/memoize
+
+Package: @emotion/react@11.11.4
+Version: undefined
+License: MIT
+Repository: https://github.com/emotion-js/emotion/tree/main/packages/react
+
+Package: @emotion/serialize@1.1.4
+Version: undefined
+License: MIT
+Repository: https://github.com/emotion-js/emotion/tree/main/packages/serialize
+
+Package: @emotion/sheet@1.2.2
+Version: undefined
+License: MIT
+Repository: https://github.com/emotion-js/emotion/tree/main/packages/sheet
+
+Package: @emotion/styled@11.11.5
+Version: undefined
+License: MIT
+Repository: https://github.com/emotion-js/emotion/tree/main/packages/styled
+
+Package: @emotion/unitless@0.7.5
+Version: undefined
+License: MIT
+Repository: https://github.com/emotion-js/emotion/tree/master/packages/unitless
+
+Package: @emotion/unitless@0.8.1
+Version: undefined
+License: MIT
+Repository: https://github.com/emotion-js/emotion/tree/main/packages/unitless
+
+Package: @emotion/use-insertion-effect-with-fallbacks@1.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/emotion-js/emotion/tree/main/packages/use-insertion-effect-with-fallbacks
+
+Package: @emotion/utils@1.2.1
+Version: undefined
+License: MIT
+Repository: https://github.com/emotion-js/emotion/tree/main/packages/utils
+
+Package: @emotion/weak-memoize@0.3.1
+Version: undefined
+License: MIT
+Repository: https://github.com/emotion-js/emotion/tree/main/packages/weak-memoize
+
+Package: @eslint-community/eslint-utils@4.4.0
+Version: undefined
+License: MIT
+Repository: https://github.com/eslint-community/eslint-utils
+
+Package: @eslint-community/regexpp@4.5.0
+Version: undefined
+License: MIT
+Repository: https://github.com/eslint-community/regexpp
+
+Package: @eslint/eslintrc@2.0.2
+Version: undefined
+License: MIT
+Repository: https://github.com/eslint/eslintrc
+
+Package: @eslint/js@8.37.0
+Version: undefined
+License: MIT
+Repository: https://github.com/eslint/eslint
+
+Package: @floating-ui/core@1.3.1
+Version: undefined
+License: MIT
+Repository: https://github.com/floating-ui/floating-ui
+
+Package: @floating-ui/dom@1.4.3
+Version: undefined
+License: MIT
+Repository: https://github.com/floating-ui/floating-ui
+
+Package: @floating-ui/react-dom@2.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/floating-ui/floating-ui
+
+Package: @googlemaps/js-api-loader@1.16.2
+Version: undefined
+License: Apache-2.0
+Repository: https://github.com/googlemaps/js-api-loader
+
+Package: @googlemaps/markerclusterer@2.3.2
+Version: undefined
+License: Apache-2.0
+Repository: https://github.com/googlemaps/js-markerclusterer
+
+Package: @humanwhocodes/config-array@0.11.8
+Version: undefined
+License: Apache-2.0
+Repository: https://github.com/humanwhocodes/config-array
+
+Package: @humanwhocodes/module-importer@1.0.1
+Version: undefined
+License: Apache-2.0
+Repository: https://github.com/humanwhocodes/module-importer
+
+Package: @humanwhocodes/object-schema@1.2.1
+Version: undefined
+License: BSD-3-Clause
+Repository: https://github.com/humanwhocodes/object-schema
+
+Package: @istanbuljs/load-nyc-config@1.1.0
+Version: undefined
+License: ISC
+Repository: https://github.com/istanbuljs/load-nyc-config
+
+Package: @istanbuljs/schema@0.1.3
+Version: undefined
+License: MIT
+Repository: https://github.com/istanbuljs/schema
+
+Package: @jest/console@27.5.1
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/jest
+
+Package: @jest/console@28.1.3
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/jest
+
+Package: @jest/core@27.5.1
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/jest
+
+Package: @jest/environment@27.5.1
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/jest
+
+Package: @jest/fake-timers@27.5.1
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/jest
+
+Package: @jest/globals@27.5.1
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/jest
+
+Package: @jest/reporters@27.5.1
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/jest
+
+Package: @jest/schemas@28.1.3
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/jest
+
+Package: @jest/source-map@27.5.1
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/jest
+
+Package: @jest/test-result@27.5.1
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/jest
+
+Package: @jest/test-result@28.1.3
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/jest
+
+Package: @jest/test-sequencer@27.5.1
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/jest
+
+Package: @jest/transform@27.5.1
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/jest
+
+Package: @jest/types@27.5.1
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/jest
+
+Package: @jest/types@28.1.3
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/jest
+
+Package: @jridgewell/gen-mapping@0.1.1
+Version: undefined
+License: MIT
+Repository: https://github.com/jridgewell/gen-mapping
+
+Package: @jridgewell/gen-mapping@0.3.2
+Version: undefined
+License: MIT
+Repository: https://github.com/jridgewell/gen-mapping
+
+Package: @jridgewell/resolve-uri@3.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/jridgewell/resolve-uri
+
+Package: @jridgewell/set-array@1.1.2
+Version: undefined
+License: MIT
+Repository: https://github.com/jridgewell/set-array
+
+Package: @jridgewell/source-map@0.3.2
+Version: undefined
+License: MIT
+Repository: https://github.com/jridgewell/source-map
+
+Package: @jridgewell/sourcemap-codec@1.4.14
+Version: undefined
+License: MIT
+Repository: https://github.com/jridgewell/sourcemap-codec
+
+Package: @jridgewell/trace-mapping@0.3.17
+Version: undefined
+License: MIT
+Repository: https://github.com/jridgewell/trace-mapping
+
+Package: @jridgewell/trace-mapping@0.3.9
+Version: undefined
+License: MIT
+Repository: https://github.com/jridgewell/trace-mapping
+
+Package: @kurkle/color@0.3.2
+Version: undefined
+License: MIT
+Repository: https://github.com/kurkle/color
+
+Package: @leichtgewicht/ip-codec@2.0.4
+Version: undefined
+License: MIT
+Repository: https://github.com/martinheidegger/ip-codec
+
+Package: @mui/base@5.0.0-beta.40
+Version: undefined
+License: MIT
+Repository: https://github.com/mui/material-ui
+
+Package: @mui/core-downloads-tracker@5.15.18
+Version: undefined
+License: MIT
+Repository: https://github.com/mui/material-ui
+
+Package: @mui/icons-material@5.14.1
+Version: undefined
+License: MIT
+Repository: https://github.com/mui/material-ui
+
+Package: @mui/material@5.15.18
+Version: undefined
+License: MIT
+Repository: https://github.com/mui/material-ui
+
+Package: @mui/private-theming@5.15.14
+Version: undefined
+License: MIT
+Repository: https://github.com/mui/material-ui
+
+Package: @mui/styled-engine@5.15.14
+Version: undefined
+License: MIT
+Repository: https://github.com/mui/material-ui
+
+Package: @mui/system@5.15.15
+Version: undefined
+License: MIT
+Repository: https://github.com/mui/material-ui
+
+Package: @mui/types@7.2.14
+Version: undefined
+License: MIT
+Repository: https://github.com/mui/material-ui
+
+Package: @mui/utils@5.15.14
+Version: undefined
+License: MIT
+Repository: https://github.com/mui/material-ui
+
+Package: @mui/x-data-grid@7.5.0
+Version: undefined
+License: MIT
+Repository: https://github.com/mui/mui-x
+
+Package: @nicolo-ribaudo/chokidar-2@2.1.8-no-fsevents.3
+Version: undefined
+License: MIT
+Repository: https://github.com/nicolo-ribaudo/chokidar-2
+
+Package: @nicolo-ribaudo/eslint-scope-5-internals@5.1.1-v1
+Version: undefined
+License: MIT
+Repository: undefined
+
+Package: @nodelib/fs.scandir@2.1.5
+Version: undefined
+License: MIT
+Repository: https://github.com/nodelib/nodelib/tree/master/packages/fs/fs.scandir
+
+Package: @nodelib/fs.stat@2.0.5
+Version: undefined
+License: MIT
+Repository: https://github.com/nodelib/nodelib/tree/master/packages/fs/fs.stat
+
+Package: @nodelib/fs.walk@1.2.8
+Version: undefined
+License: MIT
+Repository: https://github.com/nodelib/nodelib/tree/master/packages/fs/fs.walk
+
+Package: @pmmmwh/react-refresh-webpack-plugin@0.5.10
+Version: undefined
+License: MIT
+Repository: https://github.com/pmmmwh/react-refresh-webpack-plugin
+
+Package: @popperjs/core@2.11.8
+Version: undefined
+License: MIT
+Repository: https://github.com/popperjs/popper-core
+
+Package: @protobufjs/aspromise@1.1.2
+Version: undefined
+License: BSD-3-Clause
+Repository: https://github.com/dcodeIO/protobuf.js
+
+Package: @protobufjs/base64@1.1.2
+Version: undefined
+License: BSD-3-Clause
+Repository: https://github.com/dcodeIO/protobuf.js
+
+Package: @protobufjs/codegen@2.0.4
+Version: undefined
+License: BSD-3-Clause
+Repository: https://github.com/dcodeIO/protobuf.js
+
+Package: @protobufjs/eventemitter@1.1.0
+Version: undefined
+License: BSD-3-Clause
+Repository: https://github.com/dcodeIO/protobuf.js
+
+Package: @protobufjs/fetch@1.1.0
+Version: undefined
+License: BSD-3-Clause
+Repository: https://github.com/dcodeIO/protobuf.js
+
+Package: @protobufjs/float@1.0.2
+Version: undefined
+License: BSD-3-Clause
+Repository: https://github.com/dcodeIO/protobuf.js
+
+Package: @protobufjs/inquire@1.1.0
+Version: undefined
+License: BSD-3-Clause
+Repository: https://github.com/dcodeIO/protobuf.js
+
+Package: @protobufjs/path@1.1.2
+Version: undefined
+License: BSD-3-Clause
+Repository: https://github.com/dcodeIO/protobuf.js
+
+Package: @protobufjs/pool@1.1.0
+Version: undefined
+License: BSD-3-Clause
+Repository: https://github.com/dcodeIO/protobuf.js
+
+Package: @protobufjs/utf8@1.1.0
+Version: undefined
+License: BSD-3-Clause
+Repository: https://github.com/dcodeIO/protobuf.js
+
+Package: @rc-component/color-picker@1.4.1
+Version: undefined
+License: MIT
+Repository: https://github.com/react-component/color-picker
+
+Package: @rc-component/context@1.3.0
+Version: undefined
+License: MIT
+Repository: https://github.com/react-component/context
+
+Package: @rc-component/mini-decimal@1.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/react-component/mini-decimal
+
+Package: @rc-component/mutate-observer@1.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/react-component/mutate-observer
+
+Package: @rc-component/portal@1.1.1
+Version: undefined
+License: MIT
+Repository: https://github.com/react-component/portal
+
+Package: @rc-component/tour@1.8.1
+Version: undefined
+License: MIT
+Repository: https://github.com/react-component/tour
+
+Package: @rc-component/trigger@1.15.1
+Version: undefined
+License: MIT
+Repository: https://github.com/react-component/trigger
+
+Package: @react-aria/ssr@3.6.0
+Version: undefined
+License: Apache-2.0
+Repository: https://github.com/adobe/react-spectrum
+
+Package: @react-google-maps/api@2.19.2
+Version: undefined
+License: MIT
+Repository: https://github.com/JustFly1984/react-google-maps-api
+
+Package: @react-google-maps/infobox@2.19.2
+Version: undefined
+License: MIT
+Repository: https://github.com/JustFly1984/react-google-maps-api
+
+Package: @react-google-maps/marker-clusterer@2.19.2
+Version: undefined
+License: MIT
+Repository: https://github.com/JustFly1984/react-google-maps-api
+
+Package: @reduxjs/toolkit@1.9.3
+Version: undefined
+License: MIT
+Repository: https://github.com/reduxjs/redux-toolkit
+
+Package: @remix-run/router@1.4.0
+Version: undefined
+License: MIT
+Repository: https://github.com/remix-run/react-router
+
+Package: @restart/hooks@0.4.9
+Version: undefined
+License: MIT
+Repository: https://github.com/jquense/react-common-hooks
+
+Package: @restart/ui@1.6.3
+Version: undefined
+License: MIT
+Repository: https://github.com/react-restart/ui
+
+Package: @rollup/plugin-babel@5.3.1
+Version: undefined
+License: MIT
+Repository: https://github.com/rollup/plugins
+
+Package: @rollup/plugin-node-resolve@11.2.1
+Version: undefined
+License: MIT
+Repository: https://github.com/rollup/plugins
+
+Package: @rollup/plugin-replace@2.4.2
+Version: undefined
+License: MIT
+Repository: https://github.com/rollup/plugins
+
+Package: @rollup/pluginutils@3.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/rollup/plugins
+
+Package: @rushstack/eslint-patch@1.2.0
+Version: undefined
+License: MIT
+Repository: https://github.com/microsoft/rushstack
+
+Package: @sinclair/typebox@0.24.51
+Version: undefined
+License: MIT
+Repository: https://github.com/sinclairzx81/typebox
+
+Package: @sinonjs/commons@1.8.6
+Version: undefined
+License: BSD-3-Clause
+Repository: https://github.com/sinonjs/commons
+
+Package: @sinonjs/fake-timers@8.1.0
+Version: undefined
+License: BSD-3-Clause
+Repository: https://github.com/sinonjs/fake-timers
+
+Package: @surma/rollup-plugin-off-main-thread@2.2.3
+Version: undefined
+License: Apache-2.0
+Repository: https://github.com/surma/rollup-plugin-off-main-thread
+
+Package: @svgr/babel-plugin-add-jsx-attribute@5.4.0
+Version: undefined
+License: MIT
+Repository: https://github.com/gregberge/svgr/tree/master/packages/babel-plugin-add-jsx-attribute
+
+Package: @svgr/babel-plugin-remove-jsx-attribute@5.4.0
+Version: undefined
+License: MIT
+Repository: https://github.com/gregberge/svgr/tree/master/packages/babel-plugin-remove-jsx-attribute
+
+Package: @svgr/babel-plugin-remove-jsx-empty-expression@5.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/gregberge/svgr/tree/master/packages/babel-plugin-remove-jsx-empty-expression
+
+Package: @svgr/babel-plugin-replace-jsx-attribute-value@5.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/gregberge/svgr/tree/master/packages/babel-plugin-replace-jsx-attribute-value
+
+Package: @svgr/babel-plugin-svg-dynamic-title@5.4.0
+Version: undefined
+License: MIT
+Repository: https://github.com/gregberge/svgr/tree/master/packages/babel-plugin-svg-dynamic-title
+
+Package: @svgr/babel-plugin-svg-em-dimensions@5.4.0
+Version: undefined
+License: MIT
+Repository: https://github.com/gregberge/svgr/tree/master/packages/babel-plugin-svg-em-dimensions
+
+Package: @svgr/babel-plugin-transform-react-native-svg@5.4.0
+Version: undefined
+License: MIT
+Repository: https://github.com/gregberge/svgr/tree/master/packages/babel-plugin-transform-react-native-svg
+
+Package: @svgr/babel-plugin-transform-svg-component@5.5.0
+Version: undefined
+License: MIT
+Repository: https://github.com/gregberge/svgr/tree/master/packages/babel-plugin-transform-svg-component
+
+Package: @svgr/babel-preset@5.5.0
+Version: undefined
+License: MIT
+Repository: https://github.com/gregberge/svgr/tree/master/packages/babel-preset
+
+Package: @svgr/core@5.5.0
+Version: undefined
+License: MIT
+Repository: https://github.com/gregberge/svgr/tree/master/packages/core
+
+Package: @svgr/hast-util-to-babel-ast@5.5.0
+Version: undefined
+License: MIT
+Repository: https://github.com/gregberge/svgr/tree/master/packages/hast-util-to-babel-ast
+
+Package: @svgr/plugin-jsx@5.5.0
+Version: undefined
+License: MIT
+Repository: https://github.com/gregberge/svgr/tree/master/packages/plugin-jsx
+
+Package: @svgr/plugin-svgo@5.5.0
+Version: undefined
+License: MIT
+Repository: https://github.com/gregberge/svgr/tree/master/packages/plugin-svgo
+
+Package: @svgr/webpack@5.5.0
+Version: undefined
+License: MIT
+Repository: https://github.com/gregberge/svgr/tree/master/packages/webpack
+
+Package: @swc/helpers@0.4.14
+Version: undefined
+License: MIT
+Repository: https://github.com/swc-project/swc
+
+Package: @tanstack/match-sorter-utils@8.8.4
+Version: undefined
+License: MIT
+Repository: https://github.com/tanstack/table
+
+Package: @tanstack/query-core@4.27.0
+Version: undefined
+License: MIT
+Repository: https://github.com/tanstack/query
+
+Package: @tanstack/react-query-devtools@4.28.0
+Version: undefined
+License: MIT
+Repository: https://github.com/tanstack/query
+
+Package: @tanstack/react-query@4.28.0
+Version: undefined
+License: MIT
+Repository: https://github.com/tanstack/query
+
+Package: @testing-library/dom@8.20.0
+Version: undefined
+License: MIT
+Repository: https://github.com/testing-library/dom-testing-library
+
+Package: @testing-library/dom@9.2.0
+Version: undefined
+License: MIT
+Repository: https://github.com/testing-library/dom-testing-library
+
+Package: @testing-library/jest-dom@5.16.5
+Version: undefined
+License: MIT
+Repository: https://github.com/testing-library/jest-dom
+
+Package: @testing-library/react@13.4.0
+Version: undefined
+License: MIT
+Repository: https://github.com/testing-library/react-testing-library
+
+Package: @testing-library/user-event@13.5.0
+Version: undefined
+License: MIT
+Repository: https://github.com/testing-library/user-event
+
+Package: @tootallnate/once@1.1.2
+Version: undefined
+License: MIT
+Repository: https://github.com/TooTallNate/once
+
+Package: @trysound/sax@0.2.0
+Version: undefined
+License: ISC
+Repository: https://github.com/svg/sax
+
+Package: @tsconfig/node10@1.0.9
+Version: undefined
+License: MIT
+Repository: https://github.com/tsconfig/bases
+
+Package: @tsconfig/node12@1.0.11
+Version: undefined
+License: MIT
+Repository: https://github.com/tsconfig/bases
+
+Package: @tsconfig/node14@1.0.3
+Version: undefined
+License: MIT
+Repository: https://github.com/tsconfig/bases
+
+Package: @tsconfig/node16@1.0.3
+Version: undefined
+License: MIT
+Repository: https://github.com/tsconfig/bases
+
+Package: @types/aria-query@5.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/babel__core@7.20.0
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/babel__generator@7.6.4
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/babel__template@7.4.1
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/babel__traverse@7.18.3
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/body-parser@1.19.2
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/bonjour@3.5.10
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/connect-history-api-fallback@1.3.5
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/connect@3.4.35
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/d3-array@3.0.6
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/d3-axis@3.0.3
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/d3-brush@3.0.3
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/d3-chord@3.0.3
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/d3-color@3.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/d3-contour@3.0.3
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/d3-delaunay@6.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/d3-dispatch@3.0.3
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/d3-drag@3.0.3
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/d3-dsv@3.0.2
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/d3-ease@3.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/d3-fetch@3.0.3
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/d3-force@3.0.5
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/d3-format@3.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/d3-geo@3.0.4
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/d3-hierarchy@3.1.3
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/d3-interpolate@3.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/d3-path@3.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/d3-polygon@3.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/d3-quadtree@3.0.2
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/d3-random@3.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/d3-scale-chromatic@3.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/d3-scale@4.0.4
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/d3-selection@3.0.6
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/d3-shape@3.1.2
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/d3-time-format@4.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/d3-time@3.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/d3-timer@3.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/d3-transition@3.0.4
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/d3-zoom@3.0.4
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/d3@7.4.0
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/eslint-scope@3.7.4
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/eslint@8.21.3
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/estree@0.0.39
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/estree@0.0.51
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/estree@1.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/express-serve-static-core@4.17.33
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/express@4.17.17
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/file-saver@2.0.5
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/geojson@7946.0.10
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/google.maps@3.53.5
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/graceful-fs@4.1.6
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/hoist-non-react-statics@3.3.1
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/html-minifier-terser@6.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/http-proxy@1.17.10
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/istanbul-lib-coverage@2.0.4
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/istanbul-lib-report@3.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/istanbul-reports@3.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/jest@27.5.2
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/json-schema@7.0.11
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/json5@0.0.29
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/lodash@4.14.192
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/mime@3.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/node@16.18.22
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/parse-json@4.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/prettier@2.7.2
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/prop-types@15.7.12
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/q@1.5.5
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/qs@6.9.7
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/range-parser@1.2.4
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/react-copy-to-clipboard@5.0.4
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/react-dom@18.0.11
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/react-syntax-highlighter@15.5.6
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/react-transition-group@4.4.10
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/react@18.0.31
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/resolve@1.17.1
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/retry@0.12.0
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/scheduler@0.16.3
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/semver@7.3.13
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/serve-index@1.9.1
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/serve-static@1.15.1
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/sockjs@0.3.33
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/stack-utils@2.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/stylis@4.2.0
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/testing-library__jest-dom@5.14.5
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/trusted-types@2.0.3
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/use-sync-external-store@0.0.3
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/warning@3.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/ws@8.5.4
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/yargs-parser@21.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/yargs@16.0.5
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @types/yargs@17.0.24
+Version: undefined
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+Package: @typescript-eslint/eslint-plugin@5.57.0
+Version: undefined
+License: MIT
+Repository: https://github.com/typescript-eslint/typescript-eslint
+
+Package: @typescript-eslint/experimental-utils@5.57.0
+Version: undefined
+License: MIT
+Repository: https://github.com/typescript-eslint/typescript-eslint
+
+Package: @typescript-eslint/parser@5.57.0
+Version: undefined
+License: BSD-2-Clause
+Repository: https://github.com/typescript-eslint/typescript-eslint
+
+Package: @typescript-eslint/scope-manager@5.57.0
+Version: undefined
+License: MIT
+Repository: https://github.com/typescript-eslint/typescript-eslint
+
+Package: @typescript-eslint/type-utils@5.57.0
+Version: undefined
+License: MIT
+Repository: https://github.com/typescript-eslint/typescript-eslint
+
+Package: @typescript-eslint/types@5.57.0
+Version: undefined
+License: MIT
+Repository: https://github.com/typescript-eslint/typescript-eslint
+
+Package: @typescript-eslint/typescript-estree@5.57.0
+Version: undefined
+License: BSD-2-Clause
+Repository: https://github.com/typescript-eslint/typescript-eslint
+
+Package: @typescript-eslint/utils@5.57.0
+Version: undefined
+License: MIT
+Repository: https://github.com/typescript-eslint/typescript-eslint
+
+Package: @typescript-eslint/visitor-keys@5.57.0
+Version: undefined
+License: MIT
+Repository: https://github.com/typescript-eslint/typescript-eslint
+
+Package: @webassemblyjs/ast@1.11.1
+Version: undefined
+License: MIT
+Repository: https://github.com/xtuc/webassemblyjs
+
+Package: @webassemblyjs/floating-point-hex-parser@1.11.1
+Version: undefined
+License: MIT
+Repository: https://github.com/xtuc/webassemblyjs
+
+Package: @webassemblyjs/helper-api-error@1.11.1
+Version: undefined
+License: MIT
+Repository: https://github.com/xtuc/webassemblyjs
+
+Package: @webassemblyjs/helper-buffer@1.11.1
+Version: undefined
+License: MIT
+Repository: https://github.com/xtuc/webassemblyjs
+
+Package: @webassemblyjs/helper-numbers@1.11.1
+Version: undefined
+License: MIT
+Repository: https://github.com/xtuc/webassemblyjs
+
+Package: @webassemblyjs/helper-wasm-bytecode@1.11.1
+Version: undefined
+License: MIT
+Repository: https://github.com/xtuc/webassemblyjs
+
+Package: @webassemblyjs/helper-wasm-section@1.11.1
+Version: undefined
+License: MIT
+Repository: https://github.com/xtuc/webassemblyjs
+
+Package: @webassemblyjs/ieee754@1.11.1
+Version: undefined
+License: MIT
+Repository: https://github.com/xtuc/webassemblyjs
+
+Package: @webassemblyjs/leb128@1.11.1
+Version: undefined
+License: Apache-2.0
+Repository: https://github.com/xtuc/webassemblyjs
+
+Package: @webassemblyjs/utf8@1.11.1
+Version: undefined
+License: MIT
+Repository: https://github.com/xtuc/webassemblyjs
+
+Package: @webassemblyjs/wasm-edit@1.11.1
+Version: undefined
+License: MIT
+Repository: https://github.com/xtuc/webassemblyjs
+
+Package: @webassemblyjs/wasm-gen@1.11.1
+Version: undefined
+License: MIT
+Repository: https://github.com/xtuc/webassemblyjs
+
+Package: @webassemblyjs/wasm-opt@1.11.1
+Version: undefined
+License: MIT
+Repository: https://github.com/xtuc/webassemblyjs
+
+Package: @webassemblyjs/wasm-parser@1.11.1
+Version: undefined
+License: MIT
+Repository: https://github.com/xtuc/webassemblyjs
+
+Package: @webassemblyjs/wast-printer@1.11.1
+Version: undefined
+License: MIT
+Repository: https://github.com/xtuc/webassemblyjs
+
+Package: @xtuc/ieee754@1.2.0
+Version: undefined
+License: BSD-3-Clause
+Repository: https://github.com/feross/ieee754
+
+Package: @xtuc/long@4.2.2
+Version: undefined
+License: Apache-2.0
+Repository: https://github.com/dcodeIO/long.js
+
+Package: abab@2.0.6
+Version: undefined
+License: BSD-3-Clause
+Repository: https://github.com/jsdom/abab
+
+Package: abort-controller-x@0.4.2
+Version: undefined
+License: MIT
+Repository: https://github.com/deeplay-io/abort-controller-x
+
+Package: accepts@1.3.8
+Version: undefined
+License: MIT
+Repository: https://github.com/jshttp/accepts
+
+Package: ace-builds@1.20.0
+Version: undefined
+License: BSD-3-Clause
+Repository: https://github.com/ajaxorg/ace-builds
+
+Package: acorn-globals@6.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/ForbesLindesay/acorn-globals
+
+Package: acorn-import-assertions@1.8.0
+Version: undefined
+License: MIT
+Repository: https://github.com/xtuc/acorn-import-assertions
+
+Package: acorn-jsx@5.3.2
+Version: undefined
+License: MIT
+Repository: https://github.com/acornjs/acorn-jsx
+
+Package: acorn-walk@7.2.0
+Version: undefined
+License: MIT
+Repository: https://github.com/acornjs/acorn
+
+Package: acorn-walk@8.2.0
+Version: undefined
+License: MIT
+Repository: https://github.com/acornjs/acorn
+
+Package: acorn@7.4.1
+Version: undefined
+License: MIT
+Repository: https://github.com/acornjs/acorn
+
+Package: acorn@8.8.2
+Version: undefined
+License: MIT
+Repository: https://github.com/acornjs/acorn
+
+Package: address@1.2.2
+Version: undefined
+License: MIT
+Repository: https://github.com/node-modules/address
+
+Package: adjust-sourcemap-loader@4.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/bholloway/adjust-sourcemap-loader
+
+Package: ag-grid-community@29.2.0
+Version: undefined
+License: MIT
+Repository: https://github.com/ag-grid/ag-grid
+
+Package: ag-grid-react@29.2.0
+Version: undefined
+License: MIT
+Repository: https://github.com/ag-grid/ag-grid
+
+Package: agent-base@6.0.2
+Version: undefined
+License: MIT
+Repository: https://github.com/TooTallNate/node-agent-base
+
+Package: ajv-formats@2.1.1
+Version: undefined
+License: MIT
+Repository: https://github.com/ajv-validator/ajv-formats
+
+Package: ajv-keywords@3.5.2
+Version: undefined
+License: MIT
+Repository: https://github.com/epoberezkin/ajv-keywords
+
+Package: ajv-keywords@5.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/epoberezkin/ajv-keywords
+
+Package: ajv@6.12.6
+Version: undefined
+License: MIT
+Repository: https://github.com/ajv-validator/ajv
+
+Package: ajv@8.12.0
+Version: undefined
+License: MIT
+Repository: https://github.com/ajv-validator/ajv
+
+Package: ansi-escapes@4.3.2
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/ansi-escapes
+
+Package: ansi-html-community@0.0.8
+Version: undefined
+License: Apache-2.0
+Repository: https://github.com/mahdyar/ansi-html-community
+
+Package: ansi-regex@5.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/chalk/ansi-regex
+
+Package: ansi-regex@6.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/chalk/ansi-regex
+
+Package: ansi-styles@3.2.1
+Version: undefined
+License: MIT
+Repository: https://github.com/chalk/ansi-styles
+
+Package: ansi-styles@4.3.0
+Version: undefined
+License: MIT
+Repository: https://github.com/chalk/ansi-styles
+
+Package: ansi-styles@5.2.0
+Version: undefined
+License: MIT
+Repository: https://github.com/chalk/ansi-styles
+
+Package: antd@5.8.2
+Version: undefined
+License: MIT
+Repository: https://github.com/ant-design/ant-design
+
+Package: any-promise@1.3.0
+Version: undefined
+License: MIT
+Repository: https://github.com/kevinbeaty/any-promise
+
+Package: anymatch@3.1.3
+Version: undefined
+License: ISC
+Repository: https://github.com/micromatch/anymatch
+
+Package: arg@4.1.3
+Version: undefined
+License: MIT
+Repository: https://github.com/zeit/arg
+
+Package: arg@5.0.2
+Version: undefined
+License: MIT
+Repository: https://github.com/vercel/arg
+
+Package: argparse@1.0.10
+Version: undefined
+License: MIT
+Repository: https://github.com/nodeca/argparse
+
+Package: argparse@2.0.1
+Version: undefined
+License: Python-2.0
+Repository: https://github.com/nodeca/argparse
+
+Package: aria-query@5.1.3
+Version: undefined
+License: Apache-2.0
+Repository: https://github.com/A11yance/aria-query
+
+Package: array-buffer-byte-length@1.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/inspect-js/array-buffer-byte-length
+
+Package: array-flatten@1.1.1
+Version: undefined
+License: MIT
+Repository: https://github.com/blakeembrey/array-flatten
+
+Package: array-flatten@2.1.2
+Version: undefined
+License: MIT
+Repository: https://github.com/blakeembrey/array-flatten
+
+Package: array-includes@3.1.6
+Version: undefined
+License: MIT
+Repository: https://github.com/es-shims/array-includes
+
+Package: array-tree-filter@2.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/afc163/array-tree-filter
+
+Package: array-union@2.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/array-union
+
+Package: array.prototype.flat@1.3.1
+Version: undefined
+License: MIT
+Repository: https://github.com/es-shims/Array.prototype.flat
+
+Package: array.prototype.flatmap@1.3.1
+Version: undefined
+License: MIT
+Repository: https://github.com/es-shims/Array.prototype.flatMap
+
+Package: array.prototype.reduce@1.0.5
+Version: undefined
+License: MIT
+Repository: https://github.com/es-shims/Array.prototype.reduce
+
+Package: array.prototype.tosorted@1.1.1
+Version: undefined
+License: MIT
+Repository: https://github.com/es-shims/Array.prototype.toSorted
+
+Package: asap@2.0.6
+Version: undefined
+License: MIT
+Repository: https://github.com/kriskowal/asap
+
+Package: assert@2.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/browserify/commonjs-assert
+
+Package: ast-types-flow@0.0.7
+Version: undefined
+License: ISC
+Repository: https://github.com/kyldvs/ast-types-flow
+
+Package: async-validator@4.2.5
+Version: undefined
+License: MIT
+Repository: https://github.com/yiminghe/async-validator
+
+Package: async@3.2.4
+Version: undefined
+License: MIT
+Repository: https://github.com/caolan/async
+
+Package: asynckit@0.4.0
+Version: undefined
+License: MIT
+Repository: https://github.com/alexindigo/asynckit
+
+Package: at-least-node@1.0.0
+Version: undefined
+License: ISC
+Repository: https://github.com/RyanZim/at-least-node
+
+Package: autoprefixer@10.4.14
+Version: undefined
+License: MIT
+Repository: https://github.com/postcss/autoprefixer
+
+Package: available-typed-arrays@1.0.5
+Version: undefined
+License: MIT
+Repository: https://github.com/inspect-js/available-typed-arrays
+
+Package: axe-core@4.6.3
+Version: undefined
+License: MPL-2.0
+Repository: https://github.com/dequelabs/axe-core
+
+Package: axios@1.3.4
+Version: undefined
+License: MIT
+Repository: https://github.com/axios/axios
+
+Package: axobject-query@3.1.1
+Version: undefined
+License: Apache-2.0
+Repository: https://github.com/A11yance/axobject-query
+
+Package: babel-jest@27.5.1
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/jest
+
+Package: babel-loader@8.3.0
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel-loader
+
+Package: babel-plugin-istanbul@6.1.1
+Version: undefined
+License: BSD-3-Clause
+Repository: https://github.com/istanbuljs/babel-plugin-istanbul
+
+Package: babel-plugin-jest-hoist@27.5.1
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/jest
+
+Package: babel-plugin-macros@3.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/kentcdodds/babel-plugin-macros
+
+Package: babel-plugin-named-asset-import@0.3.8
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/create-react-app
+
+Package: babel-plugin-polyfill-corejs2@0.3.3
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel-polyfills
+
+Package: babel-plugin-polyfill-corejs3@0.6.0
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel-polyfills
+
+Package: babel-plugin-polyfill-regenerator@0.4.1
+Version: undefined
+License: MIT
+Repository: https://github.com/babel/babel-polyfills
+
+Package: babel-plugin-transform-react-remove-prop-types@0.4.24
+Version: undefined
+License: MIT
+Repository: https://github.com/oliviertassinari/babel-plugin-transform-react-remove-prop-types
+
+Package: babel-preset-current-node-syntax@1.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/nicolo-ribaudo/babel-preset-current-node-syntax
+
+Package: babel-preset-jest@27.5.1
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/jest
+
+Package: babel-preset-react-app@10.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/create-react-app
+
+Package: balanced-match@1.0.2
+Version: undefined
+License: MIT
+Repository: https://github.com/juliangruber/balanced-match
+
+Package: basic-auth@2.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/jshttp/basic-auth
+
+Package: batch@0.6.1
+Version: undefined
+License: MIT
+Repository: https://github.com/visionmedia/batch
+
+Package: bfj@7.0.2
+Version: undefined
+License: MIT
+Repository: git+https://gitlab.com/philbooth/bfj
+
+Package: big.js@5.2.2
+Version: undefined
+License: MIT
+Repository: https://github.com/MikeMcl/big.js
+
+Package: binary-extensions@2.2.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/binary-extensions
+
+Package: bluebird@3.7.2
+Version: undefined
+License: MIT
+Repository: https://github.com/petkaantonov/bluebird
+
+Package: body-parser@1.20.1
+Version: undefined
+License: MIT
+Repository: https://github.com/expressjs/body-parser
+
+Package: bonjour-service@1.1.1
+Version: undefined
+License: MIT
+Repository: https://github.com/onlxltd/bonjour-service
+
+Package: boolbase@1.0.0
+Version: undefined
+License: ISC
+Repository: https://github.com/fb55/boolbase
+
+Package: brace-expansion@1.1.11
+Version: undefined
+License: MIT
+Repository: https://github.com/juliangruber/brace-expansion
+
+Package: brace-expansion@2.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/juliangruber/brace-expansion
+
+Package: braces@3.0.2
+Version: undefined
+License: MIT
+Repository: https://github.com/micromatch/braces
+
+Package: browser-process-hrtime@1.0.0
+Version: undefined
+License: BSD-2-Clause
+Repository: https://github.com/kumavis/browser-process-hrtime
+
+Package: browserslist@4.21.5
+Version: undefined
+License: MIT
+Repository: https://github.com/browserslist/browserslist
+
+Package: bser@2.1.1
+Version: undefined
+License: Apache-2.0
+Repository: https://github.com/facebook/watchman
+
+Package: buffer-from@1.1.2
+Version: undefined
+License: MIT
+Repository: https://github.com/LinusU/buffer-from
+
+Package: builtin-modules@3.3.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/builtin-modules
+
+Package: builtins@5.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/juliangruber/builtins
+
+Package: bytes@3.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/visionmedia/bytes.js
+
+Package: bytes@3.1.2
+Version: undefined
+License: MIT
+Repository: https://github.com/visionmedia/bytes.js
+
+Package: call-bind@1.0.2
+Version: undefined
+License: MIT
+Repository: https://github.com/ljharb/call-bind
+
+Package: callsites@3.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/callsites
+
+Package: camel-case@4.1.2
+Version: undefined
+License: MIT
+Repository: https://github.com/blakeembrey/change-case
+
+Package: camelcase-css@2.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/stevenvachon/camelcase-css
+
+Package: camelcase@5.3.1
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/camelcase
+
+Package: camelcase@6.3.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/camelcase
+
+Package: camelize@1.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/ljharb/camelize
+
+Package: caniuse-api@3.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/nyalab/caniuse-api
+
+Package: caniuse-lite@1.0.30001591
+Version: undefined
+License: CC-BY-4.0
+Repository: https://github.com/browserslist/caniuse-lite
+
+Package: case-sensitive-paths-webpack-plugin@2.4.0
+Version: undefined
+License: MIT
+Repository: https://github.com/Urthen/case-sensitive-paths-webpack-plugin
+
+Package: chalk@2.4.2
+Version: undefined
+License: MIT
+Repository: https://github.com/chalk/chalk
+
+Package: chalk@3.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/chalk/chalk
+
+Package: chalk@4.1.2
+Version: undefined
+License: MIT
+Repository: https://github.com/chalk/chalk
+
+Package: char-regex@1.0.2
+Version: undefined
+License: MIT
+Repository: https://github.com/Richienb/char-regex
+
+Package: char-regex@2.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/Richienb/char-regex
+
+Package: chart.js@4.3.2
+Version: undefined
+License: MIT
+Repository: https://github.com/chartjs/Chart.js
+
+Package: check-types@11.2.2
+Version: undefined
+License: MIT
+Repository: git+https://gitlab.com/philbooth/check-types.js
+
+Package: chokidar@3.5.3
+Version: undefined
+License: MIT
+Repository: https://github.com/paulmillr/chokidar
+
+Package: chrome-trace-event@1.0.3
+Version: undefined
+License: MIT
+Repository: https://github.com/samccone/chrome-trace-event
+
+Package: ci-info@3.8.0
+Version: undefined
+License: MIT
+Repository: https://github.com/watson/ci-info
+
+Package: cjs-module-lexer@1.2.2
+Version: undefined
+License: MIT
+Repository: https://github.com/guybedford/cjs-module-lexer
+
+Package: classnames@2.3.2
+Version: undefined
+License: MIT
+Repository: https://github.com/JedWatson/classnames
+
+Package: clean-css@5.3.2
+Version: undefined
+License: MIT
+Repository: https://github.com/clean-css/clean-css
+
+Package: cliui@7.0.4
+Version: undefined
+License: ISC
+Repository: https://github.com/yargs/cliui
+
+Package: cliui@8.0.1
+Version: undefined
+License: ISC
+Repository: https://github.com/yargs/cliui
+
+Package: clone-deep@4.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/jonschlinkert/clone-deep
+
+Package: clsx@2.1.1
+Version: undefined
+License: MIT
+Repository: https://github.com/lukeed/clsx
+
+Package: co@4.6.0
+Version: undefined
+License: MIT
+Repository: https://github.com/tj/co
+
+Package: coa@2.0.2
+Version: undefined
+License: MIT
+Repository: https://github.com/veged/coa
+
+Package: collect-v8-coverage@1.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/SimenB/collect-v8-coverage
+
+Package: color-convert@1.9.3
+Version: undefined
+License: MIT
+Repository: https://github.com/Qix-/color-convert
+
+Package: color-convert@2.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/Qix-/color-convert
+
+Package: color-name@1.1.3
+Version: undefined
+License: MIT
+Repository: https://github.com/dfcreative/color-name
+
+Package: color-name@1.1.4
+Version: undefined
+License: MIT
+Repository: https://github.com/colorjs/color-name
+
+Package: colord@2.9.3
+Version: undefined
+License: MIT
+Repository: https://github.com/omgovich/colord
+
+Package: colorette@2.0.19
+Version: undefined
+License: MIT
+Repository: https://github.com/jorgebucaran/colorette
+
+Package: combined-stream@1.0.8
+Version: undefined
+License: MIT
+Repository: https://github.com/felixge/node-combined-stream
+
+Package: commander@2.20.3
+Version: undefined
+License: MIT
+Repository: https://github.com/tj/commander.js
+
+Package: commander@4.1.1
+Version: undefined
+License: MIT
+Repository: https://github.com/tj/commander.js
+
+Package: commander@7.2.0
+Version: undefined
+License: MIT
+Repository: https://github.com/tj/commander.js
+
+Package: commander@8.3.0
+Version: undefined
+License: MIT
+Repository: https://github.com/tj/commander.js
+
+Package: common-path-prefix@3.0.0
+Version: undefined
+License: ISC
+Repository: https://github.com/novemberborn/common-path-prefix
+
+Package: common-tags@1.8.2
+Version: undefined
+License: MIT
+Repository: https://github.com/zspecza/common-tags
+
+Package: commondir@1.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/substack/node-commondir
+
+Package: compressible@2.0.18
+Version: undefined
+License: MIT
+Repository: https://github.com/jshttp/compressible
+
+Package: compression@1.7.4
+Version: undefined
+License: MIT
+Repository: https://github.com/expressjs/compression
+
+Package: compute-scroll-into-view@3.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/scroll-into-view/compute-scroll-into-view
+
+Package: concat-map@0.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/substack/node-concat-map
+
+Package: concurrently@8.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/open-cli-tools/concurrently
+
+Package: confusing-browser-globals@1.0.11
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/create-react-app
+
+Package: connect-history-api-fallback@2.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/bripkens/connect-history-api-fallback
+
+Package: connect-pause@0.1.1
+Version: undefined
+License: MIT
+Repository: https://github.com/flesler/connect-pause
+
+Package: content-disposition@0.5.4
+Version: undefined
+License: MIT
+Repository: https://github.com/jshttp/content-disposition
+
+Package: content-type@1.0.5
+Version: undefined
+License: MIT
+Repository: https://github.com/jshttp/content-type
+
+Package: convert-source-map@1.9.0
+Version: undefined
+License: MIT
+Repository: https://github.com/thlorenz/convert-source-map
+
+Package: cookie-signature@1.0.6
+Version: undefined
+License: MIT
+Repository: https://github.com/visionmedia/node-cookie-signature
+
+Package: cookie@0.5.0
+Version: undefined
+License: MIT
+Repository: https://github.com/jshttp/cookie
+
+Package: copy-anything@3.0.3
+Version: undefined
+License: MIT
+Repository: https://github.com/mesqueeb/copy-anything
+
+Package: copy-to-clipboard@3.3.3
+Version: undefined
+License: MIT
+Repository: https://github.com/sudodoki/copy-to-clipboard
+
+Package: core-js-compat@3.29.1
+Version: undefined
+License: MIT
+Repository: https://github.com/zloirock/core-js
+
+Package: core-js-pure@3.29.1
+Version: undefined
+License: MIT
+Repository: https://github.com/zloirock/core-js
+
+Package: core-js@3.29.1
+Version: undefined
+License: MIT
+Repository: https://github.com/zloirock/core-js
+
+Package: core-util-is@1.0.3
+Version: undefined
+License: MIT
+Repository: https://github.com/isaacs/core-util-is
+
+Package: cors@2.8.5
+Version: undefined
+License: MIT
+Repository: https://github.com/expressjs/cors
+
+Package: cosmiconfig-typescript-loader@1.0.9
+Version: undefined
+License: MIT
+Repository: https://github.com/Codex-/cosmiconfig-typescript-loader
+
+Package: cosmiconfig@6.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/davidtheclark/cosmiconfig
+
+Package: cosmiconfig@7.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/davidtheclark/cosmiconfig
+
+Package: create-require@1.1.1
+Version: undefined
+License: MIT
+Repository: https://github.com/nuxt-contrib/create-require
+
+Package: cross-spawn@7.0.3
+Version: undefined
+License: MIT
+Repository: https://github.com/moxystudio/node-cross-spawn
+
+Package: crypto-random-string@2.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/crypto-random-string
+
+Package: css-blank-pseudo@3.0.3
+Version: undefined
+License: CC0-1.0
+Repository: https://github.com/csstools/postcss-plugins
+
+Package: css-color-keywords@1.0.0
+Version: undefined
+License: ISC
+Repository: https://github.com/sonicdoe/css-color-keywords
+
+Package: css-declaration-sorter@6.4.0
+Version: undefined
+License: ISC
+Repository: https://github.com/Siilwyn/css-declaration-sorter
+
+Package: css-has-pseudo@3.0.4
+Version: undefined
+License: CC0-1.0
+Repository: https://github.com/csstools/postcss-plugins
+
+Package: css-loader@6.7.3
+Version: undefined
+License: MIT
+Repository: https://github.com/webpack-contrib/css-loader
+
+Package: css-minimizer-webpack-plugin@3.4.1
+Version: undefined
+License: MIT
+Repository: https://github.com/webpack-contrib/css-minimizer-webpack-plugin
+
+Package: css-prefers-color-scheme@6.0.3
+Version: undefined
+License: CC0-1.0
+Repository: https://github.com/csstools/postcss-plugins
+
+Package: css-select-base-adapter@0.1.1
+Version: undefined
+License: MIT
+Repository: https://github.com/nrkn/css-select-base-adapter
+
+Package: css-select@2.1.0
+Version: undefined
+License: BSD-2-Clause
+Repository: https://github.com/fb55/css-select
+
+Package: css-select@4.3.0
+Version: undefined
+License: BSD-2-Clause
+Repository: https://github.com/fb55/css-select
+
+Package: css-to-react-native@3.2.0
+Version: undefined
+License: MIT
+Repository: https://github.com/styled-components/css-to-react-native
+
+Package: css-tree@1.0.0-alpha.37
+Version: undefined
+License: MIT
+Repository: https://github.com/csstree/csstree
+
+Package: css-tree@1.1.3
+Version: undefined
+License: MIT
+Repository: https://github.com/csstree/csstree
+
+Package: css-what@3.4.2
+Version: undefined
+License: BSD-2-Clause
+Repository: https://github.com/fb55/css-what
+
+Package: css-what@6.1.0
+Version: undefined
+License: BSD-2-Clause
+Repository: https://github.com/fb55/css-what
+
+Package: css.escape@1.5.1
+Version: undefined
+License: MIT
+Repository: https://github.com/mathiasbynens/CSS.escape
+
+Package: cssdb@7.5.2
+Version: undefined
+License: CC0-1.0
+Repository: https://github.com/csstools/cssdb
+
+Package: cssesc@3.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/mathiasbynens/cssesc
+
+Package: cssnano-preset-default@5.2.14
+Version: undefined
+License: MIT
+Repository: https://github.com/cssnano/cssnano
+
+Package: cssnano-utils@3.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/cssnano/cssnano
+
+Package: cssnano@5.1.15
+Version: undefined
+License: MIT
+Repository: https://github.com/cssnano/cssnano
+
+Package: csso@4.2.0
+Version: undefined
+License: MIT
+Repository: https://github.com/css/csso
+
+Package: cssom@0.3.8
+Version: undefined
+License: MIT
+Repository: https://github.com/NV/CSSOM
+
+Package: cssom@0.4.4
+Version: undefined
+License: MIT
+Repository: https://github.com/NV/CSSOM
+
+Package: cssstyle@2.3.0
+Version: undefined
+License: MIT
+Repository: https://github.com/jsdom/cssstyle
+
+Package: csstype@3.1.3
+Version: undefined
+License: MIT
+Repository: https://github.com/frenic/csstype
+
+Package: d3-array@3.2.4
+Version: undefined
+License: ISC
+Repository: https://github.com/d3/d3-array
+
+Package: d3-axis@3.0.0
+Version: undefined
+License: ISC
+Repository: https://github.com/d3/d3-axis
+
+Package: d3-brush@3.0.0
+Version: undefined
+License: ISC
+Repository: https://github.com/d3/d3-brush
+
+Package: d3-chord@3.0.1
+Version: undefined
+License: ISC
+Repository: https://github.com/d3/d3-chord
+
+Package: d3-color@3.1.0
+Version: undefined
+License: ISC
+Repository: https://github.com/d3/d3-color
+
+Package: d3-contour@4.0.2
+Version: undefined
+License: ISC
+Repository: https://github.com/d3/d3-contour
+
+Package: d3-delaunay@6.0.4
+Version: undefined
+License: ISC
+Repository: https://github.com/d3/d3-delaunay
+
+Package: d3-dispatch@3.0.1
+Version: undefined
+License: ISC
+Repository: https://github.com/d3/d3-dispatch
+
+Package: d3-drag@3.0.0
+Version: undefined
+License: ISC
+Repository: https://github.com/d3/d3-drag
+
+Package: d3-dsv@3.0.1
+Version: undefined
+License: ISC
+Repository: https://github.com/d3/d3-dsv
+
+Package: d3-ease@3.0.1
+Version: undefined
+License: BSD-3-Clause
+Repository: https://github.com/d3/d3-ease
+
+Package: d3-fetch@3.0.1
+Version: undefined
+License: ISC
+Repository: https://github.com/d3/d3-fetch
+
+Package: d3-force@3.0.0
+Version: undefined
+License: ISC
+Repository: https://github.com/d3/d3-force
+
+Package: d3-format@3.1.0
+Version: undefined
+License: ISC
+Repository: https://github.com/d3/d3-format
+
+Package: d3-geo@3.1.0
+Version: undefined
+License: ISC
+Repository: https://github.com/d3/d3-geo
+
+Package: d3-hierarchy@3.1.2
+Version: undefined
+License: ISC
+Repository: https://github.com/d3/d3-hierarchy
+
+Package: d3-interpolate@3.0.1
+Version: undefined
+License: ISC
+Repository: https://github.com/d3/d3-interpolate
+
+Package: d3-path@3.1.0
+Version: undefined
+License: ISC
+Repository: https://github.com/d3/d3-path
+
+Package: d3-polygon@3.0.1
+Version: undefined
+License: ISC
+Repository: https://github.com/d3/d3-polygon
+
+Package: d3-quadtree@3.0.1
+Version: undefined
+License: ISC
+Repository: https://github.com/d3/d3-quadtree
+
+Package: d3-random@3.0.1
+Version: undefined
+License: ISC
+Repository: https://github.com/d3/d3-random
+
+Package: d3-scale-chromatic@3.0.0
+Version: undefined
+License: ISC
+Repository: https://github.com/d3/d3-scale-chromatic
+
+Package: d3-scale@4.0.2
+Version: undefined
+License: ISC
+Repository: https://github.com/d3/d3-scale
+
+Package: d3-selection@3.0.0
+Version: undefined
+License: ISC
+Repository: https://github.com/d3/d3-selection
+
+Package: d3-shape@3.2.0
+Version: undefined
+License: ISC
+Repository: https://github.com/d3/d3-shape
+
+Package: d3-time-format@4.1.0
+Version: undefined
+License: ISC
+Repository: https://github.com/d3/d3-time-format
+
+Package: d3-time@3.1.0
+Version: undefined
+License: ISC
+Repository: https://github.com/d3/d3-time
+
+Package: d3-timer@3.0.1
+Version: undefined
+License: ISC
+Repository: https://github.com/d3/d3-timer
+
+Package: d3-transition@3.0.1
+Version: undefined
+License: ISC
+Repository: https://github.com/d3/d3-transition
+
+Package: d3-zoom@3.0.0
+Version: undefined
+License: ISC
+Repository: https://github.com/d3/d3-zoom
+
+Package: d3@7.8.5
+Version: undefined
+License: ISC
+Repository: https://github.com/d3/d3
+
+Package: damerau-levenshtein@1.0.8
+Version: undefined
+License: BSD-2-Clause
+Repository: https://github.com/tad-lispy/node-damerau-levenshtein
+
+Package: data-urls@2.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/jsdom/data-urls
+
+Package: date-fns@2.30.0
+Version: undefined
+License: MIT
+Repository: https://github.com/date-fns/date-fns
+
+Package: dayjs@1.11.9
+Version: undefined
+License: MIT
+Repository: https://github.com/iamkun/dayjs
+
+Package: debug@2.6.9
+Version: undefined
+License: MIT
+Repository: https://github.com/visionmedia/debug
+
+Package: debug@3.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/visionmedia/debug
+
+Package: debug@3.2.7
+Version: undefined
+License: MIT
+Repository: https://github.com/visionmedia/debug
+
+Package: debug@4.3.4
+Version: undefined
+License: MIT
+Repository: https://github.com/debug-js/debug
+
+Package: decimal.js@10.4.3
+Version: undefined
+License: MIT
+Repository: https://github.com/MikeMcl/decimal.js
+
+Package: dedent@0.7.0
+Version: undefined
+License: MIT
+Repository: https://github.com/dmnd/dedent
+
+Package: deep-equal@2.2.0
+Version: undefined
+License: MIT
+Repository: https://github.com/inspect-js/node-deep-equal
+
+Package: deep-is@0.1.4
+Version: undefined
+License: MIT
+Repository: https://github.com/thlorenz/deep-is
+
+Package: deepmerge@4.3.1
+Version: undefined
+License: MIT
+Repository: https://github.com/TehShrike/deepmerge
+
+Package: default-gateway@6.0.3
+Version: undefined
+License: BSD-2-Clause
+Repository: https://github.com/silverwind/default-gateway
+
+Package: define-lazy-prop@2.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/define-lazy-prop
+
+Package: define-properties@1.2.0
+Version: undefined
+License: MIT
+Repository: https://github.com/ljharb/define-properties
+
+Package: delaunator@5.0.0
+Version: undefined
+License: ISC
+Repository: https://github.com/mapbox/delaunator
+
+Package: delayed-stream@1.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/felixge/node-delayed-stream
+
+Package: depd@1.1.2
+Version: undefined
+License: MIT
+Repository: https://github.com/dougwilson/nodejs-depd
+
+Package: depd@2.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/dougwilson/nodejs-depd
+
+Package: dequal@2.0.3
+Version: undefined
+License: MIT
+Repository: https://github.com/lukeed/dequal
+
+Package: destroy@1.2.0
+Version: undefined
+License: MIT
+Repository: https://github.com/stream-utils/destroy
+
+Package: detect-newline@3.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/detect-newline
+
+Package: detect-node@2.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/iliakan/detect-node
+
+Package: detect-port-alt@1.1.6
+Version: undefined
+License: MIT
+Repository: https://github.com/node-modules/detect-port
+
+Package: didyoumean@1.2.2
+Version: undefined
+License: Apache-2.0
+Repository: https://github.com/dcporter/didyoumean.js
+
+Package: diff-match-patch@1.0.5
+Version: undefined
+License: Apache-2.0
+Repository: https://github.com/JackuB/diff-match-patch
+
+Package: diff-sequences@27.5.1
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/jest
+
+Package: diff@4.0.2
+Version: undefined
+License: BSD-3-Clause
+Repository: https://github.com/kpdecker/jsdiff
+
+Package: dir-glob@3.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/kevva/dir-glob
+
+Package: dlv@1.1.3
+Version: undefined
+License: MIT
+Repository: https://github.com/developit/dlv
+
+Package: dns-equal@1.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/watson/dns-equal
+
+Package: dns-packet@5.5.0
+Version: undefined
+License: MIT
+Repository: https://github.com/mafintosh/dns-packet
+
+Package: doctrine@2.1.0
+Version: undefined
+License: Apache-2.0
+Repository: https://github.com/eslint/doctrine
+
+Package: doctrine@3.0.0
+Version: undefined
+License: Apache-2.0
+Repository: https://github.com/eslint/doctrine
+
+Package: dom-accessibility-api@0.5.16
+Version: undefined
+License: MIT
+Repository: https://github.com/eps1lon/dom-accessibility-api
+
+Package: dom-align@1.12.4
+Version: undefined
+License: MIT
+Repository: https://github.com/yiminghe/dom-align
+
+Package: dom-converter@0.2.0
+Version: undefined
+License: MIT
+Repository: https://github.com/AriaMinaei/dom-converter
+
+Package: dom-helpers@5.2.1
+Version: undefined
+License: MIT
+Repository: https://github.com/react-bootstrap/dom-helpers
+
+Package: dom-serializer@0.2.2
+Version: undefined
+License: MIT
+Repository: https://github.com/cheeriojs/dom-renderer
+
+Package: dom-serializer@1.4.1
+Version: undefined
+License: MIT
+Repository: https://github.com/cheeriojs/dom-renderer
+
+Package: domelementtype@1.3.1
+Version: undefined
+License: BSD-2-Clause
+Repository: https://github.com/fb55/domelementtype
+
+Package: domelementtype@2.3.0
+Version: undefined
+License: BSD-2-Clause
+Repository: https://github.com/fb55/domelementtype
+
+Package: domexception@2.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/jsdom/domexception
+
+Package: domhandler@4.3.1
+Version: undefined
+License: BSD-2-Clause
+Repository: https://github.com/fb55/domhandler
+
+Package: domutils@1.7.0
+Version: undefined
+License: BSD-2-Clause
+Repository: https://github.com/FB55/domutils
+
+Package: domutils@2.8.0
+Version: undefined
+License: BSD-2-Clause
+Repository: https://github.com/fb55/domutils
+
+Package: dot-case@3.0.4
+Version: undefined
+License: MIT
+Repository: https://github.com/blakeembrey/change-case
+
+Package: dotenv-expand@5.1.0
+Version: undefined
+License: BSD-2-Clause
+Repository: undefined
+
+Package: dotenv@10.0.0
+Version: undefined
+License: BSD-2-Clause
+Repository: https://github.com/motdotla/dotenv
+
+Package: duplexer@0.1.2
+Version: undefined
+License: MIT
+Repository: https://github.com/Raynos/duplexer
+
+Package: ee-first@1.1.1
+Version: undefined
+License: MIT
+Repository: https://github.com/jonathanong/ee-first
+
+Package: ejs@3.1.9
+Version: undefined
+License: Apache-2.0
+Repository: https://github.com/mde/ejs
+
+Package: electron-to-chromium@1.4.342
+Version: undefined
+License: ISC
+Repository: https://github.com/kilian/electron-to-chromium
+
+Package: emittery@0.10.2
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/emittery
+
+Package: emittery@0.8.1
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/emittery
+
+Package: emoji-regex@8.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/mathiasbynens/emoji-regex
+
+Package: emoji-regex@9.2.2
+Version: undefined
+License: MIT
+Repository: https://github.com/mathiasbynens/emoji-regex
+
+Package: emojis-list@3.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/kikobeats/emojis-list
+
+Package: encodeurl@1.0.2
+Version: undefined
+License: MIT
+Repository: https://github.com/pillarjs/encodeurl
+
+Package: enhanced-resolve@5.12.0
+Version: undefined
+License: MIT
+Repository: https://github.com/webpack/enhanced-resolve
+
+Package: entities@2.2.0
+Version: undefined
+License: BSD-2-Clause
+Repository: https://github.com/fb55/entities
+
+Package: error-ex@1.3.2
+Version: undefined
+License: MIT
+Repository: https://github.com/qix-/node-error-ex
+
+Package: error-stack-parser@2.1.4
+Version: undefined
+License: MIT
+Repository: https://github.com/stacktracejs/error-stack-parser
+
+Package: errorhandler@1.5.1
+Version: undefined
+License: MIT
+Repository: https://github.com/expressjs/errorhandler
+
+Package: es-abstract@1.21.2
+Version: undefined
+License: MIT
+Repository: https://github.com/ljharb/es-abstract
+
+Package: es-array-method-boxes-properly@1.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/ljharb/es-array-method-boxes-properly
+
+Package: es-get-iterator@1.1.3
+Version: undefined
+License: MIT
+Repository: https://github.com/ljharb/es-get-iterator
+
+Package: es-module-lexer@0.9.3
+Version: undefined
+License: MIT
+Repository: https://github.com/guybedford/es-module-lexer
+
+Package: es-set-tostringtag@2.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/es-shims/es-set-tostringtag
+
+Package: es-shim-unscopables@1.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/ljharb/es-shim-unscopables
+
+Package: es-to-primitive@1.2.1
+Version: undefined
+License: MIT
+Repository: https://github.com/ljharb/es-to-primitive
+
+Package: es6-object-assign@1.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/rubennorte/es6-object-assign
+
+Package: escalade@3.1.1
+Version: undefined
+License: MIT
+Repository: https://github.com/lukeed/escalade
+
+Package: escape-html@1.0.3
+Version: undefined
+License: MIT
+Repository: https://github.com/component/escape-html
+
+Package: escape-string-regexp@1.0.5
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/escape-string-regexp
+
+Package: escape-string-regexp@2.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/escape-string-regexp
+
+Package: escape-string-regexp@4.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/escape-string-regexp
+
+Package: escodegen@2.0.0
+Version: undefined
+License: BSD-2-Clause
+Repository: https://github.com/estools/escodegen
+
+Package: eslint-config-react-app@7.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/create-react-app
+
+Package: eslint-config-standard-jsx@11.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/standard/eslint-config-standard-jsx
+
+Package: eslint-config-standard@17.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/standard/eslint-config-standard
+
+Package: eslint-import-resolver-node@0.3.7
+Version: undefined
+License: MIT
+Repository: https://github.com/import-js/eslint-plugin-import
+
+Package: eslint-module-utils@2.7.4
+Version: undefined
+License: MIT
+Repository: https://github.com/import-js/eslint-plugin-import
+
+Package: eslint-plugin-es@4.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/mysticatea/eslint-plugin-es
+
+Package: eslint-plugin-flowtype@8.0.3
+Version: undefined
+License: BSD-3-Clause
+Repository: https://github.com/gajus/eslint-plugin-flowtype
+
+Package: eslint-plugin-import@2.27.5
+Version: undefined
+License: MIT
+Repository: https://github.com/import-js/eslint-plugin-import
+
+Package: eslint-plugin-jest@25.7.0
+Version: undefined
+License: MIT
+Repository: https://github.com/jest-community/eslint-plugin-jest
+
+Package: eslint-plugin-jsx-a11y@6.7.1
+Version: undefined
+License: MIT
+Repository: https://github.com/jsx-eslint/eslint-plugin-jsx-a11y
+
+Package: eslint-plugin-n@15.7.0
+Version: undefined
+License: MIT
+Repository: https://github.com/eslint-community/eslint-plugin-n
+
+Package: eslint-plugin-promise@6.1.1
+Version: undefined
+License: ISC
+Repository: https://github.com/eslint-community/eslint-plugin-promise
+
+Package: eslint-plugin-react-hooks@4.6.0
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/react
+
+Package: eslint-plugin-react@7.32.2
+Version: undefined
+License: MIT
+Repository: https://github.com/jsx-eslint/eslint-plugin-react
+
+Package: eslint-plugin-testing-library@5.10.2
+Version: undefined
+License: MIT
+Repository: https://github.com/testing-library/eslint-plugin-testing-library
+
+Package: eslint-scope@5.1.1
+Version: undefined
+License: BSD-2-Clause
+Repository: https://github.com/eslint/eslint-scope
+
+Package: eslint-scope@7.1.1
+Version: undefined
+License: BSD-2-Clause
+Repository: https://github.com/eslint/eslint-scope
+
+Package: eslint-utils@2.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/mysticatea/eslint-utils
+
+Package: eslint-utils@3.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/mysticatea/eslint-utils
+
+Package: eslint-visitor-keys@1.3.0
+Version: undefined
+License: Apache-2.0
+Repository: https://github.com/eslint/eslint-visitor-keys
+
+Package: eslint-visitor-keys@2.1.0
+Version: undefined
+License: Apache-2.0
+Repository: https://github.com/eslint/eslint-visitor-keys
+
+Package: eslint-visitor-keys@3.4.0
+Version: undefined
+License: Apache-2.0
+Repository: https://github.com/eslint/eslint-visitor-keys
+
+Package: eslint-webpack-plugin@3.2.0
+Version: undefined
+License: MIT
+Repository: https://github.com/webpack-contrib/eslint-webpack-plugin
+
+Package: eslint@8.37.0
+Version: undefined
+License: MIT
+Repository: https://github.com/eslint/eslint
+
+Package: espree@9.5.1
+Version: undefined
+License: BSD-2-Clause
+Repository: https://github.com/eslint/espree
+
+Package: esprima@4.0.1
+Version: undefined
+License: BSD-2-Clause
+Repository: https://github.com/jquery/esprima
+
+Package: esquery@1.5.0
+Version: undefined
+License: BSD-3-Clause
+Repository: https://github.com/estools/esquery
+
+Package: esrecurse@4.3.0
+Version: undefined
+License: BSD-2-Clause
+Repository: https://github.com/estools/esrecurse
+
+Package: estraverse@4.3.0
+Version: undefined
+License: BSD-2-Clause
+Repository: https://github.com/estools/estraverse
+
+Package: estraverse@5.3.0
+Version: undefined
+License: BSD-2-Clause
+Repository: https://github.com/estools/estraverse
+
+Package: estree-walker@1.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/Rich-Harris/estree-walker
+
+Package: esutils@2.0.3
+Version: undefined
+License: BSD-2-Clause
+Repository: https://github.com/estools/esutils
+
+Package: etag@1.8.1
+Version: undefined
+License: MIT
+Repository: https://github.com/jshttp/etag
+
+Package: eventemitter3@4.0.7
+Version: undefined
+License: MIT
+Repository: https://github.com/primus/eventemitter3
+
+Package: events@3.3.0
+Version: undefined
+License: MIT
+Repository: https://github.com/Gozala/events
+
+Package: execa@5.1.1
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/execa
+
+Package: exit@0.1.2
+Version: undefined
+License: MIT
+Repository: https://github.com/cowboy/node-exit
+
+Package: expect@27.5.1
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/jest
+
+Package: express-urlrewrite@1.4.0
+Version: undefined
+License: MIT
+Repository: https://github.com/kapouer/express-urlrewrite
+
+Package: express@4.18.2
+Version: undefined
+License: MIT
+Repository: https://github.com/expressjs/express
+
+Package: fast-deep-equal@3.1.3
+Version: undefined
+License: MIT
+Repository: https://github.com/epoberezkin/fast-deep-equal
+
+Package: fast-glob@3.2.12
+Version: undefined
+License: MIT
+Repository: https://github.com/mrmlnc/fast-glob
+
+Package: fast-json-stable-stringify@2.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/epoberezkin/fast-json-stable-stringify
+
+Package: fast-levenshtein@2.0.6
+Version: undefined
+License: MIT
+Repository: https://github.com/hiddentao/fast-levenshtein
+
+Package: fastq@1.15.0
+Version: undefined
+License: ISC
+Repository: https://github.com/mcollina/fastq
+
+Package: faye-websocket@0.11.4
+Version: undefined
+License: Apache-2.0
+Repository: https://github.com/faye/faye-websocket-node
+
+Package: fb-watchman@2.0.2
+Version: undefined
+License: Apache-2.0
+Repository: https://github.com/facebook/watchman
+
+Package: file-entry-cache@6.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/royriojas/file-entry-cache
+
+Package: file-loader@6.2.0
+Version: undefined
+License: MIT
+Repository: https://github.com/webpack-contrib/file-loader
+
+Package: file-saver@2.0.5
+Version: undefined
+License: MIT
+Repository: https://github.com/eligrey/FileSaver.js
+
+Package: filelist@1.0.4
+Version: undefined
+License: Apache-2.0
+Repository: https://github.com/mde/filelist
+
+Package: filesize@8.0.7
+Version: undefined
+License: BSD-3-Clause
+Repository: https://github.com/avoidwork/filesize.js
+
+Package: fill-range@7.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/jonschlinkert/fill-range
+
+Package: finalhandler@1.2.0
+Version: undefined
+License: MIT
+Repository: https://github.com/pillarjs/finalhandler
+
+Package: find-cache-dir@3.3.2
+Version: undefined
+License: MIT
+Repository: https://github.com/avajs/find-cache-dir
+
+Package: find-root@1.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/js-n/find-root
+
+Package: find-up@3.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/find-up
+
+Package: find-up@4.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/find-up
+
+Package: find-up@5.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/find-up
+
+Package: flat-cache@3.0.4
+Version: undefined
+License: MIT
+Repository: https://github.com/royriojas/flat-cache
+
+Package: flatted@3.2.7
+Version: undefined
+License: ISC
+Repository: https://github.com/WebReflection/flatted
+
+Package: follow-redirects@1.15.2
+Version: undefined
+License: MIT
+Repository: https://github.com/follow-redirects/follow-redirects
+
+Package: for-each@0.3.3
+Version: undefined
+License: MIT
+Repository: https://github.com/Raynos/for-each
+
+Package: fork-ts-checker-webpack-plugin@6.5.3
+Version: undefined
+License: MIT
+Repository: https://github.com/TypeStrong/fork-ts-checker-webpack-plugin
+
+Package: form-data@3.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/form-data/form-data
+
+Package: form-data@4.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/form-data/form-data
+
+Package: forwarded@0.2.0
+Version: undefined
+License: MIT
+Repository: https://github.com/jshttp/forwarded
+
+Package: fraction.js@4.2.0
+Version: undefined
+License: MIT
+Repository: https://github.com/infusion/Fraction.js
+
+Package: fresh@0.5.2
+Version: undefined
+License: MIT
+Repository: https://github.com/jshttp/fresh
+
+Package: fs-extra@10.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/jprichardson/node-fs-extra
+
+Package: fs-extra@9.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/jprichardson/node-fs-extra
+
+Package: fs-monkey@1.0.3
+Version: undefined
+License: Unlicense
+Repository: https://github.com/streamich/fs-monkey
+
+Package: fs-readdir-recursive@1.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/fs-utils/fs-readdir-recursive
+
+Package: fs.realpath@1.0.0
+Version: undefined
+License: ISC
+Repository: https://github.com/isaacs/fs.realpath
+
+Package: fsevents@2.3.2
+Version: undefined
+License: MIT
+Repository: https://github.com/fsevents/fsevents
+
+Package: function-bind@1.1.1
+Version: undefined
+License: MIT
+Repository: https://github.com/Raynos/function-bind
+
+Package: function.prototype.name@1.1.5
+Version: undefined
+License: MIT
+Repository: https://github.com/es-shims/Function.prototype.name
+
+Package: functions-have-names@1.2.3
+Version: undefined
+License: MIT
+Repository: https://github.com/inspect-js/functions-have-names
+
+Package: gensync@1.0.0-beta.2
+Version: undefined
+License: MIT
+Repository: https://github.com/loganfsmyth/gensync
+
+Package: get-caller-file@2.0.5
+Version: undefined
+License: ISC
+Repository: https://github.com/stefanpenner/get-caller-file
+
+Package: get-intrinsic@1.2.0
+Version: undefined
+License: MIT
+Repository: https://github.com/ljharb/get-intrinsic
+
+Package: get-own-enumerable-property-symbols@3.0.2
+Version: undefined
+License: ISC
+Repository: https://github.com/mightyiam/get-own-enumerable-property-symbols
+
+Package: get-package-type@0.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/cfware/get-package-type
+
+Package: get-stdin@8.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/get-stdin
+
+Package: get-stream@6.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/get-stream
+
+Package: get-symbol-description@1.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/inspect-js/get-symbol-description
+
+Package: glob-parent@5.1.2
+Version: undefined
+License: ISC
+Repository: https://github.com/gulpjs/glob-parent
+
+Package: glob-parent@6.0.2
+Version: undefined
+License: ISC
+Repository: https://github.com/gulpjs/glob-parent
+
+Package: glob-to-regexp@0.4.1
+Version: undefined
+License: BSD-2-Clause
+Repository: https://github.com/fitzgen/glob-to-regexp
+
+Package: glob@7.1.6
+Version: undefined
+License: ISC
+Repository: https://github.com/isaacs/node-glob
+
+Package: glob@7.2.3
+Version: undefined
+License: ISC
+Repository: https://github.com/isaacs/node-glob
+
+Package: global-modules@2.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/jonschlinkert/global-modules
+
+Package: global-prefix@3.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/jonschlinkert/global-prefix
+
+Package: globals@11.12.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/globals
+
+Package: globals@13.20.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/globals
+
+Package: globalthis@1.0.3
+Version: undefined
+License: MIT
+Repository: https://github.com/ljharb/System.global
+
+Package: globby@11.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/globby
+
+Package: google-protobuf@3.14.0
+Version: undefined
+License: BSD-3-Clause
+Repository: https://github.com/protocolbuffers/protobuf/tree/master/js
+
+Package: gopd@1.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/ljharb/gopd
+
+Package: graceful-fs@4.2.11
+Version: undefined
+License: ISC
+Repository: https://github.com/isaacs/node-graceful-fs
+
+Package: grapheme-splitter@1.0.4
+Version: undefined
+License: MIT
+Repository: https://github.com/orling/grapheme-splitter
+
+Package: grpc-test-typescript@0.1.0
+Version: undefined
+License: UNLICENSED
+Repository: undefined
+
+Package: grpc-web@1.4.2
+Version: undefined
+License: Apache-2.0
+Repository: https://github.com/grpc/grpc-web
+
+Package: gzip-size@6.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/gzip-size
+
+Package: handle-thing@2.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/indutny/handle-thing
+
+Package: harmony-reflect@1.6.2
+Version: undefined
+License: (Apache-2.0 OR MPL-1.1)
+Repository: git+https://tvcutsem@github.com/tvcutsem/harmony-reflect
+
+Package: has-bigints@1.0.2
+Version: undefined
+License: MIT
+Repository: https://github.com/ljharb/has-bigints
+
+Package: has-flag@3.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/has-flag
+
+Package: has-flag@4.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/has-flag
+
+Package: has-property-descriptors@1.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/inspect-js/has-property-descriptors
+
+Package: has-proto@1.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/inspect-js/has-proto
+
+Package: has-symbols@1.0.3
+Version: undefined
+License: MIT
+Repository: https://github.com/inspect-js/has-symbols
+
+Package: has-tostringtag@1.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/inspect-js/has-tostringtag
+
+Package: has@1.0.3
+Version: undefined
+License: MIT
+Repository: https://github.com/tarruda/has
+
+Package: he@1.2.0
+Version: undefined
+License: MIT
+Repository: https://github.com/mathiasbynens/he
+
+Package: hoist-non-react-statics@3.3.2
+Version: undefined
+License: BSD-3-Clause
+Repository: https://github.com/mridgway/hoist-non-react-statics
+
+Package: hoopy@0.1.4
+Version: undefined
+License: MIT
+Repository: git+https://gitlab.com/philbooth/hoopy
+
+Package: hpack.js@2.1.6
+Version: undefined
+License: MIT
+Repository: https://github.com/indutny/hpack.js
+
+Package: html-encoding-sniffer@2.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/jsdom/html-encoding-sniffer
+
+Package: html-entities@2.3.3
+Version: undefined
+License: MIT
+Repository: https://github.com/mdevils/html-entities
+
+Package: html-escaper@2.0.2
+Version: undefined
+License: MIT
+Repository: https://github.com/WebReflection/html-escaper
+
+Package: html-minifier-terser@6.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/terser/html-minifier-terser
+
+Package: html-webpack-plugin@5.5.0
+Version: undefined
+License: MIT
+Repository: https://github.com/jantimon/html-webpack-plugin
+
+Package: htmlparser2@6.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/fb55/htmlparser2
+
+Package: http-deceiver@1.2.7
+Version: undefined
+License: MIT
+Repository: https://github.com/indutny/http-deceiver
+
+Package: http-errors@1.6.3
+Version: undefined
+License: MIT
+Repository: https://github.com/jshttp/http-errors
+
+Package: http-errors@2.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/jshttp/http-errors
+
+Package: http-parser-js@0.5.8
+Version: undefined
+License: MIT
+Repository: https://github.com/creationix/http-parser-js
+
+Package: http-proxy-agent@4.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/TooTallNate/node-http-proxy-agent
+
+Package: http-proxy-middleware@2.0.6
+Version: undefined
+License: MIT
+Repository: https://github.com/chimurai/http-proxy-middleware
+
+Package: http-proxy@1.18.1
+Version: undefined
+License: MIT
+Repository: https://github.com/http-party/node-http-proxy
+
+Package: https-proxy-agent@5.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/TooTallNate/node-https-proxy-agent
+
+Package: human-signals@2.1.0
+Version: undefined
+License: Apache-2.0
+Repository: https://github.com/ehmicky/human-signals
+
+Package: iconv-lite@0.4.24
+Version: undefined
+License: MIT
+Repository: https://github.com/ashtuchkin/iconv-lite
+
+Package: iconv-lite@0.6.3
+Version: undefined
+License: MIT
+Repository: https://github.com/ashtuchkin/iconv-lite
+
+Package: icss-utils@5.1.0
+Version: undefined
+License: ISC
+Repository: https://github.com/css-modules/icss-utils
+
+Package: idb@7.1.1
+Version: undefined
+License: ISC
+Repository: https://github.com/jakearchibald/idb
+
+Package: identity-obj-proxy@3.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/keyanzhang/identity-obj-proxy
+
+Package: ignore@5.2.4
+Version: undefined
+License: MIT
+Repository: https://github.com/kaelzhang/node-ignore
+
+Package: immer@9.0.21
+Version: undefined
+License: MIT
+Repository: https://github.com/immerjs/immer
+
+Package: immutable@4.3.0
+Version: undefined
+License: MIT
+Repository: https://github.com/immutable-js/immutable-js
+
+Package: import-fresh@3.3.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/import-fresh
+
+Package: import-local@3.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/import-local
+
+Package: imurmurhash@0.1.4
+Version: undefined
+License: MIT
+Repository: https://github.com/jensyt/imurmurhash-js
+
+Package: indent-string@4.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/indent-string
+
+Package: inflight@1.0.6
+Version: undefined
+License: ISC
+Repository: https://github.com/npm/inflight
+
+Package: inherits@2.0.3
+Version: undefined
+License: ISC
+Repository: https://github.com/isaacs/inherits
+
+Package: inherits@2.0.4
+Version: undefined
+License: ISC
+Repository: https://github.com/isaacs/inherits
+
+Package: ini@1.3.8
+Version: undefined
+License: ISC
+Repository: https://github.com/isaacs/ini
+
+Package: internal-slot@1.0.5
+Version: undefined
+License: MIT
+Repository: https://github.com/ljharb/internal-slot
+
+Package: internmap@2.0.3
+Version: undefined
+License: ISC
+Repository: https://github.com/mbostock/internmap
+
+Package: invariant@2.2.4
+Version: undefined
+License: MIT
+Repository: https://github.com/zertosh/invariant
+
+Package: ipaddr.js@1.9.1
+Version: undefined
+License: MIT
+Repository: https://github.com/whitequark/ipaddr.js
+
+Package: ipaddr.js@2.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/whitequark/ipaddr.js
+
+Package: is-arguments@1.1.1
+Version: undefined
+License: MIT
+Repository: https://github.com/inspect-js/is-arguments
+
+Package: is-array-buffer@3.0.2
+Version: undefined
+License: MIT
+Repository: https://github.com/inspect-js/is-array-buffer
+
+Package: is-arrayish@0.2.1
+Version: undefined
+License: MIT
+Repository: https://github.com/qix-/node-is-arrayish
+
+Package: is-bigint@1.0.4
+Version: undefined
+License: MIT
+Repository: https://github.com/inspect-js/is-bigint
+
+Package: is-binary-path@2.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/is-binary-path
+
+Package: is-boolean-object@1.1.2
+Version: undefined
+License: MIT
+Repository: https://github.com/inspect-js/is-boolean-object
+
+Package: is-callable@1.2.7
+Version: undefined
+License: MIT
+Repository: https://github.com/inspect-js/is-callable
+
+Package: is-core-module@2.11.0
+Version: undefined
+License: MIT
+Repository: https://github.com/inspect-js/is-core-module
+
+Package: is-date-object@1.0.5
+Version: undefined
+License: MIT
+Repository: https://github.com/inspect-js/is-date-object
+
+Package: is-docker@2.2.1
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/is-docker
+
+Package: is-extglob@2.1.1
+Version: undefined
+License: MIT
+Repository: https://github.com/jonschlinkert/is-extglob
+
+Package: is-fullwidth-code-point@3.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/is-fullwidth-code-point
+
+Package: is-generator-fn@2.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/is-generator-fn
+
+Package: is-generator-function@1.0.10
+Version: undefined
+License: MIT
+Repository: https://github.com/inspect-js/is-generator-function
+
+Package: is-glob@4.0.3
+Version: undefined
+License: MIT
+Repository: https://github.com/micromatch/is-glob
+
+Package: is-map@2.0.2
+Version: undefined
+License: MIT
+Repository: https://github.com/inspect-js/is-map
+
+Package: is-module@1.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/component/is-module
+
+Package: is-nan@1.3.2
+Version: undefined
+License: MIT
+Repository: https://github.com/es-shims/is-nan
+
+Package: is-negative-zero@2.0.2
+Version: undefined
+License: MIT
+Repository: https://github.com/inspect-js/is-negative-zero
+
+Package: is-number-object@1.0.7
+Version: undefined
+License: MIT
+Repository: https://github.com/inspect-js/is-number-object
+
+Package: is-number@7.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/jonschlinkert/is-number
+
+Package: is-obj@1.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/is-obj
+
+Package: is-path-inside@3.0.3
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/is-path-inside
+
+Package: is-plain-obj@3.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/is-plain-obj
+
+Package: is-plain-object@2.0.4
+Version: undefined
+License: MIT
+Repository: https://github.com/jonschlinkert/is-plain-object
+
+Package: is-potential-custom-element-name@1.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/mathiasbynens/is-potential-custom-element-name
+
+Package: is-promise@2.2.2
+Version: undefined
+License: MIT
+Repository: https://github.com/then/is-promise
+
+Package: is-regex@1.1.4
+Version: undefined
+License: MIT
+Repository: https://github.com/inspect-js/is-regex
+
+Package: is-regexp@1.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/is-regexp
+
+Package: is-root@2.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/is-root
+
+Package: is-set@2.0.2
+Version: undefined
+License: MIT
+Repository: https://github.com/inspect-js/is-set
+
+Package: is-shared-array-buffer@1.0.2
+Version: undefined
+License: MIT
+Repository: https://github.com/inspect-js/is-shared-array-buffer
+
+Package: is-stream@2.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/is-stream
+
+Package: is-string@1.0.7
+Version: undefined
+License: MIT
+Repository: https://github.com/ljharb/is-string
+
+Package: is-symbol@1.0.4
+Version: undefined
+License: MIT
+Repository: https://github.com/inspect-js/is-symbol
+
+Package: is-typed-array@1.1.10
+Version: undefined
+License: MIT
+Repository: https://github.com/inspect-js/is-typed-array
+
+Package: is-typedarray@1.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/hughsk/is-typedarray
+
+Package: is-weakmap@2.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/inspect-js/is-weakmap
+
+Package: is-weakref@1.0.2
+Version: undefined
+License: MIT
+Repository: https://github.com/inspect-js/is-weakref
+
+Package: is-weakset@2.0.2
+Version: undefined
+License: MIT
+Repository: https://github.com/inspect-js/is-weakset
+
+Package: is-what@4.1.8
+Version: undefined
+License: MIT
+Repository: https://github.com/mesqueeb/is-what
+
+Package: is-wsl@2.2.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/is-wsl
+
+Package: isarray@0.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/juliangruber/isarray
+
+Package: isarray@1.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/juliangruber/isarray
+
+Package: isarray@2.0.5
+Version: undefined
+License: MIT
+Repository: https://github.com/juliangruber/isarray
+
+Package: isexe@2.0.0
+Version: undefined
+License: ISC
+Repository: https://github.com/isaacs/isexe
+
+Package: isobject@3.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/jonschlinkert/isobject
+
+Package: isomorphic-ws@5.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/heineiuo/isomorphic-ws
+
+Package: istanbul-lib-coverage@3.2.0
+Version: undefined
+License: BSD-3-Clause
+Repository: https://github.com/istanbuljs/istanbuljs
+
+Package: istanbul-lib-instrument@5.2.1
+Version: undefined
+License: BSD-3-Clause
+Repository: https://github.com/istanbuljs/istanbuljs
+
+Package: istanbul-lib-report@3.0.0
+Version: undefined
+License: BSD-3-Clause
+Repository: https://github.com/istanbuljs/istanbuljs
+
+Package: istanbul-lib-source-maps@4.0.1
+Version: undefined
+License: BSD-3-Clause
+Repository: https://github.com/istanbuljs/istanbuljs
+
+Package: istanbul-reports@3.1.5
+Version: undefined
+License: BSD-3-Clause
+Repository: https://github.com/istanbuljs/istanbuljs
+
+Package: jake@10.8.5
+Version: undefined
+License: Apache-2.0
+Repository: https://github.com/jakejs/jake
+
+Package: jest-changed-files@27.5.1
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/jest
+
+Package: jest-circus@27.5.1
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/jest
+
+Package: jest-cli@27.5.1
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/jest
+
+Package: jest-config@27.5.1
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/jest
+
+Package: jest-diff@27.5.1
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/jest
+
+Package: jest-docblock@27.5.1
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/jest
+
+Package: jest-each@27.5.1
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/jest
+
+Package: jest-environment-jsdom@27.5.1
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/jest
+
+Package: jest-environment-node@27.5.1
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/jest
+
+Package: jest-get-type@27.5.1
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/jest
+
+Package: jest-haste-map@27.5.1
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/jest
+
+Package: jest-jasmine2@27.5.1
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/jest
+
+Package: jest-leak-detector@27.5.1
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/jest
+
+Package: jest-matcher-utils@27.5.1
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/jest
+
+Package: jest-message-util@27.5.1
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/jest
+
+Package: jest-message-util@28.1.3
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/jest
+
+Package: jest-mock@27.5.1
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/jest
+
+Package: jest-pnp-resolver@1.2.3
+Version: undefined
+License: MIT
+Repository: https://github.com/arcanis/jest-pnp-resolver
+
+Package: jest-regex-util@27.5.1
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/jest
+
+Package: jest-regex-util@28.0.2
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/jest
+
+Package: jest-resolve-dependencies@27.5.1
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/jest
+
+Package: jest-resolve@27.5.1
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/jest
+
+Package: jest-runner@27.5.1
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/jest
+
+Package: jest-runtime@27.5.1
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/jest
+
+Package: jest-serializer@27.5.1
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/jest
+
+Package: jest-snapshot@27.5.1
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/jest
+
+Package: jest-util@27.5.1
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/jest
+
+Package: jest-util@28.1.3
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/jest
+
+Package: jest-validate@27.5.1
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/jest
+
+Package: jest-watch-typeahead@1.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/jest-community/jest-watch-typeahead
+
+Package: jest-watcher@27.5.1
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/jest
+
+Package: jest-watcher@28.1.3
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/jest
+
+Package: jest-worker@26.6.2
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/jest
+
+Package: jest-worker@27.5.1
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/jest
+
+Package: jest-worker@28.1.3
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/jest
+
+Package: jest@27.5.1
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/jest
+
+Package: jiti@1.18.2
+Version: undefined
+License: MIT
+Repository: https://github.com/unjs/jiti
+
+Package: jju@1.4.0
+Version: undefined
+License: MIT
+Repository: https://github.com/rlidwka/jju
+
+Package: js-base64@3.7.5
+Version: undefined
+License: BSD-3-Clause
+Repository: https://github.com/dankogai/js-base64
+
+Package: js-sdsl@4.4.0
+Version: undefined
+License: MIT
+Repository: https://github.com/js-sdsl/js-sdsl
+
+Package: js-tokens@4.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/lydell/js-tokens
+
+Package: js-yaml@3.14.1
+Version: undefined
+License: MIT
+Repository: https://github.com/nodeca/js-yaml
+
+Package: js-yaml@4.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/nodeca/js-yaml
+
+Package: jsdom@16.7.0
+Version: undefined
+License: MIT
+Repository: https://github.com/jsdom/jsdom
+
+Package: jsesc@0.5.0
+Version: undefined
+License: MIT
+Repository: https://github.com/mathiasbynens/jsesc
+
+Package: jsesc@2.5.2
+Version: undefined
+License: MIT
+Repository: https://github.com/mathiasbynens/jsesc
+
+Package: json-parse-better-errors@1.0.2
+Version: undefined
+License: MIT
+Repository: https://github.com/zkat/json-parse-better-errors
+
+Package: json-parse-even-better-errors@2.3.1
+Version: undefined
+License: MIT
+Repository: https://github.com/npm/json-parse-even-better-errors
+
+Package: json-parse-helpfulerror@1.0.3
+Version: undefined
+License: MIT
+Repository: https://github.com/smikes/json-parse-helpfulerror
+
+Package: json-schema-traverse@0.4.1
+Version: undefined
+License: MIT
+Repository: https://github.com/epoberezkin/json-schema-traverse
+
+Package: json-schema-traverse@1.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/epoberezkin/json-schema-traverse
+
+Package: json-schema@0.4.0
+Version: undefined
+License: (AFL-2.1 OR BSD-3-Clause)
+Repository: https://github.com/kriszyp/json-schema
+
+Package: json-server@0.17.3
+Version: undefined
+License: MIT
+Repository: https://github.com/typicode/json-server
+
+Package: json-stable-stringify-without-jsonify@1.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/samn/json-stable-stringify
+
+Package: json2mq@0.2.0
+Version: undefined
+License: MIT
+Repository: https://github.com/akiran/json2mq
+
+Package: json5@1.0.2
+Version: undefined
+License: MIT
+Repository: https://github.com/json5/json5
+
+Package: json5@2.2.3
+Version: undefined
+License: MIT
+Repository: https://github.com/json5/json5
+
+Package: jsonfile@6.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/jprichardson/node-jsonfile
+
+Package: jsonpointer@5.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/janl/node-jsonpointer
+
+Package: jsx-ast-utils@3.3.3
+Version: undefined
+License: MIT
+Repository: https://github.com/jsx-eslint/jsx-ast-utils
+
+Package: kdbush@4.0.2
+Version: undefined
+License: ISC
+Repository: https://github.com/mourner/kdbush
+
+Package: kind-of@6.0.3
+Version: undefined
+License: MIT
+Repository: https://github.com/jonschlinkert/kind-of
+
+Package: kleur@3.0.3
+Version: undefined
+License: MIT
+Repository: https://github.com/lukeed/kleur
+
+Package: klona@2.0.6
+Version: undefined
+License: MIT
+Repository: https://github.com/lukeed/klona
+
+Package: language-subtag-registry@0.3.22
+Version: undefined
+License: CC0-1.0
+Repository: https://github.com/mattcg/language-subtag-registry
+
+Package: language-tags@1.0.5
+Version: undefined
+License: MIT
+Repository: https://github.com/mattcg/language-tags
+
+Package: launch-editor@2.6.0
+Version: undefined
+License: MIT
+Repository: https://github.com/yyx990803/launch-editor
+
+Package: leven@3.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/leven
+
+Package: levn@0.3.0
+Version: undefined
+License: MIT
+Repository: https://github.com/gkz/levn
+
+Package: levn@0.4.1
+Version: undefined
+License: MIT
+Repository: https://github.com/gkz/levn
+
+Package: lilconfig@2.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/antonk52/lilconfig
+
+Package: lines-and-columns@1.2.4
+Version: undefined
+License: MIT
+Repository: https://github.com/eventualbuddha/lines-and-columns
+
+Package: load-json-file@5.3.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/load-json-file
+
+Package: loader-runner@4.3.0
+Version: undefined
+License: MIT
+Repository: https://github.com/webpack/loader-runner
+
+Package: loader-utils@2.0.4
+Version: undefined
+License: MIT
+Repository: https://github.com/webpack/loader-utils
+
+Package: loader-utils@3.2.1
+Version: undefined
+License: MIT
+Repository: https://github.com/webpack/loader-utils
+
+Package: locate-path@3.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/locate-path
+
+Package: locate-path@5.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/locate-path
+
+Package: locate-path@6.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/locate-path
+
+Package: lodash-id@0.14.1
+Version: undefined
+License: MIT
+Repository: https://github.com/typicode/lodash-id
+
+Package: lodash.camelcase@4.3.0
+Version: undefined
+License: MIT
+Repository: https://github.com/lodash/lodash
+
+Package: lodash.debounce@4.0.8
+Version: undefined
+License: MIT
+Repository: https://github.com/lodash/lodash
+
+Package: lodash.get@4.4.2
+Version: undefined
+License: MIT
+Repository: https://github.com/lodash/lodash
+
+Package: lodash.isequal@4.5.0
+Version: undefined
+License: MIT
+Repository: https://github.com/lodash/lodash
+
+Package: lodash.memoize@4.1.2
+Version: undefined
+License: MIT
+Repository: https://github.com/lodash/lodash
+
+Package: lodash.merge@4.6.2
+Version: undefined
+License: MIT
+Repository: https://github.com/lodash/lodash
+
+Package: lodash.sortby@4.7.0
+Version: undefined
+License: MIT
+Repository: https://github.com/lodash/lodash
+
+Package: lodash.uniq@4.5.0
+Version: undefined
+License: MIT
+Repository: https://github.com/lodash/lodash
+
+Package: lodash@4.17.21
+Version: undefined
+License: MIT
+Repository: https://github.com/lodash/lodash
+
+Package: long@5.2.3
+Version: undefined
+License: Apache-2.0
+Repository: https://github.com/dcodeIO/long.js
+
+Package: loose-envify@1.4.0
+Version: undefined
+License: MIT
+Repository: https://github.com/zertosh/loose-envify
+
+Package: lowdb@1.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/typicode/lowdb
+
+Package: lower-case@2.0.2
+Version: undefined
+License: MIT
+Repository: https://github.com/blakeembrey/change-case
+
+Package: lru-cache@5.1.1
+Version: undefined
+License: ISC
+Repository: https://github.com/isaacs/node-lru-cache
+
+Package: lru-cache@6.0.0
+Version: undefined
+License: ISC
+Repository: https://github.com/isaacs/node-lru-cache
+
+Package: lz-string@1.5.0
+Version: undefined
+License: MIT
+Repository: https://github.com/pieroxy/lz-string
+
+Package: magic-string@0.25.9
+Version: undefined
+License: MIT
+Repository: https://github.com/rich-harris/magic-string
+
+Package: make-dir@2.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/make-dir
+
+Package: make-dir@3.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/make-dir
+
+Package: make-error@1.3.6
+Version: undefined
+License: ISC
+Repository: https://github.com/JsCommunity/make-error
+
+Package: makeerror@1.0.12
+Version: undefined
+License: BSD-3-Clause
+Repository: https://github.com/daaku/nodejs-makeerror
+
+Package: mdn-data@2.0.14
+Version: undefined
+License: CC0-1.0
+Repository: https://github.com/mdn/data
+
+Package: mdn-data@2.0.4
+Version: undefined
+License: CC0-1.0
+Repository: https://github.com/mdn/data
+
+Package: media-typer@0.3.0
+Version: undefined
+License: MIT
+Repository: https://github.com/jshttp/media-typer
+
+Package: memfs@3.4.13
+Version: undefined
+License: Unlicense
+Repository: https://github.com/streamich/memfs
+
+Package: memoize-one@6.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/alexreardon/memoize-one
+
+Package: merge-descriptors@1.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/component/merge-descriptors
+
+Package: merge-stream@2.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/grncdr/merge-stream
+
+Package: merge2@1.4.1
+Version: undefined
+License: MIT
+Repository: https://github.com/teambition/merge2
+
+Package: method-override@3.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/expressjs/method-override
+
+Package: methods@1.1.2
+Version: undefined
+License: MIT
+Repository: https://github.com/jshttp/methods
+
+Package: micromatch@4.0.5
+Version: undefined
+License: MIT
+Repository: https://github.com/micromatch/micromatch
+
+Package: mime-db@1.52.0
+Version: undefined
+License: MIT
+Repository: https://github.com/jshttp/mime-db
+
+Package: mime-types@2.1.35
+Version: undefined
+License: MIT
+Repository: https://github.com/jshttp/mime-types
+
+Package: mime@1.6.0
+Version: undefined
+License: MIT
+Repository: https://github.com/broofa/node-mime
+
+Package: mimic-fn@2.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/mimic-fn
+
+Package: min-indent@1.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/thejameskyle/min-indent
+
+Package: mini-css-extract-plugin@2.7.5
+Version: undefined
+License: MIT
+Repository: https://github.com/webpack-contrib/mini-css-extract-plugin
+
+Package: minimalistic-assert@1.0.1
+Version: undefined
+License: ISC
+Repository: https://github.com/calvinmetcalf/minimalistic-assert
+
+Package: minimatch@3.1.2
+Version: undefined
+License: ISC
+Repository: https://github.com/isaacs/minimatch
+
+Package: minimatch@5.1.6
+Version: undefined
+License: ISC
+Repository: https://github.com/isaacs/minimatch
+
+Package: minimist@1.2.8
+Version: undefined
+License: MIT
+Repository: https://github.com/minimistjs/minimist
+
+Package: mkdirp@0.5.6
+Version: undefined
+License: MIT
+Repository: https://github.com/substack/node-mkdirp
+
+Package: morgan@1.10.0
+Version: undefined
+License: MIT
+Repository: https://github.com/expressjs/morgan
+
+Package: ms@2.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/zeit/ms
+
+Package: ms@2.1.2
+Version: undefined
+License: MIT
+Repository: https://github.com/zeit/ms
+
+Package: ms@2.1.3
+Version: undefined
+License: MIT
+Repository: https://github.com/vercel/ms
+
+Package: multicast-dns@7.2.5
+Version: undefined
+License: MIT
+Repository: https://github.com/mafintosh/multicast-dns
+
+Package: mz@2.7.0
+Version: undefined
+License: MIT
+Repository: https://github.com/normalize/mz
+
+Package: nanoid@3.3.6
+Version: undefined
+License: MIT
+Repository: https://github.com/ai/nanoid
+
+Package: natural-compare-lite@1.4.0
+Version: undefined
+License: MIT
+Repository: https://github.com/litejs/natural-compare-lite
+
+Package: natural-compare@1.4.0
+Version: undefined
+License: MIT
+Repository: https://github.com/litejs/natural-compare-lite
+
+Package: negotiator@0.6.3
+Version: undefined
+License: MIT
+Repository: https://github.com/jshttp/negotiator
+
+Package: neo-async@2.6.2
+Version: undefined
+License: MIT
+Repository: https://github.com/suguru03/neo-async
+
+Package: nice-grpc-common@2.0.2
+Version: undefined
+License: MIT
+Repository: https://github.com/deeplay-io/nice-grpc
+
+Package: nice-grpc-web@3.3.0
+Version: undefined
+License: MIT
+Repository: https://github.com/deeplay-io/nice-grpc
+
+Package: no-case@3.0.4
+Version: undefined
+License: MIT
+Repository: https://github.com/blakeembrey/change-case
+
+Package: node-forge@1.3.1
+Version: undefined
+License: (BSD-3-Clause OR GPL-2.0)
+Repository: https://github.com/digitalbazaar/forge
+
+Package: node-int64@0.4.0
+Version: undefined
+License: MIT
+Repository: https://github.com/broofa/node-int64
+
+Package: node-releases@2.0.10
+Version: undefined
+License: MIT
+Repository: https://github.com/chicoxyzzy/node-releases
+
+Package: normalize-path@3.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/jonschlinkert/normalize-path
+
+Package: normalize-range@0.1.2
+Version: undefined
+License: MIT
+Repository: https://github.com/jamestalmage/normalize-range
+
+Package: normalize-url@6.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/normalize-url
+
+Package: npm-run-path@4.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/npm-run-path
+
+Package: nth-check@1.0.2
+Version: undefined
+License: BSD-2-Clause
+Repository: https://github.com/fb55/nth-check
+
+Package: nth-check@2.1.1
+Version: undefined
+License: BSD-2-Clause
+Repository: https://github.com/fb55/nth-check
+
+Package: nwsapi@2.2.2
+Version: undefined
+License: MIT
+Repository: https://github.com/dperini/nwsapi
+
+Package: object-assign@4.1.1
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/object-assign
+
+Package: object-hash@3.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/puleos/object-hash
+
+Package: object-inspect@1.12.3
+Version: undefined
+License: MIT
+Repository: https://github.com/inspect-js/object-inspect
+
+Package: object-is@1.1.5
+Version: undefined
+License: MIT
+Repository: https://github.com/es-shims/object-is
+
+Package: object-keys@1.1.1
+Version: undefined
+License: MIT
+Repository: https://github.com/ljharb/object-keys
+
+Package: object.assign@4.1.4
+Version: undefined
+License: MIT
+Repository: https://github.com/ljharb/object.assign
+
+Package: object.entries@1.1.6
+Version: undefined
+License: MIT
+Repository: https://github.com/es-shims/Object.entries
+
+Package: object.fromentries@2.0.6
+Version: undefined
+License: MIT
+Repository: https://github.com/es-shims/Object.fromEntries
+
+Package: object.getownpropertydescriptors@2.1.5
+Version: undefined
+License: MIT
+Repository: https://github.com/es-shims/object.getownpropertydescriptors
+
+Package: object.hasown@1.1.2
+Version: undefined
+License: MIT
+Repository: https://github.com/es-shims/Object.hasOwn
+
+Package: object.values@1.1.6
+Version: undefined
+License: MIT
+Repository: https://github.com/es-shims/Object.values
+
+Package: obuf@1.1.2
+Version: undefined
+License: MIT
+Repository: https://github.com/indutny/offset-buffer
+
+Package: on-finished@2.3.0
+Version: undefined
+License: MIT
+Repository: https://github.com/jshttp/on-finished
+
+Package: on-finished@2.4.1
+Version: undefined
+License: MIT
+Repository: https://github.com/jshttp/on-finished
+
+Package: on-headers@1.0.2
+Version: undefined
+License: MIT
+Repository: https://github.com/jshttp/on-headers
+
+Package: once@1.4.0
+Version: undefined
+License: ISC
+Repository: https://github.com/isaacs/once
+
+Package: onetime@5.1.2
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/onetime
+
+Package: open@8.4.2
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/open
+
+Package: optionator@0.8.3
+Version: undefined
+License: MIT
+Repository: https://github.com/gkz/optionator
+
+Package: optionator@0.9.1
+Version: undefined
+License: MIT
+Repository: https://github.com/gkz/optionator
+
+Package: p-limit@2.3.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/p-limit
+
+Package: p-limit@3.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/p-limit
+
+Package: p-locate@3.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/p-locate
+
+Package: p-locate@4.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/p-locate
+
+Package: p-locate@5.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/p-locate
+
+Package: p-retry@4.6.2
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/p-retry
+
+Package: p-try@2.2.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/p-try
+
+Package: param-case@3.0.4
+Version: undefined
+License: MIT
+Repository: https://github.com/blakeembrey/change-case
+
+Package: parent-module@1.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/parent-module
+
+Package: parse-json@4.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/parse-json
+
+Package: parse-json@5.2.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/parse-json
+
+Package: parse5@6.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/inikulin/parse5
+
+Package: parseurl@1.3.3
+Version: undefined
+License: MIT
+Repository: https://github.com/pillarjs/parseurl
+
+Package: pascal-case@3.1.2
+Version: undefined
+License: MIT
+Repository: https://github.com/blakeembrey/change-case
+
+Package: path-exists@3.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/path-exists
+
+Package: path-exists@4.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/path-exists
+
+Package: path-is-absolute@1.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/path-is-absolute
+
+Package: path-key@3.1.1
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/path-key
+
+Package: path-parse@1.0.7
+Version: undefined
+License: MIT
+Repository: https://github.com/jbgutierrez/path-parse
+
+Package: path-to-regexp@0.1.7
+Version: undefined
+License: MIT
+Repository: https://github.com/component/path-to-regexp
+
+Package: path-to-regexp@1.8.0
+Version: undefined
+License: MIT
+Repository: https://github.com/pillarjs/path-to-regexp
+
+Package: path-type@4.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/path-type
+
+Package: performance-now@2.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/braveg1rl/performance-now
+
+Package: picocolors@0.2.1
+Version: undefined
+License: ISC
+Repository: https://github.com/alexeyraspopov/picocolors
+
+Package: picocolors@1.0.0
+Version: undefined
+License: ISC
+Repository: https://github.com/alexeyraspopov/picocolors
+
+Package: picomatch@2.3.1
+Version: undefined
+License: MIT
+Repository: https://github.com/micromatch/picomatch
+
+Package: pify@2.3.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/pify
+
+Package: pify@3.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/pify
+
+Package: pify@4.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/pify
+
+Package: pirates@4.0.5
+Version: undefined
+License: MIT
+Repository: https://github.com/danez/pirates
+
+Package: pkg-conf@3.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/pkg-conf
+
+Package: pkg-dir@4.2.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/pkg-dir
+
+Package: pkg-up@3.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/pkg-up
+
+Package: please-upgrade-node@3.2.0
+Version: undefined
+License: MIT
+Repository: https://github.com/typicode/please-upgrade-node
+
+Package: pluralize@8.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/blakeembrey/pluralize
+
+Package: postcss-attribute-case-insensitive@5.0.2
+Version: undefined
+License: MIT
+Repository: https://github.com/csstools/postcss-plugins
+
+Package: postcss-browser-comments@4.0.0
+Version: undefined
+License: CC0-1.0
+Repository: https://github.com/csstools/postcss-browser-comments
+
+Package: postcss-calc@8.2.4
+Version: undefined
+License: MIT
+Repository: https://github.com/postcss/postcss-calc
+
+Package: postcss-clamp@4.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/polemius/postcss-clamp
+
+Package: postcss-color-functional-notation@4.2.4
+Version: undefined
+License: CC0-1.0
+Repository: https://github.com/csstools/postcss-plugins
+
+Package: postcss-color-hex-alpha@8.0.4
+Version: undefined
+License: MIT
+Repository: https://github.com/csstools/postcss-plugins
+
+Package: postcss-color-rebeccapurple@7.1.1
+Version: undefined
+License: CC0-1.0
+Repository: https://github.com/csstools/postcss-plugins
+
+Package: postcss-colormin@5.3.1
+Version: undefined
+License: MIT
+Repository: https://github.com/cssnano/cssnano
+
+Package: postcss-convert-values@5.1.3
+Version: undefined
+License: MIT
+Repository: https://github.com/cssnano/cssnano
+
+Package: postcss-custom-media@8.0.2
+Version: undefined
+License: MIT
+Repository: https://github.com/csstools/postcss-plugins
+
+Package: postcss-custom-properties@12.1.11
+Version: undefined
+License: MIT
+Repository: https://github.com/csstools/postcss-plugins
+
+Package: postcss-custom-selectors@6.0.3
+Version: undefined
+License: MIT
+Repository: https://github.com/csstools/postcss-plugins
+
+Package: postcss-dir-pseudo-class@6.0.5
+Version: undefined
+License: CC0-1.0
+Repository: https://github.com/csstools/postcss-plugins
+
+Package: postcss-discard-comments@5.1.2
+Version: undefined
+License: MIT
+Repository: https://github.com/cssnano/cssnano
+
+Package: postcss-discard-duplicates@5.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/cssnano/cssnano
+
+Package: postcss-discard-empty@5.1.1
+Version: undefined
+License: MIT
+Repository: https://github.com/cssnano/cssnano
+
+Package: postcss-discard-overridden@5.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/cssnano/cssnano
+
+Package: postcss-double-position-gradients@3.1.2
+Version: undefined
+License: CC0-1.0
+Repository: https://github.com/csstools/postcss-plugins
+
+Package: postcss-env-function@4.0.6
+Version: undefined
+License: CC0-1.0
+Repository: https://github.com/csstools/postcss-plugins
+
+Package: postcss-flexbugs-fixes@5.0.2
+Version: undefined
+License: MIT
+Repository: https://github.com/luisrudge/postcss-flexbugs-fixes
+
+Package: postcss-focus-visible@6.0.4
+Version: undefined
+License: CC0-1.0
+Repository: https://github.com/csstools/postcss-plugins
+
+Package: postcss-focus-within@5.0.4
+Version: undefined
+License: CC0-1.0
+Repository: https://github.com/csstools/postcss-plugins
+
+Package: postcss-font-variant@5.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/postcss/postcss-font-variant
+
+Package: postcss-gap-properties@3.0.5
+Version: undefined
+License: CC0-1.0
+Repository: https://github.com/csstools/postcss-plugins
+
+Package: postcss-image-set-function@4.0.7
+Version: undefined
+License: CC0-1.0
+Repository: https://github.com/csstools/postcss-plugins
+
+Package: postcss-import@14.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/postcss/postcss-import
+
+Package: postcss-initial@4.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/maximkoretskiy/postcss-initial
+
+Package: postcss-js@4.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/postcss/postcss-js
+
+Package: postcss-lab-function@4.2.1
+Version: undefined
+License: CC0-1.0
+Repository: https://github.com/csstools/postcss-plugins
+
+Package: postcss-load-config@3.1.4
+Version: undefined
+License: MIT
+Repository: https://github.com/postcss/postcss-load-config
+
+Package: postcss-loader@6.2.1
+Version: undefined
+License: MIT
+Repository: https://github.com/webpack-contrib/postcss-loader
+
+Package: postcss-logical@5.0.4
+Version: undefined
+License: CC0-1.0
+Repository: https://github.com/csstools/postcss-plugins
+
+Package: postcss-media-minmax@5.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/postcss/postcss-media-minmax
+
+Package: postcss-merge-longhand@5.1.7
+Version: undefined
+License: MIT
+Repository: https://github.com/cssnano/cssnano
+
+Package: postcss-merge-rules@5.1.4
+Version: undefined
+License: MIT
+Repository: https://github.com/cssnano/cssnano
+
+Package: postcss-minify-font-values@5.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/cssnano/cssnano
+
+Package: postcss-minify-gradients@5.1.1
+Version: undefined
+License: MIT
+Repository: https://github.com/cssnano/cssnano
+
+Package: postcss-minify-params@5.1.4
+Version: undefined
+License: MIT
+Repository: https://github.com/cssnano/cssnano
+
+Package: postcss-minify-selectors@5.2.1
+Version: undefined
+License: MIT
+Repository: https://github.com/cssnano/cssnano
+
+Package: postcss-modules-extract-imports@3.0.0
+Version: undefined
+License: ISC
+Repository: https://github.com/css-modules/postcss-modules-extract-imports
+
+Package: postcss-modules-local-by-default@4.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/css-modules/postcss-modules-local-by-default
+
+Package: postcss-modules-scope@3.0.0
+Version: undefined
+License: ISC
+Repository: https://github.com/css-modules/postcss-modules-scope
+
+Package: postcss-modules-values@4.0.0
+Version: undefined
+License: ISC
+Repository: https://github.com/css-modules/postcss-modules-values
+
+Package: postcss-nested@6.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/postcss/postcss-nested
+
+Package: postcss-nesting@10.2.0
+Version: undefined
+License: CC0-1.0
+Repository: https://github.com/csstools/postcss-plugins
+
+Package: postcss-normalize-charset@5.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/cssnano/cssnano
+
+Package: postcss-normalize-display-values@5.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/cssnano/cssnano
+
+Package: postcss-normalize-positions@5.1.1
+Version: undefined
+License: MIT
+Repository: https://github.com/cssnano/cssnano
+
+Package: postcss-normalize-repeat-style@5.1.1
+Version: undefined
+License: MIT
+Repository: https://github.com/cssnano/cssnano
+
+Package: postcss-normalize-string@5.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/cssnano/cssnano
+
+Package: postcss-normalize-timing-functions@5.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/cssnano/cssnano
+
+Package: postcss-normalize-unicode@5.1.1
+Version: undefined
+License: MIT
+Repository: https://github.com/cssnano/cssnano
+
+Package: postcss-normalize-url@5.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/cssnano/cssnano
+
+Package: postcss-normalize-whitespace@5.1.1
+Version: undefined
+License: MIT
+Repository: https://github.com/cssnano/cssnano
+
+Package: postcss-normalize@10.0.1
+Version: undefined
+License: CC0-1.0
+Repository: https://github.com/csstools/postcss-normalize
+
+Package: postcss-opacity-percentage@1.1.3
+Version: undefined
+License: MIT
+Repository: https://github.com/mrcgrtz/postcss-opacity-percentage
+
+Package: postcss-ordered-values@5.1.3
+Version: undefined
+License: MIT
+Repository: https://github.com/cssnano/cssnano
+
+Package: postcss-overflow-shorthand@3.0.4
+Version: undefined
+License: CC0-1.0
+Repository: https://github.com/csstools/postcss-plugins
+
+Package: postcss-page-break@3.0.4
+Version: undefined
+License: MIT
+Repository: https://github.com/shrpne/postcss-page-break
+
+Package: postcss-place@7.0.5
+Version: undefined
+License: CC0-1.0
+Repository: https://github.com/csstools/postcss-plugins
+
+Package: postcss-preset-env@7.8.3
+Version: undefined
+License: CC0-1.0
+Repository: https://github.com/csstools/postcss-plugins
+
+Package: postcss-pseudo-class-any-link@7.1.6
+Version: undefined
+License: CC0-1.0
+Repository: https://github.com/csstools/postcss-plugins
+
+Package: postcss-reduce-initial@5.1.2
+Version: undefined
+License: MIT
+Repository: https://github.com/cssnano/cssnano
+
+Package: postcss-reduce-transforms@5.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/cssnano/cssnano
+
+Package: postcss-replace-overflow-wrap@4.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/MattDiMu/postcss-replace-overflow-wrap
+
+Package: postcss-selector-not@6.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/csstools/postcss-plugins
+
+Package: postcss-selector-parser@6.0.11
+Version: undefined
+License: MIT
+Repository: https://github.com/postcss/postcss-selector-parser
+
+Package: postcss-svgo@5.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/cssnano/cssnano
+
+Package: postcss-unique-selectors@5.1.1
+Version: undefined
+License: MIT
+Repository: https://github.com/cssnano/cssnano
+
+Package: postcss-value-parser@4.2.0
+Version: undefined
+License: MIT
+Repository: https://github.com/TrySound/postcss-value-parser
+
+Package: postcss@7.0.39
+Version: undefined
+License: MIT
+Repository: https://github.com/postcss/postcss
+
+Package: postcss@8.4.29
+Version: undefined
+License: MIT
+Repository: https://github.com/postcss/postcss
+
+Package: prelude-ls@1.1.2
+Version: undefined
+License: MIT
+Repository: https://github.com/gkz/prelude-ls
+
+Package: prelude-ls@1.2.1
+Version: undefined
+License: MIT
+Repository: https://github.com/gkz/prelude-ls
+
+Package: prettier@2.8.7
+Version: undefined
+License: MIT
+Repository: https://github.com/prettier/prettier
+
+Package: pretty-bytes@5.6.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/pretty-bytes
+
+Package: pretty-error@4.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/AriaMinaei/pretty-error
+
+Package: pretty-format@27.5.1
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/jest
+
+Package: pretty-format@28.1.3
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/jest
+
+Package: process-nextick-args@2.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/calvinmetcalf/process-nextick-args
+
+Package: process@0.11.10
+Version: undefined
+License: MIT
+Repository: https://github.com/shtylman/node-process
+
+Package: promise@8.3.0
+Version: undefined
+License: MIT
+Repository: https://github.com/then/promise
+
+Package: prompts@2.4.2
+Version: undefined
+License: MIT
+Repository: https://github.com/terkelg/prompts
+
+Package: prop-types-extra@1.1.1
+Version: undefined
+License: MIT
+Repository: https://github.com/react-bootstrap/prop-types-extra
+
+Package: prop-types@15.8.1
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/prop-types
+
+Package: protobufjs@7.2.4
+Version: undefined
+License: BSD-3-Clause
+Repository: https://github.com/protobufjs/protobuf.js
+
+Package: proxy-addr@2.0.7
+Version: undefined
+License: MIT
+Repository: https://github.com/jshttp/proxy-addr
+
+Package: proxy-from-env@1.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/Rob--W/proxy-from-env
+
+Package: psl@1.9.0
+Version: undefined
+License: MIT
+Repository: https://github.com/lupomontero/psl
+
+Package: punycode@2.3.0
+Version: undefined
+License: MIT
+Repository: https://github.com/mathiasbynens/punycode.js
+
+Package: q@1.5.1
+Version: undefined
+License: MIT
+Repository: https://github.com/kriskowal/q
+
+Package: qrcode.react@3.1.0
+Version: undefined
+License: ISC
+Repository: https://github.com/zpao/qrcode.react
+
+Package: qs@6.11.0
+Version: undefined
+License: BSD-3-Clause
+Repository: https://github.com/ljharb/qs
+
+Package: querystringify@2.2.0
+Version: undefined
+License: MIT
+Repository: https://github.com/unshiftio/querystringify
+
+Package: queue-microtask@1.2.3
+Version: undefined
+License: MIT
+Repository: https://github.com/feross/queue-microtask
+
+Package: quick-lru@5.1.1
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/quick-lru
+
+Package: raf@3.4.1
+Version: undefined
+License: MIT
+Repository: https://github.com/chrisdickinson/raf
+
+Package: randombytes@2.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/crypto-browserify/randombytes
+
+Package: range-parser@1.2.1
+Version: undefined
+License: MIT
+Repository: https://github.com/jshttp/range-parser
+
+Package: raw-body@2.5.1
+Version: undefined
+License: MIT
+Repository: https://github.com/stream-utils/raw-body
+
+Package: rc-align@4.0.15
+Version: undefined
+License: MIT
+Repository: https://github.com/react-component/align
+
+Package: rc-cascader@3.14.1
+Version: undefined
+License: MIT
+Repository: https://github.com/react-component/cascader
+
+Package: rc-checkbox@3.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/react-component/checkbox
+
+Package: rc-collapse@3.7.1
+Version: undefined
+License: MIT
+Repository: https://github.com/react-component/collapse
+
+Package: rc-dialog@9.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/react-component/dialog
+
+Package: rc-drawer@6.2.0
+Version: undefined
+License: MIT
+Repository: https://github.com/react-component/drawer
+
+Package: rc-dropdown@4.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/react-component/dropdown
+
+Package: rc-field-form@1.36.2
+Version: undefined
+License: MIT
+Repository: https://github.com/react-component/field-form
+
+Package: rc-image@7.1.3
+Version: undefined
+License: MIT
+Repository: https://github.com/react-component/image
+
+Package: rc-input-number@8.0.4
+Version: undefined
+License: MIT
+Repository: https://github.com/react-component/input-number
+
+Package: rc-input@1.1.1
+Version: undefined
+License: MIT
+Repository: https://github.com/react-component/input
+
+Package: rc-mentions@2.5.0
+Version: undefined
+License: MIT
+Repository: https://github.com/react-component/mentions
+
+Package: rc-menu@9.10.0
+Version: undefined
+License: MIT
+Repository: https://github.com/react-component/menu
+
+Package: rc-motion@2.7.3
+Version: undefined
+License: MIT
+Repository: https://github.com/react-component/motion
+
+Package: rc-notification@5.0.5
+Version: undefined
+License: MIT
+Repository: https://github.com/react-component/notification
+
+Package: rc-overflow@1.3.1
+Version: undefined
+License: MIT
+Repository: https://github.com/react-component/overflow
+
+Package: rc-pagination@3.5.0
+Version: undefined
+License: MIT
+Repository: https://github.com/react-component/pagination
+
+Package: rc-picker@3.12.0
+Version: undefined
+License: MIT
+Repository: https://github.com/react-component/picker
+
+Package: rc-progress@3.4.1
+Version: undefined
+License: MIT
+Repository: https://github.com/react-component/progress
+
+Package: rc-rate@2.12.0
+Version: undefined
+License: MIT
+Repository: https://github.com/react-component/rate
+
+Package: rc-resize-observer@1.3.1
+Version: undefined
+License: MIT
+Repository: https://github.com/react-component/resize-observer
+
+Package: rc-segmented@2.2.2
+Version: undefined
+License: MIT
+Repository: https://github.com/react-component/segmented
+
+Package: rc-select@14.7.3
+Version: undefined
+License: MIT
+Repository: https://github.com/react-component/select
+
+Package: rc-slider@10.1.1
+Version: undefined
+License: MIT
+Repository: https://github.com/react-component/slider
+
+Package: rc-steps@6.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/react-component/steps
+
+Package: rc-switch@4.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/react-component/switch
+
+Package: rc-table@7.32.1
+Version: undefined
+License: MIT
+Repository: https://github.com/react-component/table
+
+Package: rc-tabs@12.9.0
+Version: undefined
+License: MIT
+Repository: https://github.com/react-component/tabs
+
+Package: rc-textarea@1.3.4
+Version: undefined
+License: MIT
+Repository: https://github.com/react-component/textarea
+
+Package: rc-tooltip@6.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/react-component/tooltip
+
+Package: rc-tree-select@5.11.1
+Version: undefined
+License: MIT
+Repository: https://github.com/react-component/tree-select
+
+Package: rc-tree@5.7.9
+Version: undefined
+License: MIT
+Repository: https://github.com/react-component/tree
+
+Package: rc-upload@4.3.4
+Version: undefined
+License: MIT
+Repository: https://github.com/react-component/upload
+
+Package: rc-util@5.36.0
+Version: undefined
+License: MIT
+Repository: https://github.com/react-component/util
+
+Package: rc-virtual-list@3.5.3
+Version: undefined
+License: MIT
+Repository: https://github.com/react-component/virtual-list
+
+Package: react-ace@10.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/securingsincity/react-ace
+
+Package: react-app-polyfill@3.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/create-react-app
+
+Package: react-bootstrap@2.7.4
+Version: undefined
+License: MIT
+Repository: https://github.com/react-bootstrap/react-bootstrap
+
+Package: react-chartjs-2@5.2.0
+Version: undefined
+License: MIT
+Repository: https://github.com/reactchartjs/react-chartjs-2
+
+Package: react-copy-to-clipboard@5.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/nkbt/react-copy-to-clipboard
+
+Package: react-dev-utils@12.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/create-react-app
+
+Package: react-dom@18.2.0
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/react
+
+Package: react-error-overlay@6.0.11
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/create-react-app
+
+Package: react-hook-form@7.43.8
+Version: undefined
+License: MIT
+Repository: https://github.com/react-hook-form/react-hook-form
+
+Package: react-icons@4.10.1
+Version: undefined
+License: MIT
+Repository: https://github.com/react-icons/react-icons
+
+Package: react-is@16.13.1
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/react
+
+Package: react-is@17.0.2
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/react
+
+Package: react-is@18.2.0
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/react
+
+Package: react-is@18.3.1
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/react
+
+Package: react-lifecycles-compat@3.0.4
+Version: undefined
+License: MIT
+Repository: https://github.com/reactjs/react-lifecycles-compat
+
+Package: react-redux@8.0.5
+Version: undefined
+License: MIT
+Repository: https://github.com/reduxjs/react-redux
+
+Package: react-refresh@0.11.0
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/react
+
+Package: react-router-dom@6.9.0
+Version: undefined
+License: MIT
+Repository: https://github.com/remix-run/react-router
+
+Package: react-router@6.9.0
+Version: undefined
+License: MIT
+Repository: https://github.com/remix-run/react-router
+
+Package: react-scripts@5.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/create-react-app
+
+Package: react-select@5.7.3
+Version: undefined
+License: MIT
+Repository: https://github.com/JedWatson/react-select/tree/master/packages/react-select
+
+Package: react-table@7.8.0
+Version: undefined
+License: MIT
+Repository: https://github.com/tannerlinsley/react-table
+
+Package: react-transition-group@4.4.5
+Version: undefined
+License: BSD-3-Clause
+Repository: https://github.com/reactjs/react-transition-group
+
+Package: react@18.2.0
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/react
+
+Package: read-cache@1.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/TrySound/read-cache
+
+Package: readable-stream@2.3.8
+Version: undefined
+License: MIT
+Repository: https://github.com/nodejs/readable-stream
+
+Package: readable-stream@3.6.2
+Version: undefined
+License: MIT
+Repository: https://github.com/nodejs/readable-stream
+
+Package: readdirp@3.6.0
+Version: undefined
+License: MIT
+Repository: https://github.com/paulmillr/readdirp
+
+Package: recursive-readdir@2.2.3
+Version: undefined
+License: MIT
+Repository: https://github.com/jergason/recursive-readdir
+
+Package: redent@3.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/redent
+
+Package: redux-thunk@2.4.2
+Version: undefined
+License: MIT
+Repository: https://github.com/reduxjs/redux-thunk
+
+Package: redux@4.2.1
+Version: undefined
+License: MIT
+Repository: https://github.com/reduxjs/redux
+
+Package: regenerate-unicode-properties@10.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/mathiasbynens/regenerate-unicode-properties
+
+Package: regenerate@1.4.2
+Version: undefined
+License: MIT
+Repository: https://github.com/mathiasbynens/regenerate
+
+Package: regenerator-runtime@0.13.11
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/regenerator/tree/main/packages/runtime
+
+Package: regenerator-runtime@0.14.1
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/regenerator/tree/main/packages/runtime
+
+Package: regenerator-transform@0.15.1
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/regenerator/tree/main/packages/transform
+
+Package: regex-parser@2.2.11
+Version: undefined
+License: MIT
+Repository: https://github.com/IonicaBizau/regex-parser.js
+
+Package: regexp.prototype.flags@1.4.3
+Version: undefined
+License: MIT
+Repository: https://github.com/es-shims/RegExp.prototype.flags
+
+Package: regexpp@3.2.0
+Version: undefined
+License: MIT
+Repository: https://github.com/mysticatea/regexpp
+
+Package: regexpu-core@5.3.2
+Version: undefined
+License: MIT
+Repository: https://github.com/mathiasbynens/regexpu-core
+
+Package: regjsparser@0.9.1
+Version: undefined
+License: BSD-2-Clause
+Repository: https://github.com/jviereck/regjsparser
+
+Package: relateurl@0.2.7
+Version: undefined
+License: MIT
+Repository: https://github.com/stevenvachon/relateurl
+
+Package: remove-accents@0.4.2
+Version: undefined
+License: MIT
+Repository: https://github.com/tyxla/remove-accents
+
+Package: renderkid@3.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/AriaMinaei/RenderKid
+
+Package: require-directory@2.1.1
+Version: undefined
+License: MIT
+Repository: https://github.com/troygoode/node-require-directory
+
+Package: require-from-string@2.0.2
+Version: undefined
+License: MIT
+Repository: https://github.com/floatdrop/require-from-string
+
+Package: requires-port@1.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/unshiftio/requires-port
+
+Package: reselect@4.1.8
+Version: undefined
+License: MIT
+Repository: https://github.com/reduxjs/reselect
+
+Package: resize-observer-polyfill@1.5.1
+Version: undefined
+License: MIT
+Repository: https://github.com/que-etc/resize-observer-polyfill
+
+Package: resolve-cwd@3.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/resolve-cwd
+
+Package: resolve-from@4.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/resolve-from
+
+Package: resolve-from@5.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/resolve-from
+
+Package: resolve-url-loader@4.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/bholloway/resolve-url-loader
+
+Package: resolve.exports@1.1.1
+Version: undefined
+License: MIT
+Repository: https://github.com/lukeed/resolve.exports
+
+Package: resolve@1.22.1
+Version: undefined
+License: MIT
+Repository: https://github.com/browserify/resolve
+
+Package: resolve@2.0.0-next.4
+Version: undefined
+License: MIT
+Repository: https://github.com/browserify/resolve
+
+Package: retry@0.13.1
+Version: undefined
+License: MIT
+Repository: https://github.com/tim-kos/node-retry
+
+Package: reusify@1.0.4
+Version: undefined
+License: MIT
+Repository: https://github.com/mcollina/reusify
+
+Package: rimraf@3.0.2
+Version: undefined
+License: ISC
+Repository: https://github.com/isaacs/rimraf
+
+Package: robust-predicates@3.0.2
+Version: undefined
+License: Unlicense
+Repository: https://github.com/mourner/robust-predicates
+
+Package: rollup-plugin-terser@7.0.2
+Version: undefined
+License: MIT
+Repository: https://github.com/TrySound/rollup-plugin-terser
+
+Package: rollup@2.79.1
+Version: undefined
+License: MIT
+Repository: https://github.com/rollup/rollup
+
+Package: run-parallel@1.2.0
+Version: undefined
+License: MIT
+Repository: https://github.com/feross/run-parallel
+
+Package: rw@1.3.3
+Version: undefined
+License: BSD-3-Clause
+Repository: https://github.com/mbostock/rw
+
+Package: rxjs@7.8.1
+Version: undefined
+License: Apache-2.0
+Repository: https://github.com/reactivex/rxjs
+
+Package: safe-buffer@5.1.2
+Version: undefined
+License: MIT
+Repository: https://github.com/feross/safe-buffer
+
+Package: safe-buffer@5.2.1
+Version: undefined
+License: MIT
+Repository: https://github.com/feross/safe-buffer
+
+Package: safe-regex-test@1.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/ljharb/safe-regex-test
+
+Package: safer-buffer@2.1.2
+Version: undefined
+License: MIT
+Repository: https://github.com/ChALkeR/safer-buffer
+
+Package: sanitize.css@13.0.0
+Version: undefined
+License: CC0-1.0
+Repository: https://github.com/csstools/sanitize.css
+
+Package: sass-loader@12.6.0
+Version: undefined
+License: MIT
+Repository: https://github.com/webpack-contrib/sass-loader
+
+Package: sass@1.60.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sass/dart-sass
+
+Package: sax@1.2.4
+Version: undefined
+License: ISC
+Repository: https://github.com/isaacs/sax-js
+
+Package: saxes@5.0.1
+Version: undefined
+License: ISC
+Repository: https://github.com/lddubeau/saxes
+
+Package: scheduler@0.23.0
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/react
+
+Package: schema-utils@2.7.0
+Version: undefined
+License: MIT
+Repository: https://github.com/webpack/schema-utils
+
+Package: schema-utils@2.7.1
+Version: undefined
+License: MIT
+Repository: https://github.com/webpack/schema-utils
+
+Package: schema-utils@3.1.1
+Version: undefined
+License: MIT
+Repository: https://github.com/webpack/schema-utils
+
+Package: schema-utils@4.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/webpack/schema-utils
+
+Package: scroll-into-view-if-needed@3.0.6
+Version: undefined
+License: MIT
+Repository: https://github.com/scroll-into-view/scroll-into-view-if-needed
+
+Package: select-hose@2.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/indutny/select-hose
+
+Package: selfsigned@2.1.1
+Version: undefined
+License: MIT
+Repository: https://github.com/jfromaniello/selfsigned
+
+Package: semver-compare@1.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/substack/semver-compare
+
+Package: semver@5.7.2
+Version: undefined
+License: ISC
+Repository: https://github.com/npm/node-semver
+
+Package: semver@6.3.0
+Version: undefined
+License: ISC
+Repository: https://github.com/npm/node-semver
+
+Package: semver@7.3.8
+Version: undefined
+License: ISC
+Repository: https://github.com/npm/node-semver
+
+Package: send@0.18.0
+Version: undefined
+License: MIT
+Repository: https://github.com/pillarjs/send
+
+Package: serialize-javascript@4.0.0
+Version: undefined
+License: BSD-3-Clause
+Repository: https://github.com/yahoo/serialize-javascript
+
+Package: serialize-javascript@6.0.1
+Version: undefined
+License: BSD-3-Clause
+Repository: https://github.com/yahoo/serialize-javascript
+
+Package: serve-index@1.9.1
+Version: undefined
+License: MIT
+Repository: https://github.com/expressjs/serve-index
+
+Package: serve-static@1.15.0
+Version: undefined
+License: MIT
+Repository: https://github.com/expressjs/serve-static
+
+Package: server-destroy@1.0.1
+Version: undefined
+License: ISC
+Repository: https://github.com/isaacs/server-destroy
+
+Package: setprototypeof@1.1.0
+Version: undefined
+License: ISC
+Repository: https://github.com/wesleytodd/setprototypeof
+
+Package: setprototypeof@1.2.0
+Version: undefined
+License: ISC
+Repository: https://github.com/wesleytodd/setprototypeof
+
+Package: shallow-clone@3.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/jonschlinkert/shallow-clone
+
+Package: shallowequal@1.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/dashed/shallowequal
+
+Package: shebang-command@2.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/kevva/shebang-command
+
+Package: shebang-regex@3.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/shebang-regex
+
+Package: shell-quote@1.8.0
+Version: undefined
+License: MIT
+Repository: https://github.com/ljharb/shell-quote
+
+Package: side-channel@1.0.4
+Version: undefined
+License: MIT
+Repository: https://github.com/ljharb/side-channel
+
+Package: signal-exit@3.0.7
+Version: undefined
+License: ISC
+Repository: https://github.com/tapjs/signal-exit
+
+Package: sisteransi@1.0.5
+Version: undefined
+License: MIT
+Repository: https://github.com/terkelg/sisteransi
+
+Package: slash@2.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/slash
+
+Package: slash@3.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/slash
+
+Package: slash@4.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/slash
+
+Package: sockjs@0.3.24
+Version: undefined
+License: MIT
+Repository: https://github.com/sockjs/sockjs-node
+
+Package: source-list-map@2.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/webpack/source-list-map
+
+Package: source-map-js@1.0.2
+Version: undefined
+License: BSD-3-Clause
+Repository: https://github.com/7rulnik/source-map-js
+
+Package: source-map-loader@3.0.2
+Version: undefined
+License: MIT
+Repository: https://github.com/webpack-contrib/source-map-loader
+
+Package: source-map-support@0.5.21
+Version: undefined
+License: MIT
+Repository: https://github.com/evanw/node-source-map-support
+
+Package: source-map@0.5.7
+Version: undefined
+License: BSD-3-Clause
+Repository: https://github.com/mozilla/source-map
+
+Package: source-map@0.6.1
+Version: undefined
+License: BSD-3-Clause
+Repository: https://github.com/mozilla/source-map
+
+Package: source-map@0.7.4
+Version: undefined
+License: BSD-3-Clause
+Repository: https://github.com/mozilla/source-map
+
+Package: source-map@0.8.0-beta.0
+Version: undefined
+License: BSD-3-Clause
+Repository: https://github.com/mozilla/source-map
+
+Package: sourcemap-codec@1.4.8
+Version: undefined
+License: MIT
+Repository: https://github.com/Rich-Harris/sourcemap-codec
+
+Package: spawn-command@0.0.2-1
+Version: undefined
+License: MIT
+Repository: https://github.com/mmalecki/spawn-command
+
+Package: spdy-transport@3.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/spdy-http2/spdy-transport
+
+Package: spdy@4.0.2
+Version: undefined
+License: MIT
+Repository: https://github.com/indutny/node-spdy
+
+Package: sprintf-js@1.0.3
+Version: undefined
+License: BSD-3-Clause
+Repository: https://github.com/alexei/sprintf.js
+
+Package: stable@0.1.8
+Version: undefined
+License: MIT
+Repository: https://github.com/Two-Screen/stable
+
+Package: stack-utils@2.0.6
+Version: undefined
+License: MIT
+Repository: https://github.com/tapjs/stack-utils
+
+Package: stackframe@1.3.4
+Version: undefined
+License: MIT
+Repository: https://github.com/stacktracejs/stackframe
+
+Package: standard-engine@15.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/standard/standard-engine
+
+Package: standard@17.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/standard/standard
+
+Package: statuses@1.5.0
+Version: undefined
+License: MIT
+Repository: https://github.com/jshttp/statuses
+
+Package: statuses@2.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/jshttp/statuses
+
+Package: steno@0.4.4
+Version: undefined
+License: MIT
+Repository: https://github.com/typicode/steno
+
+Package: stop-iteration-iterator@1.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/ljharb/stop-iteration-iterator
+
+Package: string-convert@0.2.1
+Version: undefined
+License: MIT
+Repository: https://github.com/akiran/string-convert
+
+Package: string-length@4.0.2
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/string-length
+
+Package: string-length@5.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/string-length
+
+Package: string-natural-compare@3.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/nwoltman/string-natural-compare
+
+Package: string-width@4.2.3
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/string-width
+
+Package: string.prototype.matchall@4.0.8
+Version: undefined
+License: MIT
+Repository: https://github.com/es-shims/String.prototype.matchAll
+
+Package: string.prototype.trim@1.2.7
+Version: undefined
+License: MIT
+Repository: https://github.com/es-shims/String.prototype.trim
+
+Package: string.prototype.trimend@1.0.6
+Version: undefined
+License: MIT
+Repository: https://github.com/es-shims/String.prototype.trimEnd
+
+Package: string.prototype.trimstart@1.0.6
+Version: undefined
+License: MIT
+Repository: https://github.com/es-shims/String.prototype.trimStart
+
+Package: string_decoder@1.1.1
+Version: undefined
+License: MIT
+Repository: https://github.com/nodejs/string_decoder
+
+Package: string_decoder@1.3.0
+Version: undefined
+License: MIT
+Repository: https://github.com/nodejs/string_decoder
+
+Package: stringify-object@3.3.0
+Version: undefined
+License: BSD-2-Clause
+Repository: https://github.com/yeoman/stringify-object
+
+Package: strip-ansi@6.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/chalk/strip-ansi
+
+Package: strip-ansi@7.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/chalk/strip-ansi
+
+Package: strip-bom@3.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/strip-bom
+
+Package: strip-bom@4.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/strip-bom
+
+Package: strip-comments@2.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/jonschlinkert/strip-comments
+
+Package: strip-final-newline@2.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/strip-final-newline
+
+Package: strip-indent@3.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/strip-indent
+
+Package: strip-json-comments@3.1.1
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/strip-json-comments
+
+Package: style-loader@3.3.2
+Version: undefined
+License: MIT
+Repository: https://github.com/webpack-contrib/style-loader
+
+Package: styled-components@6.0.7
+Version: undefined
+License: MIT
+Repository: https://github.com/styled-components/styled-components
+
+Package: stylehacks@5.1.1
+Version: undefined
+License: MIT
+Repository: https://github.com/cssnano/cssnano
+
+Package: stylis@4.2.0
+Version: undefined
+License: MIT
+Repository: https://github.com/thysultan/stylis.js
+
+Package: stylis@4.3.0
+Version: undefined
+License: MIT
+Repository: https://github.com/thysultan/stylis.js
+
+Package: sucrase@3.31.0
+Version: undefined
+License: MIT
+Repository: https://github.com/alangpierce/sucrase
+
+Package: supercluster@8.0.1
+Version: undefined
+License: ISC
+Repository: https://github.com/mapbox/supercluster
+
+Package: superjson@1.12.2
+Version: undefined
+License: MIT
+Repository: https://github.com/blitz-js/superjson
+
+Package: supports-color@5.5.0
+Version: undefined
+License: MIT
+Repository: https://github.com/chalk/supports-color
+
+Package: supports-color@7.2.0
+Version: undefined
+License: MIT
+Repository: https://github.com/chalk/supports-color
+
+Package: supports-color@8.1.1
+Version: undefined
+License: MIT
+Repository: https://github.com/chalk/supports-color
+
+Package: supports-hyperlinks@2.3.0
+Version: undefined
+License: MIT
+Repository: https://github.com/jamestalmage/supports-hyperlinks
+
+Package: supports-preserve-symlinks-flag@1.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/inspect-js/node-supports-preserve-symlinks-flag
+
+Package: svg-parser@2.0.4
+Version: undefined
+License: MIT
+Repository: https://github.com/Rich-Harris/svg-parser
+
+Package: svgo@1.3.2
+Version: undefined
+License: MIT
+Repository: https://github.com/svg/svgo
+
+Package: svgo@2.8.0
+Version: undefined
+License: MIT
+Repository: https://github.com/svg/svgo
+
+Package: symbol-tree@3.2.4
+Version: undefined
+License: MIT
+Repository: https://github.com/jsdom/js-symbol-tree
+
+Package: tailwindcss@3.3.0
+Version: undefined
+License: MIT
+Repository: https://github.com/tailwindlabs/tailwindcss
+
+Package: tapable@1.1.3
+Version: undefined
+License: MIT
+Repository: https://github.com/webpack/tapable
+
+Package: tapable@2.2.1
+Version: undefined
+License: MIT
+Repository: https://github.com/webpack/tapable
+
+Package: temp-dir@2.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/temp-dir
+
+Package: tempy@0.6.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/tempy
+
+Package: terminal-link@2.1.1
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/terminal-link
+
+Package: terser-webpack-plugin@5.3.7
+Version: undefined
+License: MIT
+Repository: https://github.com/webpack-contrib/terser-webpack-plugin
+
+Package: terser@5.16.8
+Version: undefined
+License: BSD-2-Clause
+Repository: https://github.com/terser/terser
+
+Package: test-exclude@6.0.0
+Version: undefined
+License: ISC
+Repository: https://github.com/istanbuljs/test-exclude
+
+Package: text-table@0.2.0
+Version: undefined
+License: MIT
+Repository: https://github.com/substack/text-table
+
+Package: thenify-all@1.6.0
+Version: undefined
+License: MIT
+Repository: https://github.com/thenables/thenify-all
+
+Package: thenify@3.3.1
+Version: undefined
+License: MIT
+Repository: https://github.com/thenables/thenify
+
+Package: throat@6.0.2
+Version: undefined
+License: MIT
+Repository: https://github.com/ForbesLindesay/throat
+
+Package: throttle-debounce@5.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/niksy/throttle-debounce
+
+Package: thunky@1.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/mafintosh/thunky
+
+Package: tmpl@1.0.5
+Version: undefined
+License: BSD-3-Clause
+Repository: https://github.com/daaku/nodejs-tmpl
+
+Package: to-fast-properties@2.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/to-fast-properties
+
+Package: to-regex-range@5.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/micromatch/to-regex-range
+
+Package: toggle-selection@1.0.6
+Version: undefined
+License: MIT
+Repository: https://github.com/sudodoki/toggle-selection
+
+Package: toidentifier@1.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/component/toidentifier
+
+Package: tough-cookie@4.1.2
+Version: undefined
+License: BSD-3-Clause
+Repository: https://github.com/salesforce/tough-cookie
+
+Package: tr46@1.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/Sebmaster/tr46.js
+
+Package: tr46@2.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/jsdom/tr46
+
+Package: tree-kill@1.2.2
+Version: undefined
+License: MIT
+Repository: https://github.com/pkrumins/node-tree-kill
+
+Package: tryer@1.0.1
+Version: undefined
+License: MIT
+Repository: git+https://gitlab.com/philbooth/tryer
+
+Package: ts-error@1.0.6
+Version: undefined
+License: MIT
+Repository: https://github.com/gfmio/ts-error
+
+Package: ts-interface-checker@0.1.13
+Version: undefined
+License: Apache-2.0
+Repository: https://github.com/gristlabs/ts-interface-checker
+
+Package: ts-node@10.9.1
+Version: undefined
+License: MIT
+Repository: https://github.com/TypeStrong/ts-node
+
+Package: tsconfig-paths@3.14.2
+Version: undefined
+License: MIT
+Repository: https://github.com/dividab/tsconfig-paths
+
+Package: tslib@1.14.1
+Version: undefined
+License: 0BSD
+Repository: https://github.com/Microsoft/tslib
+
+Package: tslib@2.5.0
+Version: undefined
+License: 0BSD
+Repository: https://github.com/Microsoft/tslib
+
+Package: tsutils@3.21.0
+Version: undefined
+License: MIT
+Repository: https://github.com/ajafff/tsutils
+
+Package: type-check@0.3.2
+Version: undefined
+License: MIT
+Repository: https://github.com/gkz/type-check
+
+Package: type-check@0.4.0
+Version: undefined
+License: MIT
+Repository: https://github.com/gkz/type-check
+
+Package: type-detect@4.0.8
+Version: undefined
+License: MIT
+Repository: https://github.com/chaijs/type-detect
+
+Package: type-fest@0.16.0
+Version: undefined
+License: (MIT OR CC0-1.0)
+Repository: https://github.com/sindresorhus/type-fest
+
+Package: type-fest@0.20.2
+Version: undefined
+License: (MIT OR CC0-1.0)
+Repository: https://github.com/sindresorhus/type-fest
+
+Package: type-fest@0.21.3
+Version: undefined
+License: (MIT OR CC0-1.0)
+Repository: https://github.com/sindresorhus/type-fest
+
+Package: type-fest@0.3.1
+Version: undefined
+License: (MIT OR CC0-1.0)
+Repository: https://github.com/sindresorhus/type-fest
+
+Package: type-is@1.6.18
+Version: undefined
+License: MIT
+Repository: https://github.com/jshttp/type-is
+
+Package: typed-array-length@1.0.4
+Version: undefined
+License: MIT
+Repository: https://github.com/inspect-js/typed-array-length
+
+Package: typedarray-to-buffer@3.1.5
+Version: undefined
+License: MIT
+Repository: https://github.com/feross/typedarray-to-buffer
+
+Package: typescript@4.9.5
+Version: undefined
+License: Apache-2.0
+Repository: https://github.com/Microsoft/TypeScript
+
+Package: unbox-primitive@1.0.2
+Version: undefined
+License: MIT
+Repository: https://github.com/ljharb/unbox-primitive
+
+Package: uncontrollable@7.2.1
+Version: undefined
+License: MIT
+Repository: https://github.com/jquense/uncontrollable
+
+Package: unicode-canonical-property-names-ecmascript@2.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/mathiasbynens/unicode-canonical-property-names-ecmascript
+
+Package: unicode-match-property-ecmascript@2.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/mathiasbynens/unicode-match-property-ecmascript
+
+Package: unicode-match-property-value-ecmascript@2.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/mathiasbynens/unicode-match-property-value-ecmascript
+
+Package: unicode-property-aliases-ecmascript@2.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/mathiasbynens/unicode-property-aliases-ecmascript
+
+Package: unique-string@2.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/unique-string
+
+Package: universalify@0.2.0
+Version: undefined
+License: MIT
+Repository: https://github.com/RyanZim/universalify
+
+Package: universalify@2.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/RyanZim/universalify
+
+Package: unpipe@1.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/stream-utils/unpipe
+
+Package: unquote@1.1.1
+Version: undefined
+License: MIT
+Repository: https://github.com/lakenen/node-unquote
+
+Package: upath@1.2.0
+Version: undefined
+License: MIT
+Repository: https://github.com/anodynos/upath
+
+Package: update-browserslist-db@1.0.10
+Version: undefined
+License: MIT
+Repository: https://github.com/browserslist/update-db
+
+Package: uri-js@4.4.1
+Version: undefined
+License: BSD-2-Clause
+Repository: https://github.com/garycourt/uri-js
+
+Package: url-parse@1.5.10
+Version: undefined
+License: MIT
+Repository: https://github.com/unshiftio/url-parse
+
+Package: use-isomorphic-layout-effect@1.1.2
+Version: undefined
+License: MIT
+Repository: https://github.com/Andarist/use-isomorphic-layout-effect
+
+Package: use-sync-external-store@1.2.0
+Version: undefined
+License: MIT
+Repository: https://github.com/facebook/react
+
+Package: util-deprecate@1.0.2
+Version: undefined
+License: MIT
+Repository: https://github.com/TooTallNate/util-deprecate
+
+Package: util.promisify@1.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/ljharb/util.promisify
+
+Package: util@0.12.5
+Version: undefined
+License: MIT
+Repository: https://github.com/browserify/node-util
+
+Package: utila@0.4.0
+Version: undefined
+License: MIT
+Repository: https://github.com/AriaMinaei/utila
+
+Package: utils-merge@1.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/jaredhanson/utils-merge
+
+Package: uuid@8.3.2
+Version: undefined
+License: MIT
+Repository: https://github.com/uuidjs/uuid
+
+Package: v8-compile-cache-lib@3.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/cspotcode/v8-compile-cache-lib
+
+Package: v8-to-istanbul@8.1.1
+Version: undefined
+License: ISC
+Repository: https://github.com/istanbuljs/v8-to-istanbul
+
+Package: vary@1.1.2
+Version: undefined
+License: MIT
+Repository: https://github.com/jshttp/vary
+
+Package: w3c-hr-time@1.0.2
+Version: undefined
+License: MIT
+Repository: https://github.com/jsdom/w3c-hr-time
+
+Package: w3c-xmlserializer@2.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/jsdom/w3c-xmlserializer
+
+Package: walker@1.0.8
+Version: undefined
+License: Apache-2.0
+Repository: https://github.com/daaku/nodejs-walker
+
+Package: warning@4.0.3
+Version: undefined
+License: MIT
+Repository: https://github.com/BerkeleyTrue/warning
+
+Package: watchpack@2.4.0
+Version: undefined
+License: MIT
+Repository: https://github.com/webpack/watchpack
+
+Package: wbuf@1.7.3
+Version: undefined
+License: MIT
+Repository: https://github.com/indutny/wbuf
+
+Package: web-vitals@2.1.4
+Version: undefined
+License: Apache-2.0
+Repository: https://github.com/GoogleChrome/web-vitals
+
+Package: webidl-conversions@4.0.2
+Version: undefined
+License: BSD-2-Clause
+Repository: https://github.com/jsdom/webidl-conversions
+
+Package: webidl-conversions@5.0.0
+Version: undefined
+License: BSD-2-Clause
+Repository: https://github.com/jsdom/webidl-conversions
+
+Package: webidl-conversions@6.1.0
+Version: undefined
+License: BSD-2-Clause
+Repository: https://github.com/jsdom/webidl-conversions
+
+Package: webpack-dev-middleware@5.3.3
+Version: undefined
+License: MIT
+Repository: https://github.com/webpack/webpack-dev-middleware
+
+Package: webpack-dev-server@4.13.1
+Version: undefined
+License: MIT
+Repository: https://github.com/webpack/webpack-dev-server
+
+Package: webpack-manifest-plugin@4.1.1
+Version: undefined
+License: MIT
+Repository: https://github.com/shellscape/webpack-manifest-plugin
+
+Package: webpack-merge@5.8.0
+Version: undefined
+License: MIT
+Repository: https://github.com/survivejs/webpack-merge
+
+Package: webpack-sources@1.4.3
+Version: undefined
+License: MIT
+Repository: https://github.com/webpack/webpack-sources
+
+Package: webpack-sources@2.3.1
+Version: undefined
+License: MIT
+Repository: https://github.com/webpack/webpack-sources
+
+Package: webpack-sources@3.2.3
+Version: undefined
+License: MIT
+Repository: https://github.com/webpack/webpack-sources
+
+Package: webpack@5.76.3
+Version: undefined
+License: MIT
+Repository: https://github.com/webpack/webpack
+
+Package: websocket-driver@0.7.4
+Version: undefined
+License: Apache-2.0
+Repository: https://github.com/faye/websocket-driver-node
+
+Package: websocket-extensions@0.1.4
+Version: undefined
+License: Apache-2.0
+Repository: https://github.com/faye/websocket-extensions-node
+
+Package: whatwg-encoding@1.0.5
+Version: undefined
+License: MIT
+Repository: https://github.com/jsdom/whatwg-encoding
+
+Package: whatwg-fetch@3.6.2
+Version: undefined
+License: MIT
+Repository: https://github.com/github/fetch
+
+Package: whatwg-mimetype@2.3.0
+Version: undefined
+License: MIT
+Repository: https://github.com/jsdom/whatwg-mimetype
+
+Package: whatwg-url@7.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/jsdom/whatwg-url
+
+Package: whatwg-url@8.7.0
+Version: undefined
+License: MIT
+Repository: https://github.com/jsdom/whatwg-url
+
+Package: which-boxed-primitive@1.0.2
+Version: undefined
+License: MIT
+Repository: https://github.com/inspect-js/which-boxed-primitive
+
+Package: which-collection@1.0.1
+Version: undefined
+License: MIT
+Repository: https://github.com/inspect-js/which-collection
+
+Package: which-typed-array@1.1.9
+Version: undefined
+License: MIT
+Repository: https://github.com/inspect-js/which-typed-array
+
+Package: which@1.3.1
+Version: undefined
+License: ISC
+Repository: https://github.com/isaacs/node-which
+
+Package: which@2.0.2
+Version: undefined
+License: ISC
+Repository: https://github.com/isaacs/node-which
+
+Package: wildcard@2.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/DamonOehlman/wildcard
+
+Package: word-wrap@1.2.3
+Version: undefined
+License: MIT
+Repository: https://github.com/jonschlinkert/word-wrap
+
+Package: workbox-background-sync@6.5.4
+Version: undefined
+License: MIT
+Repository: https://github.com/googlechrome/workbox
+
+Package: workbox-broadcast-update@6.5.4
+Version: undefined
+License: MIT
+Repository: https://github.com/googlechrome/workbox
+
+Package: workbox-build@6.5.4
+Version: undefined
+License: MIT
+Repository: https://github.com/googlechrome/workbox
+
+Package: workbox-cacheable-response@6.5.4
+Version: undefined
+License: MIT
+Repository: https://github.com/googlechrome/workbox
+
+Package: workbox-core@6.5.4
+Version: undefined
+License: MIT
+Repository: https://github.com/googlechrome/workbox
+
+Package: workbox-expiration@6.5.4
+Version: undefined
+License: MIT
+Repository: https://github.com/googlechrome/workbox
+
+Package: workbox-google-analytics@6.5.4
+Version: undefined
+License: MIT
+Repository: https://github.com/googlechrome/workbox
+
+Package: workbox-navigation-preload@6.5.4
+Version: undefined
+License: MIT
+Repository: https://github.com/googlechrome/workbox
+
+Package: workbox-precaching@6.5.4
+Version: undefined
+License: MIT
+Repository: https://github.com/googlechrome/workbox
+
+Package: workbox-range-requests@6.5.4
+Version: undefined
+License: MIT
+Repository: https://github.com/googlechrome/workbox
+
+Package: workbox-recipes@6.5.4
+Version: undefined
+License: MIT
+Repository: https://github.com/googlechrome/workbox
+
+Package: workbox-routing@6.5.4
+Version: undefined
+License: MIT
+Repository: https://github.com/googlechrome/workbox
+
+Package: workbox-strategies@6.5.4
+Version: undefined
+License: MIT
+Repository: https://github.com/googlechrome/workbox
+
+Package: workbox-streams@6.5.4
+Version: undefined
+License: MIT
+Repository: https://github.com/googlechrome/workbox
+
+Package: workbox-sw@6.5.4
+Version: undefined
+License: MIT
+Repository: https://github.com/googlechrome/workbox
+
+Package: workbox-webpack-plugin@6.5.4
+Version: undefined
+License: MIT
+Repository: https://github.com/googlechrome/workbox
+
+Package: workbox-window@6.5.4
+Version: undefined
+License: MIT
+Repository: https://github.com/googlechrome/workbox
+
+Package: wrap-ansi@7.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/chalk/wrap-ansi
+
+Package: wrappy@1.0.2
+Version: undefined
+License: ISC
+Repository: https://github.com/npm/wrappy
+
+Package: write-file-atomic@3.0.3
+Version: undefined
+License: ISC
+Repository: https://github.com/npm/write-file-atomic
+
+Package: ws@7.5.9
+Version: undefined
+License: MIT
+Repository: https://github.com/websockets/ws
+
+Package: ws@8.13.0
+Version: undefined
+License: MIT
+Repository: https://github.com/websockets/ws
+
+Package: xdg-basedir@4.0.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/xdg-basedir
+
+Package: xml-name-validator@3.0.0
+Version: undefined
+License: Apache-2.0
+Repository: https://github.com/jsdom/xml-name-validator
+
+Package: xmlchars@2.2.0
+Version: undefined
+License: MIT
+Repository: https://github.com/lddubeau/xmlchars
+
+Package: y18n@5.0.8
+Version: undefined
+License: ISC
+Repository: https://github.com/yargs/y18n
+
+Package: yallist@3.1.1
+Version: undefined
+License: ISC
+Repository: https://github.com/isaacs/yallist
+
+Package: yallist@4.0.0
+Version: undefined
+License: ISC
+Repository: https://github.com/isaacs/yallist
+
+Package: yaml@1.10.2
+Version: undefined
+License: ISC
+Repository: https://github.com/eemeli/yaml
+
+Package: yargs-parser@20.2.9
+Version: undefined
+License: ISC
+Repository: https://github.com/yargs/yargs-parser
+
+Package: yargs-parser@21.1.1
+Version: undefined
+License: ISC
+Repository: https://github.com/yargs/yargs-parser
+
+Package: yargs@16.2.0
+Version: undefined
+License: MIT
+Repository: https://github.com/yargs/yargs
+
+Package: yargs@17.7.1
+Version: undefined
+License: MIT
+Repository: https://github.com/yargs/yargs
+
+Package: yargs@17.7.2
+Version: undefined
+License: MIT
+Repository: https://github.com/yargs/yargs
+
+Package: yn@3.1.1
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/yn
+
+Package: yocto-queue@0.1.0
+Version: undefined
+License: MIT
+Repository: https://github.com/sindresorhus/yocto-queue
+
