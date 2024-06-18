@@ -37,12 +37,13 @@ import { Layout } from "@/layout";
 
 import { RoutePaths } from "@/common/enum";
 
-import "./App.scss";
+// import "./App.scss";
 import { ApplicationConnectionPolicies } from "@/components/views/applications-connection-policies";
 import { ApplicationPolicyCreator } from "@/components/views/application-policy-creator";
 import { ApplicationPolicyAttachment } from "@/components/views/application-policy-attachment";
-import {Dashboard} from "@/components/views/dashboard";
-import {VPCConnectionDashboard} from "@/components/views/vpc-connection-dashboard";
+// import {Dashboard} from "@/components/views/dashboard";
+import Home from './pages/Dashboard/Home';
+import { VPCConnectionDashboard } from "@/components/views/vpc-connection-dashboard";
 import { AccessControlPolicyCreator } from "@/components/views/access-control-policy-creator";
 import { TrafficInspectionPolicyCreator } from "./components/views/traffic-inspection-policy-creator";
 import { GeofencingPolicyCreator } from "./components/views/geofencing-policy-creator/GeofencingPolicyCreator";
@@ -56,44 +57,44 @@ import { MonitoringPolicy } from "./components/views/monitoring-policy/Monitorin
 
 
 function App() {
-  
+
   return (
-    <Layout>
-      <Suspense fallback={<span>Fetching data, please wait.</span>}>
-        <Routes>
-          <Route path={RoutePaths.LOGIN_PAGE} element={<LoginPage />} /> 
-          <Route path={RoutePaths.INFRA_RESOURCE_DASHBOARD} element={<Dashboard />} />
-          <Route path={RoutePaths.VPC_CONNECTION_DASHBOARD} element={<VPCConnectionDashboard />} />
-          <Route path={RoutePaths.NETWORK_DOMAINS} element={<NetworkDomains />} />
-          <Route path={RoutePaths.DEFINE_NETWORK_DOMAIN} element={<DefineNetworkDomain />} />
-          <Route path={RoutePaths.NETWORK_DOMAIN_CONNECTIONS} element={<NetworkDomainsConnections />} />
+    // <Layout>
+    <Suspense fallback={<span>Fetching data, please wait.</span>}>
+      <Routes>
+        <Route path={RoutePaths.LOGIN_PAGE} element={<LoginPage />} />
+        <Route path={RoutePaths.INFRA_RESOURCE_DASHBOARD} element={<Home />} />
+        <Route path={RoutePaths.VPC_CONNECTION_DASHBOARD} element={<VPCConnectionDashboard />} />
+        <Route path={RoutePaths.NETWORK_DOMAINS} element={<NetworkDomains />} />
+        <Route path={RoutePaths.DEFINE_NETWORK_DOMAIN} element={<DefineNetworkDomain />} />
+        <Route path={RoutePaths.NETWORK_DOMAIN_CONNECTIONS} element={<NetworkDomainsConnections />} />
 
 
-          <Route path={RoutePaths.CONNECTION_CREATOR} element={<NetworkDomainsConnectionCreator />} />
-          <Route path={RoutePaths.APPLICATION_CONNECTIONS} element={<ApplicationConnections />} />
-          <Route path={RoutePaths.APPLICATION_CONNECTION_POLICIES} element={<ApplicationConnectionPolicies />} />
-          <Route path={RoutePaths.APPLICATION_CONNECTION_CREATOR} element={<ApplicationPolicyCreator />} />
-          <Route path={RoutePaths.APPLICATION_CONNECTION_ATTACHMENT} element={<ApplicationPolicyAttachment />} />
-          <Route path={RoutePaths.USER_CONNECTION_ATTACHMENT} element={<UserPolicyAttachment />} />
+        <Route path={RoutePaths.CONNECTION_CREATOR} element={<NetworkDomainsConnectionCreator />} />
+        <Route path={RoutePaths.APPLICATION_CONNECTIONS} element={<ApplicationConnections />} />
+        <Route path={RoutePaths.APPLICATION_CONNECTION_POLICIES} element={<ApplicationConnectionPolicies />} />
+        <Route path={RoutePaths.APPLICATION_CONNECTION_CREATOR} element={<ApplicationPolicyCreator />} />
+        <Route path={RoutePaths.APPLICATION_CONNECTION_ATTACHMENT} element={<ApplicationPolicyAttachment />} />
+        <Route path={RoutePaths.USER_CONNECTION_ATTACHMENT} element={<UserPolicyAttachment />} />
 
-          <Route path={RoutePaths.SLA_PROFILE_CREATOR} element={<SlaProfileCreator/>} />
-          <Route path={RoutePaths.SLA_PROFILES} element={<SlaProfiles />} />
-          <Route path={RoutePaths.LIST_INFRA_RESOURCES} element={<ListInfraResources />} />
-          <Route path={RoutePaths.LIST_CLUSTER_RESOURCES} element={<ListClusterResources />} />
+        <Route path={RoutePaths.SLA_PROFILE_CREATOR} element={<SlaProfileCreator />} />
+        <Route path={RoutePaths.SLA_PROFILES} element={<SlaProfiles />} />
+        <Route path={RoutePaths.LIST_INFRA_RESOURCES} element={<ListInfraResources />} />
+        <Route path={RoutePaths.LIST_CLUSTER_RESOURCES} element={<ListClusterResources />} />
 
 
-          <Route path={RoutePaths.ACCESS_CONTROL_POLICIES_CREATOR} element={<AccessControlPolicyCreator/>} />
-          <Route path={RoutePaths.TRAFFIC_INSPECTION_POLICIES_CREATOR} element={<TrafficInspectionPolicyCreator/>} />
-          <Route path={RoutePaths.ACCESS_CONTROL_POLICIES} element={<AccessControlPolicies/>} />
+        <Route path={RoutePaths.ACCESS_CONTROL_POLICIES_CREATOR} element={<AccessControlPolicyCreator />} />
+        <Route path={RoutePaths.TRAFFIC_INSPECTION_POLICIES_CREATOR} element={<TrafficInspectionPolicyCreator />} />
+        <Route path={RoutePaths.ACCESS_CONTROL_POLICIES} element={<AccessControlPolicies />} />
 
-          <Route path={RoutePaths.GEOFENCING_POLICIES_CREATOR} element={<GeofencingPolicyCreator/>} />
-          <Route path={RoutePaths.NETWORK_DATA_PRIVACY_POLICIES_CREATOR} element={<NetworkDataPrivacyPolicyCreator/>} />
-          <Route path={RoutePaths.MONITORING_POLICIES_CREATOR} element={<MonitoringPolicyCreator/>} />
-          <Route path={RoutePaths.MONITORING_POLICIES} element={<MonitoringPolicy/>} />
-          <Route path={RoutePaths.LOGGING_POLICIES_CREATOR} element={<LoggingPolicyCreator/>} />          
-        </Routes>
-      </Suspense>
-    </Layout>
+        <Route path={RoutePaths.GEOFENCING_POLICIES_CREATOR} element={<GeofencingPolicyCreator />} />
+        <Route path={RoutePaths.NETWORK_DATA_PRIVACY_POLICIES_CREATOR} element={<NetworkDataPrivacyPolicyCreator />} />
+        <Route path={RoutePaths.MONITORING_POLICIES_CREATOR} element={<MonitoringPolicyCreator />} />
+        <Route path={RoutePaths.MONITORING_POLICIES} element={<MonitoringPolicy />} />
+        <Route path={RoutePaths.LOGGING_POLICIES_CREATOR} element={<LoggingPolicyCreator />} />
+      </Routes>
+    </Suspense>
+    // </Layout>
   );
 }
 
