@@ -8,7 +8,6 @@ import '../../css/vpc.css';
 import ProviderButtons from '@/components/ProviderRegion/ProviderRegionBar';
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "@/store/store";
-import { isIPv6 } from "net";
 
 const vpc = () => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -21,8 +20,15 @@ const vpc = () => {
 
     const info = vpcs.map(vpc => ({
         id: vpc.id,
+        accountId: vpc.accountId,
         name: vpc.name || '',
         region: vpc.region,
+        ipv4: vpc.ipv4_cidr,
+        ipv6: vpc.ipv6_cidr,
+        labels: vpc["labels"],
+        compliant: vpc.compliant,
+        // selfLink: vpc.selfLink,
+        project: vpc.project,
     }));
 
     const handleVpcSelect = (vpc) => {
@@ -58,6 +64,7 @@ const vpc = () => {
                     <thead>
                         <tr className="table-header">
                             <th className="table-cell">ID</th>
+                            <th className="table-cell">Account ID</th>
                             <th className="table-cell">Name</th>
                             <th className="table-cell">Region</th>
                         </tr>
@@ -66,10 +73,11 @@ const vpc = () => {
                         {vpcSearch.map(vpc => (
                             <tr
                                 key={vpc.id}
-                                className={`table-vpc ${selectedVpcId === vpc.id ? 'selected' : ''}`}
+                                className={`table-row ${selectedVpcId === vpc.id ? 'selected-row' : ''}`}
                                 onClick={() => handleVpcSelect(vpc)}
                             >
                                 <td className="table-cell">{vpc.id}</td>
+                                <td className="table-cell">{vpc.accountId}</td>
                                 <td className="table-cell">{vpc.name}</td>
                                 <td className="table-cell">{vpc.region}</td>
                             </tr>

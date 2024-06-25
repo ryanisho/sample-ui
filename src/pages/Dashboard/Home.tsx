@@ -21,10 +21,17 @@ const Home: React.FC = () => {
     const [selectedProvider, setSelectedProvider] = useState<Source>('All Providers');
     const { fetchSummary } = useFetchSummary()
     const { count, status } = useSelector((state: RootState) => state.summary);
+    const [renderCharts, setRenderCharts] = useState(false);
+
 
     // Effect
     useEffect(() => {
         fetchSummary()
+        const timer = setTimeout(() => {
+            // render pie charts later since api call has fetch latency.
+            setRenderCharts(true);
+        }, 200);
+        return () => clearTimeout(timer);
     }, []);
 
     const handleSelect = (provider: Source) => {
@@ -62,7 +69,6 @@ const Home: React.FC = () => {
     // pie chart data
     const statusData = status[selectedProvider]
 
-
     return (
         <DefaultLayout>
             <div style={{ marginBottom: "10px", justifyContent: "space-between" }}>
@@ -88,8 +94,13 @@ const Home: React.FC = () => {
             </div>
 
             <div className="mt-4 grid grid-cols-12 gap-4 md:mt-6 md:gap-6 2xl:mt-7.5 2xl:gap-7.5">
-                <PieChart series={[statusData.pod.running, statusData.pod.pending, statusData.pod.crash]} title="Pod States" />
-                <PieChart series={[statusData.vm.running, statusData.vm.stopped, statusData.vm.terminated]} title="VM States" />
+                {/* statusData.pod/.vm api call has a delay ~ 200 ms. useEffect 200ms renders PieCharts later to encapsulate accurate value. */}
+                {renderCharts && (
+                    <>
+                        <PieChart series={[statusData.pod.running, statusData.pod.pending, statusData.pod.crash]} title="Pod States" />
+                        <PieChart series={[statusData.vm.running, statusData.vm.stopped, statusData.vm.terminated]} title="VM States" />
+                    </>
+                )}
             </div>
         </DefaultLayout >
     );

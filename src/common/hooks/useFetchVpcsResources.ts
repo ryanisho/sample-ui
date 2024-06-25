@@ -30,6 +30,13 @@ const { CloudProviderServiceClient } = require("@/_proto/infra-sdk/output/cloud_
 const infraSdkResourcesClient = new CloudProviderServiceClient(BACKEND_API_PREFIX, null, null);
 const vpcRequest = new ListVPCRequest();
 
+/**
+ * Custom hook to fetch VPC resources from the infrastructure provider.
+ * @param provider - The infrastructure resource provider.
+ * @param accountId - The ID of the account.
+ * @param region - The region to fetch VPCs from.
+ * @returns An object containing the fetched VPCs and a function to fetch VPCs.
+ */
 export const useFetchVpcsResources = (provider: InfraResourceProvider, accountId: string, region: string) => {
   const [vpcs, setVpcs] = useState<any[]>([]);
 
@@ -39,6 +46,9 @@ export const useFetchVpcsResources = (provider: InfraResourceProvider, accountId
   vpcRequest.setAccountId(accountId);
   vpcRequest.setRegion(region)
 
+  /**
+   * Fetches VPCs from the infrastructure provider.
+   */
   const fetchVpcs = () => {
     try {
       infraSdkResourcesClient.listVPC(vpcRequest, {}, (err: any, response: any) => {

@@ -80,7 +80,7 @@
     "tailwindcss": "^3.4.4"
   },
   "scripts": {
-    "start": " concurrently \"craco start --config craco.config.js\" \"json-server --watch ./src/_db/db.json\"",
+    "start": "concurrently \"craco start --config craco.config.js\" \"json-server --watch ./src/_db/db.json\"",
     "build": "craco build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

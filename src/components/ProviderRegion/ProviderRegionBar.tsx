@@ -19,7 +19,6 @@ const ProviderRegionBar = () => {
     // account id and region?
     const [selectedAccountId, setSelectedAccountId] = useState('');
     const [selectedRegion, setSelectedRegion] = useState('');
-
     const [selectedButton, setLastClickedProvider] = useState<InfraResourceProvider>(InfraResourceProvider.ALL_PROVIDERS);
 
     // api calls 
@@ -29,33 +28,34 @@ const ProviderRegionBar = () => {
 
     useEffect(() => {
         fetchAccounts();
+        fetchVpcs();
     }, []);
 
     // display all accountIds and regionNames, ignore for now.
 
-    // const accountIds: any[] = accounts.reduce((uniqueIds: any[], account: any, index: number) => {
-    //     const accountId = account.accountId;
-    //     if (!uniqueIds.some((item: any) => item.value === accountId)) {
-    //         uniqueIds.push({
-    //             label: accountId,
-    //             value: accountId,
-    //             key: accountId + index,
-    //         });
-    //     }
-    //     return uniqueIds;
-    // }, []);
+    const accountIds: any[] = accounts.reduce((uniqueIds: any[], account: any, index: number) => {
+        const accountId = account.accountId;
+        if (!uniqueIds.some((item: any) => item.value === accountId)) {
+            uniqueIds.push({
+                label: accountId,
+                value: accountId,
+                key: accountId + index,
+            });
+        }
+        return uniqueIds;
+    }, []);
 
-    // const regionNames: any[] = regions.reduce((uniqueIds: any[], region: any, index: number) => {
-    //     const regionName = region.regionName;
-    //     if (!uniqueIds.some((item: any) => item.value === regionName)) {
-    //         uniqueIds.push({
-    //             label: regionName,
-    //             value: regionName,
-    //             key: regionName + index,
-    //         });
-    //     }
-    //     return uniqueIds;
-    // }, []);
+    const regionNames: any[] = regions.reduce((uniqueIds: any[], region: any, index: number) => {
+        const regionName = region.regionName;
+        if (!uniqueIds.some((item: any) => item.value === regionName)) {
+            uniqueIds.push({
+                label: regionName,
+                value: regionName,
+                key: regionName + index,
+            });
+        }
+        return uniqueIds;
+    }, []);
 
     const handleAccountIdChange = (value: string) => {
         setSelectedAccountId(value)
@@ -132,10 +132,10 @@ const ProviderRegionBar = () => {
                         { name: 'GCP', enum: InfraResourceProvider.GCP },
                         { name: 'Azure', enum: InfraResourceProvider.AZURE },
                         { name: 'Cisco', enum: InfraResourceProvider.CISCO_ISE },
-                        { name: 'All', enum: InfraResourceProvider.ALL_PROVIDERS },
+                        { name: 'All Providers', enum: InfraResourceProvider.ALL_PROVIDERS },
                     ].map((button) => (
                         <button
-                            className={`button-blue ${selectedButton === button.name ? 'selected' : ''}`}
+                            className={`button-blue ${selectedButton === button.enum ? 'selected' : ''}`}
                             key={button.name}
                             onClick={() => handleProviderSelect(button.enum)}
                         >
