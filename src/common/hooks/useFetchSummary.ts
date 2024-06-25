@@ -46,8 +46,8 @@ export const useFetchSummary = () => {
         const counts: ResourceCounts = {
           'Accounts': count.getAccounts(),
           'UserGroups': 1,
-          'Users' : Math.floor(Math.random() * 20),
-          'IdentityProviders' : 1,
+          'Users': Math.floor(Math.random() * 20),
+          'IdentityProviders': 1,
           'VPC': count.getVpc(),
           'RouteTables': count.getRouteTables(),
           'Subnets': count.getSubnets(),
@@ -56,7 +56,7 @@ export const useFetchSummary = () => {
           'SecurityGroups': count.getSecurityGroups(),
           'NATGateways': count.getNatGateways(),
           'CloudRouters': count.getRouters(),
-          'InternetGateways':count.getIgws(),
+          'InternetGateways': count.getIgws(),
           'VPCEndpoints': count.getVpcEndpoints(),
           'PublicIPAddresses': count.getPublicIps(),
           'Clusters': count.getClusters(),
@@ -90,11 +90,13 @@ export const useFetchSummary = () => {
     })
   }
 
+  // fetchSummary fetches all provider information at once
+  // commented out for now since we only have AWS on local machine
   const fetchSummary = () => {
     fetchProvider('AWS')
-    fetchProvider('GCP')
-    fetchProvider('Azure')
-    //fetchProvider('Enterprise')
+    // fetchProvider('GCP')
+    // fetchProvider('Azure')
+    // fetchProvider('Enterprise')
   };
 
   return { fetchSummary };

@@ -22,10 +22,8 @@ const path = require(`path`);
 module.exports = {
   style: {
     postcss: {
-      plugins: [
-        require('tailwindcss'),
-        require('autoprefixer'),
-      ],
+      plugins: [require('tailwindcss')("./tailwind.config.js"), require('autoprefixer')],
+      mode: "file",
     }
   },
   devServer: {

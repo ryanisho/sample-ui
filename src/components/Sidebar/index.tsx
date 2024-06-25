@@ -108,7 +108,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
               {/* <!-- Menu Item Dashboard --> */}
               <SidebarNested item={{
                 text: "Dashboard",
-                link: "/"
+                link: "/infra-resource-dashboard"
               }} pathname={pathname} sidebarExpanded={sidebarExpanded} setSidebarExpanded={setSidebarExpanded} />
               {/* <!-- Menu Item Dashboard --> */}
 
@@ -119,7 +119,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                   children: [
                     {
                       text: "Cloud Resources",
-                      link: "/vpc"
+                      link: "/vpc-connection-dashboard"
 
                     },
                     {
@@ -146,11 +146,11 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                       children: [
                         {
                           text: "List",
-                          link: "/network-domains/list"
+                          link: "/network-domain-connections"
                         },
                         {
                           text: "Create",
-                          link: "/network-domains/create"
+                          link: "/define-network-domain"
                         },
                       ]
                     },

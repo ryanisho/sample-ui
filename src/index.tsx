@@ -28,6 +28,7 @@ import { store } from "@/store/store";
 import App from "./App";
 // import "./index.scss";
 import "./css/style.css"
+import "./css/satoshi.css"
 // import 'jsvectormap/dist/css/jsvectormap.css';
 import 'flatpickr/dist/flatpickr.min.css';
 import { BrowserRouter as Router } from "react-router-dom";

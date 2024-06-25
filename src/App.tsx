@@ -23,17 +23,17 @@ import { Route, Routes } from "react-router-dom";
 
 import {
   NetworkDomains,
-  NetworkDomainsConnections,
-  DefineNetworkDomain,
+  // NetworkDomainsConnections,
+  // DefineNetworkDomain,
   SlaProfiles,
   //SlaProfileCreator,
   NetworkDomainsConnectionCreator,
   ApplicationConnections,
   LoginPage,
   ListInfraResources,
-  ListClusterResources,
+  // ListClusterResources,
 } from "@/components";
-import { Layout } from "@/layout";
+// import { Layout } from "@/layout";
 
 import { RoutePaths } from "@/common/enum";
 
@@ -41,9 +41,13 @@ import { RoutePaths } from "@/common/enum";
 import { ApplicationConnectionPolicies } from "@/components/views/applications-connection-policies";
 import { ApplicationPolicyCreator } from "@/components/views/application-policy-creator";
 import { ApplicationPolicyAttachment } from "@/components/views/application-policy-attachment";
-// import {Dashboard} from "@/components/views/dashboard";
+// import { Dashboard } from "@/components/views/dashboard";
 import Home from './pages/Dashboard/Home';
-import { VPCConnectionDashboard } from "@/components/views/vpc-connection-dashboard";
+// import { VPCConnectionDashboard } from "@/components/views/vpc-connection-dashboard";
+import Vpc from "./pages/Vpc/Vpc";
+import ClusterResources from "./pages/Kubernetes/Kubernetes"
+import ListNetworkDomain from "./pages/NetworkDomain/ListNetworkDomain";
+import CreateNetworkDomain from "./pages/NetworkDomain/CreateNetworkDomain";
 import { AccessControlPolicyCreator } from "@/components/views/access-control-policy-creator";
 import { TrafficInspectionPolicyCreator } from "./components/views/traffic-inspection-policy-creator";
 import { GeofencingPolicyCreator } from "./components/views/geofencing-policy-creator/GeofencingPolicyCreator";
@@ -64,10 +68,16 @@ function App() {
       <Routes>
         <Route path={RoutePaths.LOGIN_PAGE} element={<LoginPage />} />
         <Route path={RoutePaths.INFRA_RESOURCE_DASHBOARD} element={<Home />} />
-        <Route path={RoutePaths.VPC_CONNECTION_DASHBOARD} element={<VPCConnectionDashboard />} />
+        {/* <Route path={RoutePaths.INFRA_RESOURCE_DASHBOARD} element={<Dashboard />} /> */}
+        {/* <Route path={RoutePaths.VPC_CONNECTION_DASHBOARD} element={<VPCConnectionDashboard />} /> */}
+        <Route path={RoutePaths.VPC_CONNECTION_DASHBOARD} element={<Vpc />} />
+
         <Route path={RoutePaths.NETWORK_DOMAINS} element={<NetworkDomains />} />
-        <Route path={RoutePaths.DEFINE_NETWORK_DOMAIN} element={<DefineNetworkDomain />} />
-        <Route path={RoutePaths.NETWORK_DOMAIN_CONNECTIONS} element={<NetworkDomainsConnections />} />
+        {/* <Route path={RoutePaths.DEFINE_NETWORK_DOMAIN} element={<DefineNetworkDomain />} /> */}
+        {/* <Route path={RoutePaths.NETWORK_DOMAIN_CONNECTIONS} element={<NetworkDomainsConnections />} /> */}
+        <Route path={RoutePaths.NETWORK_DOMAIN_CONNECTIONS} element={<ListNetworkDomain />} />
+        <Route path={RoutePaths.DEFINE_NETWORK_DOMAIN} element={<CreateNetworkDomain />} />
+
 
 
         <Route path={RoutePaths.CONNECTION_CREATOR} element={<NetworkDomainsConnectionCreator />} />
@@ -80,7 +90,8 @@ function App() {
         <Route path={RoutePaths.SLA_PROFILE_CREATOR} element={<SlaProfileCreator />} />
         <Route path={RoutePaths.SLA_PROFILES} element={<SlaProfiles />} />
         <Route path={RoutePaths.LIST_INFRA_RESOURCES} element={<ListInfraResources />} />
-        <Route path={RoutePaths.LIST_CLUSTER_RESOURCES} element={<ListClusterResources />} />
+        {/* <Route path={RoutePaths.LIST_CLUSTER_RESOURCES} element={<ListClusterResources />} /> */}
+        <Route path={RoutePaths.LIST_CLUSTER_RESOURCES} element={<ClusterResources />} />
 
 
         <Route path={RoutePaths.ACCESS_CONTROL_POLICIES_CREATOR} element={<AccessControlPolicyCreator />} />

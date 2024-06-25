@@ -17,8 +17,8 @@ const options: ApexOptions = {
   legend: {
     show: true,
     position: 'bottom',
-    offsetY: 50,
-    offsetX: 50,
+    offsetY: 15,
+    offsetX: 0,
   },
 
   plotOptions: {

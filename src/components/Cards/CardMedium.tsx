@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react';
 
 interface CardDataStatsProps {
     label: string;
-    value: string;
+    value: string | number;
 }
 
 interface CardMediumProps {
