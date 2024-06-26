@@ -53,26 +53,26 @@ const vpc = () => {
                         placeholder="Search by name or ID"
                         value={searchTerm}
                         onChange={e => setSearchTerm(e.target.value)}
-                        className="input-field"
+                        className="input-field dark:bg-black"
                     />
                 </div>
                 <ProviderButtons></ProviderButtons>
             </div>
             <div className="mt-3">
                 <table className="data-table">
-                    <thead>
-                        <tr className="table-header">
-                            <th className="table-cell">ID</th>
-                            <th className="table-cell">Account ID</th>
-                            <th className="table-cell">Name</th>
-                            <th className="table-cell">Region</th>
+                    <thead className="dark:bg-gray-700">
+                        <tr className="table-header dark:bg-black dark:text-white">
+                            <th className="table-cell dark:text-gray-300">ID</th>
+                            <th className="table-cell dark:text-gray-300">Account ID</th>
+                            <th className="table-cell dark:text-gray-300">Name</th>
+                            <th className="table-cell dark:text-gray-300">Region</th>
                         </tr>
                     </thead>
-                    <tbody className="table-body">
+                    <tbody className="table-body dark:bg-black dark:text-white">
                         {vpcSearch.map(vpc => (
                             <tr
                                 key={vpc.id}
-                                className={`table-row ${selectedVpcId === vpc.id ? 'selected-row' : ''}`}
+                                className={`table-row ${selectedVpcId === vpc.id ? 'selected-row dark:bg-gray-600' : 'dark:bg-gray-700'}`}
                                 onClick={() => handleVpcSelect(vpc)}
                             >
                                 <td className="table-cell">{vpc.id}</td>

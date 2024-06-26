@@ -77,7 +77,7 @@ const Home: React.FC = () => {
                 <div className="flex justify-end">
                     {['AWS', 'GCP', 'Azure', 'Enterprise', 'All Providers'].map((buttonName) => (
                         <button
-                            className={`button-blue ${selectedProvider === buttonName ? 'selected' : ''}`}
+                            className={`dark:text-white dark:border-white button-blue ${selectedProvider === buttonName ? 'selected' : ''}`}
                             key={buttonName}
                             onClick={() => handleSelect(buttonName as Source)}
                         >

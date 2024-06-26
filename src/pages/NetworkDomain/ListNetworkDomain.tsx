@@ -69,14 +69,14 @@ const ListNetworkDomain = () => {
                         placeholder="Search by anything"
                         value={searchTerm}
                         onChange={e => setSearchTerm(e.target.value)}
-                        className="input-field h-10"
+                        className="dark:bg-black input-field h-10"
                     />
                 </div>
             </div>
             <div className="mt-3">
                 <table className="data-table">
                     <thead>
-                        <tr className="table-header">
+                        <tr className="table-header dark:bg-black dark:text-white">
                             <th className="table-cell" onClick={() => handleSort('name')}>Name {sortColumn === 'name' ? (sortDirection === 'asc' ? '↑' : '↓') : ''}</th>
                             <th className="table-cell" onClick={() => handleSort('type')}>Type {sortColumn === 'type' ? (sortDirection === 'asc' ? '↑' : '↓') : ''}</th>
                             <th className="table-cell" onClick={() => handleSort('provider')}>Provider {sortColumn === 'provider' ? (sortDirection === 'asc' ? '↑' : '↓') : ''}</th>
@@ -84,7 +84,7 @@ const ListNetworkDomain = () => {
                             <th className="table-cell" onClick={() => handleSort('id')}>ID {sortColumn === 'id' ? (sortDirection === 'asc' ? '↑' : '↓') : ''}</th>
                         </tr>
                     </thead>
-                    <tbody className="table-body">
+                    <tbody className="table-body dark:bg-black dark:text-white">
                         {sortedData.map(row => (
                             <tr
                                 key={row.id}

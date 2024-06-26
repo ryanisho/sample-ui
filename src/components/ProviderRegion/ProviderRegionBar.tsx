@@ -128,7 +128,7 @@ const ProviderRegionBar = () => {
                         { name: 'All Providers', enum: InfraResourceProvider.ALL_PROVIDERS },
                     ].map((button) => (
                         <button
-                            className={`button-blue ${selectedButton === button.enum ? 'selected' : ''}`}
+                            className={`dark:border-white dark:text-white button-blue ${selectedButton === button.enum ? 'selected' : ''}`}
                             key={button.name}
                             onClick={() => handleProviderSelect(button.enum)}
                         >
@@ -142,7 +142,7 @@ const ProviderRegionBar = () => {
                 <select
                     value={selectedAccountId}
                     onChange={e => handleAccountIdChange(e.target.value)}
-                    className="select-field"
+                    className="dark:bg-black select-field"
                 >
                     <option value="">Select Account ID</option>
                     {accountIds.map(account => <option key={account.key} value={account.value}>{account.label}</option>)}
@@ -151,7 +151,7 @@ const ProviderRegionBar = () => {
                 <select
                     value={selectedRegion}
                     onChange={e => handleRegionChange(e.target.value)}
-                    className="select-field"
+                    className="dark:bg-black select-field"
                 >
                     <option value="">Select Region</option>
                     {regionNames.map(region => <option key={region.key} value={region.value}>{region.label}</option>)}
