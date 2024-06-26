@@ -174,8 +174,6 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                 sidebarExpanded={sidebarExpanded}
                 setSidebarExpanded={setSidebarExpanded}
               />
-              {/* <!-- Menu Item Profile --> */}
-
               {/* <!-- Menu Item Forms --> */}
               <SidebarNested
                 item={{
@@ -184,29 +182,29 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                   children: [
                     {
                       text: "Connections",
-                      link: "/forms/form-elements",
+                      link: "/application-connections",
                       children: [
                         {
                           text: "List",
-                          link: "/forms/form-elements/input"
+                          link: "/application-connections"
                         },
                         {
                           text: "Create",
-                          link: "/forms/form-elements/input"
+                          link: "/application-connection-attachment"
                         },
                       ]
                     },
                     {
                       text: "Connection Policies",
-                      link: "/forms/form-layout",
+                      link: "/application-connection-policies",
                       children: [
                         {
                           text: "List",
-                          link: "/forms/form-elements/input"
+                          link: "/application-connection-policies"
                         },
                         {
                           text: "Create",
-                          link: "/forms/form-elements/input"
+                          link: "/application-connection-creator"
                         },
                       ]
                     }
@@ -216,43 +214,41 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                 sidebarExpanded={sidebarExpanded}
                 setSidebarExpanded={setSidebarExpanded}
               />
-              {/* <!-- Menu Item Forms --> */}
-
               {/* <!-- Menu Item Tables --> */}
               <SidebarNested
                 item={{
                   text: "User",
-                  link: "/application",
+                  link: "/user",
                   children: [
                     {
                       text: "List",
-                      link: "/forms/form-elements",
+                      link: "/user-list",
                     },
                     {
                       text: "Connections",
-                      link: "/forms/form-layout",
+                      link: "/user-connections",
                       children: [
                         {
                           text: "List",
-                          link: "/forms/form-elements/input"
+                          link: "/user-connections-policies"
                         },
                         {
                           text: "Create",
-                          link: "/forms/form-elements/input"
+                          link: "/user-connection-attachment"
                         },
                       ]
                     },
                     {
                       text: "Connection Policies",
-                      link: "/forms/form-layout",
+                      link: "/user-connection-policies",
                       children: [
                         {
                           text: "List",
-                          link: "/forms/form-elements/input"
+                          link: "/user-connections-policies"
                         },
                         {
                           text: "Create",
-                          link: "/forms/form-elements/input"
+                          link: "/user-connections-policies-creator"
                         },
                       ]
                     }
@@ -272,33 +268,33 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                   children: [
                     {
                       text: "List",
-                      link: "/forms/form-elements",
+                      link: "/endpoint-list",
                     },
                     {
                       text: "Connections",
-                      link: "/forms/form-layout",
+                      link: "/endpoint-connections",
                       children: [
                         {
                           text: "List",
-                          link: "/forms/form-elements/input"
+                          link: "/endpoint-connections-policies"
                         },
                         {
                           text: "Create",
-                          link: "/forms/form-elements/input"
+                          link: "/application-connection-attachment"
                         },
                       ]
                     },
                     {
                       text: "Connection Policies",
-                      link: "/forms/form-layout",
+                      link: "/endpoint-connection-policies",
                       children: [
                         {
                           text: "List",
-                          link: "/forms/form-elements/input"
+                          link: "/endpoint-connections-policies"
                         },
                         {
                           text: "Create",
-                          link: "/forms/form-elements/input"
+                          link: "/endpoint-connections-policies-creator"
                         },
                       ]
                     }
@@ -327,71 +323,71 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                   children: [
                     {
                       text: "Connection Monitoring Policy",
-                      link: "/forms/form-elements",
+                      link: "/connection-monitoring-policy",
                       children: [
                         {
                           text: "List",
-                          link: "/forms/form-elements/input"
+                          link: "/monitoring-policies"
                         },
                         {
                           text: "Create",
-                          link: "/forms/form-elements/input"
+                          link: "/monitoring-policies-creator"
                         },
                       ]
                     },
                     {
                       text: "Connections Logging Policy",
-                      link: "/forms/form-layout",
+                      link: "/connnection-logging-policy",
                       children: [
                         {
                           text: "List",
-                          link: "/forms/form-elements/input"
+                          link: "/logging-policies"
                         },
                         {
                           text: "Create",
-                          link: "/forms/form-elements/input"
+                          link: "/logging-policies-creator"
                         },
                       ]
                     },
                     {
                       text: "Metric Connection Policy",
-                      link: "/forms/form-layout",
+                      link: "/metric-connection-policy",
                       children: [
                         {
                           text: "List",
-                          link: "/forms/form-elements/input"
+                          link: "/network-domain-connections"
                         },
                         {
                           text: "Create",
-                          link: "/forms/form-elements/input"
+                          link: "/connection-creator"
                         },
                       ]
                     },
                     {
                       text: "Alerting Policy",
-                      link: "/forms/form-layout",
+                      link: "/alerting-policy",
                       children: [
                         {
                           text: "List",
-                          link: "/forms/form-elements/input"
+                          link: "/sla-profiles"
                         },
                         {
                           text: "Create",
-                          link: "/forms/form-elements/input"
+                          link: "/sla-profile-creator"
                         },
                       ]
                     },
                     {
                       text: "Packet Trading Policy",
-                      link: "/forms/form-layout",
+                      link: "/packet-trading-policy",
                       children: [
                         {
                           text: "List",
-                          link: "/forms/form-elements/input"
+                          link: "/sla-profiles"
                         },
                         {
                           text: "Create",
-                          link: "/forms/form-elements/input"
+                          link: "/sla-profile-creator"
                         },
                       ]
                     }
@@ -408,62 +404,62 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                   children: [
                     {
                       text: "Access Control Policy",
-                      link: "/vpc",
+                      link: "/access-control-policy",
                       children: [
                         {
                           text: "List",
-                          link: "/vpc"
+                          link: "/access-control-policies"
 
                         },
                         {
                           text: "Create",
-                          link: "/forms/form-layout"
+                          link: "/access-control-policies-creator"
                         }
                       ]
 
                     },
                     {
                       text: "Geofencing Policy",
-                      link: "/forms/form-layout",
+                      link: "/geofencing-policy",
                       children: [
                         {
                           text: "List",
-                          link: "/vpc"
+                          link: "/geofencing-policies"
 
                         },
                         {
                           text: "Create",
-                          link: "/forms/form-layout"
+                          link: "/geofencing-policies-creator"
                         }
                       ]
                     },
                     {
                       text: "Network Data Privacy Policy",
-                      link: "/forms/form-layout",
+                      link: "/network-data-privacy-policy",
                       children: [
                         {
                           text: "List",
-                          link: "/vpc"
+                          link: "/network-data-privacy-policies"
 
                         },
                         {
                           text: "Create",
-                          link: "/forms/form-layout"
+                          link: "/network-data-privacy-policies-creator"
                         }
                       ]
                     },
                     {
                       text: "Traffic Inspection Policy",
-                      link: "/forms/form-layout",
+                      link: "/traffic-inspection-policy",
                       children: [
                         {
                           text: "List",
-                          link: "/vpc"
+                          link: "/traffic-inspection-policies"
 
                         },
                         {
                           text: "Create",
-                          link: "/forms/form-layout"
+                          link: "/traffic-inspection-policies-creator"
                         }
                       ]
                     }
@@ -480,7 +476,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                   children: [
                     {
                       text: "Connection SLO Policy",
-                      link: "/vpc"
+                      link: "/sla-profiles"
 
                     }
                   ]
