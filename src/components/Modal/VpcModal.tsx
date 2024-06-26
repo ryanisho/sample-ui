@@ -17,6 +17,8 @@ const ModalComponent: React.FC<ModalComponentProps> = ({ isModalOpen, onRequestC
 
     const [selectedTab, setSelectedTab] = useState(1);
     const [lastPingTime, setLastPingTime] = useState<Date | null>(null);
+    const [showCopiedPopup, setShowCopiedPopup] = useState(false);
+
 
     const pingAPI = async () => {
         await new Promise(selectedVpc => setTimeout(selectedVpc, 1000));
@@ -24,8 +26,11 @@ const ModalComponent: React.FC<ModalComponentProps> = ({ isModalOpen, onRequestC
     };
 
     useEffect(() => {
-        pingAPI();
-    }, []);
+        pingAPI(); if (showCopiedPopup) {
+            const timer = setTimeout(() => setShowCopiedPopup(false), 2000);
+            return () => clearTimeout(timer);
+        }
+    }, [showCopiedPopup]);
 
     // Function to format the date
     const formatDate = (lastPingTime: Date | null) => {
@@ -36,29 +41,48 @@ const ModalComponent: React.FC<ModalComponentProps> = ({ isModalOpen, onRequestC
         return minutesAgo.toString();
     };
 
+    const handleCopyToClipboard = (text) => {
+        navigator.clipboard.writeText(text);
+        setShowCopiedPopup(true);
+    };
+
     const renderLabelsTable = (labels) => {
-        // Check if labels is not null and has keys
         if (labels && Object.keys(labels).length > 0) {
             return (
-                <table className="w-full mt-3 text-sm">
-                    <thead style={{ backgroundColor: "rgb(245, 245, 245)" }}>
-                        <tr>
-                            <th className="p-2 font-bold">Tag</th>
-                            <th className="p-2 font-bold">Value</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {Object.entries(labels).map(([key, value], index) => (
-                            <tr key={index} className="even:bg-gray-100" onClick={() => navigator.clipboard.writeText(`${key}: ${value}`)}>
-                                <td className="border border-gray-200 p-2">{key}</td>
-                                <td className="border border-gray-200 p-2">{String(value)}</td>
+                <>
+                    <p className="text-sm">Click to copy and paste (tag, value) pair.</p>
+                    <table className="text-sm mt-3" style={{ padding: '10px', boxShadow: '0px 1px 1px rgba(0, 0, 0, 0.2)', border: '1px solid #F5F5F5', width: "100%" }}>
+                        <thead style={{ backgroundColor: "rgb(245, 245, 245)" }}>
+                            <tr>
+                                <th className="p-2">Tag</th>
+                                <th className="p-2">Value</th>
                             </tr>
-                        ))}
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            {Object.entries(labels).map(([key, value], index, array) => (
+                                <React.Fragment key={index}>
+                                    <tr className="even:bg-gray-100" onClick={() => handleCopyToClipboard(`${key}: ${value}`)}>
+                                        <td className="p-2">{key}</td>
+                                        <td className="p-2">{String(value)}</td>
+                                    </tr>
+                                    {showCopiedPopup && (
+                                        <div style={{ position: 'absolute', left: '20px', top: '20px', background: 'white', border: '1px solid black', padding: '8px' }}>
+                                            Copied to clipboard!
+                                        </div>
+                                    )}
+                                    {index !== array.length - 1 && (
+                                        <tr>
+                                            <td style={{ color: 'rgb(245, 245, 245)' }} colSpan={2}><hr /></td>
+                                        </tr>
+                                    )}
+                                </React.Fragment>
+                            ))}
+                        </tbody>
+                    </table>
+                </>
             );
         } else {
-            return <p>No labels found</p>;
+            return <p className="mt-2 text-sm">No labels avaliable.</p>;
         }
     };
 
@@ -116,6 +140,12 @@ const ModalComponent: React.FC<ModalComponentProps> = ({ isModalOpen, onRequestC
                                     </div>
                                 </div>
                                 <div className="text-gray-400 mt-5">
+                                    Region
+                                    <div className="text-black">
+                                        {selectedVpc.region}
+                                    </div>
+                                </div>
+                                <div className="text-gray-400 mt-5">
                                     Project
                                     <div className="text-black" >
                                         {selectedVpc && "project" in selectedVpc.labels ? selectedVpc.labels["project"] : "N/A"}
@@ -133,7 +163,7 @@ const ModalComponent: React.FC<ModalComponentProps> = ({ isModalOpen, onRequestC
                                         {selectedVpc.ipv6}
                                     </div>
                                 </div>
-                                <div className="text-gray-400 mt-5">
+                                <div className="text-gray-400 mt-2">
                                     Compliant Tags
                                     <div className="text-black" >
                                         {selectedVpc.labels && "project" in selectedVpc.labels && "owner" in selectedVpc.labels ? (
@@ -143,7 +173,7 @@ const ModalComponent: React.FC<ModalComponentProps> = ({ isModalOpen, onRequestC
                                         )}
                                     </div>
                                 </div>
-                                <div className="text-gray-400 mt-5">
+                                <div className="text-gray-400 mt-2">
                                     Notify Account Owner
                                     <div className="text-black" >
                                         {selectedVpc.labels && "project" in selectedVpc.labels && "owner" in selectedVpc.labels ? (
@@ -153,22 +183,16 @@ const ModalComponent: React.FC<ModalComponentProps> = ({ isModalOpen, onRequestC
                                     </div>
                                 </div>
 
-                                <div className="text-gray-400 mt-5">
+                                <div className="text-gray-400 mt-2">
                                     Hostname Type
                                     <div className="text-black" >
                                         N/A
                                     </div>
                                 </div>
 
-                                <div className="text-gray-400 mt-5">
+                                <div className="text-gray-400 mt-2">
                                     Resource type
                                     <div className="text-black" >
-                                        N/A
-                                    </div>
-                                </div>
-                                <div className="text-gray-400 mt-5">
-                                    Self Link
-                                    <div className="text-black">
                                         N/A
                                     </div>
                                 </div>
@@ -208,7 +232,6 @@ const ModalComponent: React.FC<ModalComponentProps> = ({ isModalOpen, onRequestC
                             {selectedTab === 3 &&
                                 <div>
                                     <h2 className="text-black font-semibold">Tag Information</h2>
-                                    <p className="text-sm">Click to copy and paste (tag, value) pair.</p>
                                     {renderLabelsTable(selectedVpc.labels)}
                                 </div>
                             }

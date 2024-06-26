@@ -94,9 +94,9 @@ export const useFetchSummary = () => {
   // commented out for now since we only have AWS on local machine
   const fetchSummary = () => {
     fetchProvider('AWS')
-    // fetchProvider('GCP')
-    // fetchProvider('Azure')
-    // fetchProvider('Enterprise')
+    fetchProvider('GCP')
+    fetchProvider('Azure')
+    fetchProvider('Enterprise')
   };
 
   return { fetchSummary };

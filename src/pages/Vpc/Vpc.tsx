@@ -32,17 +32,16 @@ const vpc = () => {
     }));
 
     const handleVpcSelect = (vpc) => {
-        setSelectedVpcId(vpc.id);
-        setSelectedVpc(vpc);
-        setIsModalOpen(true);
+        setSelectedVpcId(vpc.id); // row select css
+        setSelectedVpc(vpc); // modal data
+        setIsModalOpen(true); // open modal
     };
 
-
+    // search function, id/name
     const vpcSearch: typeof info = info.filter(vpc =>
         vpc.id.toLowerCase().includes(searchTerm.toLowerCase()) ||
         vpc.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
-
 
     return (
         <DefaultLayout>

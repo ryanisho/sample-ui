@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { InfraResourceProvider } from "@/common/enum";
 
 // new imports
-import { useFormContext } from "react-hook-form";
 import { useFetchVpcAccounts, useFetchRegions, useFetchVpcsResources } from "@/common/hooks";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "@/store/store";
@@ -19,7 +18,7 @@ const ProviderRegionBar = () => {
     // account id and region?
     const [selectedAccountId, setSelectedAccountId] = useState('');
     const [selectedRegion, setSelectedRegion] = useState('');
-    const [selectedButton, setLastClickedProvider] = useState<InfraResourceProvider>(InfraResourceProvider.ALL_PROVIDERS);
+    const [selectedButton, setLastClickedProvider] = useState<InfraResourceProvider>(InfraResourceProvider.AWS);
 
     // api calls 
     const { fetchAccounts } = useFetchVpcAccounts(selectedButton);
@@ -29,10 +28,10 @@ const ProviderRegionBar = () => {
     useEffect(() => {
         fetchAccounts();
         fetchVpcs();
+        fetchRegions();
     }, []);
 
     // display all accountIds and regionNames, ignore for now.
-
     const accountIds: any[] = accounts.reduce((uniqueIds: any[], account: any, index: number) => {
         const accountId = account.accountId;
         if (!uniqueIds.some((item: any) => item.value === accountId)) {
@@ -73,7 +72,6 @@ const ProviderRegionBar = () => {
         } else {
             switch (value) {
                 case InfraResourceProvider.AWS:
-                    console.log('AWS');
                     dispatch(setInfraVpcs([]));
                     setLastClickedProvider(InfraResourceProvider.AWS);
                     setTimeout(() => {
@@ -83,7 +81,6 @@ const ProviderRegionBar = () => {
                     }, 1000);
                     break;
                 case InfraResourceProvider.GCP:
-                    console.log('GCP');
                     dispatch(setInfraVpcs([]));
                     setLastClickedProvider(InfraResourceProvider.GCP);
                     setTimeout(() => {
@@ -93,7 +90,6 @@ const ProviderRegionBar = () => {
                     }, 1000);
                     break;
                 case InfraResourceProvider.AZURE:
-                    console.log('Azure');
                     dispatch(setInfraVpcs([]));
                     setLastClickedProvider(InfraResourceProvider.AZURE);
                     setTimeout(() => {
@@ -104,17 +100,14 @@ const ProviderRegionBar = () => {
                     break;
 
                 case InfraResourceProvider.CISCO_ISE:
-                    console.log('Cisco');
                     dispatch(setInfraVpcs([]));
                     setLastClickedProvider(InfraResourceProvider.CISCO_ISE);
                     break;
 
                 case InfraResourceProvider.ALL_PROVIDERS:
-                    console.log('All');
                     dispatch(setInfraVpcs([]));
                     setLastClickedProvider(InfraResourceProvider.ALL_PROVIDERS);
                     break;
-
                 default:
                     console.log(`Unhandled exception, value is ${value}`);
                     break;
@@ -145,14 +138,14 @@ const ProviderRegionBar = () => {
                 </div>
 
             </div>
-            {/* <div className="flex flex-col w-1/6">
+            <div className="flex flex-col w-1/6">
                 <select
                     value={selectedAccountId}
                     onChange={e => handleAccountIdChange(e.target.value)}
                     className="select-field"
                 >
                     <option value="">Select Account ID</option>
-                    {accounts.map(id => <option key={id} value={id}>{id}</option>)}
+                    {accountIds.map(account => <option key={account.key} value={account.value}>{account.label}</option>)}
                 </select>
 
                 <select
@@ -161,9 +154,9 @@ const ProviderRegionBar = () => {
                     className="select-field"
                 >
                     <option value="">Select Region</option>
-                    {regions.map(region => <option key={region} value={region}>{region}</option>)}
+                    {regionNames.map(region => <option key={region.key} value={region.value}>{region.label}</option>)}
                 </select>
-            </div> */}
+            </div>
         </>
     );
 };
