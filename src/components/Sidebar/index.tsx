@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import SidebarLinkGroup from './SidebarLinkGroup';
 // import Logo from '../../images/logo/logo.svg';
 import SidebarNested from './SidebarNested';
 
@@ -9,6 +8,14 @@ interface SidebarProps {
   sidebarOpen: boolean;
   setSidebarOpen: (arg: boolean) => void;
 }
+
+/**
+ * Sidebar component that displays a collapsible sidebar menu.
+ *
+ * @param sidebarOpen - A boolean indicating whether the sidebar is open or closed.
+ * @param setSidebarOpen - A function to toggle the sidebar open or closed.
+ * @returns The Sidebar component.
+ */
 
 const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
   const location = useLocation();
@@ -98,21 +105,16 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
       <div className="no-scrollbar flex flex-col overflow-y-auto duration-300 ease-linear">
         {/* <!-- Sidebar Menu --> */}
         <nav className="px-1 lg:px-1">
-          {/* <!-- Menu Group --> */}
           <div>
             <h3 className="mb-4 ml-4 text-sm font-semibold text-bodydark2">
               NETWORK
             </h3>
 
             <ul className="mb-6 flex flex-col gap-1.5">
-              {/* <!-- Menu Item Dashboard --> */}
               <SidebarNested item={{
                 text: "Dashboard",
                 link: "/infra-resource-dashboard"
               }} pathname={pathname} sidebarExpanded={sidebarExpanded} setSidebarExpanded={setSidebarExpanded} />
-              {/* <!-- Menu Item Dashboard --> */}
-
-              {/* <!-- Menu Item Calendar --> */}
               <SidebarNested
                 item={{
                   text: "Infrastructure Resources",
@@ -132,9 +134,6 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                 sidebarExpanded={sidebarExpanded}
                 setSidebarExpanded={setSidebarExpanded}
               />
-              {/* <!-- Menu Item Calendar --> */}
-
-              {/* <!-- Menu Item Profile --> */}
               <SidebarNested
                 item={{
                   text: "Network Domain",
@@ -156,15 +155,15 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                     },
                     {
                       text: "Connections",
-                      link: "/forms/form-layout",
+                      link: "/network-domain-connection-header",
                       children: [
                         {
                           text: "List",
-                          link: "/forms/form-elements/input"
+                          link: "/network-domain-connections"
                         },
                         {
                           text: "Create",
-                          link: "/forms/form-elements/input"
+                          link: "/connection-creator"
                         },
                       ]
                     }
@@ -174,7 +173,6 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                 sidebarExpanded={sidebarExpanded}
                 setSidebarExpanded={setSidebarExpanded}
               />
-              {/* <!-- Menu Item Forms --> */}
               <SidebarNested
                 item={{
                   text: "Application",
@@ -214,7 +212,6 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                 sidebarExpanded={sidebarExpanded}
                 setSidebarExpanded={setSidebarExpanded}
               />
-              {/* <!-- Menu Item Tables --> */}
               <SidebarNested
                 item={{
                   text: "User",
@@ -258,9 +255,6 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                 sidebarExpanded={sidebarExpanded}
                 setSidebarExpanded={setSidebarExpanded}
               />
-              {/* <!-- Menu Item Tables --> */}
-
-              {/* <!-- Menu Item Settings --> */}
               <SidebarNested
                 item={{
                   text: "Endpoint",
@@ -304,18 +298,15 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                 sidebarExpanded={sidebarExpanded}
                 setSidebarExpanded={setSidebarExpanded}
               />
-              {/* <!-- Menu Item Settings --> */}
             </ul>
           </div>
 
-          {/* <!-- Others Group --> */}
           <div>
             <h3 className="mb-4 ml-4 text-sm font-semibold text-bodydark2">
               PRIVACY
             </h3>
 
             <ul className="mb-6 flex flex-col gap-1.5">
-              {/* <!-- Menu Item Chart --> */}
               <SidebarNested
                 item={{
                   text: "Observability",
@@ -485,7 +476,6 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                 sidebarExpanded={sidebarExpanded}
                 setSidebarExpanded={setSidebarExpanded}
               />
-
             </ul>
           </div>
         </nav>
