@@ -77,11 +77,21 @@ const ListNetworkDomain = () => {
                 <table className="data-table">
                     <thead>
                         <tr className="table-header dark:bg-black dark:text-white">
-                            <th className="table-cell" onClick={() => handleSort('name')}>Name {sortColumn === 'name' ? (sortDirection === 'asc' ? '↑' : '↓') : ''}</th>
-                            <th className="table-cell" onClick={() => handleSort('type')}>Type {sortColumn === 'type' ? (sortDirection === 'asc' ? '↑' : '↓') : ''}</th>
-                            <th className="table-cell" onClick={() => handleSort('provider')}>Provider {sortColumn === 'provider' ? (sortDirection === 'asc' ? '↑' : '↓') : ''}</th>
-                            <th className="table-cell" onClick={() => handleSort('region')}>Region {sortColumn === 'region' ? (sortDirection === 'asc' ? '↑' : '↓') : ''}</th>
-                            <th className="table-cell" onClick={() => handleSort('id')}>ID {sortColumn === 'id' ? (sortDirection === 'asc' ? '↑' : '↓') : ''}</th>
+                            <th className="table-cell" onClick={() => handleSort('name')}>
+                                Name {sortColumn === 'name' ? (sortDirection === 'asc' ? '↑' : '↓') : '↑↓'}
+                            </th>
+                            <th className="table-cell" onClick={() => handleSort('type')}>
+                                Type {sortColumn === 'type' ? (sortDirection === 'asc' ? '↑' : '↓') : '↑↓'}
+                            </th>
+                            <th className="table-cell" onClick={() => handleSort('provider')}>
+                                Provider {sortColumn === 'provider' ? (sortDirection === 'asc' ? '↑' : '↓') : '↑↓'}
+                            </th>
+                            <th className="table-cell" onClick={() => handleSort('region')}>
+                                Region {sortColumn === 'region' ? (sortDirection === 'asc' ? '↑' : '↓') : '↑↓'}
+                            </th>
+                            <th className="table-cell" onClick={() => handleSort('id')}>
+                                ID {sortColumn === 'id' ? (sortDirection === 'asc' ? '↑' : '↓') : '↑↓'}
+                            </th>
                         </tr>
                     </thead>
                     <tbody className="table-body dark:bg-black dark:text-white">
