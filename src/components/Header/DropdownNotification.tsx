@@ -1,6 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 
+/**
+ * DropdownNotification component.
+ * 
+ * This component displays a notification dropdown menu with a trigger button.
+ * The dropdown menu opens when the trigger button is clicked and closes when the user clicks outside the dropdown or presses the escape key.
+ * The component also includes a list of notifications that can be customized.
+ */
 const DropdownNotification = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [notifying, setNotifying] = useState(true);
@@ -79,7 +86,7 @@ const DropdownNotification = () => {
 
         <ul className="flex h-auto flex-col overflow-y-auto">
           <li>
-            <Link
+            {/* <Link
               className="flex flex-col gap-2.5 border-t border-stroke px-4.5 py-3 hover:bg-gray-2 dark:border-strokedark dark:hover:bg-meta-4"
               to="#"
             >
@@ -92,7 +99,7 @@ const DropdownNotification = () => {
               </p>
 
               <p className="text-xs">12 May, 2025</p>
-            </Link>
+            </Link> */}
           </li>
           <li>
             <Link
@@ -101,15 +108,23 @@ const DropdownNotification = () => {
             >
               <p className="text-sm">
                 <span className="text-black dark:text-white">
-                  It is a long established fact
+                  Test notification
                 </span>{' '}
-                that a reader will be distracted by the readable.
+                some service that was potentially requested is now offline.
               </p>
-
-              <p className="text-xs">24 Feb, 2025</p>
+              <p className="text-xs">
+                {
+                  new Date('1970-01-01T15:40:00Z').toLocaleTimeString([], {
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    timeZone: 'UTC',
+                    hour12: true
+                  })
+                } UST
+              </p>
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link
               className="flex flex-col gap-2.5 border-t border-stroke px-4.5 py-3 hover:bg-gray-2 dark:border-strokedark dark:hover:bg-meta-4"
               to="#"
@@ -124,8 +139,8 @@ const DropdownNotification = () => {
 
               <p className="text-xs">04 Jan, 2025</p>
             </Link>
-          </li>
-          <li>
+          </li> */}
+          {/* <li>
             <Link
               className="flex flex-col gap-2.5 border-t border-stroke px-4.5 py-3 hover:bg-gray-2 dark:border-strokedark dark:hover:bg-meta-4"
               to="#"
@@ -140,7 +155,7 @@ const DropdownNotification = () => {
 
               <p className="text-xs">01 Dec, 2024</p>
             </Link>
-          </li>
+          </li> */}
         </ul>
       </div>
     </li>

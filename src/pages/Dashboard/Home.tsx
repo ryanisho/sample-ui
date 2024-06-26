@@ -69,6 +69,8 @@ const Home: React.FC = () => {
     // pie chart data
     const statusData = status[selectedProvider]
 
+    console.log('statusData', statusData);
+
     return (
         <DefaultLayout>
             <div style={{ marginBottom: "10px", justifyContent: "space-between" }}>
@@ -93,14 +95,19 @@ const Home: React.FC = () => {
                 <CardMedium title="Enterprise Resources [DC | Campus | Edge | User] " data={enterpriseResources} />
             </div>
 
-            <div className="mt-4 grid grid-cols-12 gap-4 md:mt-6 md:gap-6 2xl:mt-7.5 2xl:gap-7.5">
-                {/* statusData.pod/.vm api call has a delay ~ 200 ms. useEffect 200ms renders PieCharts later to encapsulate accurate value. */}
-                {renderCharts && (
-                    <>
-                        <PieChart series={[statusData.pod.running, statusData.pod.pending, statusData.pod.crash]} title="Pod States" />
-                        <PieChart series={[statusData.vm.running, statusData.vm.stopped, statusData.vm.terminated]} title="VM States" />
-                    </>
-                )}
+            <div className="order border-stroke bg-white py-4 px-7.5 shadow-default dark:border-strokedark dark:bg-boxdark mt-4 grid grid-cols-12 gap-4 md:mt-6 md:gap-6 2xl:mt-7.5 2xl:gap-7.5">
+                <div className="col-span-12 overflow-auto h-[500px]">
+                    {renderCharts && (
+                        <div className="space-y-4">
+                            <div className="p-4">
+                                <PieChart series={[statusData.vm.running, statusData.vm.stopped, statusData.vm.terminated]} title="VM States" />
+                            </div>
+                            <div className="p-4">
+                                <PieChart series={[statusData.pod.running, statusData.pod.pending, statusData.pod.crash]} title="Pod States" />
+                            </div>
+                        </div>
+                    )}
+                </div>
             </div>
         </DefaultLayout >
     );
