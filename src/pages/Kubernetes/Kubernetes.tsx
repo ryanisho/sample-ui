@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Breadcrumb from '../../components/Breadcrumbs/Breadcrumb';
 import DefaultLayout from '../../layout/DefaultLayout';
 import ModalComponent from '../../components/Modal/KubernetesModal';
+import ProviderRegionBar from '@/components/ProviderRegion/ProviderRegionBar';
 
 const clusters = () => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -73,47 +74,16 @@ const clusters = () => {
                         placeholder="Search by name"
                         value={searchTerm}
                         onChange={e => setSearchTerm(e.target.value)}
-                        className="input-field"
+                        className="dark:bg-black input-field"
                     />
-
-                    <div className="flex">
-                        {['AWS', 'GCP', 'Azure', 'All'].map((buttonName) => (
-                            <button
-                                className={`button-blue ${selectedButton === buttonName ? 'selected' : ''}`}
-                                key={buttonName}
-                                onClick={() => handleButtonClick(buttonName)}
-                            >
-                                {buttonName}
-                            </button>
-                        ))}
-                    </div>
                 </div>
-
-                <div className="flex flex-col w-1/6">
-                    <select
-                        value={selectedAccountId}
-                        onChange={e => setSelectedAccountId(e.target.value)}
-                        className="select-field"
-                    >
-                        <option value="">Select Account ID</option>
-                        {accountIds.map(id => <option key={id} value={id}>{id}</option>)}
-                    </select>
-
-                    <select
-                        value={selectedRegion}
-                        onChange={e => setSelectedRegion(e.target.value)}
-                        className="select-field"
-                    >
-                        <option value="">Select Region</option>
-                        {regions.map(region => <option key={region} value={region}>{region}</option>)}
-                    </select>
-                </div>
+                <ProviderRegionBar></ProviderRegionBar>
             </div>
 
             <div className="mt-3">
                 <table className="data-table">
                     <thead>
-                        <tr className="table-header">
+                        <tr className="table-header dark:bg-black dark:text-white">
                             <th className="table-cell">Account ID</th>
                             <th className="table-cell">Name</th>
                             <th className="table-cell">Fullname</th>
@@ -124,7 +94,7 @@ const clusters = () => {
                             <th className="table-cell">Labels</th>
                         </tr>
                     </thead>
-                    <tbody className="table-body">
+                    <tbody className="table-body dark:bg-black dark:text-white">
                         {filteredData.map(row => (
                             <tr
                                 key={row.id}

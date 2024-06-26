@@ -19,10 +19,10 @@ const CardLarge: React.FC<CardLargeProps> = ({ title, data }) => {
             {data.map((item, index) => (
                 <div key={index} className="mt-1 flex items-end justify-between">
                     <div>
-                        <h4 className="text-title-sm text-gray-700 dark:text-white">
+                        <h4 className="text-title-md text-gray-700 dark:text-white">
                             {item.label}
                         </h4>
-                        <span className="text-ml text-black dark:text-white">{item.value}</span>
+                        <span className="text-xl text-black dark:text-white">{item.value}</span>
                     </div>
                 </div>
             ))}
