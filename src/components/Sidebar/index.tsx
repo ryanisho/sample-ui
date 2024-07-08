@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 // import Logo from '../../images/logo/logo.svg';
+import Hamburger from "../../assets/images/hamburger.svg";
 import SidebarNested from './SidebarNested';
-
 
 interface SidebarProps {
   sidebarOpen: boolean;
@@ -17,7 +17,12 @@ interface SidebarProps {
  * @returns The Sidebar component.
  */
 
-const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
+const Sidebar = ({
+  sidebarOpen,
+  setSidebarOpen,
+  isSidebarVisible,
+  toggleSidebarVisibility
+}: SidebarProps & { isSidebarVisible: boolean; toggleSidebarVisibility: () => void; }) => {
   const location = useLocation();
   const { pathname } = location;
 
@@ -45,7 +50,6 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
     return () => document.removeEventListener('click', clickHandler);
   });
 
-  // close if the esc key is pressed
   useEffect(() => {
     const keyHandler = ({ keyCode }: KeyboardEvent) => {
       if (!sidebarOpen || keyCode !== 27) return;
@@ -64,12 +68,22 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
     }
   }, [sidebarExpanded]);
 
+  // Conditionally render the sidebar based on `isSidebarVisible`
+  if (!isSidebarVisible) {
+    return (
+      <button onClick={toggleSidebarVisibility} className="fixed top-2 left-3 m-4" style={{ zIndex: 1000, pointerEvents: 'auto' }}>
+        <img src={Hamburger} alt="Menu" style={{ width: '4%', height: '4%' }} />
+      </button>
+    );
+  }
+
   return (
     <aside
       ref={sidebar}
       className={`absolute left-0 top-0 z-9999 flex h-screen w-72.5 flex-col overflow-y-hidden bg-black duration-300 ease-linear dark:bg-boxdark lg:static lg:translate-x-0 ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
     >
+
       {/* <!-- SIDEBAR HEADER --> */}
       <div className="flex items-center justify-between gap-2 px-6 py-5.5 lg:py-6.5">
         <NavLink to="/">
@@ -480,6 +494,9 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
           </div>
         </nav>
       </div>
+      <button onClick={toggleSidebarVisibility} className="p-2 mt-auto">
+        Hide Sidebar
+      </button>
     </aside>
   );
 };
