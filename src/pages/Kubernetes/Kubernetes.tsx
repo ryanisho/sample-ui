@@ -95,10 +95,10 @@ const clusters = () => {
                         </tr>
                     </thead>
                     <tbody className="table-body dark:bg-black dark:text-white">
-                        {filteredData.map(row => (
+                        {filteredData.map((row, index) => (
                             <tr
                                 key={row.id}
-                                className={`table-row ${row.id === selectedRowId ? 'selected-row' : ''}`}
+                                className={`table-row ${row.id === selectedRowId ? 'selected-row' : ''} ${index === filteredData.length - 1 ? '' : 'border-b border-gray-100'}`}
                                 onClick={(e) => {
                                     e.preventDefault();
                                     if (row.id === selectedRowId) {
@@ -108,7 +108,6 @@ const clusters = () => {
                                         setSelectedRowId(row.id);
                                         setSelectedRow(row);
                                         setIsModalOpen(true);
-
                                     }
                                 }}
                             >

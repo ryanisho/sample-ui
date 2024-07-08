@@ -69,10 +69,10 @@ const vpc = () => {
                         </tr>
                     </thead>
                     <tbody className="table-body dark:bg-black dark:text-white">
-                        {vpcSearch.map(vpc => (
+                        {vpcSearch.map((vpc, index) => (
                             <tr
                                 key={vpc.id}
-                                className={`table-row ${selectedVpcId === vpc.id ? 'selected-row dark:bg-gray-600' : 'dark:bg-gray-700'}`}
+                                className={`table-row ${selectedVpcId === vpc.id ? 'selected-row dark:bg-gray-600' : 'dark:bg-gray-700'} ${index === vpcSearch.length - 1 ? '' : 'border-b border-gray-100'}`}
                                 onClick={() => handleVpcSelect(vpc)}
                             >
                                 <td className="table-cell">{vpc.id}</td>

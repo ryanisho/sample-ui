@@ -95,10 +95,10 @@ const ListNetworkDomain = () => {
                         </tr>
                     </thead>
                     <tbody className="table-body dark:bg-black dark:text-white">
-                        {sortedData.map(row => (
+                        {sortedData.map((row, index) => (
                             <tr
                                 key={row.id}
-                                className={`table-row ${row.id === selectedRowId ? 'selected-row' : ''}`}
+                                className={`table-row ${row.id === selectedRowId ? 'selected-row' : ''} ${index === filteredData.length - 1 ? '' : 'border-b border-gray-100'}`}
                                 onClick={() => setSelectedRowId(row.id === selectedRowId ? null : row.id)}
                             >
                                 <td className="table-cell">{row.name}</td>
