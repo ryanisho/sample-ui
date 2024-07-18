@@ -116,7 +116,6 @@ const vpc = () => {
                             <span className="w-1/4 px-4 py-2 flex text-center justify-center">{vpc.region}</span>
                         </div>
                     ))}
-
                 </div>
                 <ModalComponent
                     isModalOpen={isModalOpen}

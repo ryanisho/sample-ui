@@ -46,6 +46,7 @@ import LoginPage from './pages/Login/Login';
 import Home from './pages/Dashboard/Home';
 // import { VPCConnectionDashboard } from "@/components/views/vpc-connection-dashboard";
 import Vpc from "./pages/Vpc/Vpc";
+import SecurityGroups from './pages/SecurityGroups/SecurityGroups';
 import ClusterResources from "./pages/Kubernetes/Kubernetes"
 import ListNetworkDomain from "./pages/NetworkDomain/ListNetworkDomain";
 import CreateNetworkDomain from "./pages/NetworkDomain/CreateNetworkDomain";
@@ -59,6 +60,7 @@ import { SlaProfileCreator } from "./components/views/sla-profile-creator";
 import { AccessControlPolicies } from "./components/views/access-control-policy";
 import { UserPolicyAttachment } from "./components/views/user-policy-attachment";
 import { MonitoringPolicy } from "./components/views/monitoring-policy/MonitoringPolicy";
+// import SecurityGroups from "./pages/SecurityGroups/SecurityGroups";
 
 
 function App() {
@@ -72,6 +74,8 @@ function App() {
         {/* <Route path={RoutePaths.INFRA_RESOURCE_DASHBOARD} element={<Dashboard />} /> */}
         {/* <Route path={RoutePaths.VPC_CONNECTION_DASHBOARD} element={<VPCConnectionDashboard />} /> */}
         <Route path={RoutePaths.VPC_CONNECTION_DASHBOARD} element={<Vpc />} />
+        <Route path={RoutePaths.SECURITY_GROUPS} element={<SecurityGroups />} />
+
 
         <Route path={RoutePaths.NETWORK_DOMAINS} element={<NetworkDomains />} />
         {/* <Route path={RoutePaths.DEFINE_NETWORK_DOMAIN} element={<DefineNetworkDomain />} /> */}

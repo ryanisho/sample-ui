@@ -60,7 +60,7 @@ export const useFetchVpcResourceSecurityGroups = (provider: string, region: stri
               labels[key] = value;
             });
             //rulesMap.forEach((value: string, key: string) => {
-              //rulesMap[key] = value;
+            //rulesMap[key] = value;
             //});
 
             return {
@@ -76,7 +76,7 @@ export const useFetchVpcResourceSecurityGroups = (provider: string, region: stri
           });
 
           setVpcResourceSecurityGroups([...infraSecurityGroups]);
-          console.log("Security group info ", infraSecurityGroups )
+          console.log("Security group info ", infraSecurityGroups)
         }
       });
     } catch (e) {

@@ -83,7 +83,7 @@ export const useFetchVpcsResources = (provider: InfraResourceProvider, accountId
               accountId,
             };
           });
-          console.log("infra VPCs ", infraVpcs)
+          // console.log("infra VPCs ", infraVpcs)
 
           setVpcs([...infraVpcs]);
         }

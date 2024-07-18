@@ -31,7 +31,7 @@ const ProviderRegionBar = () => {
         fetchRegions();
     }, []);
 
-    // display all accountIds and regionNames, ignore for now.
+    // display all accountIds and regionName
     const accountIds: any[] = accounts.reduce((uniqueIds: any[], account: any, index: number) => {
         const accountId = account.accountId;
         if (!uniqueIds.some((item: any) => item.value === accountId)) {

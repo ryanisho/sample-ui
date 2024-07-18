@@ -23,6 +23,8 @@ export enum RoutePaths {
 
   INFRA_RESOURCE_DASHBOARD = "/infra-resource-dashboard",
   VPC_CONNECTION_DASHBOARD = "/vpc-connection-dashboard",
+  VM_CONNECTION_DASHBOARD = "/vm-connection-dashboard",
+  SECURITY_GROUPS = "/security-groups-dashboard",
   LIST_INFRA_RESOURCES = "/list-infra-resources",
   LIST_CLUSTER_RESOURCES = "/list-cluster-resources",
 
