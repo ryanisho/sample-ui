@@ -494,9 +494,6 @@ const Sidebar = ({
           </div>
         </nav>
       </div>
-      <button onClick={toggleSidebarVisibility} className="p-2 mt-auto">
-        Hide Sidebar
-      </button>
     </aside>
   );
 };
