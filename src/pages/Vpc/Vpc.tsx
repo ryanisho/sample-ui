@@ -66,7 +66,7 @@ const vpc = () => {
                 <ProviderButtons></ProviderButtons>
             </div>
             <div className="mt-3">
-                <table className="data-table">
+                {/* <table className="data-table">
                     <thead className="dark:bg-gray-700">
                         <tr className="table-header dark:bg-black dark:text-white">
                             <th className="table-cell dark:text-gray-300">ID</th>
@@ -75,6 +75,7 @@ const vpc = () => {
                             <th className="table-cell dark:text-gray-300">Region</th>
                         </tr>
                     </thead>
+
                     <tbody className="table-body dark:bg-black dark:text-white">
                         {vpcSearch.map((vpc, index) => (
                             <tr
@@ -92,7 +93,31 @@ const vpc = () => {
                             </tr>
                         ))}
                     </tbody>
-                </table>
+                </table> */}
+                <div className="table-header flex justify-between text-left text-sm font-medium text-gray-700 rounded-lg">
+                    <span className="w-1/4 px-4 py-2 text-center">ID</span>
+                    <span className="w-1/4 px-2 py-2 text-center">Account ID</span>
+                    <span className="w-1/4 px-1 py-2 text-center">Name</span>
+                    <span className="w-1/4 px-1 py-2 text-center">Region</span>
+                </div>
+                <div>
+                    {vpcSearch.map((vpc, idx) => (
+                        <div
+                            key={idx}
+                            className={`dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 bg-white rounded-lg my-2 p-4 shadow ${selectedVpcId === vpc.id ? 'bg-blue-100 dark:bg-gray-600' : 'dark:bg-gray-700'}`}
+                            onClick={() => {
+                                handleRowClick(vpc);
+                                handleVpcSelect(vpc);
+                            }}
+                        >
+                            <span className="w-1/4 px-4 py-2 flex text-center justify-center">{vpc.id}</span>
+                            <span className="w-1/4 px-4 py-2 flex text-center justify-center">{vpc.accountId}</span>
+                            <span className="w-1/4 px-4 py-2 flex text-center justify-center">{vpc.name}</span>
+                            <span className="w-1/4 px-4 py-2 flex text-center justify-center">{vpc.region}</span>
+                        </div>
+                    ))}
+
+                </div>
                 <ModalComponent
                     isModalOpen={isModalOpen}
                     onRequestClose={() => { setIsModalOpen(false); setSelectedVpcId(null) }}

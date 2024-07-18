@@ -31,7 +31,7 @@
 }
 
 .table-header {
-    background-color: #E0E0E0;
+    background-color: #373737ee;
     font-size: 0.75rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -44,7 +44,6 @@
     padding: 0.25rem 1rem;
     font-size: 0.875rem;
     text-align: center;
-    ;
 }
 
 .table-body {
