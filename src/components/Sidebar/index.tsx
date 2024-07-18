@@ -135,7 +135,16 @@ const Sidebar = ({
                   children: [
                     {
                       text: "Cloud Resources",
-                      link: "/vpc-connection-dashboard"
+                      children: [
+                        {
+                          text: "Discover VPCs",
+                          link: "/discover-vpcs"
+                        },
+                        {
+                          text: "Discover Other Resources",
+                          link: "/other-resources"
+                        },
+                      ]
 
                     },
                     {
