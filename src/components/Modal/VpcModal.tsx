@@ -10,7 +10,7 @@ import vpc from '@/pages/Vpc/Vpc';
 interface ModalComponentProps {
     isModalOpen: boolean;
     onRequestClose: () => void;
-    selectedVpc: any; // Replace 'any' with the type of your selected row
+    selectedVpc: any;
 }
 
 const ModalComponent: React.FC<ModalComponentProps> = ({ isModalOpen, onRequestClose, selectedVpc }) => {
@@ -90,14 +90,20 @@ const ModalComponent: React.FC<ModalComponentProps> = ({ isModalOpen, onRequestC
         // Modal component 
         <Modal
             isOpen={isModalOpen}
+            shouldCloseOnOverlayClick={false}
+            shouldFocusAfterRender={false}
+            shouldReturnFocusAfterClose={false}
             onRequestClose={onRequestClose}
             style={{
-                overlay: { backgroundColor: 'rgba(0, 0, 0, 0.5)' },
+                overlay: {
+                    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                    pointerEvents: 'none'
+                },
                 content: {
                     position: 'absolute',
                     top: '7%',
-                    left: '50%',
-                    right: '0',
+                    left: '65%',
+                    right: '0%',
                     bottom: '0%',
                     overflow: 'auto',
                     WebkitOverflowScrolling: 'touch',
@@ -105,6 +111,7 @@ const ModalComponent: React.FC<ModalComponentProps> = ({ isModalOpen, onRequestC
                     outline: 'none',
                     padding: '20px',
                     zIndex: 1000,
+                    pointerEvents: 'auto',
                 }
             }}
         >

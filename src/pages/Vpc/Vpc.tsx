@@ -43,6 +43,13 @@ const vpc = () => {
         vpc.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
+    const handleRowClick = (selectedVpc) => {
+        setSelectedVpc(selectedVpc);
+        if (!isModalOpen) {
+            setIsModalOpen(true);
+        }
+    }
+
     return (
         <DefaultLayout>
             <Breadcrumb pageName="Multi-cloud Infrastructure Resources" />
@@ -73,7 +80,10 @@ const vpc = () => {
                             <tr
                                 key={vpc.id}
                                 className={`table-row ${selectedVpcId === vpc.id ? 'selected-row dark:bg-gray-600' : 'dark:bg-gray-700'} ${index === vpcSearch.length - 1 ? '' : 'border-b border-gray-100'}`}
-                                onClick={() => handleVpcSelect(vpc)}
+                                onClick={() => {
+                                    handleRowClick(vpc);
+                                    handleVpcSelect(vpc);
+                                }}
                             >
                                 <td className="table-cell">{vpc.id}</td>
                                 <td className="table-cell">{vpc.accountId}</td>
