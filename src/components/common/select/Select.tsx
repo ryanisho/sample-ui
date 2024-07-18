@@ -42,7 +42,6 @@ export const Select: FC<SelectProps> = ({
 }) => {
   return (
     <AntDSelect
-      style={{ ...(expand && { width: "100%" }) }}
       className={styles.antSelect}
       options={options}
       placeholder={placeholder}

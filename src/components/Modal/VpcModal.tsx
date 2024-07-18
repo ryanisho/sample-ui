@@ -96,7 +96,7 @@ const ModalComponent: React.FC<ModalComponentProps> = ({ isModalOpen, onRequestC
             onRequestClose={onRequestClose}
             style={{
                 overlay: {
-                    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                    backgroundColor: 'transparent',
                     pointerEvents: 'none'
                 },
                 content: {

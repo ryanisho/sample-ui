@@ -1,8 +1,8 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import React, { useEffect, useRef, useState } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 // import Logo from '../../images/logo/logo.svg';
 import Hamburger from "../../assets/images/hamburger.svg";
-import SidebarNested from './SidebarNested';
+import SidebarNested from "./SidebarNested";
 
 interface SidebarProps {
   sidebarOpen: boolean;
@@ -11,7 +11,6 @@ interface SidebarProps {
 
 /**
  * Sidebar component that displays a collapsible sidebar menu.
- *
  * @param sidebarOpen - A boolean indicating whether the sidebar is open or closed.
  * @param setSidebarOpen - A function to toggle the sidebar open or closed.
  * @returns The Sidebar component.
@@ -21,17 +20,20 @@ const Sidebar = ({
   sidebarOpen,
   setSidebarOpen,
   isSidebarVisible,
-  toggleSidebarVisibility
-}: SidebarProps & { isSidebarVisible: boolean; toggleSidebarVisibility: () => void; }) => {
+  toggleSidebarVisibility,
+}: SidebarProps & {
+  isSidebarVisible: boolean;
+  toggleSidebarVisibility: () => void;
+}) => {
   const location = useLocation();
   const { pathname } = location;
 
   const trigger = useRef<any>(null);
   const sidebar = useRef<any>(null);
 
-  const storedSidebarExpanded = localStorage.getItem('sidebar-expanded');
+  const storedSidebarExpanded = localStorage.getItem("sidebar-expanded");
   const [sidebarExpanded, setSidebarExpanded] = useState(
-    storedSidebarExpanded === null ? false : storedSidebarExpanded === 'true'
+    storedSidebarExpanded === null ? false : storedSidebarExpanded === "true"
   );
 
   // close on click outside
@@ -46,8 +48,8 @@ const Sidebar = ({
         return;
       setSidebarOpen(false);
     };
-    document.addEventListener('click', clickHandler);
-    return () => document.removeEventListener('click', clickHandler);
+    document.addEventListener("click", clickHandler);
+    return () => document.removeEventListener("click", clickHandler);
   });
 
   useEffect(() => {
@@ -55,24 +57,28 @@ const Sidebar = ({
       if (!sidebarOpen || keyCode !== 27) return;
       setSidebarOpen(false);
     };
-    document.addEventListener('keydown', keyHandler);
-    return () => document.removeEventListener('keydown', keyHandler);
+    document.addEventListener("keydown", keyHandler);
+    return () => document.removeEventListener("keydown", keyHandler);
   });
 
   useEffect(() => {
-    localStorage.setItem('sidebar-expanded', sidebarExpanded.toString());
+    localStorage.setItem("sidebar-expanded", sidebarExpanded.toString());
     if (sidebarExpanded) {
-      document.querySelector('body')?.classList.add('sidebar-expanded');
+      document.querySelector("body")?.classList.add("sidebar-expanded");
     } else {
-      document.querySelector('body')?.classList.remove('sidebar-expanded');
+      document.querySelector("body")?.classList.remove("sidebar-expanded");
     }
   }, [sidebarExpanded]);
 
   // Conditionally render the sidebar based on `isSidebarVisible`
   if (!isSidebarVisible) {
     return (
-      <button onClick={toggleSidebarVisibility} className="fixed top-2 left-3 m-4" style={{ zIndex: 1000, pointerEvents: 'auto' }}>
-        <img src={Hamburger} alt="Menu" style={{ width: '4%', height: '4%' }} />
+      <button
+        onClick={toggleSidebarVisibility}
+        className="fixed top-2 left-3 m-4"
+        style={{ zIndex: 1000, pointerEvents: "auto" }}
+      >
+        <img src={Hamburger} alt="Menu" style={{ width: "4%", height: "4%" }} />
       </button>
     );
   }
@@ -80,16 +86,25 @@ const Sidebar = ({
   return (
     <aside
       ref={sidebar}
-      className={`absolute left-0 top-0 z-9999 flex h-screen w-72.5 flex-col overflow-y-hidden bg-black duration-300 ease-linear dark:bg-boxdark lg:static lg:translate-x-0 ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'
+      className={`absolute left-0 top-0 z-9999 flex h-screen w-72.5 flex-col overflow-y-hidden bg-black duration-300 ease-linear dark:bg-boxdark lg:static lg:translate-x-0 ${sidebarOpen ? "translate-x-0" : "-translate-x-full"
         }`}
     >
-
       {/* <!-- SIDEBAR HEADER --> */}
       <div className="flex items-center justify-between gap-2 px-6 py-5.5 lg:py-6.5">
         <NavLink to="/">
           {/* <img src={Logo} alt="Logo" /> */}
-          <h1 style={{ fontSize: '3em', color: 'white', fontWeight: 'bold', paddingTop: '20px', paddingBottom: '5px' }}>AWI</h1>
-          <p style={{ color: '#049FD9' }}>by Cisco</p>
+          <h1
+            style={{
+              fontSize: "3em",
+              color: "white",
+              fontWeight: "bold",
+              paddingTop: "20px",
+              paddingBottom: "5px",
+            }}
+          >
+            AWI
+          </h1>
+          <p style={{ color: "#049FD9" }}>by Cisco</p>
         </NavLink>
 
         <button
@@ -125,10 +140,15 @@ const Sidebar = ({
             </h3>
 
             <ul className="mb-6 flex flex-col gap-1.5">
-              <SidebarNested item={{
-                text: "Dashboard",
-                link: "/infra-resource-dashboard"
-              }} pathname={pathname} sidebarExpanded={sidebarExpanded} setSidebarExpanded={setSidebarExpanded} />
+              <SidebarNested
+                item={{
+                  text: "Dashboard",
+                  link: "/infra-resource-dashboard",
+                }}
+                pathname={pathname}
+                sidebarExpanded={sidebarExpanded}
+                setSidebarExpanded={setSidebarExpanded}
+              />
               <SidebarNested
                 item={{
                   text: "Infrastructure Resources",
@@ -138,20 +158,19 @@ const Sidebar = ({
                       children: [
                         {
                           text: "Discover VPCs",
-                          link: "/discover-vpcs"
+                          link: "/vpc-connection-dashboard",
                         },
                         {
                           text: "Discover Other Resources",
-                          link: "/other-resources"
+                          link: "/other-resources",
                         },
-                      ]
-
+                      ],
                     },
                     {
                       text: "K8S Resources",
-                      link: "/list-cluster-resources"
-                    }
-                  ]
+                      link: "/list-cluster-resources",
+                    },
+                  ],
                 }}
                 pathname={pathname}
                 sidebarExpanded={sidebarExpanded}
@@ -168,13 +187,13 @@ const Sidebar = ({
                       children: [
                         {
                           text: "List",
-                          link: "/network-domain-connections"
+                          link: "/network-domain-connections",
                         },
                         {
                           text: "Create",
-                          link: "/define-network-domain"
+                          link: "/define-network-domain",
                         },
-                      ]
+                      ],
                     },
                     {
                       text: "Connections",
@@ -182,15 +201,15 @@ const Sidebar = ({
                       children: [
                         {
                           text: "List",
-                          link: "/network-domain-connections"
+                          link: "/network-domain-connections",
                         },
                         {
                           text: "Create",
-                          link: "/connection-creator"
+                          link: "/connection-creator",
                         },
-                      ]
-                    }
-                  ]
+                      ],
+                    },
+                  ],
                 }}
                 pathname={pathname}
                 sidebarExpanded={sidebarExpanded}
@@ -206,13 +225,13 @@ const Sidebar = ({
                       children: [
                         {
                           text: "List",
-                          link: "/application-connections"
+                          link: "/application-connections",
                         },
                         {
                           text: "Create",
-                          link: "/application-connection-attachment"
+                          link: "/application-connection-attachment",
                         },
-                      ]
+                      ],
                     },
                     {
                       text: "Connection Policies",
@@ -220,15 +239,15 @@ const Sidebar = ({
                       children: [
                         {
                           text: "List",
-                          link: "/application-connection-policies"
+                          link: "/application-connection-policies",
                         },
                         {
                           text: "Create",
-                          link: "/application-connection-creator"
+                          link: "/application-connection-creator",
                         },
-                      ]
-                    }
-                  ]
+                      ],
+                    },
+                  ],
                 }}
                 pathname={pathname}
                 sidebarExpanded={sidebarExpanded}
@@ -249,13 +268,13 @@ const Sidebar = ({
                       children: [
                         {
                           text: "List",
-                          link: "/user-connections-policies"
+                          link: "/user-connections-policies",
                         },
                         {
                           text: "Create",
-                          link: "/user-connection-attachment"
+                          link: "/user-connection-attachment",
                         },
-                      ]
+                      ],
                     },
                     {
                       text: "Connection Policies",
@@ -263,15 +282,15 @@ const Sidebar = ({
                       children: [
                         {
                           text: "List",
-                          link: "/user-connections-policies"
+                          link: "/user-connections-policies",
                         },
                         {
                           text: "Create",
-                          link: "/user-connections-policies-creator"
+                          link: "/user-connections-policies-creator",
                         },
-                      ]
-                    }
-                  ]
+                      ],
+                    },
+                  ],
                 }}
                 pathname={pathname}
                 sidebarExpanded={sidebarExpanded}
@@ -292,13 +311,13 @@ const Sidebar = ({
                       children: [
                         {
                           text: "List",
-                          link: "/endpoint-connections-policies"
+                          link: "/endpoint-connections-policies",
                         },
                         {
                           text: "Create",
-                          link: "/application-connection-attachment"
+                          link: "/application-connection-attachment",
                         },
-                      ]
+                      ],
                     },
                     {
                       text: "Connection Policies",
@@ -306,15 +325,15 @@ const Sidebar = ({
                       children: [
                         {
                           text: "List",
-                          link: "/endpoint-connections-policies"
+                          link: "/endpoint-connections-policies",
                         },
                         {
                           text: "Create",
-                          link: "/endpoint-connections-policies-creator"
+                          link: "/endpoint-connections-policies-creator",
                         },
-                      ]
-                    }
-                  ]
+                      ],
+                    },
+                  ],
                 }}
                 pathname={pathname}
                 sidebarExpanded={sidebarExpanded}
@@ -340,13 +359,13 @@ const Sidebar = ({
                       children: [
                         {
                           text: "List",
-                          link: "/monitoring-policies"
+                          link: "/monitoring-policies",
                         },
                         {
                           text: "Create",
-                          link: "/monitoring-policies-creator"
+                          link: "/monitoring-policies-creator",
                         },
-                      ]
+                      ],
                     },
                     {
                       text: "Connections Logging Policy",
@@ -354,13 +373,13 @@ const Sidebar = ({
                       children: [
                         {
                           text: "List",
-                          link: "/logging-policies"
+                          link: "/logging-policies",
                         },
                         {
                           text: "Create",
-                          link: "/logging-policies-creator"
+                          link: "/logging-policies-creator",
                         },
-                      ]
+                      ],
                     },
                     {
                       text: "Metric Connection Policy",
@@ -368,13 +387,13 @@ const Sidebar = ({
                       children: [
                         {
                           text: "List",
-                          link: "/network-domain-connections"
+                          link: "/network-domain-connections",
                         },
                         {
                           text: "Create",
-                          link: "/connection-creator"
+                          link: "/connection-creator",
                         },
-                      ]
+                      ],
                     },
                     {
                       text: "Alerting Policy",
@@ -382,13 +401,13 @@ const Sidebar = ({
                       children: [
                         {
                           text: "List",
-                          link: "/sla-profiles"
+                          link: "/sla-profiles",
                         },
                         {
                           text: "Create",
-                          link: "/sla-profile-creator"
+                          link: "/sla-profile-creator",
                         },
-                      ]
+                      ],
                     },
                     {
                       text: "Packet Trading Policy",
@@ -396,15 +415,15 @@ const Sidebar = ({
                       children: [
                         {
                           text: "List",
-                          link: "/sla-profiles"
+                          link: "/sla-profiles",
                         },
                         {
                           text: "Create",
-                          link: "/sla-profile-creator"
+                          link: "/sla-profile-creator",
                         },
-                      ]
-                    }
-                  ]
+                      ],
+                    },
+                  ],
                 }}
                 pathname={pathname}
                 sidebarExpanded={sidebarExpanded}
@@ -421,15 +440,13 @@ const Sidebar = ({
                       children: [
                         {
                           text: "List",
-                          link: "/access-control-policies"
-
+                          link: "/access-control-policies",
                         },
                         {
                           text: "Create",
-                          link: "/access-control-policies-creator"
-                        }
-                      ]
-
+                          link: "/access-control-policies-creator",
+                        },
+                      ],
                     },
                     {
                       text: "Geofencing Policy",
@@ -437,14 +454,13 @@ const Sidebar = ({
                       children: [
                         {
                           text: "List",
-                          link: "/geofencing-policies"
-
+                          link: "/geofencing-policies",
                         },
                         {
                           text: "Create",
-                          link: "/geofencing-policies-creator"
-                        }
-                      ]
+                          link: "/geofencing-policies-creator",
+                        },
+                      ],
                     },
                     {
                       text: "Network Data Privacy Policy",
@@ -452,14 +468,13 @@ const Sidebar = ({
                       children: [
                         {
                           text: "List",
-                          link: "/network-data-privacy-policies"
-
+                          link: "/network-data-privacy-policies",
                         },
                         {
                           text: "Create",
-                          link: "/network-data-privacy-policies-creator"
-                        }
-                      ]
+                          link: "/network-data-privacy-policies-creator",
+                        },
+                      ],
                     },
                     {
                       text: "Traffic Inspection Policy",
@@ -467,16 +482,15 @@ const Sidebar = ({
                       children: [
                         {
                           text: "List",
-                          link: "/traffic-inspection-policies"
-
+                          link: "/traffic-inspection-policies",
                         },
                         {
                           text: "Create",
-                          link: "/traffic-inspection-policies-creator"
-                        }
-                      ]
-                    }
-                  ]
+                          link: "/traffic-inspection-policies-creator",
+                        },
+                      ],
+                    },
+                  ],
                 }}
                 pathname={pathname}
                 sidebarExpanded={sidebarExpanded}
@@ -489,10 +503,9 @@ const Sidebar = ({
                   children: [
                     {
                       text: "Connection SLO Policy",
-                      link: "/sla-profiles"
-
-                    }
-                  ]
+                      link: "/sla-profiles",
+                    },
+                  ],
                 }}
                 pathname={pathname}
                 sidebarExpanded={sidebarExpanded}

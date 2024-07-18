@@ -46,6 +46,8 @@ import {
   toApplicationConnection
 } from "@/store/application-connection-deployer-slice/applicationConnectionDeployerSlice";
 import { BACKEND_API_PREFIX } from "@/common/constants";
+import DefaultLayout from '../../../layout/DefaultLayout';
+
 
 export const ApplicationPolicyAttachment: FC = () => {
   const {
@@ -71,9 +73,9 @@ export const ApplicationPolicyAttachment: FC = () => {
   const submit = () => {
     Promise.all(appConnections.map(appConnection => appConnectionClient.connectApps(appConnection)))
       .then(() => {
-          fetchAppConnections()
-          navigate(RoutePaths.APPLICATION_CONNECTIONS)
-        }
+        fetchAppConnections()
+        navigate(RoutePaths.APPLICATION_CONNECTIONS)
+      }
       ).catch(error => console.log(error, "Static response"))
   }
 
@@ -86,66 +88,68 @@ export const ApplicationPolicyAttachment: FC = () => {
   const steps: { title: string; description?: string, content?: JSX.Element; status?: StepsProps["status"] }[] = [
     {
       title: 'Workload Selection Policy',
-      content: <ApplicationPolicy/>,
+      content: <ApplicationPolicy />,
       description: "Required",
       status: policy === undefined ? "error" : undefined
     },
     {
       title: 'Attach a Security Policy',
-      content: <SecurityPolicy/>,
+      content: <SecurityPolicy />,
       description: "Optional",
     },
     {
       title: 'Attach an Observability Policy',
-      content: <ObservabilityPolicy/>,
+      content: <ObservabilityPolicy />,
       description: "Optional",
     },
     {
       title: 'Attach a Transport',
-      content: <NetworkConfiguration visible={current === 4}/>,
+      content: <NetworkConfiguration visible={current === 4} />,
       description: "Required",
       status: !networkDomainConnectionNames.length ? "error" : undefined
     },
     {
       title: 'Review and Submit',
-      content: <ReviewApplicationConnectionDeployment/>,
+      content: <ReviewApplicationConnectionDeployment />,
       description: "Required",
     },
   ]
   return (
-    <Wrapper title={"Securely Connect Your Application(s) Resources"}>
-      <div style={{ marginBottom: "10px" }}>
-        <Collapse
-          defaultActiveKey={1}
-          items={[{
-            key: 1,
-            label: 'Overview',
-            children: <ApplicationConnectionBackground/>
-          }]}
-        />
-      </div>
-      <Steps current={current} status={steps[current].status}
-             items={steps.map((item) => ({ key: item.title, title: item.title, description: item.description }))}
-             direction={"horizontal"}/>
-      <div>{steps[current].content}</div>
-      <div style={{ marginTop: 24 }}>
-        {current < steps.length - 1 && (
-          <Button type="primary" onClick={() => next()} disabled={steps[current]?.status === "error"}>
-            Next
-          </Button>
-        )}
-        {current === steps.length - 1 && (
-          <Button type="primary" onClick={submit}
-                  disabled={steps[current]?.status === "error"}>
-            Submit
-          </Button>
-        )}
-        {current > 0 && (
-          <Button style={{ margin: '0 8px' }} onClick={() => prev()}>
-            Previous
-          </Button>
-        )}
-      </div>
-    </Wrapper>
+    <DefaultLayout>
+      <Wrapper title={"Securely Connect Your Application(s) Resources"}>
+        <div style={{ marginBottom: "10px" }}>
+          <Collapse
+            defaultActiveKey={1}
+            items={[{
+              key: 1,
+              label: 'Overview',
+              children: <ApplicationConnectionBackground />
+            }]}
+          />
+        </div>
+        <Steps current={current} status={steps[current].status}
+          items={steps.map((item) => ({ key: item.title, title: item.title, description: item.description }))}
+          direction={"horizontal"} />
+        <div>{steps[current].content}</div>
+        <div style={{ marginTop: 24 }}>
+          {current < steps.length - 1 && (
+            <Button type="primary" onClick={() => next()} disabled={steps[current]?.status === "error"}>
+              Next
+            </Button>
+          )}
+          {current === steps.length - 1 && (
+            <Button type="primary" onClick={submit}
+              disabled={steps[current]?.status === "error"}>
+              Submit
+            </Button>
+          )}
+          {current > 0 && (
+            <Button style={{ margin: '0 8px' }} onClick={() => prev()}>
+              Previous
+            </Button>
+          )}
+        </div>
+      </Wrapper>
+    </DefaultLayout>
   );
 };

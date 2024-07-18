@@ -51,18 +51,14 @@ interface TertiaryButtonProps {
 
 type ButtonProps = PrimaryButtonProps | SecondaryButtonProps | TertiaryButtonProps;
 
-export const Button: FC<ButtonProps> = ({ customClass, onClick, text, iconSrc, variant }) => {
+export const Button: FC<ButtonProps> = ({ onClick, text, iconSrc }) => {
   return (
     <AntDButton
-      className={cx(styles.btn, customClass, {
-        [styles.btn__primary]: variant === ButtonVariants.PRIMARY,
-        [styles.btn__secondary]: variant === ButtonVariants.SECONDARY,
-        [styles.btn__tertiary]: variant === ButtonVariants.TERTIARY,
-      })}
       onClick={onClick}
+      style={{ backgroundColor: 'transparent', border: 'none', boxShadow: 'none' }}
     >
       <span>{text}</span>
       {iconSrc && <img src={iconSrc} alt={text} />}
-    </AntDButton>
+    </AntDButton >
   );
 };

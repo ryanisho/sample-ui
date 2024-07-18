@@ -144,7 +144,9 @@ export const NetworkDomainsConnectionCreator: FC = () => {
           label="Allow All Traffic:"
           render={
             <>
-              <Tooltip title={Tooltips.ALLOW_ALL} />
+              <div className="mb-1">
+                <Tooltip title={Tooltips.ALLOW_ALL} />
+              </div>
               <Checkbox name="destination.defaultAccessControl" />
             </>
           }

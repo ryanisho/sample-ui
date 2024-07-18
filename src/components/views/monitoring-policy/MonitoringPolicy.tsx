@@ -23,6 +23,8 @@ import { useEffect } from "react";
 
 import { DataGrid, TextRowCell } from "@/components/data-grid";
 import { Wrapper } from "@/components/views/wrapper";
+import DefaultLayout from '../../../layout/DefaultLayout';
+
 
 import { serverStatus } from "@/common/constants";
 import { AppDispatch, RootState } from "@/store/store";
@@ -225,16 +227,18 @@ export const MonitoringPolicy = () => {
 
   if ((data) || (grpcData)) {
     return (
-      <Wrapper title="Connection Monitoring Policies">
-        <DataGrid
-          rowData={serverStatus === "live" ? data : data}
-          columnDefs={serverStatus === "live" ? stubServerColumnsDef : stubServerColumnsDef}
-          heightAndWidth={{
-            height: "1200px",
-            width: "1600px",
-          }}
-        />
-      </Wrapper>
+      <DefaultLayout>
+        <Wrapper title="Connection Monitoring Policies">
+          <DataGrid
+            rowData={serverStatus === "live" ? data : data}
+            columnDefs={serverStatus === "live" ? stubServerColumnsDef : stubServerColumnsDef}
+            heightAndWidth={{
+              height: "1200px",
+              width: "1600px",
+            }}
+          />
+        </Wrapper>
+      </DefaultLayout>
     );
   }
 

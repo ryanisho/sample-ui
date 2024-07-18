@@ -28,18 +28,21 @@ import {
   YamlLivePreview
 } from "@/components/views/application-policy-creator/_components";
 import { DefaultInject } from "@/store/application-connection-slice/applicationConnectionSlice";
+import DefaultLayout from "@/layout/DefaultLayout";
 
 export const ApplicationPolicyCreator: FC = () => {
   return (
-    <SidebarWrapper title={"Application Connectivity Policy Creation"} rightSidebar={<YamlLivePreview/>}>
-      <section>
-        <MainSettings/>
-        <div className={styles.columnsContainer}>
-          <FromTraffic/>
-          <ToTraffic/>   
-        </div>
-      </section>
-    </SidebarWrapper>
+    <DefaultLayout>
+      <SidebarWrapper title={"Application Connectivity Policy Creation"} rightSidebar={<YamlLivePreview />}>
+        <section>
+          <MainSettings />
+          <div className={styles.columnsContainer}>
+            <FromTraffic />
+            <ToTraffic />
+          </div>
+        </section>
+      </SidebarWrapper>
+    </DefaultLayout>
   );
 };
 

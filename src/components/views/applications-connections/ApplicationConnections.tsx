@@ -145,7 +145,7 @@ export const ApplicationConnections = () => {
             to: params.value?.destinationMatched
           })
         };
-        return <Button onClick={handleDownload}> View Matched Resources</Button>
+        return <Button onClick={handleDownload}>View Matched Resources</Button>
       },
       width: 300,
     },
@@ -169,8 +169,11 @@ export const ApplicationConnections = () => {
 
   return (
     <DefaultLayout>
-      <Wrapper title="Application Connections &nbsp;[Access Control] ">
-        <Toolbar selectedAppConnections={selectedRows} />
+      <Wrapper title="Application Connections &nbsp;[Access Control]">
+        {/* align right */}
+        <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+          <Toolbar selectedAppConnections={selectedRows} />
+        </div>
         <div className="ag-theme-material" style={{
           height: "500px",
           width: "100%",
