@@ -203,7 +203,6 @@ const Sidebar = ({
                   children: [
                     {
                       text: "Connections",
-                      link: "/application-connections",
                       children: [
                         {
                           text: "List",
@@ -281,7 +280,7 @@ const Sidebar = ({
               <SidebarNested
                 item={{
                   text: "Endpoint",
-                  link: "/application",
+                  link: "/endpoint",
                   children: [
                     {
                       text: "List",
@@ -333,7 +332,7 @@ const Sidebar = ({
               <SidebarNested
                 item={{
                   text: "Observability",
-                  link: "/application",
+                  link: "/observability",
                   children: [
                     {
                       text: "Connection Monitoring Policy",

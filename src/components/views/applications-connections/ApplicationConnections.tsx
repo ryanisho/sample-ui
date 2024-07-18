@@ -47,6 +47,9 @@ import gridStyles from "@/components/data-grid/data-grid.module.scss";
 import download from "@/assets/icons/download.svg";
 import { saveAs } from "file-saver";
 
+import DefaultLayout from '../../../layout/DefaultLayout';
+
+
 export const ApplicationConnections = () => {
   const { data } = useSelector((state: RootState) => state.applicationConnectionsList);
   const [connectionResources, setConnectionResources] = useState<AppConnectionData>({ config: undefined })
@@ -89,7 +92,7 @@ export const ApplicationConnections = () => {
       headerName: "ID",
       valueGetter: (params) => params.data?.id,
       cellRenderer: (params: any) => {
-        return <TextRowCell value={params.value}/>;
+        return <TextRowCell value={params.value} />;
       },
       width: 200,
     },
@@ -97,7 +100,7 @@ export const ApplicationConnections = () => {
       headerName: "App Connection Name",
       valueGetter: (params) => params.data?.appConnectionConfig?.metadata?.name,
       cellRenderer: (params: any) => {
-        return <TextRowCell value={params.value}/>;
+        return <TextRowCell value={params.value} />;
       },
       width: 300,
     },
@@ -107,7 +110,7 @@ export const ApplicationConnections = () => {
       cellRenderer: (params: any) => {
         return (
           <Link to={RoutePaths.NETWORK_DOMAIN_CONNECTIONS}>
-            <TextRowCell value={params.value}/>
+            <TextRowCell value={params.value} />
           </Link>
         );
       },
@@ -120,13 +123,13 @@ export const ApplicationConnections = () => {
         const status: Status = params.value
         switch (status) {
           case Status.FAILED:
-            return <StatusRowCell value={"inactive"}/>;
+            return <StatusRowCell value={"inactive"} />;
           case Status.IN_PROGRESS:
-            return <StatusRowCell value={"inprogress"}/>;
+            return <StatusRowCell value={"inprogress"} />;
           case Status.SUCCESS:
-            return <StatusRowCell value={"active"}/>;
+            return <StatusRowCell value={"active"} />;
           case Status.UNRECOGNIZED:
-            return <StatusRowCell value={"inactive"}/>;
+            return <StatusRowCell value={"inactive"} />;
         }
       },
       width: 150,
@@ -157,57 +160,59 @@ export const ApplicationConnections = () => {
           }
         };
         return <Button style={{ width: "100%", height: "100%" }}
-                       icon={<img alt={"download"} style={{ maxWidth: "100%", maxHeight: "100%", padding: "1px", }}
-                                  src={download}></img>} onClick={handleDownload}></Button>;
+          icon={<img alt={"download"} style={{ maxWidth: "100%", maxHeight: "100%", padding: "1px", }}
+            src={download}></img>} onClick={handleDownload}></Button>;
       },
       width: 100,
     },
   ];
 
   return (
-    <Wrapper title="Application Connections &nbsp;[Access Control] ">
-      <Toolbar selectedAppConnections={selectedRows}/>
-      <div className="ag-theme-material" style={{
-        height: "500px",
-        width: "100%",
-      }}>
-        <AgGridReact
-          className={gridStyles.dataGrid}
-          rowData={data}
-          columnDefs={columnDefs}
-          rowSelection={"multiple"}
-          suppressRowClickSelection
-          onRowSelected={handleRowSelection}
-        />
-      </div>
-      <Drawer
-        open={drawerOpen}
-        onClose={() => setDrawerOpen(false)}
-        mask={false}
-        placement="right"
-        destroyOnClose
-        title={"YAML Preview"}
-        width="30%"
-        bodyStyle={{ padding: 0 }}
-      >
-        <AceEditor
-          mode="yaml"
-          theme="eclipse"
-          name="YAML_PREVIEW"
-          wrapEnabled
-          setOptions={{ useWorker: false }}
-          value={stringOfYAML(appConnectionInject(yamlSource))}
-          className="border shadow-sm"
-          style={{ width: "100%", height: "100%" }}
-          showPrintMargin={false}
-          readOnly
-        />
-      </Drawer>
-      <BottomDrawer isDrawerVisible={bottomDrawerVisible} setIsDrawerVisible={setBottomDrawerVisible} destroyOnClose>
-        <TableEnvironmentProvider>
-          <AppConnectionResources {...connectionResources}/>
-        </TableEnvironmentProvider>
-      </BottomDrawer>
-    </Wrapper>
+    <DefaultLayout>
+      <Wrapper title="Application Connections &nbsp;[Access Control] ">
+        <Toolbar selectedAppConnections={selectedRows} />
+        <div className="ag-theme-material" style={{
+          height: "500px",
+          width: "100%",
+        }}>
+          <AgGridReact
+            className={gridStyles.dataGrid}
+            rowData={data}
+            columnDefs={columnDefs}
+            rowSelection={"multiple"}
+            suppressRowClickSelection
+            onRowSelected={handleRowSelection}
+          />
+        </div>
+        <Drawer
+          open={drawerOpen}
+          onClose={() => setDrawerOpen(false)}
+          mask={false}
+          placement="right"
+          destroyOnClose
+          title={"YAML Preview"}
+          width="30%"
+          bodyStyle={{ padding: 0 }}
+        >
+          <AceEditor
+            mode="yaml"
+            theme="eclipse"
+            name="YAML_PREVIEW"
+            wrapEnabled
+            setOptions={{ useWorker: false }}
+            value={stringOfYAML(appConnectionInject(yamlSource))}
+            className="border shadow-sm"
+            style={{ width: "100%", height: "100%" }}
+            showPrintMargin={false}
+            readOnly
+          />
+        </Drawer>
+        <BottomDrawer isDrawerVisible={bottomDrawerVisible} setIsDrawerVisible={setBottomDrawerVisible} destroyOnClose>
+          <TableEnvironmentProvider>
+            <AppConnectionResources {...connectionResources} />
+          </TableEnvironmentProvider>
+        </BottomDrawer>
+      </Wrapper>
+    </DefaultLayout>
   );
 };
