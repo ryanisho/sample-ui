@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Breadcrumb from '../../components/Breadcrumbs/Breadcrumb';
 import DefaultLayout from '../../layout/DefaultLayout';
 import '../../css/vpc.css';
@@ -12,41 +12,32 @@ import { RootState } from "@/store/store";
 const SecurityGroups = () => {
     const [searchTerm, setSearchTerm] = useState('');
 
-    // new
-    const { vpcs } = useSelector((state: RootState) => state.infraResources); // retrieve vpcs from api
-    const accounts = useSelector((state: RootState) => state.infraResources.accounts);
+    const { selectedProvider, selectedAccountId } = useSelector((state: RootState) => state.selectedResources);
+    const { vpcResourceSecurityGroups, fetchVpcResourceSecurityGroups } = useFetchVpcResourceSecurityGroups(selectedProvider, '', '', selectedAccountId);
 
+    useEffect(() => {
+        fetchVpcResourceSecurityGroups();
+    }, [fetchVpcResourceSecurityGroups]);
 
-    const info = vpcs.map(vpc => ({
-        id: vpc.id,
-        accountId: vpc.accountId,
-        name: vpc.name || '',
-        region: vpc.region,
-        ipv4: vpc.ipv4_cidr,
-        ipv6: vpc.ipv6_cidr,
-        labels: vpc["labels"],
-        compliant: vpc.compliant,
-        // selfLink: vpc.selfLink,
-        project: vpc.project,
+    console.log("INFO: " + vpcResourceSecurityGroups);
+
+    const info = vpcResourceSecurityGroups.map(sg => ({
+        provider: sg.provider,
+        accountId: sg.accountId,
+        name: sg.name || '',
+        region: sg.region,
+        vpcId: sg.vpcId,
+        labels: sg["labels"],
     }));
 
+    console.log("INFO 2: " + info);
 
-    // pass in through state
-    const { fetchVpcResourceSecurityGroups } = useFetchVpcResourceSecurityGroups(
-        "aws",
-        "",
-        "",
-        "accountId"
-    );
-
-    const securityGroups = fetchVpcResourceSecurityGroups();
-    console.log(securityGroups);
 
     // search function, id/name
-    const sgSearch: typeof info = info.filter(sg =>
-        sg.id.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        sg.name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+    // const sgSearch: typeof info = info.filter(sg =>
+    //     sg.id.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    //     sg.name.toLowerCase().includes(searchTerm.toLowerCase())
+    // );
 
     return (
         <DefaultLayout>
@@ -77,7 +68,7 @@ const SecurityGroups = () => {
                 </div>
                 {/* table body */}
                 <div>
-                    {sgSearch.map((sg, idx) => (
+                    {/* {sgSearch.map((sg, idx) => (
                         <div
                             key={idx}
                             className={`dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 bg-white rounded-lg my-2 p-4 shadow`}
@@ -87,7 +78,7 @@ const SecurityGroups = () => {
                             <span className="w-1/4 px-4 py-2 flex text-center justify-center">{sg.name}</span>
                             <span className="w-1/4 px-4 py-2 flex text-center justify-center">{sg.region}</span>
                         </div>
-                    ))}
+                    ))} */}
                 </div>
             </div>
             {/* table end */}
