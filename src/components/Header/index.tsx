@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import DropdownMessage from './DropdownMessage';
 import DropdownNotification from './DropdownNotification';
+import DropdownLogs from './DropdownLogs';
 import DropdownUser from './DropdownUser';
 // import LogoIcon from '../../images/logo/logo-icon.svg';
 import DarkModeSwitcher from './DarkModeSwitcher';
@@ -34,6 +35,7 @@ const Header: React.FC<HeaderProps> = ({
             <DarkModeSwitcher />
             {/* <!-- Dark Mode Toggler --> */}
             <DropdownNotification />
+            <DropdownLogs />
             {/* <DropdownMessage /> */}
           </ul>
           {/* <!-- User Area --> */}
