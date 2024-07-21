@@ -45,7 +45,7 @@ import LoginPage from './pages/Login/Login';
 // import { Dashboard } from "@/components/views/dashboard";
 import Home from './pages/Dashboard/Home';
 // import { VPCConnectionDashboard } from "@/components/views/vpc-connection-dashboard";
-import Vpc from "./pages/Vpc/Vpc";
+import MultiCloudInfra from "./pages/MultiCloudInfra/MultiCloudInfra";
 import SecurityGroups from './pages/SecurityGroups/SecurityGroups';
 import ClusterResources from "./pages/Kubernetes/Kubernetes"
 import ListNetworkDomain from "./pages/NetworkDomain/ListNetworkDomain";
@@ -73,7 +73,8 @@ function App() {
         <Route path={RoutePaths.INFRA_RESOURCE_DASHBOARD} element={<Home />} />
         {/* <Route path={RoutePaths.INFRA_RESOURCE_DASHBOARD} element={<Dashboard />} /> */}
         {/* <Route path={RoutePaths.VPC_CONNECTION_DASHBOARD} element={<VPCConnectionDashboard />} /> */}
-        <Route path={RoutePaths.VPC_CONNECTION_DASHBOARD} element={<Vpc />} />
+        <Route path={RoutePaths.MULTI_CLOUD_INFRA_RESOURCE_DASHBOARD} element={<MultiCloudInfra />} />
+        {/* <Route path={RoutePaths.VPC_CONNECTION_DASHBOARD} element={<Vpc />} /> */}
         <Route path={RoutePaths.SECURITY_GROUPS} element={<SecurityGroups />} />
 
 

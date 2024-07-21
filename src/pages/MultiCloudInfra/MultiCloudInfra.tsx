@@ -9,7 +9,7 @@ import ProviderButtons from '@/components/ProviderRegion/ProviderRegionBar';
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "@/store/store";
 
-const vpc = () => {
+const MultiCloudInfra = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -127,4 +127,4 @@ const vpc = () => {
     );
 };
 
-export default vpc;
+export default MultiCloudInfra;

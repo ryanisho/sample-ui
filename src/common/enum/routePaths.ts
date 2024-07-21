@@ -22,6 +22,7 @@ export enum RoutePaths {
   DASHBOARD = "/dashboard",
 
   INFRA_RESOURCE_DASHBOARD = "/infra-resource-dashboard",
+  MULTI_CLOUD_INFRA_RESOURCE_DASHBOARD = "/multi-cloud-infra-resources",
   VPC_CONNECTION_DASHBOARD = "/vpc-connection-dashboard",
   VM_CONNECTION_DASHBOARD = "/vm-connection-dashboard",
   SECURITY_GROUPS = "/security-groups-dashboard",

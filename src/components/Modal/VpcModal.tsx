@@ -5,7 +5,6 @@ import '../../css/vpc.css';
 
 // new 
 import { useFetchVpcResourceClusters, useFetchVpcResourceSubnets, useFetchVpcResourceVms, useFetchVpcResourceSecurityGroups, useFetchVpcResourceRouteTables, useFetchVpcResourceACLs, useFetchVpcResourceVpcEndpoints, useFetchVpcResourceRouters, useFetchVpcResourceNATGateways, useFetchVpcResourceInternetGateways, useFetchVpcResourcePublicIPs, } from "@/common/hooks";
-import vpc from '@/pages/Vpc/Vpc';
 
 interface ModalComponentProps {
     isModalOpen: boolean;
