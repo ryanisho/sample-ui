@@ -3,6 +3,7 @@ import { NavLink, useLocation } from "react-router-dom";
 // import Logo from '../../images/logo/logo.svg';
 import Hamburger from "../../assets/images/hamburger.svg";
 import SidebarNested from "./SidebarNested";
+import { link } from "fs";
 
 interface SidebarProps {
   sidebarOpen: boolean;
@@ -143,7 +144,16 @@ const Sidebar = ({
               <SidebarNested
                 item={{
                   text: "Dashboard",
-                  link: "/infra-resource-dashboard",
+                  children: [
+                    {
+                      text: "Infrastructure Resources",
+                      link: "/infra-resource-dashboard",
+                    },
+                    {
+                      text: "IP Traffic (Connections)",
+                      link: "/vpc-connection-dashboard",
+                    },
+                  ],
                 }}
                 pathname={pathname}
                 sidebarExpanded={sidebarExpanded}
@@ -155,16 +165,7 @@ const Sidebar = ({
                   children: [
                     {
                       text: "Cloud Resources",
-                      children: [
-                        {
-                          text: "Discover VPCs",
-                          link: "/vpc-connection-dashboard",
-                        },
-                        {
-                          text: "Discover Other Resources",
-                          link: "/other-resources",
-                        },
-                      ],
+                      link: "/multi-cloud-infra-resources",
                     },
                     {
                       text: "K8S Resources",
