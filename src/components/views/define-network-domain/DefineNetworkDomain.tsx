@@ -26,6 +26,7 @@ import { Wrapper } from "@/components/views/wrapper/";
 import { fetchDataClient, openNotification } from "@/common/utils";
 import { networkDomainTypes, providers, staticNetworkDomainIds } from "@/common/constants";
 import { ButtonVariants } from "@/common/enum";
+import DefaultLayout from "@/layout/DefaultLayout";
 
 export const DefineNetworkDomain: FC = () => {
   const methods = useForm();
@@ -117,9 +118,11 @@ export const DefineNetworkDomain: FC = () => {
   ];
 
   return (
-    <Wrapper title="Define Network Domain">
-      <Form fields={defineNetworkDomainFields} />
-      <Button onClick={methods.handleSubmit(onSubmit)} text="Submit" variant={ButtonVariants.PRIMARY} />
-    </Wrapper>
+    <DefaultLayout>
+      <Wrapper title="Define Network Domain">
+        <Form fields={defineNetworkDomainFields} />
+        <Button onClick={methods.handleSubmit(onSubmit)} text="Submit" variant={ButtonVariants.PRIMARY} />
+      </Wrapper>
+    </DefaultLayout>
   );
 };

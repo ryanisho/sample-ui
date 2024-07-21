@@ -49,7 +49,7 @@ import MultiCloudInfra from "./pages/MultiCloudInfra/MultiCloudInfra";
 import SecurityGroups from './pages/SecurityGroups/SecurityGroups';
 import ClusterResources from "./pages/Kubernetes/Kubernetes"
 import ListNetworkDomain from "./pages/NetworkDomain/ListNetworkDomain";
-import CreateNetworkDomain from "./pages/NetworkDomain/CreateNetworkDomain";
+import { DefineNetworkDomain } from "@/components/views/define-network-domain";
 import { AccessControlPolicyCreator } from "@/components/views/access-control-policy-creator";
 import { TrafficInspectionPolicyCreator } from "./components/views/traffic-inspection-policy-creator";
 import { GeofencingPolicyCreator } from "./components/views/geofencing-policy-creator/GeofencingPolicyCreator";
@@ -78,12 +78,9 @@ function App() {
 
 
         <Route path={RoutePaths.NETWORK_DOMAINS} element={<NetworkDomains />} />
-        {/* <Route path={RoutePaths.DEFINE_NETWORK_DOMAIN} element={<DefineNetworkDomain />} /> */}
+        <Route path={RoutePaths.DEFINE_NETWORK_DOMAIN} element={<DefineNetworkDomain />} />
         {/* <Route path={RoutePaths.NETWORK_DOMAIN_CONNECTIONS} element={<NetworkDomainsConnections />} /> */}
         <Route path={RoutePaths.NETWORK_DOMAIN_CONNECTIONS} element={<ListNetworkDomain />} />
-        <Route path={RoutePaths.DEFINE_NETWORK_DOMAIN} element={<CreateNetworkDomain />} />
-
-
 
         <Route path={RoutePaths.CONNECTION_CREATOR} element={<NetworkDomainsConnectionCreator />} />
         <Route path={RoutePaths.APPLICATION_CONNECTIONS} element={<ApplicationConnections />} />
