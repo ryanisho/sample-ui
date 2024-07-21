@@ -76,10 +76,10 @@ const PieChart: React.FC<PieChartState> = ({ title, series }) => {
         </div>
       </div>
 
-      <div className="mb-2">
+      <div className="mb-2 h-64">
         <div id="PieChart" className="mx-auto flex justify-center">
           {state.series.every(value => value === 0) ? (
-            <p className="text-lg mb-10">There are currently no running, stopped, or terminated states.</p>
+            <p className="text-lg mt-24">There are currently no running, stopped, or terminated states.</p>
           ) : (
             <ReactApexChart
               options={options}
