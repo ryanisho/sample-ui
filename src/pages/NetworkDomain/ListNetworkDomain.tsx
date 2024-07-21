@@ -8,20 +8,8 @@ import { useSelector } from "react-redux";
 
 const ListNetworkDomain = () => {
     const [searchTerm, setSearchTerm] = useState('');
-    const [selectedRowId, setSelectedRowId] = useState<number | null>(null);
     const { fetchAllNetworkDomains } = useFetchNetworkDomains();
     const { grpcData } = useSelector((state: RootState) => state.grpcNetworkDomains);
-    const [sortColumn, setSortColumn] = useState('');
-    const [sortDirection, setSortDirection] = useState('asc');
-
-    const handleSort = (columnName) => {
-        if (sortColumn === columnName) {
-            setSortDirection(sortDirection === 'asc' ? 'desc' : 'asc');
-        } else {
-            setSortColumn(columnName);
-            setSortDirection('asc');
-        }
-    };
 
     useEffect(() => {
         fetchAllNetworkDomains()
@@ -43,22 +31,6 @@ const ListNetworkDomain = () => {
         row.type.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
-    // Sorting function
-    const sortData = (data) => {
-        return data.sort((a, b) => {
-            if (a[sortColumn] < b[sortColumn]) {
-                return sortDirection === 'asc' ? -1 : 1;
-            }
-            if (a[sortColumn] > b[sortColumn]) {
-                return sortDirection === 'asc' ? 1 : -1;
-            }
-            return 0;
-        });
-    };
-
-    // Apply sorting
-    const sortedData = sortColumn ? sortData([...filteredData]) : filteredData;
-
     return (
         <DefaultLayout>
             <Breadcrumb pageName="List Network Domains" />
@@ -74,44 +46,28 @@ const ListNetworkDomain = () => {
                 </div>
             </div>
             <div className="mt-3">
-                <table className="data-table">
-                    <thead>
-                        <tr className="table-header dark:bg-black dark:text-white">
-                            <th className="table-cell" onClick={() => handleSort('name')}>
-                                Name {sortColumn === 'name' ? (sortDirection === 'asc' ? '↑' : '↓') : '↑↓'}
-                            </th>
-                            <th className="table-cell" onClick={() => handleSort('type')}>
-                                Type {sortColumn === 'type' ? (sortDirection === 'asc' ? '↑' : '↓') : '↑↓'}
-                            </th>
-                            <th className="table-cell" onClick={() => handleSort('provider')}>
-                                Provider {sortColumn === 'provider' ? (sortDirection === 'asc' ? '↑' : '↓') : '↑↓'}
-                            </th>
-                            <th className="table-cell" onClick={() => handleSort('region')}>
-                                Region {sortColumn === 'region' ? (sortDirection === 'asc' ? '↑' : '↓') : '↑↓'}
-                            </th>
-                            <th className="table-cell" onClick={() => handleSort('id')}>
-                                ID {sortColumn === 'id' ? (sortDirection === 'asc' ? '↑' : '↓') : '↑↓'}
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody className="table-body dark:bg-black dark:text-white">
-                        {sortedData.map((row, index) => (
-                            <tr
-                                key={row.id}
-                                className={`table-row ${row.id === selectedRowId ? 'selected-row' : ''} ${index === filteredData.length - 1 ? '' : 'border-b border-gray-100'}`}
-                                onClick={() => setSelectedRowId(row.id === selectedRowId ? null : row.id)}
-                            >
-                                <td className="table-cell">{row.name}</td>
-                                <td className="table-cell">{row.type.toUpperCase()}</td>
-                                <td className="table-cell">{row.provider}</td>
-                                <td className="table-cell">{row.region}</td>
-                                <td className="table-cell">{row.id}</td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
+                <div className="table-header flex justify-between text-left text-sm font-medium text-gray-700 rounded-lg">
+                    <span className="w-1/4 px-4 py-2 text-center">Name</span>
+                    <span className="w-1/4 px-2 py-2 text-center">Type</span>
+                    <span className="w-1/4 px-1 py-2 text-center">Provider</span>
+                    <span className="w-1/4 px-1 py-2 text-center">Region</span>
+                    <span className="w-1/4 px-1 py-2 text-center">ID</span>
+                </div>
+                <div>
+                    {filteredData.map((row, idx) => (
+                        <div
+                            key={idx}
+                            className={`dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 bg-white rounded-lg my-2 p-4 shadow`}
+                        >
+                            <span className="w-1/4 px-4 py-2 flex text-center justify-center">{row.name}</span>                            <span className="w-1/4 px-4 py-2 flex text-center justify-center">{row.type.toUpperCase()}</span>
+                            <span className="w-1/4 px-4 py-2 flex text-center justify-center">{row.provider}</span>
+                            <span className="w-1/4 px-4 py-2 flex text-center justify-center">{row.region}</span>
+                            <span className="w-1/4 px-4 py-2 flex text-center justify-center">{row.id}</span>
+                        </div>
+                    ))}
+                </div>
             </div>
-        </DefaultLayout>
+        </DefaultLayout >
     );
 };
 
