@@ -8,7 +8,8 @@ import '../../css/vpc.css';
 import ProviderButtons from '@/components/ProviderRegion/ProviderRegionBar';
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
-import { useFetchVpcResourceSecurityGroups } from "@/common/hooks";
+import { useFetchVpcResourceClusters, useFetchVpcResourceSubnets, useFetchVpcResourceVms, useFetchVpcResourceSecurityGroups, useFetchVpcResourceRouteTables, useFetchVpcResourceACLs, useFetchVpcResourceVpcEndpoints, useFetchVpcResourceRouters, useFetchVpcResourceNATGateways, useFetchVpcResourceInternetGateways, useFetchVpcResourcePublicIPs, } from "@/common/hooks";
+
 
 
 const MultiCloudInfra = () => {
@@ -55,24 +56,34 @@ const MultiCloudInfra = () => {
         }
     }
 
+    const { selectedProvider, selectedAccountId } = useSelector((state: RootState) => state.selectedResources);
+
+    // VMs
+    const { vpcResourceVms, fetchVpcResourcesVms } = useFetchVpcResourceVms(selectedProvider, '', '', selectedAccountId);
+
+    // Subnets
+    const { vpcResourceSubnets, fetchVpcResourcesSubnets } = useFetchVpcResourceSubnets(selectedProvider, '', '', selectedAccountId);
 
     // Security Groups
-    const { selectedProvider, selectedAccountId } = useSelector((state: RootState) => state.selectedResources);
     const { vpcResourceSecurityGroups, fetchVpcResourceSecurityGroups } = useFetchVpcResourceSecurityGroups(selectedProvider, '', '', selectedAccountId);
 
+    // ACL
+    const { vpcResourceACLs, fetchVpcResourceACLs } = useFetchVpcResourceACLs(selectedProvider, '', '', selectedAccountId);
 
-    console.log("INFO: " + vpcResourceSecurityGroups);
+    // Route Table
+    const { vpcResourceRouteTables, fetchVpcResourceRouteTables } = useFetchVpcResourceRouteTables(selectedProvider, '', '', selectedAccountId);
 
-    // const info = vpcResourceSecurityGroups.map(sg => ({
-    //     provider: sg.provider,
-    //     accountId: sg.accountId,
-    //     name: sg.name || '',
-    //     region: sg.region,
-    //     vpcId: sg.vpcId,
-    //     labels: sg["labels"],
-    // }));
+    // VPC Endpoints
+    const { vpcResourceVpcEndpoints, fetchVpcResourceVPCEndpoints } = useFetchVpcResourceVpcEndpoints(selectedProvider, '', '', selectedAccountId);
 
-    // console.log("INFO 2: " + info);
+    // NAT Gateways
+    const { vpcResourceNATGateways, fetchVpcResourceNATGateways } = useFetchVpcResourceNATGateways(selectedProvider, '', '', selectedAccountId);
+
+    // Internet Gateways
+    const { vpcResourceInternetGateways, fetchVpcResourceInternetGateways } = useFetchVpcResourceInternetGateways(selectedProvider, '', '', selectedAccountId);
+
+    // Public IP Addresses
+    const { vpcResourcePublicIPs, fetchVpcResourcePublicIPs } = useFetchVpcResourcePublicIPs(selectedProvider, '', '', selectedAccountId);
 
     return (
         <DefaultLayout>
@@ -111,6 +122,30 @@ const MultiCloudInfra = () => {
                                 if (button.name === 'Security Groups') {
                                     fetchVpcResourceSecurityGroups();
                                 }
+                                if (button.name === 'VM') {
+                                    fetchVpcResourcesVms();
+                                }
+                                if (button.name === 'Subnet') {
+                                    fetchVpcResourcesSubnets();
+                                }
+                                if (button.name === 'ACL') {
+                                    fetchVpcResourceACLs();
+                                }
+                                if (button.name === 'Route Table') {
+                                    fetchVpcResourceRouteTables();
+                                }
+                                if (button.name === 'VPC Endpoints') {
+                                    fetchVpcResourceVPCEndpoints();
+                                }
+                                if (button.name === 'NAT Gateways') {
+                                    fetchVpcResourceNATGateways();
+                                }
+                                if (button.name === 'Internet Gateways') {
+                                    fetchVpcResourceInternetGateways();
+                                }
+                                if (button.name === 'Public IP Addresses') {
+                                    fetchVpcResourcePublicIPs();
+                                }
                             }}
                         >
                             {button.name}
@@ -147,6 +182,245 @@ const MultiCloudInfra = () => {
                             ))}
                         </div>
                     </div>
+                ) : selectedView === 'VM' ? (
+                    <div>
+                        <div className="table-header flex justify-between text-left text-sm font-medium text-gray-700 rounded-lg">
+                            <span className="w-1/4 px-4 py-2 text-center">Name</span>
+                            <span className="w-1/4 px-4 py-2 text-center">ID</span>
+                            <span className="w-1/4 px-2 py-2 text-center">Account ID</span>
+                            <span className="w-1/4 px-2 py-2 text-center">Provider</span>
+                            <span className="w-1/4 px-2 py-2 text-center">Owner</span>
+                            <span className="w-1/4 px-2 py-2 text-center">Project</span>
+                            <span className="w-1/4 px-2 py-2 text-center">Type</span>
+                            <span className="w-1/4 px-2 py-2 text-center">Subnet ID</span>
+                            <span className="w-1/4 px-2 py-2 text-center">Public IP</span>
+                            <span className="w-1/4 px-2 py-2 text-center">State</span>
+                            <span className="w-1/4 px-1 py-2 text-center">Compliancy</span>
+
+                        </div>
+                        <div>
+                            {vpcResourceVms.map((group, idx) => (
+                                <div
+                                    key={idx}
+                                    className="dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 bg-white rounded-lg my-2 p-4 shadow"
+                                >
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.name}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.id}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.accountId}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.provider}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.owner}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.project}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.type}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.subnetId}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.publicIp}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.state}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.compliant}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                ) : selectedView === 'Subnet' ? (
+                    <div>
+                        <div className="table-header flex justify-between text-left text-sm font-medium text-gray-700 rounded-lg">
+                            <span className="w-1/4 px-4 py-2 text-center">ID</span>
+                            <span className="w-1/4 px-2 py-2 text-center">Name</span>
+                            <span className="w-1/4 px-1 py-2 text-center">CIDR Block</span>
+                            <span className="w-1/4 px-1 py-2 text-center">Provider</span>
+                            <span className="w-1/4 px-1 py-2 text-center">Account ID</span>
+                            <span className="w-1/4 px-1 py-2 text-center">Region</span>
+                            <span className="w-1/4 px-1 py-2 text-center">VPC ID</span>
+                            <span className="w-1/4 px-1 py-2 text-center">Zone</span>
+                        </div>
+                        <div>
+                            {vpcResourceSubnets.map((group, idx) => (
+                                <div
+                                    key={idx}
+                                    className={`dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 bg-white rounded-lg my-2 p-4 shadow ${selectedVpcId === group.id ? 'bg-blue-100 dark:bg-gray-600' : 'dark:bg-gray-700'}`}
+                                >
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.id}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.name}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.cidrblock}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.provider}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.accountId}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.region}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.vpcId}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.zone}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                ) : selectedView === "ACL" ? (
+                    <div>
+                        <div className="table-header flex justify-between text-left text-sm font-medium text-gray-700 rounded-lg">
+                            <span className="w-1/4 px-4 py-2 text-center">Name</span>
+                            <span className="w-1/4 px-2 py-2 text-center">ID</span>
+                            <span className="w-1/4 px-1 py-2 text-center">Provider</span>
+                            <span className="w-1/4 px-1 py-2 text-center">Account ID</span>
+                            <span className="w-1/4 px-1 py-2 text-center">Region</span>
+                            <span className="w-1/4 px-1 py-2 text-center">VPC ID</span>
+                        </div>
+                        <div>
+                            {vpcResourceACLs.map((group, idx) => (
+                                <div
+                                    key={idx}
+                                    className={`dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 bg-white rounded-lg my-2 p-4 shadow ${selectedVpcId === group.id ? 'bg-blue-100 dark:bg-gray-600' : 'dark:bg-gray-700'}`}
+                                >
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.name}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.id}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.provider}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.accountId}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.region}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.vpcId}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                ) : selectedView === "Route Table" ? (
+                    <div>
+                        <div className="table-header flex justify-between text-left text-sm font-medium text-gray-700 rounded-lg">
+                            <span className="w-1/4 px-4 py-2 text-center">Name</span>
+                            <span className="w-1/4 px-2 py-2 text-center">ID</span>
+                            <span className="w-1/4 px-1 py-2 text-center">Provider</span>
+                            <span className="w-1/4 px-1 py-2 text-center">Account ID</span>
+                            <span className="w-1/4 px-1 py-2 text-center">Region</span>
+                            <span className="w-1/4 px-1 py-2 text-center">VPC ID</span>
+                        </div>
+                        <div>
+                            {vpcResourceRouteTables.map((group, idx) => (
+                                <div
+                                    key={idx}
+                                    className={`dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 bg-white rounded-lg my-2 p-4 shadow ${selectedVpcId === group.id ? 'bg-blue-100 dark:bg-gray-600' : 'dark:bg-gray-700'}`}
+                                >
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.name}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.id}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.provider}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.accountId}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.region}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.vpcId}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                ) : selectedView === "VPC Endpoints" ? (
+                    <div>
+                        <div className="table-header flex justify-between text-left text-sm font-medium text-gray-700 rounded-lg">
+                            <span className="w-1/4 px-4 py-2 text-center">Name</span>
+                            <span className="w-1/4 px-2 py-2 text-center">ID</span>
+                            <span className="w-1/4 px-1 py-2 text-center">Provider</span>
+                            <span className="w-1/4 px-1 py-2 text-center">Account ID</span>
+                            <span className="w-1/4 px-1 py-2 text-center">Region</span>
+                            <span className="w-1/4 px-1 py-2 text-center">VPC ID</span>
+                            <span className="w-1/4 px-1 py-2 text-center">Route Table IDs</span>
+                            <span className="w-1/4 px-1 py-2 text-center">Subnet IDs</span>
+                            <span className="w-1/4 px-1 py-2 text-center">Service</span>
+                        </div>
+                        <div>
+                            {vpcResourceVpcEndpoints.map((group, idx) => (
+                                <div
+                                    key={idx}
+                                    className={`dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 bg-white rounded-lg my-2 p-4 shadow ${selectedVpcId === group.id ? 'bg-blue-100 dark:bg-gray-600' : 'dark:bg-gray-700'}`}
+                                >
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.name}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.id}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.provider}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.accountId}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.region}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.vpcId}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.routeTableIds}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.subnetIds}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.service}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                ) : selectedView === 'NAT Gateways' ? (
+                    <div>
+                        <div className="table-header flex justify-between text-left text-sm font-medium text-gray-700 rounded-lg">
+                            <span className="w-1/4 px-4 py-2 text-center">Name</span>
+                            <span className="w-1/4 px-2 py-2 text-center">ID</span>
+                            <span className="w-1/4 px-1 py-2 text-center">Account ID</span>
+                            <span className="w-1/4 px-1 py-2 text-center">VPC ID</span>
+                            <span className="w-1/4 px-1 py-2 text-center">Region</span>
+                            <span className="w-1/4 px-1 py-2 text-center">State</span>
+                            <span className="w-1/4 px-1 py-2 text-center">Public IP</span>
+                            <span className="w-1/4 px-1 py-2 text-center">Private IP</span>
+                            <span className="w-1/4 px-1 py-2 text-center">Subnet ID</span>
+                        </div>
+                        <div>
+                            {vpcResourceNATGateways.map((group, idx) => (
+                                <div
+                                    key={idx}
+                                    className={`dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 bg-white rounded-lg my-2 p-4 shadow ${selectedVpcId === group.id ? 'bg-blue-100 dark:bg-gray-600' : 'dark:bg-gray-700'}`}
+                                >
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.name}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.id}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.accountId}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.vpcId}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.region}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.state}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.publicIp}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.privateIp}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.subnetId}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                ) : selectedView === 'Internet Gateways' ? (
+                    <div>
+                        <div className="table-header flex justify-between text-left text-sm font-medium text-gray-700 rounded-lg">
+                            <span className="w-1/4 px-4 py-2 text-center">Name</span>
+                            <span className="w-1/4 px-2 py-2 text-center">ID</span>
+                            <span className="w-1/4 px-1 py-2 text-center">Provider</span>
+                            <span className="w-1/4 px-1 py-2 text-center">Account ID</span>
+                            <span className="w-1/4 px-1 py-2 text-center">Region</span>
+                            <span className="w-1/4 px-1 py-2 text-center">VPC ID</span>
+                            <span className="w-1/4 px-1 py-2 text-center">State</span>
+                        </div>
+                        <div>
+                            {vpcResourceInternetGateways.map((group, idx) => (
+                                <div
+                                    key={idx}
+                                    className={`dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 bg-white rounded-lg my-2 p-4 shadow ${selectedVpcId === group.id ? 'bg-blue-100 dark:bg-gray-600' : 'dark:bg-gray-700'}`}
+                                >
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.name}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.id}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.provider}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.accountId}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.region}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.vpcId}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.state}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                ) : selectedView === 'Public IP Addresses' ? (
+                    <div>
+                        <div className="table-header flex justify-between text-left text-sm font-medium text-gray-700 rounded-lg">
+                            <span className="w-1/4 px-4 py-2 text-center">Name</span>
+                            <span className="w-1/4 px-2 py-2 text-center">ID</span>
+                            <span className="w-1/4 px-1 py-2 text-center">Provider</span>
+                            <span className="w-1/4 px-1 py-2 text-center">Account ID</span>
+                            <span className="w-1/4 px-1 py-2 text-center">Region</span>
+                            <span className="w-1/4 px-1 py-2 text-center">VPC ID</span>
+                            <span className="w-1/4 px-1 py-2 text-center">State</span>
+                        </div>
+                        <div>
+                            {vpcResourcePublicIPs.map((group, idx) => (
+                                <div
+                                    key={idx}
+                                    className={`dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 bg-white rounded-lg my-2 p-4 shadow ${selectedVpcId === group.id ? 'bg-blue-100 dark:bg-gray-600' : 'dark:bg-gray-700'}`}
+                                >
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.name}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.id}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.provider}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.accountId}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.region}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.vpcId}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.state}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
                 ) : (
                     // Render default vpcSearch table
                     <div>
@@ -169,10 +443,10 @@ const MultiCloudInfra = () => {
                                 </div>
                             ))}
                         </div>
-                    </div>
+                    </div >
                 )}
-            </div>
-        </DefaultLayout>
+            </div >
+        </DefaultLayout >
     );
 };
 
