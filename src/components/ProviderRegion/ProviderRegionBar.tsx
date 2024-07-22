@@ -126,7 +126,6 @@ const ProviderRegionBar = () => {
     return (
         <>
             <div style={{ marginBottom: "10px", justifyContent: "space-between" }}>
-
                 <div className="flex justify-end">
                     {[
                         { name: 'AWS', enum: InfraResourceProvider.AWS },
@@ -144,7 +143,6 @@ const ProviderRegionBar = () => {
                         </button>
                     ))}
                 </div>
-
             </div>
             <div className="flex flex-col w-1/6">
                 <select

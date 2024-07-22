@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 import Breadcrumb from '../../components/Breadcrumbs/Breadcrumb';
 import DefaultLayout from '../../layout/DefaultLayout';
 import ModalComponent from '../../components/Modal/VpcModal';
@@ -6,8 +6,10 @@ import '../../css/vpc.css';
 
 // new 
 import ProviderButtons from '@/components/ProviderRegion/ProviderRegionBar';
-import { useDispatch, useSelector } from "react-redux";
-import { AppDispatch, RootState } from "@/store/store";
+import { useSelector } from "react-redux";
+import { RootState } from "@/store/store";
+import { useFetchVpcResourceSecurityGroups } from "@/common/hooks";
+
 
 const MultiCloudInfra = () => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -18,7 +20,10 @@ const MultiCloudInfra = () => {
     const [selectedVpc, setSelectedVpc] = useState(null); // track current vpc
     const [selectedVpcId, setSelectedVpcId] = useState<number | null>(null); // track current vpc id (for modal)
 
-    const info = vpcs.map(vpc => ({
+    // new views
+    const [selectedView, setSelectedView] = useState('');
+
+    const vpcData = vpcs.map(vpc => ({
         id: vpc.id,
         accountId: vpc.accountId,
         name: vpc.name || '',
@@ -38,7 +43,7 @@ const MultiCloudInfra = () => {
     };
 
     // search function, id/name
-    const vpcSearch: typeof info = info.filter(vpc =>
+    const vpcSearch: typeof vpcData = vpcData.filter(vpc =>
         vpc.id.toLowerCase().includes(searchTerm.toLowerCase()) ||
         vpc.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
@@ -49,6 +54,25 @@ const MultiCloudInfra = () => {
             setIsModalOpen(true);
         }
     }
+
+
+    // Security Groups
+    const { selectedProvider, selectedAccountId } = useSelector((state: RootState) => state.selectedResources);
+    const { vpcResourceSecurityGroups, fetchVpcResourceSecurityGroups } = useFetchVpcResourceSecurityGroups(selectedProvider, '', '', selectedAccountId);
+
+
+    console.log("INFO: " + vpcResourceSecurityGroups);
+
+    // const info = vpcResourceSecurityGroups.map(sg => ({
+    //     provider: sg.provider,
+    //     accountId: sg.accountId,
+    //     name: sg.name || '',
+    //     region: sg.region,
+    //     vpcId: sg.vpcId,
+    //     labels: sg["labels"],
+    // }));
+
+    // console.log("INFO 2: " + info);
 
     return (
         <DefaultLayout>
@@ -65,63 +89,88 @@ const MultiCloudInfra = () => {
                 </div>
                 <ProviderButtons></ProviderButtons>
             </div>
-            <div className="mt-3">
-                {/* <table className="data-table">
-                    <thead className="dark:bg-gray-700">
-                        <tr className="table-header dark:bg-black dark:text-white">
-                            <th className="table-cell dark:text-gray-300">ID</th>
-                            <th className="table-cell dark:text-gray-300">Account ID</th>
-                            <th className="table-cell dark:text-gray-300">Name</th>
-                            <th className="table-cell dark:text-gray-300">Region</th>
-                        </tr>
-                    </thead>
-
-                    <tbody className="table-body dark:bg-black dark:text-white">
-                        {vpcSearch.map((vpc, index) => (
-                            <tr
-                                key={vpc.id}
-                                className={`table-row ${selectedVpcId === vpc.id ? 'selected-row dark:bg-gray-600' : 'dark:bg-gray-700'} ${index === vpcSearch.length - 1 ? '' : 'border-b border-gray-100'}`}
-                                onClick={() => {
-                                    handleRowClick(vpc);
-                                    handleVpcSelect(vpc);
-                                }}
-                            >
-                                <td className="table-cell">{vpc.id}</td>
-                                <td className="table-cell">{vpc.accountId}</td>
-                                <td className="table-cell">{vpc.name}</td>
-                                <td className="table-cell">{vpc.region}</td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table> */}
-                <div className="table-header flex justify-between text-left text-sm font-medium text-gray-700 rounded-lg">
-                    <span className="w-1/4 px-4 py-2 text-center">ID</span>
-                    <span className="w-1/4 px-2 py-2 text-center">Account ID</span>
-                    <span className="w-1/4 px-1 py-2 text-center">Name</span>
-                    <span className="w-1/4 px-1 py-2 text-center">Region</span>
-                </div>
-                <div>
-                    {vpcSearch.map((vpc, idx) => (
-                        <div
-                            key={idx}
-                            className={`dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 bg-white rounded-lg my-2 p-4 shadow ${selectedVpcId === vpc.id ? 'bg-blue-100 dark:bg-gray-600' : 'dark:bg-gray-700'}`}
+            <div style={{ marginBottom: "10px", justifyContent: "space-between" }}>
+                <div className="flex justify-begin">
+                    {[
+                        { name: 'VM', },
+                        { name: 'Subnet', },
+                        { name: 'Security Groups', },
+                        { name: 'ACL', },
+                        { name: 'Route Table', },
+                        { name: 'VPC Endpoints', },
+                        { name: 'NAT Gateways', },
+                        { name: 'Internet Gateways', },
+                        { name: 'Public IP Addresses', },
+                        { name: 'Overlapping IP CIDR', },
+                    ].map((button) => (
+                        <button
+                            className={`dark:border-white dark:text-white button-blue ${selectedView === button.name ? 'selected' : ''}`}
+                            key={button.name}
                             onClick={() => {
-                                handleRowClick(vpc);
-                                handleVpcSelect(vpc);
+                                setSelectedView(button.name);
+                                if (button.name === 'Security Groups') {
+                                    fetchVpcResourceSecurityGroups();
+                                }
                             }}
                         >
-                            <span className="w-1/4 px-4 py-2 flex text-center justify-center">{vpc.id}</span>
-                            <span className="w-1/4 px-4 py-2 flex text-center justify-center">{vpc.accountId}</span>
-                            <span className="w-1/4 px-4 py-2 flex text-center justify-center">{vpc.name}</span>
-                            <span className="w-1/4 px-4 py-2 flex text-center justify-center">{vpc.region}</span>
-                        </div>
+                            {button.name}
+                        </button>
                     ))}
                 </div>
-                <ModalComponent
-                    isModalOpen={isModalOpen}
-                    onRequestClose={() => { setIsModalOpen(false); setSelectedVpcId(null) }}
-                    selectedVpc={selectedVpc}
-                />
+            </div>
+            <div className="mt-3">
+                {selectedView === 'Security Groups' ? (
+                    // Render table for security groups
+                    <div>
+                        <div className="table-header flex justify-between text-left text-sm font-medium text-gray-700 rounded-lg">
+                            <span className="w-1/4 px-4 py-2 text-center">Name</span>
+                            <span className="w-1/4 px-2 py-2 text-center">Account ID</span>
+                            <span className="w-1/4 px-2 py-2 text-center">ID</span>
+                            <span className="w-1/4 px-1 py-2 text-center">Region</span>
+                            <span className="w-1/4 px-1 py-2 text-center">VPC ID</span>
+                            {/* <span className="w-1/4 px-1 py-2 text-center">Labels</span> */}
+
+                        </div>
+                        <div>
+                            {vpcResourceSecurityGroups.map((group, idx) => (
+                                <div
+                                    key={idx}
+                                    className="dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 bg-white rounded-lg my-2 p-4 shadow"
+                                >
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.name}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.accountId}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.id}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.region}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.vpcId}</span>
+                                    {/* <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.labels}</span> */}
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                ) : (
+                    // Render default vpcSearch table
+                    <div>
+                        <div className="table-header flex justify-between text-left text-sm font-medium text-gray-700 rounded-lg">
+                            <span className="w-1/4 px-4 py-2 text-center">ID</span>
+                            <span className="w-1/4 px-2 py-2 text-center">Account ID</span>
+                            <span className="w-1/4 px-1 py-2 text-center">Name</span>
+                            <span className="w-1/4 px-1 py-2 text-center">Region</span>
+                        </div>
+                        <div>
+                            {vpcSearch.map((vpc, idx) => (
+                                <div
+                                    key={idx}
+                                    className={`dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 bg-white rounded-lg my-2 p-4 shadow ${selectedVpcId === vpc.id ? 'bg-blue-100 dark:bg-gray-600' : 'dark:bg-gray-700'}`}
+                                >
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{vpc.id}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{vpc.accountId}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{vpc.name}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{vpc.region}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                )}
             </div>
         </DefaultLayout>
     );
