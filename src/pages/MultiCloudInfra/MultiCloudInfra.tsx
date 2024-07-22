@@ -85,6 +85,7 @@ const MultiCloudInfra = () => {
     // Public IP Addresses
     const { vpcResourcePublicIPs, fetchVpcResourcePublicIPs } = useFetchVpcResourcePublicIPs(selectedProvider, '', '', selectedAccountId);
 
+
     return (
         <DefaultLayout>
             <Breadcrumb pageName="Multi-cloud Infrastructure Resources" />
@@ -103,6 +104,7 @@ const MultiCloudInfra = () => {
             <div style={{ marginBottom: "10px", justifyContent: "space-between" }}>
                 <div className="flex justify-begin">
                     {[
+                        { name: 'VPC', },
                         { name: 'VM', },
                         { name: 'Subnet', },
                         { name: 'Security Groups', },
@@ -112,7 +114,6 @@ const MultiCloudInfra = () => {
                         { name: 'NAT Gateways', },
                         { name: 'Internet Gateways', },
                         { name: 'Public IP Addresses', },
-                        { name: 'Overlapping IP CIDR', },
                     ].map((button) => (
                         <button
                             className={`dark:border-white dark:text-white button-blue ${selectedView === button.name ? 'selected' : ''}`}
@@ -164,7 +165,6 @@ const MultiCloudInfra = () => {
                             <span className="w-1/4 px-1 py-2 text-center">Region</span>
                             <span className="w-1/4 px-1 py-2 text-center">VPC ID</span>
                             {/* <span className="w-1/4 px-1 py-2 text-center">Labels</span> */}
-
                         </div>
                         <div>
                             {vpcResourceSecurityGroups.map((group, idx) => (

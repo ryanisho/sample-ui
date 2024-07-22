@@ -512,9 +512,6 @@ export const NetworkDomains: FC<NetworkDomainsProps> = ({ setIsClusterDrawerVisi
           >
             K8S Clusters
   </Button> */}
-
-
-
         </ButtonGroup>
         <Tooltip title={Tooltips.RESOURCE_TYPE} />
       </div>
