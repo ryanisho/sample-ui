@@ -27,6 +27,7 @@ const ProviderRegionBar = () => {
     const { fetchRegions } = useFetchRegions(selectedButton);
 
     useEffect(() => {
+        handleProviderSelect(InfraResourceProvider.AWS);
         fetchAccounts();
         fetchVpcs();
         fetchRegions();
@@ -135,7 +136,7 @@ const ProviderRegionBar = () => {
                         { name: 'All Providers', enum: InfraResourceProvider.ALL_PROVIDERS },
                     ].map((button) => (
                         <button
-                            className={`dark:border-white dark:text-white button-blue ${selectedButton === button.enum ? 'selected' : ''}`}
+                            className={`dark:border-white dark:text-white button-blue text-lg px-4 py-2 ${selectedButton === button.enum ? 'selected' : ''}`}
                             key={button.name}
                             onClick={() => handleProviderSelect(button.enum)}
                         >
@@ -143,7 +144,7 @@ const ProviderRegionBar = () => {
                         </button>
                     ))}
                 </div>
-            </div>
+            </div >
             <div className="flex flex-col w-1/6">
                 <select
                     value={selectedAccountId}

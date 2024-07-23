@@ -22,7 +22,7 @@ const MultiCloudInfra = () => {
     const [selectedVpcId, setSelectedVpcId] = useState<number | null>(null); // track current vpc id (for modal)
 
     // new views
-    const [selectedView, setSelectedView] = useState('');
+    const [selectedView, setSelectedView] = useState('VPC');
 
     const vpcData = vpcs.map(vpc => ({
         id: vpc.id,
@@ -56,6 +56,7 @@ const MultiCloudInfra = () => {
         }
     }
 
+    // Provider, AccountID
     const { selectedProvider, selectedAccountId } = useSelector((state: RootState) => state.selectedResources);
 
     // VMs
@@ -64,7 +65,7 @@ const MultiCloudInfra = () => {
     // Subnets
     const { vpcResourceSubnets, fetchVpcResourcesSubnets } = useFetchVpcResourceSubnets(selectedProvider, '', '', selectedAccountId);
 
-    // Security Groups
+    // SGs
     const { vpcResourceSecurityGroups, fetchVpcResourceSecurityGroups } = useFetchVpcResourceSecurityGroups(selectedProvider, '', '', selectedAccountId);
 
     // ACL
@@ -79,10 +80,10 @@ const MultiCloudInfra = () => {
     // NAT Gateways
     const { vpcResourceNATGateways, fetchVpcResourceNATGateways } = useFetchVpcResourceNATGateways(selectedProvider, '', '', selectedAccountId);
 
-    // Internet Gateways
+    // IGWs
     const { vpcResourceInternetGateways, fetchVpcResourceInternetGateways } = useFetchVpcResourceInternetGateways(selectedProvider, '', '', selectedAccountId);
 
-    // Public IP Addresses
+    // Public IPs
     const { vpcResourcePublicIPs, fetchVpcResourcePublicIPs } = useFetchVpcResourcePublicIPs(selectedProvider, '', '', selectedAccountId);
 
 
@@ -90,7 +91,7 @@ const MultiCloudInfra = () => {
         <DefaultLayout>
             <Breadcrumb pageName="Multi-cloud Infrastructure Resources" />
             <div className="flex justify-between">
-                <div className="flex flex-col w-1/4">
+                <div className="flex flex-col w-1/6">
                     <input
                         type="text"
                         placeholder="Search by name or ID"
@@ -107,20 +108,20 @@ const MultiCloudInfra = () => {
                         { name: 'VPC', },
                         { name: 'VM', },
                         { name: 'Subnet', },
-                        { name: 'Security Groups', },
+                        { name: 'SGs', },
                         { name: 'ACL', },
                         { name: 'Route Table', },
                         { name: 'VPC Endpoints', },
                         { name: 'NAT Gateways', },
-                        { name: 'Internet Gateways', },
-                        { name: 'Public IP Addresses', },
+                        { name: 'IGWs', },
+                        { name: 'Public IPs', },
                     ].map((button) => (
                         <button
-                            className={`dark:border-white dark:text-white button-blue ${selectedView === button.name ? 'selected' : ''}`}
+                            className={`dark:border-white dark:text-white button-blue text-sm py-1 whitespace-nowrap ${selectedView === button.name ? 'selected' : ''}`}
                             key={button.name}
                             onClick={() => {
                                 setSelectedView(button.name);
-                                if (button.name === 'Security Groups') {
+                                if (button.name === 'SGs') {
                                     fetchVpcResourceSecurityGroups();
                                 }
                                 if (button.name === 'VM') {
@@ -141,10 +142,10 @@ const MultiCloudInfra = () => {
                                 if (button.name === 'NAT Gateways') {
                                     fetchVpcResourceNATGateways();
                                 }
-                                if (button.name === 'Internet Gateways') {
+                                if (button.name === 'IGWs') {
                                     fetchVpcResourceInternetGateways();
                                 }
-                                if (button.name === 'Public IP Addresses') {
+                                if (button.name === 'Public IPs') {
                                     fetchVpcResourcePublicIPs();
                                 }
                             }}
@@ -155,8 +156,8 @@ const MultiCloudInfra = () => {
                 </div>
             </div>
             <div className="mt-3">
-                {selectedView === 'Security Groups' ? (
-                    // Render table for security groups
+                {selectedView === 'SGs' ? (
+                    // Render table for SGs
                     <div>
                         <div className="table-header flex justify-between text-left text-sm font-medium text-gray-700 rounded-lg">
                             <span className="w-1/4 px-4 py-2 text-center">Name</span>
@@ -365,7 +366,7 @@ const MultiCloudInfra = () => {
                             ))}
                         </div>
                     </div>
-                ) : selectedView === 'Internet Gateways' ? (
+                ) : selectedView === 'IGWs' ? (
                     <div>
                         <div className="table-header flex justify-between text-left text-sm font-medium text-gray-700 rounded-lg">
                             <span className="w-1/4 px-4 py-2 text-center">Name</span>
@@ -393,7 +394,7 @@ const MultiCloudInfra = () => {
                             ))}
                         </div>
                     </div>
-                ) : selectedView === 'Public IP Addresses' ? (
+                ) : selectedView === 'Public IPs' ? (
                     <div>
                         <div className="table-header flex justify-between text-left text-sm font-medium text-gray-700 rounded-lg">
                             <span className="w-1/4 px-4 py-2 text-center">Name</span>
