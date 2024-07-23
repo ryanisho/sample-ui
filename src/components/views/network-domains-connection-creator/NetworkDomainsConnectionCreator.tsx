@@ -52,7 +52,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import { BACKEND_API_PREFIX } from "@/common/constants";
 import DefaultLayout from '../../../layout/DefaultLayout';
-
+import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
 
 export const NetworkDomainsConnectionCreator: FC = () => {
   const { data } = useSelector((state: RootState) => state.networkDomains);
@@ -186,42 +186,41 @@ export const NetworkDomainsConnectionCreator: FC = () => {
 
   return (
     <DefaultLayout>
-      <Wrapper title="Network Domain Connection Creator">
-        <FormProvider {...methods}>
-          <div style={{ marginBottom: "10px" }}>
-            <Collapse
-              defaultActiveKey={1}
-              items={[{
-                key: 1,
-                label: 'Overview',
-                children: <NetworkDomainConnectionBackground />
-              }]}
-            />
-          </div>
-          <Steps current={current} status={steps[current].status}
-            items={steps.map((item) => ({ key: item.title, title: item.title, description: item.description }))}
-            direction={"horizontal"} />
-          <div>{steps[current].content}</div>
-          <div style={{ marginTop: 24 }}>
-            {current < steps.length - 1 && (
-              <AButton type="primary" onClick={() => next()} disabled={steps[current]?.status === "error"}>
-                Next
-              </AButton>
-            )}
-            {current === steps.length - 1 && (
-              <AButton type="primary" onClick={methods.handleSubmit(onSubmit)}
-                disabled={steps[current]?.status === "error"}>
-                Submit
-              </AButton>
-            )}
-            {current > 0 && (
-              <AButton style={{ margin: '0 8px' }} onClick={() => prev()}>
-                Previous
-              </AButton>
-            )}
-          </div>
-        </FormProvider>
-      </Wrapper>
+      <Breadcrumb pageName="Network Domains Connection Creator" />
+      <FormProvider {...methods}>
+        <div style={{ marginBottom: "10px" }}>
+          <Collapse
+            defaultActiveKey={1}
+            items={[{
+              key: 1,
+              label: 'Overview',
+              children: <NetworkDomainConnectionBackground />
+            }]}
+          />
+        </div>
+        <Steps current={current} status={steps[current].status}
+          items={steps.map((item) => ({ key: item.title, title: item.title, description: item.description }))}
+          direction={"horizontal"} />
+        <div>{steps[current].content}</div>
+        <div style={{ marginTop: 24 }}>
+          {current < steps.length - 1 && (
+            <AButton type="primary" onClick={() => next()} disabled={steps[current]?.status === "error"}>
+              Next
+            </AButton>
+          )}
+          {current === steps.length - 1 && (
+            <AButton type="primary" onClick={methods.handleSubmit(onSubmit)}
+              disabled={steps[current]?.status === "error"}>
+              Submit
+            </AButton>
+          )}
+          {current > 0 && (
+            <AButton style={{ margin: '0 8px' }} onClick={() => prev()}>
+              Previous
+            </AButton>
+          )}
+        </div>
+      </FormProvider>
     </DefaultLayout>
   );
 };
