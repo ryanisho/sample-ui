@@ -21,11 +21,12 @@ import React, { FC } from "react";
 import { useForm } from "react-hook-form";
 
 import { Button, Form, Input, Select, AutoComplete } from "@/components";
-import { Wrapper } from "@/components/views/wrapper/";
+import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
 
 import { fetchDataClient, openNotification } from "@/common/utils";
 import { networkDomainTypes, providers, staticNetworkDomainIds } from "@/common/constants";
 import { ButtonVariants } from "@/common/enum";
+import { Card } from 'antd';
 import DefaultLayout from "@/layout/DefaultLayout";
 
 export const DefineNetworkDomain: FC = () => {
@@ -119,10 +120,14 @@ export const DefineNetworkDomain: FC = () => {
 
   return (
     <DefaultLayout>
-      <Wrapper title="Define Network Domain">
+      <Breadcrumb pageName="Define Network Domain" />
+      <Card
+        bordered={false}
+        style={{ width: '100%' }}
+      >
         <Form fields={defineNetworkDomainFields} />
         <Button onClick={methods.handleSubmit(onSubmit)} text="Submit" variant={ButtonVariants.PRIMARY} />
-      </Wrapper>
+      </Card>
     </DefaultLayout>
   );
 };
