@@ -64,6 +64,7 @@ export const Button: FC<ButtonProps> = ({ onClick, text, iconSrc }) => {
         boxShadow: '0 2px 4px rgba(0,0,0,0.2)', // Subtle shadow
         transition: 'all 0.3s', // Smooth transition for hover effect
         marginTop: '20px', // Add space between buttons
+        marginBottom: '20px', // Add space between buttons
       }}
       onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.05)'} // Slightly enlarge on hover
       onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'} // Return to original size

@@ -236,7 +236,7 @@ const Sidebar = ({
                     },
                     {
                       text: "Connection Policies",
-                      link: "/application-connection-policies",
+                      link: "/applicationconnectionpolicies",
                       children: [
                         {
                           text: "List",

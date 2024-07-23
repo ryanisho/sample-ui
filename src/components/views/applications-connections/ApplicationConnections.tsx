@@ -47,6 +47,7 @@ import gridStyles from "@/components/data-grid/data-grid.module.scss";
 import download from "@/assets/icons/download.svg";
 import { saveAs } from "file-saver";
 
+import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
 import DefaultLayout from '../../../layout/DefaultLayout';
 
 
@@ -169,53 +170,51 @@ export const ApplicationConnections = () => {
 
   return (
     <DefaultLayout>
-      <Wrapper title="Application Connections &nbsp;[Access Control]">
-        {/* align right */}
-        <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-          <Toolbar selectedAppConnections={selectedRows} />
-        </div>
-        <div className="ag-theme-material" style={{
-          height: "500px",
-          width: "100%",
-        }}>
-          <AgGridReact
-            className={gridStyles.dataGrid}
-            rowData={data}
-            columnDefs={columnDefs}
-            rowSelection={"multiple"}
-            suppressRowClickSelection
-            onRowSelected={handleRowSelection}
-          />
-        </div>
-        <Drawer
-          open={drawerOpen}
-          onClose={() => setDrawerOpen(false)}
-          mask={false}
-          placement="right"
-          destroyOnClose
-          title={"YAML Preview"}
-          width="30%"
-          bodyStyle={{ padding: 0 }}
-        >
-          <AceEditor
-            mode="yaml"
-            theme="eclipse"
-            name="YAML_PREVIEW"
-            wrapEnabled
-            setOptions={{ useWorker: false }}
-            value={stringOfYAML(appConnectionInject(yamlSource))}
-            className="border shadow-sm"
-            style={{ width: "100%", height: "100%" }}
-            showPrintMargin={false}
-            readOnly
-          />
-        </Drawer>
-        <BottomDrawer isDrawerVisible={bottomDrawerVisible} setIsDrawerVisible={setBottomDrawerVisible} destroyOnClose>
-          <TableEnvironmentProvider>
-            <AppConnectionResources {...connectionResources} />
-          </TableEnvironmentProvider>
-        </BottomDrawer>
-      </Wrapper>
+      <Breadcrumb pageName="Application Connections" />
+      {/* align right */}
+      <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+        <Toolbar selectedAppConnections={selectedRows} />
+      </div>
+      <div className="ag-theme-material" style={{
+        height: "500px",
+        width: "100%",
+      }}>
+        <AgGridReact
+          className={gridStyles.dataGrid}
+          rowData={data}
+          columnDefs={columnDefs}
+          rowSelection={"multiple"}
+          suppressRowClickSelection
+          onRowSelected={handleRowSelection}
+        />
+      </div>
+      <Drawer
+        open={drawerOpen}
+        onClose={() => setDrawerOpen(false)}
+        mask={false}
+        placement="right"
+        destroyOnClose
+        title={"YAML Preview"}
+        width="30%"
+      >
+        <AceEditor
+          mode="yaml"
+          theme="eclipse"
+          name="YAML_PREVIEW"
+          wrapEnabled
+          setOptions={{ useWorker: false }}
+          value={stringOfYAML(appConnectionInject(yamlSource))}
+          className="border shadow-sm"
+          style={{ width: "100%", height: "100%" }}
+          showPrintMargin={false}
+          readOnly
+        />
+      </Drawer>
+      <BottomDrawer isDrawerVisible={bottomDrawerVisible} setIsDrawerVisible={setBottomDrawerVisible} destroyOnClose>
+        <TableEnvironmentProvider>
+          <AppConnectionResources {...connectionResources} />
+        </TableEnvironmentProvider>
+      </BottomDrawer>
     </DefaultLayout>
   );
 };

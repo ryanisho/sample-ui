@@ -48,7 +48,9 @@ import gridStyles from "@/components/data-grid/data-grid.module.scss";
 import { setPolicy } from "@/store/application-connection-deployer-slice/applicationConnectionDeployerSlice";
 import { YAMLSideDrawer } from "@/components/common/yaml-side-drawer";
 import { BACKEND_API_PREFIX } from "@/common/constants";
+
 import DefaultLayout from '../../../layout/DefaultLayout';
+import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
 
 
 export const ApplicationConnectionPolicies = () => {
@@ -179,24 +181,23 @@ export const ApplicationConnectionPolicies = () => {
 
   return (
     <DefaultLayout>
-      <Wrapper title="Application Connection Policies">
-        <Toolbar selectedAppConnections={selectedRows} />
-        <div className="ag-theme-material" style={{
-          height: "500px",
-          width: "100%",
-        }}>
-          <AgGridReact
-            className={gridStyles.dataGrid}
-            rowData={data}
-            columnDefs={columnDefs}
-            rowSelection={"multiple"}
-            suppressRowClickSelection
-            onRowSelected={handleRowSelection}
-          />
-        </div>
-        <YAMLSideDrawer open={drawerOpen} onClose={() => setDrawerOpen(false)}
-          yamlSource={appConnectionInject(yamlSource)} width={"40%"} />
-      </Wrapper>
+      <Breadcrumb pageName="Application Connection Policies" />
+      <Toolbar selectedAppConnections={selectedRows} />
+      <div className="ag-theme-material" style={{
+        height: "500px",
+        width: "100%",
+      }}>
+        <AgGridReact
+          className={gridStyles.dataGrid}
+          rowData={data}
+          columnDefs={columnDefs}
+          rowSelection={"multiple"}
+          suppressRowClickSelection
+          onRowSelected={handleRowSelection}
+        />
+      </div>
+      <YAMLSideDrawer open={drawerOpen} onClose={() => setDrawerOpen(false)}
+        yamlSource={appConnectionInject(yamlSource)} width={"40%"} />
     </DefaultLayout>
   );
 };

@@ -29,11 +29,13 @@ import {
 } from "@/components/views/application-policy-creator/_components";
 import { DefaultInject } from "@/store/application-connection-slice/applicationConnectionSlice";
 import DefaultLayout from "@/layout/DefaultLayout";
+import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
 
 export const ApplicationPolicyCreator: FC = () => {
   return (
     <DefaultLayout>
-      <SidebarWrapper title={"Application Connectivity Policy Creation"} rightSidebar={<YamlLivePreview />}>
+      <Breadcrumb pageName="Application Policy Creator" />
+      <SidebarWrapper title={""} rightSidebar={<YamlLivePreview />}>
         <section>
           <MainSettings />
           <div className={styles.columnsContainer}>
