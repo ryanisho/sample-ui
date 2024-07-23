@@ -41,6 +41,9 @@ const MultiCloudInfra = () => {
         setSelectedVpcId(vpc.id); // row select css
         setSelectedVpc(vpc); // modal data
         setIsModalOpen(true); // open modal
+        if (!isModalOpen) {
+            setIsModalOpen(true);
+        }
     };
 
     // search function, id/name
@@ -48,13 +51,6 @@ const MultiCloudInfra = () => {
         vpc.id.toLowerCase().includes(searchTerm.toLowerCase()) ||
         vpc.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
-
-    const handleRowClick = (selectedVpc) => {
-        setSelectedVpc(selectedVpc);
-        if (!isModalOpen) {
-            setIsModalOpen(true);
-        }
-    }
 
     // Provider, AccountID
     const { selectedProvider, selectedAccountId } = useSelector((state: RootState) => state.selectedResources);
@@ -435,14 +431,21 @@ const MultiCloudInfra = () => {
                             {vpcSearch.map((vpc, idx) => (
                                 <div
                                     key={idx}
-                                    className={`dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 bg-white rounded-lg my-2 p-4 shadow ${selectedVpcId === vpc.id ? 'bg-blue-100 dark:bg-gray-600' : 'dark:bg-gray-700'}`}
-                                >
+                                    className={`dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 rounded-lg my-2 p-4 shadow ${selectedVpcId === vpc.id ? 'bg-blue-100 dark:bg-gray-600' : 'bg-white dark:bg-gray-700'}`}
+                                    onClick={() => {
+                                        handleVpcSelect(vpc);
+                                    }}>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{vpc.id}</span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{vpc.accountId}</span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{vpc.name}</span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{vpc.region}</span>
                                 </div>
                             ))}
+                            <ModalComponent
+                                isModalOpen={isModalOpen}
+                                onRequestClose={() => setIsModalOpen(false)}
+                                selectedVpc={selectedVpc}
+                            />
                         </div>
                     </div >
                 )}
