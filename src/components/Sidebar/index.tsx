@@ -180,15 +180,15 @@ const Sidebar = ({
               <SidebarNested
                 item={{
                   text: "Network Domain",
-                  link: "/1",
+                  link: "/network-domain-1",
                   children: [
                     {
                       text: "Domains",
-                      link: "/2",
+                      link: "/network-domain-domain-header",
                       children: [
                         {
                           text: "List",
-                          link: "/network-domain-connections",
+                          link: "/network-domains",
                         },
                         {
                           text: "Create",

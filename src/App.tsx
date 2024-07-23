@@ -23,7 +23,7 @@ import { Route, Routes } from "react-router-dom";
 
 import {
   NetworkDomains,
-  // NetworkDomainsConnections,
+  NetworkDomainsConnections,
   // DefineNetworkDomain,
   SlaProfiles,
   //SlaProfileCreator,
@@ -76,11 +76,9 @@ function App() {
         <Route path={RoutePaths.MULTI_CLOUD_INFRA_RESOURCE_DASHBOARD} element={<MultiCloudInfra />} />
         <Route path={RoutePaths.SECURITY_GROUPS} element={<SecurityGroups />} />
 
-
-        <Route path={RoutePaths.NETWORK_DOMAINS} element={<NetworkDomains />} />
+        <Route path={RoutePaths.NETWORK_DOMAINS} element={<ListNetworkDomain />} />
         <Route path={RoutePaths.DEFINE_NETWORK_DOMAIN} element={<DefineNetworkDomain />} />
-        {/* <Route path={RoutePaths.NETWORK_DOMAIN_CONNECTIONS} element={<NetworkDomainsConnections />} /> */}
-        <Route path={RoutePaths.NETWORK_DOMAIN_CONNECTIONS} element={<ListNetworkDomain />} />
+        <Route path={RoutePaths.NETWORK_DOMAIN_CONNECTIONS} element={<NetworkDomainsConnections />} />
 
         <Route path={RoutePaths.CONNECTION_CREATOR} element={<NetworkDomainsConnectionCreator />} />
         <Route path={RoutePaths.APPLICATION_CONNECTIONS} element={<ApplicationConnections />} />
