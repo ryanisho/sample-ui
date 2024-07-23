@@ -351,6 +351,44 @@ const Sidebar = ({
             <ul className="mb-6 flex flex-col gap-1.5">
               <SidebarNested
                 item={{
+                  text: "Connection",
+                  children: [
+                    {
+                      text: "Workload Selection",
+                      link: "/workload-selection",
+                      children: [
+                        {
+                          text: "List",
+                          link: "/workload-selection",
+                        },
+                        {
+                          text: "Create",
+                          link: "/workload-selection-creator",
+                        },
+                      ],
+                    },
+                    {
+                      text: "SLO",
+                      link: "/slo",
+                      children: [
+                        {
+                          text: "List",
+                          link: "/sla-profiles",
+                        },
+                        {
+                          text: "Create",
+                          link: "/sla-profile-creator",
+                        },
+                      ]
+                    }
+                  ],
+                }}
+                pathname={pathname}
+                sidebarExpanded={sidebarExpanded}
+                setSidebarExpanded={setSidebarExpanded}
+              />
+              <SidebarNested
+                item={{
                   text: "Observability",
                   link: "/observability",
                   children: [
@@ -497,26 +535,11 @@ const Sidebar = ({
                 sidebarExpanded={sidebarExpanded}
                 setSidebarExpanded={setSidebarExpanded}
               />
-
-              <SidebarNested
-                item={{
-                  text: "SLO",
-                  children: [
-                    {
-                      text: "Connection SLO Policy",
-                      link: "/sla-profiles",
-                    },
-                  ],
-                }}
-                pathname={pathname}
-                sidebarExpanded={sidebarExpanded}
-                setSidebarExpanded={setSidebarExpanded}
-              />
             </ul>
           </div>
         </nav>
-      </div>
-    </aside>
+      </div >
+    </aside >
   );
 };
 
