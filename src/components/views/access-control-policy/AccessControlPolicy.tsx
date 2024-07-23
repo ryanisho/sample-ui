@@ -35,6 +35,7 @@ import { openNotification } from "@/common/utils";
 import { BACKEND_API_PREFIX } from "@/common/constants";
 
 import DefaultLayout from "@/layout/DefaultLayout";
+import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
 
 export const AccessControlPolicies = () => {
   const { data } = useSelector((state: RootState) => state.accessControlPolicies);
@@ -96,16 +97,15 @@ export const AccessControlPolicies = () => {
   if ((data)) {
     return (
       <DefaultLayout>
-        <Wrapper title="Access Policies">
-          <DataGrid
-            rowData={data}
-            columnDefs={ColumnsDef}
-            heightAndWidth={{
-              height: "1200px",
-              width: "1600px",
-            }}
-          />
-        </Wrapper>
+        <Breadcrumb pageName="Access Control Policies" />
+        <DataGrid
+          rowData={data}
+          columnDefs={ColumnsDef}
+          heightAndWidth={{
+            height: "1200px",
+            width: "1600px",
+          }}
+        />
       </DefaultLayout>
     );
   }

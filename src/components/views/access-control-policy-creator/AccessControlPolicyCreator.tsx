@@ -32,6 +32,7 @@ import { Security_AccessPolicy, Security_AccessPolicy_AccessProtocol, Security_P
 import { QueriedNetworkDomain } from "@/store/grpc-network-domains-slice/grpcNetworkDomainsSlice";
 import { BACKEND_API_PREFIX } from "@/common/constants";
 import DefaultLayout from '../../../layout/DefaultLayout';
+import Breadcrumb from '@/components/Breadcrumbs/Breadcrumb';
 
 
 const securityPolicyService = createClient(SecurityPolicyServiceDefinition, createChannel(BACKEND_API_PREFIX));
@@ -114,8 +115,8 @@ export const AccessControlPolicyCreator: FC = () => {
 
   return (
     <DefaultLayout>
+      <Breadcrumb pageName="Access Control Policy Creator" />
       <div className="container">
-        <h2>Access Control Policy</h2>
         <form onSubmit={handleSubmit}>
           <div>
             <label>Name</label>
