@@ -84,6 +84,7 @@ export const Toolbar: FC<ToolbarProps> = ({ selectedAppConnections }) => {
           transition: "background-color 0.3s, box-shadow 0.3s",
           height: "35px",
           marginTop: "18px",
+          lineHeight: "19px",
         }}
           onMouseOver={({ currentTarget }) => {
             currentTarget.style.backgroundColor = "#0056b3";
