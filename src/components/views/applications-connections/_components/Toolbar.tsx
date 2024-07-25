@@ -112,7 +112,7 @@ export const Toolbar: FC<ToolbarProps> = ({ selectedAppConnections }) => {
             padding: "8px 12px",
             border: "none",
             borderRadius: "5px",
-            backgroundColor: "#007bff",
+            backgroundColor: "#1890ff",
             color: "white",
             cursor: "pointer",
             display: "inline-block",
@@ -123,6 +123,7 @@ export const Toolbar: FC<ToolbarProps> = ({ selectedAppConnections }) => {
             boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
             transition: "background-color 0.3s, box-shadow 0.3s",
             height: "35px",
+            lineHeight: "19px", // Added lineHeight to center text vertically
           }}
             onMouseOver={({ currentTarget }) => {
               currentTarget.style.backgroundColor = "#0056b3";
