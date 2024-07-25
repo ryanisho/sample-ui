@@ -15,30 +15,7 @@ interface ModalComponentProps {
 const ModalComponent: React.FC<ModalComponentProps> = ({ isModalOpen, onRequestClose, selectedVpc }) => {
 
     const [selectedTab, setSelectedTab] = useState(1);
-    const [lastPingTime, setLastPingTime] = useState<Date | null>(null);
     const [showCopiedPopup, setShowCopiedPopup] = useState(false);
-
-
-    const pingAPI = async () => {
-        await new Promise(selectedVpc => setTimeout(selectedVpc, 1000));
-        setLastPingTime(new Date());
-    };
-
-    useEffect(() => {
-        pingAPI(); if (showCopiedPopup) {
-            const timer = setTimeout(() => setShowCopiedPopup(false), 2000);
-            return () => clearTimeout(timer);
-        }
-    }, [showCopiedPopup]);
-
-    // Function to format the date
-    const formatDate = (lastPingTime: Date | null) => {
-        if (!lastPingTime) return 'Never';
-        const now = new Date();
-        const difference = now.getTime() - lastPingTime.getTime();
-        const minutesAgo = Math.floor(difference / 60000);
-        return minutesAgo.toString();
-    };
 
     const handleCopyToClipboard = (text) => {
         navigator.clipboard.writeText(text);
@@ -135,7 +112,6 @@ const ModalComponent: React.FC<ModalComponentProps> = ({ isModalOpen, onRequestC
                     <>
                         <div style={{ backgroundColor: '#F5F5F5', padding: '10px', boxShadow: '0px 1px 1px rgba(0, 0, 0, 0.2)', border: '1px solid #F5F5F5' }}>
                             <h1 style={{ fontWeight: 'bold', color: 'black', fontSize: '1em' }}>Resource summary for {selectedVpc.name} ({selectedVpc.id})</h1>
-                            <p className="text-sm">Updated about {formatDate(lastPingTime)} minutes ago</p>
                         </div>
                         <div style={{ backgroundColor: '#FFFFFF', padding: '10px', boxShadow: '0px 1px 1px rgba(0, 0, 0, 0.2)', border: '1px solid #F5F5F5', borderTopColor: '#F0F0F0' }}>
                             <div className="grid grid-cols-3 gap-5 text-sm ml-1">

@@ -1,28 +1,42 @@
-import { useState, useEffect } from "react";
-import Breadcrumb from '../../components/Breadcrumbs/Breadcrumb';
-import DefaultLayout from '../../layout/DefaultLayout';
-import ModalComponent from '../../components/Modal/VpcModal';
-import '../../css/vpc.css';
-
-// new 
-import ProviderButtons from '@/components/ProviderRegion/ProviderRegionBar';
+import { useState } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
-import { useFetchVpcResourceClusters, useFetchVpcResourceSubnets, useFetchVpcResourceVms, useFetchVpcResourceSecurityGroups, useFetchVpcResourceRouteTables, useFetchVpcResourceACLs, useFetchVpcResourceVpcEndpoints, useFetchVpcResourceRouters, useFetchVpcResourceNATGateways, useFetchVpcResourceInternetGateways, useFetchVpcResourcePublicIPs, } from "@/common/hooks";
-
-
+import Breadcrumb from '../../components/Breadcrumbs/Breadcrumb';
+import ProviderButtons from '@/components/ProviderRegion/ProviderRegionBar';
+import DefaultLayout from '../../layout/DefaultLayout';
+import ModalComponent from '../../components/Modal/VpcModal';
+import {
+    useFetchVpcResourceSubnets,
+    useFetchVpcResourceVms,
+    useFetchVpcResourceSecurityGroups,
+    useFetchVpcResourceRouteTables,
+    useFetchVpcResourceACLs,
+    useFetchVpcResourceVpcEndpoints,
+    useFetchVpcResourceNATGateways,
+    useFetchVpcResourceInternetGateways,
+    useFetchVpcResourcePublicIPs,
+} from "@/common/hooks";
+import '../../css/vpc.css';
 
 const MultiCloudInfra = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [isModalOpen, setIsModalOpen] = useState(false);
-
-    // new
-    const { vpcs } = useSelector((state: RootState) => state.infraResources); // retrieve vpcs from api
     const [selectedVpc, setSelectedVpc] = useState(null); // track current vpc
     const [selectedVpcId, setSelectedVpcId] = useState<number | null>(null); // track current vpc id (for modal)
-
-    // new views
     const [selectedView, setSelectedView] = useState('VPC');
+
+    // api
+    const { vpcs } = useSelector((state: RootState) => state.infraResources); // retrieve vpcs from api
+    const { selectedProvider, selectedAccountId } = useSelector((state: RootState) => state.selectedResources);
+    const { vpcResourceVms, fetchVpcResourcesVms } = useFetchVpcResourceVms(selectedProvider, '', '', selectedAccountId);
+    const { vpcResourceSubnets, fetchVpcResourcesSubnets } = useFetchVpcResourceSubnets(selectedProvider, '', '', selectedAccountId);
+    const { vpcResourceSecurityGroups, fetchVpcResourceSecurityGroups } = useFetchVpcResourceSecurityGroups(selectedProvider, '', '', selectedAccountId);
+    const { vpcResourceACLs, fetchVpcResourceACLs } = useFetchVpcResourceACLs(selectedProvider, '', '', selectedAccountId);
+    const { vpcResourceRouteTables, fetchVpcResourceRouteTables } = useFetchVpcResourceRouteTables(selectedProvider, '', '', selectedAccountId);
+    const { vpcResourceVpcEndpoints, fetchVpcResourceVPCEndpoints } = useFetchVpcResourceVpcEndpoints(selectedProvider, '', '', selectedAccountId);
+    const { vpcResourceNATGateways, fetchVpcResourceNATGateways } = useFetchVpcResourceNATGateways(selectedProvider, '', '', selectedAccountId);
+    const { vpcResourceInternetGateways, fetchVpcResourceInternetGateways } = useFetchVpcResourceInternetGateways(selectedProvider, '', '', selectedAccountId);
+    const { vpcResourcePublicIPs, fetchVpcResourcePublicIPs } = useFetchVpcResourcePublicIPs(selectedProvider, '', '', selectedAccountId);
 
     const vpcData = vpcs.map(vpc => ({
         id: vpc.id,
@@ -37,6 +51,72 @@ const MultiCloudInfra = () => {
         project: vpc.project,
     }));
 
+    // search 
+    const vpcSearch: typeof vpcData = vpcData.filter(vpc =>
+        vpc.id.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        vpc.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        vpc.accountId.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        vpc.region.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
+    const sgSearch: typeof vpcResourceSecurityGroups = vpcResourceSecurityGroups.filter(group =>
+        group.id.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        group.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        group.accountId.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        group.region.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        group.vpcId.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
+    const vmSearch: typeof vpcResourceVms = vpcResourceVms.filter(group =>
+        group.id.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        group.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        group.accountId.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        group.provider.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        group.owner.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        group.project.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        group.type.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        group.subnetId.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        group.publicIp.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        group.state.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        group.compliant.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
+    // const keysToSearch = [
+    //     'id', 'name', 'accountId', 'provider', 'owner', 'project', 
+    //     'type', 'subnetId', 'publicIp', 'state', 'compliant'
+    // ];
+
+    // const matchesSearchTerm = (group: any, searchTerm: string): boolean => {
+    //     const lowerCaseSearchTerm = searchTerm.toLowerCase();
+    //     return keysToSearch.some(key => 
+    //         group[key]?.toString().toLowerCase().includes(lowerCaseSearchTerm)
+    //     );
+    // };
+
+    // const vmSearch: typeof vpcResourceVms = vpcResourceVms.filter(group => 
+    //     matchesSearchTerm(group, searchTerm)
+    // );
+
+    const buttonData = [
+        { name: 'VPC', fetchFunction: null },
+        { name: 'VM', fetchFunction: fetchVpcResourcesVms },
+        { name: 'Subnet', fetchFunction: fetchVpcResourcesSubnets },
+        { name: 'SGs', fetchFunction: fetchVpcResourceSecurityGroups },
+        { name: 'ACL', fetchFunction: fetchVpcResourceACLs },
+        { name: 'Route Table', fetchFunction: fetchVpcResourceRouteTables },
+        { name: 'VPC Endpoints', fetchFunction: fetchVpcResourceVPCEndpoints },
+        { name: 'NAT Gateways', fetchFunction: fetchVpcResourceNATGateways },
+        { name: 'IGWs', fetchFunction: fetchVpcResourceInternetGateways },
+        { name: 'Public IPs', fetchFunction: fetchVpcResourcePublicIPs },
+    ];
+
+    const handleButtonClick = (name, fetchFunction) => {
+        setSelectedView(name);
+        if (fetchFunction) {
+            fetchFunction();
+        }
+    };
+
     const handleVpcSelect = (vpc) => {
         setSelectedVpcId(vpc.id); // row select css
         setSelectedVpc(vpc); // modal data
@@ -46,43 +126,6 @@ const MultiCloudInfra = () => {
         }
     };
 
-    // search function, id/name
-    const vpcSearch: typeof vpcData = vpcData.filter(vpc =>
-        vpc.id.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        vpc.name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-
-    // Provider, AccountID
-    const { selectedProvider, selectedAccountId } = useSelector((state: RootState) => state.selectedResources);
-
-    // VMs
-    const { vpcResourceVms, fetchVpcResourcesVms } = useFetchVpcResourceVms(selectedProvider, '', '', selectedAccountId);
-
-    // Subnets
-    const { vpcResourceSubnets, fetchVpcResourcesSubnets } = useFetchVpcResourceSubnets(selectedProvider, '', '', selectedAccountId);
-
-    // SGs
-    const { vpcResourceSecurityGroups, fetchVpcResourceSecurityGroups } = useFetchVpcResourceSecurityGroups(selectedProvider, '', '', selectedAccountId);
-
-    // ACL
-    const { vpcResourceACLs, fetchVpcResourceACLs } = useFetchVpcResourceACLs(selectedProvider, '', '', selectedAccountId);
-
-    // Route Table
-    const { vpcResourceRouteTables, fetchVpcResourceRouteTables } = useFetchVpcResourceRouteTables(selectedProvider, '', '', selectedAccountId);
-
-    // VPC Endpoints
-    const { vpcResourceVpcEndpoints, fetchVpcResourceVPCEndpoints } = useFetchVpcResourceVpcEndpoints(selectedProvider, '', '', selectedAccountId);
-
-    // NAT Gateways
-    const { vpcResourceNATGateways, fetchVpcResourceNATGateways } = useFetchVpcResourceNATGateways(selectedProvider, '', '', selectedAccountId);
-
-    // IGWs
-    const { vpcResourceInternetGateways, fetchVpcResourceInternetGateways } = useFetchVpcResourceInternetGateways(selectedProvider, '', '', selectedAccountId);
-
-    // Public IPs
-    const { vpcResourcePublicIPs, fetchVpcResourcePublicIPs } = useFetchVpcResourcePublicIPs(selectedProvider, '', '', selectedAccountId);
-
-
     return (
         <DefaultLayout>
             <Breadcrumb pageName="Multi-cloud Infrastructure Resources" />
@@ -90,7 +133,7 @@ const MultiCloudInfra = () => {
                 <div className="flex flex-col w-1/6">
                     <input
                         type="text"
-                        placeholder="Search by name or ID"
+                        placeholder="Search by id, name, etc."
                         value={searchTerm}
                         onChange={e => setSearchTerm(e.target.value)}
                         className="input-field dark:bg-black"
@@ -98,57 +141,22 @@ const MultiCloudInfra = () => {
                 </div>
                 <ProviderButtons></ProviderButtons>
             </div>
-            <div style={{ marginBottom: "10px", justifyContent: "space-between" }}>
+            <div style={{ marginBottom: "10px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                 <div className="flex justify-begin">
-                    {[
-                        { name: 'VPC', },
-                        { name: 'VM', },
-                        { name: 'Subnet', },
-                        { name: 'SGs', },
-                        { name: 'ACL', },
-                        { name: 'Route Table', },
-                        { name: 'VPC Endpoints', },
-                        { name: 'NAT Gateways', },
-                        { name: 'IGWs', },
-                        { name: 'Public IPs', },
-                    ].map((button) => (
+                    {buttonData.map((button) => (
                         <button
                             className={`dark:border-white dark:text-white button-blue text-sm py-1 whitespace-nowrap ${selectedView === button.name ? 'selected' : ''}`}
                             key={button.name}
-                            onClick={() => {
-                                setSelectedView(button.name);
-                                if (button.name === 'SGs') {
-                                    fetchVpcResourceSecurityGroups();
-                                }
-                                if (button.name === 'VM') {
-                                    fetchVpcResourcesVms();
-                                }
-                                if (button.name === 'Subnet') {
-                                    fetchVpcResourcesSubnets();
-                                }
-                                if (button.name === 'ACL') {
-                                    fetchVpcResourceACLs();
-                                }
-                                if (button.name === 'Route Table') {
-                                    fetchVpcResourceRouteTables();
-                                }
-                                if (button.name === 'VPC Endpoints') {
-                                    fetchVpcResourceVPCEndpoints();
-                                }
-                                if (button.name === 'NAT Gateways') {
-                                    fetchVpcResourceNATGateways();
-                                }
-                                if (button.name === 'IGWs') {
-                                    fetchVpcResourceInternetGateways();
-                                }
-                                if (button.name === 'Public IPs') {
-                                    fetchVpcResourcePublicIPs();
-                                }
-                            }}
+                            onClick={() => handleButtonClick(button.name, button.fetchFunction)}
                         >
                             {button.name}
                         </button>
                     ))}
+                </div>
+                <div>
+                    {selectedView !== 'VPC' && (
+                        <p>Last updated 3 minutes ago</p>
+                    )}
                 </div>
             </div>
             <div className="mt-3">
@@ -164,7 +172,7 @@ const MultiCloudInfra = () => {
                             {/* <span className="w-1/4 px-1 py-2 text-center">Labels</span> */}
                         </div>
                         <div>
-                            {vpcResourceSecurityGroups.map((group, idx) => (
+                            {sgSearch.map((group, idx) => (
                                 <div
                                     key={idx}
                                     className="dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 bg-white rounded-lg my-2 p-4 shadow"
@@ -196,7 +204,7 @@ const MultiCloudInfra = () => {
 
                         </div>
                         <div>
-                            {vpcResourceVms.map((group, idx) => (
+                            {vmSearch.map((group, idx) => (
                                 <div
                                     key={idx}
                                     className="dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 bg-white rounded-lg my-2 p-4 shadow"

@@ -340,16 +340,16 @@ const Sidebar = ({
                   text: "Connection",
                   children: [
                     {
-                      text: "Workload Selection",
-                      link: "/workload-selection",
+                      text: "Workload Selection Policy",
+                      link: "/applicationconnectionpolicies",
                       children: [
                         {
                           text: "List",
-                          link: "/workload-selection",
+                          link: "/application-connection-policies",
                         },
                         {
                           text: "Create",
-                          link: "/workload-selection-creator",
+                          link: "/application-connection-creator",
                         },
                       ],
                     },
@@ -403,20 +403,6 @@ const Sidebar = ({
                         {
                           text: "Create",
                           link: "/logging-policies-creator",
-                        },
-                      ],
-                    },
-                    {
-                      text: "Application Connection Policies",
-                      link: "/applicationconnectionpolicies",
-                      children: [
-                        {
-                          text: "List",
-                          link: "/application-connection-policies",
-                        },
-                        {
-                          text: "Create",
-                          link: "/application-connection-creator",
                         },
                       ],
                     },
