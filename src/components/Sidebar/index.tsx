@@ -342,12 +342,10 @@ const Sidebar = ({
               />
             </ul>
           </div>
-
           <div>
             <h3 className="mb-4 ml-4 text-sm font-semibold text-bodydark2">
               POLICY
             </h3>
-
             <ul className="mb-6 flex flex-col gap-1.5">
               <SidebarNested
                 item={{
@@ -468,7 +466,6 @@ const Sidebar = ({
                 sidebarExpanded={sidebarExpanded}
                 setSidebarExpanded={setSidebarExpanded}
               />
-
               <SidebarNested
                 item={{
                   text: "Security",
@@ -536,6 +533,7 @@ const Sidebar = ({
                 setSidebarExpanded={setSidebarExpanded}
               />
             </ul>
+
           </div>
         </nav>
       </div >
