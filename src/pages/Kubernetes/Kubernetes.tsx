@@ -8,9 +8,6 @@ const clusters = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [selectedAccountId, setSelectedAccountId] = useState('');
     const [selectedRegion, setSelectedRegion] = useState('');
-    const [selectedRowId, setSelectedRowId] = useState<number | null>(null);
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const [selectedRow, setSelectedRow] = useState<typeof data[number] | null>(null);
 
     const data = [
         {
@@ -48,20 +45,12 @@ const clusters = () => {
         },
     ]
 
-    const accountIds = Array.from(new Set(data.map(item => item.accountId)));
-    const regions = Array.from(new Set(data.map(item => item.region)));
-
     const filteredData: typeof data = data.filter(row =>
         row.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
         (selectedAccountId ? row.accountId === selectedAccountId : true) &&
         (selectedRegion ? row.region === selectedRegion : true)
     );
 
-    const [selectedButton, setSelectedButton] = useState('All');
-
-    const handleButtonClick = (buttonName: string) => {
-        setSelectedButton(buttonName);
-    };
 
     return (
         <DefaultLayout>
@@ -81,53 +70,35 @@ const clusters = () => {
             </div>
 
             <div className="mt-3">
-                <table className="data-table">
-                    <thead>
-                        <tr className="table-header dark:bg-black dark:text-white">
-                            <th className="table-cell">Account ID</th>
-                            <th className="table-cell">Name</th>
-                            <th className="table-cell">Fullname</th>
-                            <th className="table-cell">ARN</th>
-                            <th className="table-cell">Region</th>
-                            <th className="table-cell">VPC ID</th>
-                            <th className="table-cell">Provider</th>
-                            <th className="table-cell">Labels</th>
-                        </tr>
-                    </thead>
-                    <tbody className="table-body dark:bg-black dark:text-white">
-                        {filteredData.map((row, index) => (
-                            <tr
-                                key={row.id}
-                                className={`table-row ${row.id === selectedRowId ? 'selected-row' : ''} ${index === filteredData.length - 1 ? '' : 'border-b border-gray-100'}`}
-                                onClick={(e) => {
-                                    e.preventDefault();
-                                    if (row.id === selectedRowId) {
-                                        setSelectedRowId(null);
-                                        setIsModalOpen(false);
-                                    } else {
-                                        setSelectedRowId(row.id);
-                                        setSelectedRow(row);
-                                        setIsModalOpen(true);
-                                    }
-                                }}
+                <div>
+                    <div className="table-header flex justify-between text-left text-sm font-medium text-gray-700 rounded-lg">
+                        <span className="w-1/4 px-4 py-2 text-center">Name</span>
+                        <span className="w-1/4 px-2 py-2 text-center">Fullname</span>
+                        <span className="w-1/4 px-1 py-2 text-center">ARN</span>
+                        <span className="w-1/4 px-1 py-2 text-center">Region</span>
+                        <span className="w-1/4 px-1 py-2 text-center">VPC ID</span>
+                        <span className="w-1/4 px-1 py-2 text-center">Provider</span>
+                        <span className="w-1/4 px-1 py-2 text-center">Account ID</span>
+                        <span className="w-1/4 px-1 py-2 text-center">Labels</span>
+                    </div>
+                    <div>
+                        {filteredData.map((vpc, idx) => (
+                            <div
+                                key={idx}
+                                className={`dark:bg-black dark:text-white flex items-center justify-between text-left text-xs font-medium bg-white text-gray-700 rounded-lg my-2 p-2 shadow`} // Adjusted font size and padding
                             >
-                                <td className="table-cell">{row.id}</td>
-                                <td className="table-cell">{row.name}</td>
-                                <td className="table-cell">{row.fullName}</td>
-                                <td className="table-cell">{row.arn}</td>
-                                <td className="table-cell">{row.region}</td>
-                                <td className="table-cell">{row.vpcId}</td>
-                                <td className="table-cell">{row.provider}</td>
-                                <td className="table-cell">{row.labels}</td>
-                            </tr>
+                                <span className="w-1/4 px-2 py-1 flex text-center justify-center">{vpc.name}</span>
+                                <span className="w-1/4 px-2 py-1 flex text-center justify-center">{vpc.fullName}</span>
+                                <span className="w-1/4 px-2 py-1 flex text-center justify-center">{vpc.arn}</span>
+                                <span className="w-1/4 px-2 py-1 flex text-center justify-center">{vpc.region}</span>
+                                <span className="w-1/4 px-2 py-1 flex text-center justify-center">{vpc.vpcId}</span>
+                                <span className="w-1/4 px-2 py-1 flex text-center justify-center">{vpc.provider}</span>
+                                <span className="w-1/4 px-2 py-1 flex text-center justify-center">{vpc.accountId}</span>
+                                <span className="w-1/4 px-2 py-1 flex text-center justify-center">{vpc.labels}</span>
+                            </div>
                         ))}
-                    </tbody>
-                </table>
-                <ModalComponent
-                    isModalOpen={isModalOpen}
-                    onRequestClose={() => { setIsModalOpen(false); setSelectedRowId(null) }}
-                    selectedRow={selectedRow}
-                />
+                    </div>
+                </div >
             </div>
         </DefaultLayout>
     );
