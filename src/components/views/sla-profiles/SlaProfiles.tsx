@@ -29,6 +29,7 @@ import { AppDispatch, RootState } from "@/store/store";
 import { fetchSLAProfiles } from "@/store/sla-profiles-slice/thunk/slaProfilesThunk";
 
 import DefaultLayout from "@/layout/DefaultLayout";
+import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
 
 export const SlaProfiles = () => {
   const { data } = useSelector((state: RootState) => state.slaProfiles);
@@ -185,16 +186,15 @@ export const SlaProfiles = () => {
   if ((data) || (grpcData)) {
     return (
       <DefaultLayout>
-        <Wrapper title="Connection SLO Profiles">
-          <DataGrid
-            rowData={serverStatus === "live" ? data : data}
-            columnDefs={serverStatus === "live" ? stubServerColumnsDef : stubServerColumnsDef}
-            heightAndWidth={{
-              height: "1200px",
-              width: "1600px",
-            }}
-          />
-        </Wrapper>
+        <Breadcrumb pageName="SLA Profiles" />
+        <DataGrid
+          rowData={serverStatus === "live" ? data : data}
+          columnDefs={serverStatus === "live" ? stubServerColumnsDef : stubServerColumnsDef}
+          heightAndWidth={{
+            height: "1200px",
+            width: "1600px",
+          }}
+        />
       </DefaultLayout>
     );
   }
