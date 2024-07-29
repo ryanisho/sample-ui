@@ -20,7 +20,6 @@
 import React, { FC, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "@/store/store";
-import { Wrapper } from "@/components/views/wrapper";
 import { useFetchAppConnections, useFetchNetworkDomainsConnections } from "@/common/hooks";
 import { fetchSLAProfiles } from "@/store/sla-profiles-slice/thunk/slaProfilesThunk";
 import { Button, Collapse, Steps, StepsProps } from "antd";
@@ -49,6 +48,8 @@ import { BACKEND_API_PREFIX } from "@/common/constants";
 import DefaultLayout from '../../../layout/DefaultLayout';
 import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
 
+// temporary error solution
+import './error.css'
 
 export const ApplicationPolicyAttachment: FC = () => {
   const {
@@ -77,7 +78,9 @@ export const ApplicationPolicyAttachment: FC = () => {
         fetchAppConnections()
         navigate(RoutePaths.APPLICATION_CONNECTIONS)
       }
-      ).catch(error => console.log(error, "Static response"))
+      ).catch(error => {
+        console.error("Error connecting apps:", error);
+      })
   }
 
   const dispatch = useDispatch<AppDispatch>();

@@ -49,6 +49,7 @@ import {
 } from "@/store/application-connection-deployer-slice/applicationConnectionDeployerSlice";
 import { BACKEND_API_PREFIX } from "@/common/constants";
 import DefaultLayout from "@/layout/DefaultLayout";
+import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
 
 export const UserPolicyAttachment: FC = () => {
   const {
@@ -118,40 +119,39 @@ export const UserPolicyAttachment: FC = () => {
   ]
   return (
     <DefaultLayout>
-      <Wrapper title={"Securely Connect Your Users to your Application(s) Resources"}>
-        <div style={{ marginBottom: "10px" }}>
-          <Collapse
-            defaultActiveKey={1}
-            items={[{
-              key: 1,
-              label: 'Overview',
-              children: <UserConnectionBackground />
-            }]}
-          />
-        </div>
-        <Steps current={current} status={steps[current].status}
-          items={steps.map((item) => ({ key: item.title, title: item.title, description: item.description }))}
-          direction={"horizontal"} />
-        <div>{steps[current].content}</div>
-        <div style={{ marginTop: 24 }}>
-          {current < steps.length - 1 && (
-            <Button type="primary" onClick={() => next()} disabled={steps[current]?.status === "error"}>
-              Next
-            </Button>
-          )}
-          {current === steps.length - 1 && (
-            <Button type="primary" onClick={submit}
-              disabled={steps[current]?.status === "error"}>
-              Submit
-            </Button>
-          )}
-          {current > 0 && (
-            <Button style={{ margin: '0 8px' }} onClick={() => prev()}>
-              Previous
-            </Button>
-          )}
-        </div>
-      </Wrapper>
-    </DefaultLayout>
+      <Breadcrumb pageName="Securely Connect Your Users to your Application(s) Resources" />
+      <div style={{ marginBottom: "10px" }}>
+        <Collapse
+          defaultActiveKey={1}
+          items={[{
+            key: 1,
+            label: 'Overview',
+            children: <UserConnectionBackground />
+          }]}
+        />
+      </div>
+      <Steps current={current} status={steps[current].status}
+        items={steps.map((item) => ({ key: item.title, title: item.title, description: item.description }))}
+        direction={"horizontal"} />
+      <div>{steps[current].content}</div>
+      <div style={{ marginTop: 24 }}>
+        {current < steps.length - 1 && (
+          <Button type="primary" onClick={() => next()} disabled={steps[current]?.status === "error"}>
+            Next
+          </Button>
+        )}
+        {current === steps.length - 1 && (
+          <Button type="primary" onClick={submit}
+            disabled={steps[current]?.status === "error"}>
+            Submit
+          </Button>
+        )}
+        {current > 0 && (
+          <Button style={{ margin: '0 8px' }} onClick={() => prev()}>
+            Previous
+          </Button>
+        )}
+      </div>
+    </DefaultLayout >
   );
 };

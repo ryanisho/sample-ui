@@ -263,20 +263,6 @@ const Sidebar = ({
                         },
                       ],
                     },
-                    {
-                      text: "Connection Policies",
-                      link: "/user-connection-policies",
-                      children: [
-                        {
-                          text: "List",
-                          link: "/user-connections-policies",
-                        },
-                        {
-                          text: "Create",
-                          link: "/user-connections-policies-creator",
-                        },
-                      ],
-                    },
                   ],
                 }}
                 pathname={pathname}
