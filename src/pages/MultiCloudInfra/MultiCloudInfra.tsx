@@ -157,9 +157,7 @@ const MultiCloudInfra = () => {
                     ))}
                 </div>
                 <div>
-                    {selectedView !== 'VPC' && (
-                        <p>Last updated {timeSinceUpdate}</p>
-                    )}
+                    <p>Last updated {timeSinceUpdate}</p>
                 </div>
             </div>
             <div className="mt-3">

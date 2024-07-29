@@ -24,6 +24,7 @@ import { fetchDataClient, openNotification } from "@/common/utils";
 import { ApiEndpoints } from "@/common/enum";
 import "./Styles.css"
 import DefaultLayout from '../../../layout/DefaultLayout';
+import Breadcrumb from '@/components/Breadcrumbs/Breadcrumb';
 
 
 export const MonitoringPolicyCreator: React.FC = () => {
@@ -93,9 +94,8 @@ export const MonitoringPolicyCreator: React.FC = () => {
 
   return (
     <DefaultLayout>
+      <Breadcrumb pageName="Monitoring Policy Creator" />
       <div className="container">
-        <h1>Connection Monitoring Policy</h1>
-        <h1>Connection Monitoring Policy</h1>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="name">Name</label>
