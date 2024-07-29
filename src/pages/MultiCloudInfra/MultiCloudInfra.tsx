@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 import Breadcrumb from '../../components/Breadcrumbs/Breadcrumb';
@@ -24,6 +24,9 @@ const MultiCloudInfra = () => {
     const [selectedVpc, setSelectedVpc] = useState(null); // track current vpc
     const [selectedVpcId, setSelectedVpcId] = useState<number | null>(null); // track current vpc id (for modal)
     const [selectedView, setSelectedView] = useState('VPC');
+
+    const [lastUpdated, setLastUpdated] = useState<Date | null>(null);
+    const [timeSinceUpdate, setTimeSinceUpdate] = useState<string>('just now');
 
     // api
     const { vpcs } = useSelector((state: RootState) => state.infraResources); // retrieve vpcs from api
@@ -81,6 +84,20 @@ const MultiCloudInfra = () => {
         group.compliant.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
+
+    // timer counter
+    useEffect(() => {
+        if (lastUpdated) {
+            const interval = setInterval(() => {
+                const now = new Date();
+                const minutes = Math.floor((now.getTime() - lastUpdated.getTime()) / 60000);
+                setTimeSinceUpdate(`${minutes} minute${minutes === 1 ? '' : 's'} ago`);
+            }, 1000);
+
+            return () => clearInterval(interval);
+        }
+    }, [lastUpdated]);
+
     // const keysToSearch = [
     //     'id', 'name', 'accountId', 'provider', 'owner', 'project', 
     //     'type', 'subnetId', 'publicIp', 'state', 'compliant'
@@ -110,10 +127,11 @@ const MultiCloudInfra = () => {
         { name: 'Public IPs', fetchFunction: fetchVpcResourcePublicIPs },
     ];
 
-    const handleButtonClick = (name, fetchFunction) => {
+    const handleButtonClick = async (name, fetchFunction) => {
         setSelectedView(name);
+        setLastUpdated(new Date());
         if (fetchFunction) {
-            fetchFunction();
+            await fetchFunction();
         }
     };
 
@@ -155,7 +173,7 @@ const MultiCloudInfra = () => {
                 </div>
                 <div>
                     {selectedView !== 'VPC' && (
-                        <p>Last updated 3 minutes ago</p>
+                        <p>Last updated {timeSinceUpdate}</p>
                     )}
                 </div>
             </div>
