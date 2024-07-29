@@ -54,36 +54,37 @@ const MultiCloudInfra = () => {
         project: vpc.project,
     }));
 
-    // search 
-    const vpcSearch: typeof vpcData = vpcData.filter(vpc =>
-        vpc.id.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        vpc.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        vpc.accountId.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        vpc.region.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+    // search function
+    const search = (data: any[], searchTerm: string, keys: string[]) => {
+        const lowerCaseSearchTerm = searchTerm.toLowerCase();
+        return data.filter(item =>
+            keys.some(key => item[key]?.toLowerCase().includes(lowerCaseSearchTerm))
+        );
+    };
 
-    const sgSearch: typeof vpcResourceSecurityGroups = vpcResourceSecurityGroups.filter(group =>
-        group.id.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        group.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        group.accountId.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        group.region.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        group.vpcId.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+    // search keys
+    const vpcKeys = ['id', 'name', 'accountId', 'region'];
+    const sgKeys = ['id', 'name', 'accountId', 'region', 'vpcId'];
+    const vmKeys = ['id', 'name', 'accountId', 'provider', 'owner', 'project', 'type', 'subnetId', 'publicIp', 'state', 'compliant'];
+    const subnetKeys = ['id', 'name', 'cidrblock', 'provider', 'accountId', 'region', 'vpcId', 'zone'];
+    const aclKeys = ['id', 'name', 'provider', 'accountId', 'region', 'vpcId'];
+    const routeTableKeys = ['id', 'name', 'provider', 'accountId', 'region', 'vpcId'];
+    const vpcEndpointKeys = ['id', 'name', 'provider', 'accountId', 'region', 'vpcId', 'routeTableIds', 'subnetIds', 'service'];
+    const natGatewaysKeys = ['id', 'name', 'accountId', 'vpcId', 'region', 'state', 'publicIp', 'privateIp', 'subnetId'];
+    const igsKeys = ['id', 'name', 'provider', 'accountId', 'region', 'vpcId', 'state'];
+    const publicIPsKeys = ['id', 'name', 'provider', 'accountId', 'region', 'vpcId', 'state'];
 
-    const vmSearch: typeof vpcResourceVms = vpcResourceVms.filter(group =>
-        group.id.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        group.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        group.accountId.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        group.provider.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        group.owner.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        group.project.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        group.type.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        group.subnetId.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        group.publicIp.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        group.state.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        group.compliant.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-
+    // serach functions
+    const vpcSearch = search(vpcData, searchTerm, vpcKeys);
+    const sgSearch = search(vpcResourceSecurityGroups, searchTerm, sgKeys);
+    const vmSearch = search(vpcResourceVms, searchTerm, vmKeys);
+    const subnetSearch = search(vpcResourceSubnets, searchTerm, subnetKeys);
+    const aclSearch = search(vpcResourceACLs, searchTerm, aclKeys);
+    const routeTableSearch = search(vpcResourceRouteTables, searchTerm, routeTableKeys);
+    const vpcEndpointSearch = search(vpcResourceVpcEndpoints, searchTerm, vpcEndpointKeys);
+    const natGatewaysSearch = search(vpcResourceNATGateways, searchTerm, natGatewaysKeys);
+    const igsSearch = search(vpcResourceInternetGateways, searchTerm, igsKeys);
+    const publicIPsSearch = search(vpcResourcePublicIPs, searchTerm, publicIPsKeys);
 
     // timer counter
     useEffect(() => {
@@ -97,22 +98,6 @@ const MultiCloudInfra = () => {
             return () => clearInterval(interval);
         }
     }, [lastUpdated]);
-
-    // const keysToSearch = [
-    //     'id', 'name', 'accountId', 'provider', 'owner', 'project', 
-    //     'type', 'subnetId', 'publicIp', 'state', 'compliant'
-    // ];
-
-    // const matchesSearchTerm = (group: any, searchTerm: string): boolean => {
-    //     const lowerCaseSearchTerm = searchTerm.toLowerCase();
-    //     return keysToSearch.some(key => 
-    //         group[key]?.toString().toLowerCase().includes(lowerCaseSearchTerm)
-    //     );
-    // };
-
-    // const vmSearch: typeof vpcResourceVms = vpcResourceVms.filter(group => 
-    //     matchesSearchTerm(group, searchTerm)
-    // );
 
     const buttonData = [
         { name: 'VPC', fetchFunction: null },
@@ -255,7 +240,7 @@ const MultiCloudInfra = () => {
                             <span className="w-1/4 px-1 py-2 text-center">Zone</span>
                         </div>
                         <div>
-                            {vpcResourceSubnets.map((group, idx) => (
+                            {subnetSearch.map((group, idx) => (
                                 <div
                                     key={idx}
                                     className={`dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 bg-white rounded-lg my-2 p-4 shadow ${selectedVpcId === group.id ? 'bg-blue-100 dark:bg-gray-600' : 'dark:bg-gray-700'}`}
@@ -283,7 +268,7 @@ const MultiCloudInfra = () => {
                             <span className="w-1/4 px-1 py-2 text-center">VPC ID</span>
                         </div>
                         <div>
-                            {vpcResourceACLs.map((group, idx) => (
+                            {aclSearch.map((group, idx) => (
                                 <div
                                     key={idx}
                                     className={`dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 bg-white rounded-lg my-2 p-4 shadow ${selectedVpcId === group.id ? 'bg-blue-100 dark:bg-gray-600' : 'dark:bg-gray-700'}`}
@@ -309,7 +294,7 @@ const MultiCloudInfra = () => {
                             <span className="w-1/4 px-1 py-2 text-center">VPC ID</span>
                         </div>
                         <div>
-                            {vpcResourceRouteTables.map((group, idx) => (
+                            {routeTableSearch.map((group, idx) => (
                                 <div
                                     key={idx}
                                     className={`dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 bg-white rounded-lg my-2 p-4 shadow ${selectedVpcId === group.id ? 'bg-blue-100 dark:bg-gray-600' : 'dark:bg-gray-700'}`}
@@ -338,7 +323,7 @@ const MultiCloudInfra = () => {
                             <span className="w-1/4 px-1 py-2 text-center">Service</span>
                         </div>
                         <div>
-                            {vpcResourceVpcEndpoints.map((group, idx) => (
+                            {vpcEndpointSearch.map((group, idx) => (
                                 <div
                                     key={idx}
                                     className={`dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 bg-white rounded-lg my-2 p-4 shadow ${selectedVpcId === group.id ? 'bg-blue-100 dark:bg-gray-600' : 'dark:bg-gray-700'}`}
@@ -370,7 +355,7 @@ const MultiCloudInfra = () => {
                             <span className="w-1/4 px-1 py-2 text-center">Subnet ID</span>
                         </div>
                         <div>
-                            {vpcResourceNATGateways.map((group, idx) => (
+                            {natGatewaysSearch.map((group, idx) => (
                                 <div
                                     key={idx}
                                     className={`dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 bg-white rounded-lg my-2 p-4 shadow ${selectedVpcId === group.id ? 'bg-blue-100 dark:bg-gray-600' : 'dark:bg-gray-700'}`}
@@ -400,7 +385,7 @@ const MultiCloudInfra = () => {
                             <span className="w-1/4 px-1 py-2 text-center">State</span>
                         </div>
                         <div>
-                            {vpcResourceInternetGateways.map((group, idx) => (
+                            {igsSearch.map((group, idx) => (
                                 <div
                                     key={idx}
                                     className={`dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 bg-white rounded-lg my-2 p-4 shadow ${selectedVpcId === group.id ? 'bg-blue-100 dark:bg-gray-600' : 'dark:bg-gray-700'}`}
@@ -428,7 +413,7 @@ const MultiCloudInfra = () => {
                             <span className="w-1/4 px-1 py-2 text-center">State</span>
                         </div>
                         <div>
-                            {vpcResourcePublicIPs.map((group, idx) => (
+                            {publicIPsSearch.map((group, idx) => (
                                 <div
                                     key={idx}
                                     className={`dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 bg-white rounded-lg my-2 p-4 shadow ${selectedVpcId === group.id ? 'bg-blue-100 dark:bg-gray-600' : 'dark:bg-gray-700'}`}
