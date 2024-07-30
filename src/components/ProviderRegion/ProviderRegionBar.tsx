@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { InfraResourceProvider } from "@/common/enum";
 
 // new imports
@@ -8,15 +8,18 @@ import { AppDispatch, RootState } from "@/store/store";
 import { setInfraVpcs } from "@/store/infra-resources-slice/infraResourcesSlice";
 import { setSelectedAccountId, setSelectedProvider, setSelectedRegion } from '@/store/selectedRegionAccountId-slice/selectedRegionAccountIdSlice';
 
+interface ProviderButtonsProps {
+    onProviderButtonClick: () => void;
+}
 
-const ProviderRegionBar = () => {
+const ProviderRegionBar: React.FC<ProviderButtonsProps> = ({ onProviderButtonClick }) => {
+
+    const dispatch = useDispatch<AppDispatch>();
 
     // accounts + regions
     const { accounts } = useSelector((state: RootState) => state.infraResources);
     const { regions } = useSelector((state: RootState) => state.infraResources);
 
-    const dispatch = useDispatch<AppDispatch>();
-    // account id and region?
     const [selectedAccountId, setSelectedAccountIdState] = useState('');
     const [selectedRegion, setSelectedRegionState] = useState('');
     const [selectedButton, setLastClickedProvider] = useState<InfraResourceProvider>(InfraResourceProvider.AWS);
@@ -138,7 +141,7 @@ const ProviderRegionBar = () => {
                         <button
                             className={`dark:border-white dark:text-white button-blue text-lg px-3 py-2 ${selectedButton === button.enum ? 'selected' : ''}`}
                             key={button.name}
-                            onClick={() => handleProviderSelect(button.enum)}
+                            onClick={() => { handleProviderSelect(button.enum); onProviderButtonClick() }}
                         >
                             {button.name}
                         </button>

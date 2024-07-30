@@ -103,13 +103,13 @@ const MultiCloudInfra = () => {
         // { name: 'VPC', fetchFunction: null },
         { name: 'VM', fetchFunction: fetchVpcResourcesVms },
         { name: 'Subnet', fetchFunction: fetchVpcResourcesSubnets },
-        { name: 'SGs', fetchFunction: fetchVpcResourceSecurityGroups },
+        { name: 'Security Group', fetchFunction: fetchVpcResourceSecurityGroups },
         { name: 'ACL', fetchFunction: fetchVpcResourceACLs },
         { name: 'Route Table', fetchFunction: fetchVpcResourceRouteTables },
-        { name: 'VPC Endpoints', fetchFunction: fetchVpcResourceVPCEndpoints },
-        { name: 'NAT Gateways', fetchFunction: fetchVpcResourceNATGateways },
-        { name: 'IGWs', fetchFunction: fetchVpcResourceInternetGateways },
-        { name: 'Public IPs', fetchFunction: fetchVpcResourcePublicIPs },
+        { name: 'VPC Endpoint', fetchFunction: fetchVpcResourceVPCEndpoints },
+        { name: 'NAT Gateway', fetchFunction: fetchVpcResourceNATGateways },
+        { name: 'Internet Gateway', fetchFunction: fetchVpcResourceInternetGateways },
+        { name: 'Public IP', fetchFunction: fetchVpcResourcePublicIPs },
     ];
 
     const handleButtonClick = async (name, fetchFunction) => {
@@ -122,12 +122,16 @@ const MultiCloudInfra = () => {
 
     const handleVpcSelect = (vpc) => {
         setSelectedVpcId(vpc.id); // row select css
-        setSelectedVpc(vpc); // modal data
+    };
+
+    const handleOpenModal = (vpc) => {
+        setSelectedVpcId(vpc.id); // row select css
+        setSelectedVpc(vpc);
         setIsModalOpen(true); // open modal
         if (!isModalOpen) {
             setIsModalOpen(true);
         }
-    };
+    }
 
     return (
         <DefaultLayout>
@@ -161,8 +165,8 @@ const MultiCloudInfra = () => {
                 </div>
             </div>
             <div className="mt-3">
-                {selectedView === 'SGs' ? (
-                    // Render table for SGs
+                {selectedView === 'Security Group' ? (
+                    // Render table for Security Group
                     <div>
                         <div className="table-header flex justify-between text-left text-sm font-medium text-gray-700 rounded-lg">
                             <span className="w-1/4 px-4 py-2 text-center">Name</span>
@@ -307,7 +311,7 @@ const MultiCloudInfra = () => {
                             ))}
                         </div>
                     </div>
-                ) : selectedView === "VPC Endpoints" ? (
+                ) : selectedView === "VPC Endpoint" ? (
                     <div>
                         <div className="table-header flex justify-between text-left text-sm font-medium text-gray-700 rounded-lg">
                             <span className="w-1/4 px-4 py-2 text-center">Name</span>
@@ -339,7 +343,7 @@ const MultiCloudInfra = () => {
                             ))}
                         </div>
                     </div>
-                ) : selectedView === 'NAT Gateways' ? (
+                ) : selectedView === 'NAT Gateway' ? (
                     <div>
                         <div className="table-header flex justify-between text-left text-sm font-medium text-gray-700 rounded-lg">
                             <span className="w-1/4 px-4 py-2 text-center">Name</span>
@@ -371,7 +375,7 @@ const MultiCloudInfra = () => {
                             ))}
                         </div>
                     </div>
-                ) : selectedView === 'IGWs' ? (
+                ) : selectedView === 'Internet Gateway' ? (
                     <div>
                         <div className="table-header flex justify-between text-left text-sm font-medium text-gray-700 rounded-lg">
                             <span className="w-1/4 px-4 py-2 text-center">Name</span>
@@ -399,7 +403,7 @@ const MultiCloudInfra = () => {
                             ))}
                         </div>
                     </div>
-                ) : selectedView === 'Public IPs' ? (
+                ) : selectedView === 'Public IP' ? (
                     <div>
                         <div className="table-header flex justify-between text-left text-sm font-medium text-gray-700 rounded-lg">
                             <span className="w-1/4 px-4 py-2 text-center">Name</span>
@@ -440,9 +444,12 @@ const MultiCloudInfra = () => {
                             {vpcSearch.map((vpc, idx) => (
                                 <div
                                     key={idx}
-                                    className={`dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 rounded-lg my-2 p-4 shadow ${selectedVpcId === vpc.id ? 'bg-blue-100 dark:bg-gray-600' : 'bg-white dark:bg-gray-700'}`}
+                                    className={`unselectable cursor-pointer dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 rounded-lg my-2 p-4 shadow ${selectedVpcId === vpc.id ? 'bg-blue-100 dark:bg-gray-600' : 'bg-white dark:bg-gray-700'}`}
                                     onClick={() => {
                                         handleVpcSelect(vpc);
+                                    }}
+                                    onDoubleClick={() => {
+                                        handleOpenModal(vpc);
                                     }}>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{vpc.id}</span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{vpc.accountId}</span>
