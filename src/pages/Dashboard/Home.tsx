@@ -99,7 +99,7 @@ const Home: React.FC = () => {
                 <div className="col-span-12 overflow-auto h-[500px]">
                     {renderCharts && (
                         <div className="space-y-4">
-                            <div className="p-4">
+                            <div className="py-4">
                                 <PieChart series={[statusData.vm.running, statusData.vm.stopped, statusData.vm.terminated]} title="VM States" />
                             </div>
                             <div className="p-4">
