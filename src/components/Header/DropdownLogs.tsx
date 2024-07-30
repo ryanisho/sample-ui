@@ -59,7 +59,7 @@ const DropdownNotification = () => {
                     <span className="absolute -z-1 inline-flex h-full w-full animate-ping rounded-full bg-meta-1 opacity-75"></span>
                 </span>
 
-                <img src={Logs} alt="logs" className="h-4 w-4" />
+                <img src={Logs} alt="logs" className="h-4 w-4 dark:invert dark:brightness-200" />
             </Link>
 
             <div

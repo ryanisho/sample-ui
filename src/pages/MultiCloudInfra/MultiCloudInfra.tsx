@@ -173,7 +173,7 @@ const MultiCloudInfra = () => {
                 {selectedView === 'Security Group' ? (
                     // Render table for Security Group
                     <div>
-                        <div className="table-header flex justify-between text-left text-sm font-medium text-gray-700 rounded-lg">
+                        <div className="dark:bg-black dark:border-black border-b border-1 border-[#E5E7EB] table-header flex justify-between text-left text-sm font-medium text-gray-700 rounded-lg">
                             <span className="w-1/4 px-4 py-2 text-center">Name</span>
                             <span className="w-1/4 px-2 py-2 text-center">Account ID</span>
                             <span className="w-1/4 px-2 py-2 text-center">ID</span>
@@ -185,7 +185,7 @@ const MultiCloudInfra = () => {
                             {sgSearch.map((group, idx) => (
                                 <div
                                     key={idx}
-                                    className={`unselectable cursor-pointer dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 rounded-lg my-2 p-4 shadow ${selectedVpcId === group.id ? 'bg-blue-100 dark:bg-gray-600' : 'bg-white dark:bg-gray-700'}`}
+                                    className={`unselectable cursor-pointer dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 rounded-lg my-2 p-4 shadow ${selectedVpcId === group.id ? 'bg-blue-100 dark:bg-[#00437b]' : 'bg-white dark:bg-black'}`}
                                     onClick={() => {
                                         handleVpcSelect(group);
                                     }}
@@ -205,7 +205,7 @@ const MultiCloudInfra = () => {
                     </div>
                 ) : selectedView === 'VM' ? (
                     <div>
-                        <div className="table-header flex justify-between text-left text-sm font-medium text-gray-700 rounded-lg">
+                        <div className="dark:bg-black dark:border-black border-b border-1 border-[#E5E7EB] table-header flex justify-between text-left text-sm font-medium text-gray-700 rounded-lg">
                             <span className="w-1/4 px-4 py-2 text-center">Name</span>
                             <span className="w-1/4 px-4 py-2 text-center">ID</span>
                             <span className="w-1/4 px-2 py-2 text-center">Account ID</span>
@@ -223,7 +223,7 @@ const MultiCloudInfra = () => {
                             {vmSearch.map((group, idx) => (
                                 <div
                                     key={idx}
-                                    className="dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 bg-white rounded-lg my-2 p-4 shadow"
+                                    className={`unselectable cursor-pointer dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 rounded-lg my-2 p-4 shadow ${selectedVpcId === group.id ? 'bg-blue-100 dark:bg-[#00437b]' : 'bg-white dark:bg-black'}`}
                                     onClick={() => {
                                         handleVpcSelect(group);
                                     }}
@@ -248,7 +248,7 @@ const MultiCloudInfra = () => {
                     </div>
                 ) : selectedView === 'Subnet' ? (
                     <div>
-                        <div className="table-header flex justify-between text-left text-sm font-medium text-gray-700 rounded-lg">
+                        <div className="dark:bg-black dark:border-black border-b border-1 border-[#E5E7EB] table-header flex justify-between text-left text-sm font-medium text-gray-700 rounded-lg">
                             <span className="w-1/4 px-4 py-2 text-center">ID</span>
                             <span className="w-1/4 px-2 py-2 text-center">Name</span>
                             <span className="w-1/4 px-1 py-2 text-center">CIDR Block</span>
@@ -262,7 +262,7 @@ const MultiCloudInfra = () => {
                             {subnetSearch.map((group, idx) => (
                                 <div
                                     key={idx}
-                                    className={`dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 bg-white rounded-lg my-2 p-4 shadow ${selectedVpcId === group.id ? 'bg-blue-100 dark:bg-gray-600' : 'dark:bg-gray-700'}`}
+                                    className={`unselectable cursor-pointer dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 rounded-lg my-2 p-4 shadow ${selectedVpcId === group.id ? 'bg-blue-100 dark:bg-[#00437b]' : 'bg-white dark:bg-black'}`}
                                     onClick={() => {
                                         handleVpcSelect(group);
                                     }}
@@ -284,7 +284,7 @@ const MultiCloudInfra = () => {
                     </div>
                 ) : selectedView === "ACL" ? (
                     <div>
-                        <div className="table-header flex justify-between text-left text-sm font-medium text-gray-700 rounded-lg">
+                        <div className="dark:bg-black dark:border-black border-b border-1 border-[#E5E7EB] table-header flex justify-between text-left text-sm font-medium text-gray-700 rounded-lg">
                             <span className="w-1/4 px-4 py-2 text-center">Name</span>
                             <span className="w-1/4 px-2 py-2 text-center">ID</span>
                             <span className="w-1/4 px-1 py-2 text-center">Provider</span>
@@ -296,7 +296,7 @@ const MultiCloudInfra = () => {
                             {aclSearch.map((group, idx) => (
                                 <div
                                     key={idx}
-                                    className={`unselectable cursor-pointer dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 rounded-lg my-2 p-4 shadow ${selectedVpcId === group.id ? 'bg-blue-100 dark:bg-gray-600' : 'bg-white dark:bg-gray-700'}`}
+                                    className={`unselectable cursor-pointer dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 rounded-lg my-2 p-4 shadow ${selectedVpcId === group.id ? 'bg-blue-100 dark:bg-[#00437b]' : 'bg-white dark:bg-black'}`}
                                     onClick={() => {
                                         handleVpcSelect(group);
                                     }}
@@ -316,7 +316,7 @@ const MultiCloudInfra = () => {
                     </div>
                 ) : selectedView === "Route Table" ? (
                     <div>
-                        <div className="table-header flex justify-between text-left text-sm font-medium text-gray-700 rounded-lg">
+                        <div className="dark:bg-black dark:border-black border-b border-1 border-[#E5E7EB] table-header flex justify-between text-left text-sm font-medium text-gray-700 rounded-lg">
                             <span className="w-1/4 px-4 py-2 text-center">Name</span>
                             <span className="w-1/4 px-2 py-2 text-center">ID</span>
                             <span className="w-1/4 px-1 py-2 text-center">Provider</span>
@@ -328,7 +328,8 @@ const MultiCloudInfra = () => {
                             {routeTableSearch.map((group, idx) => (
                                 <div
                                     key={idx}
-                                    className={`unselectable cursor-pointer dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 rounded-lg my-2 p-4 shadow ${selectedVpcId === group.id ? 'bg-blue-100 dark:bg-gray-600' : 'bg-white dark:bg-gray-700'}`}
+                                    className={`unselectable cursor-pointer dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 rounded-lg my-2 p-4 shadow ${selectedVpcId === group.id ? 'bg-blue-100 dark:bg-[#00437b]' : 'bg-white dark:bg-black'}`}
+
                                     onClick={() => {
                                         handleVpcSelect(group);
                                     }}
@@ -348,7 +349,7 @@ const MultiCloudInfra = () => {
                     </div>
                 ) : selectedView === "VPC Endpoint" ? (
                     <div>
-                        <div className="table-header flex justify-between text-left text-sm font-medium text-gray-700 rounded-lg">
+                        <div className="dark:bg-black dark:border-black border-b border-1 border-[#E5E7EB] table-header flex justify-between text-left text-sm font-medium text-gray-700 rounded-lg">
                             <span className="w-1/4 px-4 py-2 text-center">Name</span>
                             <span className="w-1/4 px-2 py-2 text-center">ID</span>
                             <span className="w-1/4 px-1 py-2 text-center">Provider</span>
@@ -363,7 +364,7 @@ const MultiCloudInfra = () => {
                             {vpcEndpointSearch.map((group, idx) => (
                                 <div
                                     key={idx}
-                                    className={`unselectable cursor-pointer dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 rounded-lg my-2 p-4 shadow ${selectedVpcId === group.id ? 'bg-blue-100 dark:bg-gray-600' : 'bg-white dark:bg-gray-700'}`}
+                                    className={`unselectable cursor-pointer dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 rounded-lg my-2 p-4 shadow ${selectedVpcId === group.id ? 'bg-blue-100 dark:bg-[#00437b]' : 'bg-white dark:bg-black'}`}
                                     onClick={() => {
                                         handleVpcSelect(group);
                                     }}
@@ -378,7 +379,11 @@ const MultiCloudInfra = () => {
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.region}</span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.vpcId}</span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.routeTableIds}</span>
-                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.subnetIds}</span>
+                                    <span className="w-1/4 px-4 py-2 text-center justify-center">
+                                        {group.subnetIds.split(',').map((id, index) => (
+                                            <span key={index} className="block">{id}</span>
+                                        ))}
+                                    </span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.service}</span>
                                 </div>
                             ))}
@@ -386,7 +391,7 @@ const MultiCloudInfra = () => {
                     </div>
                 ) : selectedView === 'NAT Gateway' ? (
                     <div>
-                        <div className="table-header flex justify-between text-left text-sm font-medium text-gray-700 rounded-lg">
+                        <div className="dark:bg-black dark:border-black border-b border-1 border-[#E5E7EB] table-header flex justify-between text-left text-sm font-medium text-gray-700 rounded-lg">
                             <span className="w-1/4 px-4 py-2 text-center">Name</span>
                             <span className="w-1/4 px-2 py-2 text-center">ID</span>
                             <span className="w-1/4 px-1 py-2 text-center">Account ID</span>
@@ -401,7 +406,7 @@ const MultiCloudInfra = () => {
                             {natGatewaysSearch.map((group, idx) => (
                                 <div
                                     key={idx}
-                                    className={`unselectable cursor-pointer dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 rounded-lg my-2 p-4 shadow ${selectedVpcId === group.id ? 'bg-blue-100 dark:bg-gray-600' : 'bg-white dark:bg-gray-700'}`}
+                                    className={`unselectable cursor-pointer dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 rounded-lg my-2 p-4 shadow ${selectedVpcId === group.id ? 'bg-blue-100 dark:bg-[#00437b]' : 'bg-white dark:bg-black'}`}
                                     onClick={() => {
                                         handleVpcSelect(group);
                                     }}
@@ -424,7 +429,7 @@ const MultiCloudInfra = () => {
                     </div>
                 ) : selectedView === 'Internet Gateway' ? (
                     <div>
-                        <div className="table-header flex justify-between text-left text-sm font-medium text-gray-700 rounded-lg">
+                        <div className="dark:bg-black dark:border-black border-b border-1 border-[#E5E7EB] table-header flex justify-between text-left text-sm font-medium text-gray-700 rounded-lg">
                             <span className="w-1/4 px-4 py-2 text-center">Name</span>
                             <span className="w-1/4 px-2 py-2 text-center">ID</span>
                             <span className="w-1/4 px-1 py-2 text-center">Provider</span>
@@ -437,7 +442,7 @@ const MultiCloudInfra = () => {
                             {igsSearch.map((group, idx) => (
                                 <div
                                     key={idx}
-                                    className={`unselectable cursor-pointer dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 rounded-lg my-2 p-4 shadow ${selectedVpcId === group.id ? 'bg-blue-100 dark:bg-gray-600' : 'bg-white dark:bg-gray-700'}`}
+                                    className={`unselectable cursor-pointer dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 rounded-lg my-2 p-4 shadow ${selectedVpcId === group.id ? 'bg-blue-100 dark:bg-[#00437b]' : 'bg-white dark:bg-black'}`}
                                     onClick={() => {
                                         handleVpcSelect(group);
                                     }}
@@ -455,7 +460,7 @@ const MultiCloudInfra = () => {
                     </div>
                 ) : selectedView === 'Public IP' ? (
                     <div>
-                        <div className="table-header flex justify-between text-left text-sm font-medium text-gray-700 rounded-lg">
+                        <div className="dark:bg-black dark:border-black border-b border-1 border-[#E5E7EB] table-header flex justify-between text-left text-sm font-medium text-gray-700 rounded-lg">
                             <span className="w-1/4 px-4 py-2 text-center">Name</span>
                             <span className="w-1/4 px-2 py-2 text-center">ID</span>
                             <span className="w-1/4 px-1 py-2 text-center">Provider</span>
@@ -489,7 +494,7 @@ const MultiCloudInfra = () => {
                 ) : (
                     // Render default vpcSearch table
                     <div>
-                        <div className="table-header flex justify-between text-left text-sm font-medium text-gray-700 rounded-lg">
+                        <div className="dark:bg-black dark:border-black border-b border-1 border-[#E5E7EB] table-header flex justify-between text-left text-sm font-medium text-gray-700 rounded-lg">
                             <span className="w-1/4 px-4 py-2 text-center">ID</span>
                             <span className="w-1/4 px-2 py-2 text-center">Account ID</span>
                             <span className="w-1/4 px-1 py-2 text-center">Name</span>
