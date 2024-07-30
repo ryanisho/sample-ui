@@ -24,7 +24,7 @@ const options: ApexOptions = {
   plotOptions: {
     pie: {
       donut: {
-        size: '70%',
+        size: '65%',
         background: 'transparent',
       },
     },
@@ -32,24 +32,6 @@ const options: ApexOptions = {
   dataLabels: {
     enabled: false,
   },
-  responsive: [
-    {
-      breakpoint: 2600,
-      options: {
-        chart: {
-          width: 400,
-        },
-      },
-    },
-    {
-      breakpoint: 640,
-      options: {
-        chart: {
-          width: 400,
-        },
-      },
-    },
-  ],
 };
 
 const PieChart: React.FC<PieChartState> = ({ title, series }) => {
@@ -77,7 +59,7 @@ const PieChart: React.FC<PieChartState> = ({ title, series }) => {
       </div>
 
       <div className="mb-2 h-64">
-        <div id="PieChart" className="mx-auto flex justify-center">
+        <div id="PieChart" className="flex justify-center">
           {state.series.every(value => value === 0) ? (
             <p className="text-lg mt-32">There are currently no running, stopped, or terminated states.</p>
           ) : (
