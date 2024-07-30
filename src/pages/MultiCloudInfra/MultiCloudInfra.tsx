@@ -133,6 +133,10 @@ const MultiCloudInfra = () => {
         }
     }
 
+    const handleVPCView = () => {
+        setSelectedView('VPC');
+    }
+
     return (
         <DefaultLayout>
             <Breadcrumb pageName="Multi-cloud Infrastructure Resources" />
@@ -146,7 +150,7 @@ const MultiCloudInfra = () => {
                         className="input-field dark:bg-black"
                     />
                 </div>
-                <ProviderButtons></ProviderButtons>
+                <ProviderButtons onProviderButtonClick={handleVPCView}></ProviderButtons>
             </div>
             <div style={{ marginBottom: "10px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                 <div className="flex justify-begin">
