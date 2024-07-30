@@ -100,7 +100,7 @@ const MultiCloudInfra = () => {
     }, [lastUpdated]);
 
     const buttonData = [
-        { name: 'VPC', fetchFunction: null },
+        // { name: 'VPC', fetchFunction: null },
         { name: 'VM', fetchFunction: fetchVpcResourcesVms },
         { name: 'Subnet', fetchFunction: fetchVpcResourcesSubnets },
         { name: 'SGs', fetchFunction: fetchVpcResourceSecurityGroups },
