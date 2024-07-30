@@ -127,7 +127,6 @@ const MultiCloudInfra = () => {
     const handleOpenModal = (vpc) => {
         setSelectedVpcId(vpc.id); // row select css
         setSelectedVpc(vpc);
-        setIsModalOpen(true); // open modal
         if (!isModalOpen) {
             setIsModalOpen(true);
         }
@@ -135,6 +134,8 @@ const MultiCloudInfra = () => {
 
     const handleVPCView = () => {
         setSelectedView('VPC');
+        setIsModalOpen(false);
+        setSelectedVpcId(null);
     }
 
     return (
@@ -184,7 +185,13 @@ const MultiCloudInfra = () => {
                             {sgSearch.map((group, idx) => (
                                 <div
                                     key={idx}
-                                    className="dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 bg-white rounded-lg my-2 p-4 shadow"
+                                    className={`unselectable cursor-pointer dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 rounded-lg my-2 p-4 shadow ${selectedVpcId === group.id ? 'bg-blue-100 dark:bg-gray-600' : 'bg-white dark:bg-gray-700'}`}
+                                    onClick={() => {
+                                        handleVpcSelect(group);
+                                    }}
+                                    onDoubleClick={() => {
+                                        handleOpenModal(group);
+                                    }}
                                 >
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.name}</span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.accountId}</span>
@@ -217,6 +224,12 @@ const MultiCloudInfra = () => {
                                 <div
                                     key={idx}
                                     className="dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 bg-white rounded-lg my-2 p-4 shadow"
+                                    onClick={() => {
+                                        handleVpcSelect(group);
+                                    }}
+                                    onDoubleClick={() => {
+                                        handleOpenModal(group);
+                                    }}
                                 >
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.name}</span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.id}</span>
@@ -250,6 +263,12 @@ const MultiCloudInfra = () => {
                                 <div
                                     key={idx}
                                     className={`dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 bg-white rounded-lg my-2 p-4 shadow ${selectedVpcId === group.id ? 'bg-blue-100 dark:bg-gray-600' : 'dark:bg-gray-700'}`}
+                                    onClick={() => {
+                                        handleVpcSelect(group);
+                                    }}
+                                    onDoubleClick={() => {
+                                        handleOpenModal(group);
+                                    }}
                                 >
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.id}</span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.name}</span>
@@ -277,7 +296,13 @@ const MultiCloudInfra = () => {
                             {aclSearch.map((group, idx) => (
                                 <div
                                     key={idx}
-                                    className={`dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 bg-white rounded-lg my-2 p-4 shadow ${selectedVpcId === group.id ? 'bg-blue-100 dark:bg-gray-600' : 'dark:bg-gray-700'}`}
+                                    className={`unselectable cursor-pointer dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 rounded-lg my-2 p-4 shadow ${selectedVpcId === group.id ? 'bg-blue-100 dark:bg-gray-600' : 'bg-white dark:bg-gray-700'}`}
+                                    onClick={() => {
+                                        handleVpcSelect(group);
+                                    }}
+                                    onDoubleClick={() => {
+                                        handleOpenModal(group);
+                                    }}
                                 >
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.name}</span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.id}</span>
@@ -303,7 +328,13 @@ const MultiCloudInfra = () => {
                             {routeTableSearch.map((group, idx) => (
                                 <div
                                     key={idx}
-                                    className={`dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 bg-white rounded-lg my-2 p-4 shadow ${selectedVpcId === group.id ? 'bg-blue-100 dark:bg-gray-600' : 'dark:bg-gray-700'}`}
+                                    className={`unselectable cursor-pointer dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 rounded-lg my-2 p-4 shadow ${selectedVpcId === group.id ? 'bg-blue-100 dark:bg-gray-600' : 'bg-white dark:bg-gray-700'}`}
+                                    onClick={() => {
+                                        handleVpcSelect(group);
+                                    }}
+                                    onDoubleClick={() => {
+                                        handleOpenModal(group);
+                                    }}
                                 >
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.name}</span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.id}</span>
@@ -332,7 +363,13 @@ const MultiCloudInfra = () => {
                             {vpcEndpointSearch.map((group, idx) => (
                                 <div
                                     key={idx}
-                                    className={`dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 bg-white rounded-lg my-2 p-4 shadow ${selectedVpcId === group.id ? 'bg-blue-100 dark:bg-gray-600' : 'dark:bg-gray-700'}`}
+                                    className={`unselectable cursor-pointer dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 rounded-lg my-2 p-4 shadow ${selectedVpcId === group.id ? 'bg-blue-100 dark:bg-gray-600' : 'bg-white dark:bg-gray-700'}`}
+                                    onClick={() => {
+                                        handleVpcSelect(group);
+                                    }}
+                                    onDoubleClick={() => {
+                                        handleOpenModal(group);
+                                    }}
                                 >
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.name}</span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.id}</span>
@@ -364,7 +401,13 @@ const MultiCloudInfra = () => {
                             {natGatewaysSearch.map((group, idx) => (
                                 <div
                                     key={idx}
-                                    className={`dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 bg-white rounded-lg my-2 p-4 shadow ${selectedVpcId === group.id ? 'bg-blue-100 dark:bg-gray-600' : 'dark:bg-gray-700'}`}
+                                    className={`unselectable cursor-pointer dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 rounded-lg my-2 p-4 shadow ${selectedVpcId === group.id ? 'bg-blue-100 dark:bg-gray-600' : 'bg-white dark:bg-gray-700'}`}
+                                    onClick={() => {
+                                        handleVpcSelect(group);
+                                    }}
+                                    onDoubleClick={() => {
+                                        handleOpenModal(group);
+                                    }}
                                 >
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.name}</span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.id}</span>
@@ -394,7 +437,10 @@ const MultiCloudInfra = () => {
                             {igsSearch.map((group, idx) => (
                                 <div
                                     key={idx}
-                                    className={`dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 bg-white rounded-lg my-2 p-4 shadow ${selectedVpcId === group.id ? 'bg-blue-100 dark:bg-gray-600' : 'dark:bg-gray-700'}`}
+                                    className={`unselectable cursor-pointer dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 rounded-lg my-2 p-4 shadow ${selectedVpcId === group.id ? 'bg-blue-100 dark:bg-gray-600' : 'bg-white dark:bg-gray-700'}`}
+                                    onClick={() => {
+                                        handleVpcSelect(group);
+                                    }}
                                 >
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.name}</span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.id}</span>
@@ -422,8 +468,13 @@ const MultiCloudInfra = () => {
                             {publicIPsSearch.map((group, idx) => (
                                 <div
                                     key={idx}
-                                    className={`dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 bg-white rounded-lg my-2 p-4 shadow ${selectedVpcId === group.id ? 'bg-blue-100 dark:bg-gray-600' : 'dark:bg-gray-700'}`}
-                                >
+                                    className={`unselectable cursor-pointer dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 rounded-lg my-2 p-4 shadow ${selectedVpcId === group.id ? 'bg-blue-100 dark:bg-gray-600' : 'bg-white dark:bg-gray-700'}`}
+                                    onClick={() => {
+                                        handleVpcSelect(group);
+                                    }}
+                                    onDoubleClick={() => {
+                                        handleOpenModal(group);
+                                    }}>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.name}</span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.id}</span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.provider}</span>
@@ -461,14 +512,15 @@ const MultiCloudInfra = () => {
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{vpc.region}</span>
                                 </div>
                             ))}
-                            <ModalComponent
-                                isModalOpen={isModalOpen}
-                                onRequestClose={() => setIsModalOpen(false)}
-                                selectedVpc={selectedVpc}
-                            />
                         </div>
+
                     </div >
                 )}
+                <ModalComponent
+                    isModalOpen={isModalOpen}
+                    onRequestClose={() => setIsModalOpen(false)}
+                    selectedVpc={selectedVpc}
+                />
             </div >
         </DefaultLayout >
     );
