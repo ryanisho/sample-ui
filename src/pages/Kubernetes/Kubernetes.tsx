@@ -66,7 +66,7 @@ const clusters = () => {
                         className="dark:bg-black input-field"
                     />
                 </div>
-                <ProviderRegionBar></ProviderRegionBar>
+                <ProviderRegionBar onProviderButtonClick={() => { }}></ProviderRegionBar>
             </div>
 
             <div className="mt-3">

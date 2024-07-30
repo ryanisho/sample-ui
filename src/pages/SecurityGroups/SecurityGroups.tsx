@@ -52,7 +52,7 @@ const SecurityGroups = () => {
                         className="input-field dark:bg-black"
                     />
                 </div>
-                <ProviderButtons></ProviderButtons>
+                <ProviderButtons onProviderButtonClick={() => { }}></ProviderButtons>
             </div>
             {/* table start */}
             <div className="mt-3">

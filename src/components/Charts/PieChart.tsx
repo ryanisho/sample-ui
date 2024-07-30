@@ -17,7 +17,7 @@ const options: ApexOptions = {
   legend: {
     show: true,
     position: 'bottom',
-    offsetY: 15,
+    offsetY: 0,
     offsetX: 0,
   },
 
@@ -76,10 +76,10 @@ const PieChart: React.FC<PieChartState> = ({ title, series }) => {
         </div>
       </div>
 
-      <div className="mb-2 h-96">
+      <div className="mb-2 h-64">
         <div id="PieChart" className="mx-auto flex justify-center">
           {state.series.every(value => value === 0) ? (
-            <p className="text-lg mt-48">There are currently no running, stopped, or terminated states.</p>
+            <p className="text-lg mt-32">There are currently no running, stopped, or terminated states.</p>
           ) : (
             <ReactApexChart
               options={options}
