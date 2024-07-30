@@ -225,8 +225,8 @@ span.flatpickr-weekday,
   margin: 5px;
   margin-top: 9px;
   /* Add some margin */
-  padding: 2px;
-  width: 100px;
+  /* padding: 2px; */
+  /* width: 100px; */
   /* Add padding */
   justify-content: center;
   /* Center the text horizontally */
