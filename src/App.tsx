@@ -61,6 +61,7 @@ import { AccessControlPolicies } from "./components/views/access-control-policy"
 import { UserPolicyAttachment } from "./components/views/user-policy-attachment";
 import { MonitoringPolicy } from "./components/views/monitoring-policy/MonitoringPolicy";
 // import SecurityGroups from "./pages/SecurityGroups/SecurityGroups";
+import Error404 from "./pages/404";
 
 
 function App() {
@@ -103,6 +104,9 @@ function App() {
         <Route path={RoutePaths.MONITORING_POLICIES_CREATOR} element={<MonitoringPolicyCreator />} />
         <Route path={RoutePaths.MONITORING_POLICIES} element={<MonitoringPolicy />} />
         <Route path={RoutePaths.LOGGING_POLICIES_CREATOR} element={<LoggingPolicyCreator />} />
+
+        {/* 404 */}
+        <Route path="*" element={<Error404 />} />
       </Routes>
     </Suspense>
     // </Layout>
