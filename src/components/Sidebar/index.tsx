@@ -79,7 +79,7 @@ const Sidebar = ({
         className="fixed top-2 left-3 m-4"
         style={{ zIndex: 1000, pointerEvents: "auto" }}
       >
-        <img src={Hamburger} className="dark: invert dark:brightness-200" alt="Menu" style={{ width: "4%", height: "4%" }} />
+        <img src={Hamburger} className="dark:invert dark:brightness-200" alt="Menu" style={{ width: "4%", height: "4%" }} />
       </button>
     );
   }
