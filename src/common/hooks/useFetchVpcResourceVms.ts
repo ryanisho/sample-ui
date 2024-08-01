@@ -48,6 +48,7 @@ export const useFetchVpcResourceVms = (provider: string, region: string, id: str
             const id = instance.getId();
             const accountId = instance.getAccountId();
             const provider = instance.getProvider().toUpperCase();
+            const region = instance.getRegion();
             const type = instance.getType();
             const subnetId = instance.getSubnetid();
             const publicIp = instance.getPublicip();
@@ -56,6 +57,7 @@ export const useFetchVpcResourceVms = (provider: string, region: string, id: str
             const labels: any = {};
             const labelsMap = instance.getLabelsMap();
             const vpcId = instance.getVpcid();
+            const zone = instance.getZone();
             let project = ""
             let owner = ""
             let compliant = "No"
@@ -76,6 +78,7 @@ export const useFetchVpcResourceVms = (provider: string, region: string, id: str
             return {
               name,
               vpcId,
+              region,
               id,
               accountId,
               provider,
@@ -88,6 +91,7 @@ export const useFetchVpcResourceVms = (provider: string, region: string, id: str
               state,
               labels,
               compliant,
+              zone,
             };
           });
 
