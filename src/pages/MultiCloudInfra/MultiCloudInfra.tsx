@@ -37,6 +37,7 @@ const MultiCloudInfra = () => {
 
     const [lastUpdated, setLastUpdated] = useState<Date | null>(null);
     const [timeSinceUpdate, setTimeSinceUpdate] = useState<string>('just now');
+    const [sortConfig, setSortConfig] = useState<{ key: string, direction: 'ascending' | 'descending' } | null>(null);
 
     // api
     const { vpcs } = useSelector((state: RootState) => state.infraResources); // retrieve vpcs from api
@@ -108,6 +109,29 @@ const MultiCloudInfra = () => {
             return () => clearInterval(interval);
         }
     }, [lastUpdated]);
+
+    // sorting funciton
+    const sortedData = (data) => {
+        if (!sortConfig) return data;
+
+        return [...data].sort((a, b) => {
+            if (a[sortConfig.key] < b[sortConfig.key]) {
+                return sortConfig.direction === 'ascending' ? -1 : 1;
+            }
+            if (a[sortConfig.key] > b[sortConfig.key]) {
+                return sortConfig.direction === 'ascending' ? 1 : -1;
+            }
+            return 0;
+        });
+    };
+
+    const handleSort = (key: string) => {
+        let direction: 'ascending' | 'descending' = 'ascending';
+        if (sortConfig && sortConfig.key === key && sortConfig.direction === 'ascending') {
+            direction = 'descending';
+        }
+        setSortConfig({ key, direction });
+    };
 
     const buttonData = [
         // { name: 'VPC', fetchFunction: null },
@@ -185,12 +209,12 @@ const MultiCloudInfra = () => {
                     // Render table for Security Group
                     <div>
                         <div className="dark:bg-black dark:border-black border-b border-1 border-[#E5E7EB] table-header flex justify-between text-left text-sm font-medium text-gray-700 rounded-lg">
-                            <span className="w-1/4 px-4 py-2 text-center">Name</span>
-                            <span className="w-1/4 px-2 py-2 text-center">Account ID</span>
-                            <span className="w-1/4 px-2 py-2 text-center">ID</span>
+                            <span onClick={() => handleSort('name')} className="w-1/4 px-4 py-2 text-center">Name</span>
+                            <span onClick={() => handleSort('accountId')} className="w-1/4 px-2 py-2 text-center">Account ID</span>
+                            <span onClick={() => handleSort('id')} className="w-1/4 px-2 py-2 text-center">ID</span>
                         </div>
                         <div>
-                            {sgSearch.map((group, idx) => (
+                            {sortedData(sgSearch).map((group, idx) => (
                                 <div
                                     key={idx}
                                     className={`unselectable cursor-pointer dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 rounded-lg my-2 p-4 shadow ${selectedVpcId === group.id ? 'bg-blue-100 dark:bg-[#00437b]' : 'bg-white dark:bg-black'}`}
@@ -216,14 +240,14 @@ const MultiCloudInfra = () => {
                 ) : selectedView === 'VM' ? (
                     <div>
                         <div className="dark:bg-black dark:border-black border-b border-1 border-[#E5E7EB] table-header flex justify-between text-left text-sm font-medium text-gray-700 rounded-lg">
-                            <span className="w-1/4 px-4 py-2 text-center">Name</span>
-                            <span className="w-1/4 px-4 py-2 text-center">ID</span>
-                            <span className="w-1/4 px-2 py-2 text-center">Account ID</span>
-                            <span className="w-1/4 px-2 py-2 text-center">Provider</span>
+                            <span onClick={() => handleSort('name')} className="w-1/4 px-4 py-2 text-center">Name</span>
+                            <span onClick={() => handleSort('id')} className="w-1/4 px-4 py-2 text-center">ID</span>
+                            <span onClick={() => handleSort('accountId')} className="w-1/4 px-2 py-2 text-center">Account ID</span>
+                            <span onClick={() => handleSort('provider')} className="w-1/4 px-2 py-2 text-center">Provider</span>
 
                         </div>
                         <div>
-                            {vmSearch.map((group, idx) => (
+                            {sortedData(vmSearch).map((group, idx) => (
                                 <div
                                     key={idx}
                                     className={`unselectable cursor-pointer dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 rounded-lg my-2 p-4 shadow ${selectedVpcId === group.id ? 'bg-blue-100 dark:bg-[#00437b]' : 'bg-white dark:bg-black'}`}
@@ -250,13 +274,13 @@ const MultiCloudInfra = () => {
                 ) : selectedView === 'Subnet' ? (
                     <div>
                         <div className="dark:bg-black dark:border-black border-b border-1 border-[#E5E7EB] table-header flex justify-between text-left text-sm font-medium text-gray-700 rounded-lg">
-                            <span className="w-1/4 px-4 py-2 text-center">ID</span>
-                            <span className="w-1/4 px-2 py-2 text-center">Name</span>
-                            <span className="w-1/4 px-1 py-2 text-center">Provider</span>
-                            <span className="w-1/4 px-1 py-2 text-center">Account ID</span>
+                            <span onClick={() => handleSort('id')} className="w-1/4 px-4 py-2 text-center">ID</span>
+                            <span onClick={() => handleSort('name')} className="w-1/4 px-2 py-2 text-center">Name</span>
+                            <span onClick={() => handleSort('provider')} className="w-1/4 px-1 py-2 text-center">Provider</span>
+                            <span onClick={() => handleSort('accountId')} className="w-1/4 px-1 py-2 text-center">Account ID</span>
                         </div>
                         <div>
-                            {subnetSearch.map((group, idx) => (
+                            {sortedData(subnetSearch).map((group, idx) => (
                                 <div
                                     key={idx}
                                     className={`unselectable cursor-pointer dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 rounded-lg my-2 p-4 shadow ${selectedVpcId === group.id ? 'bg-blue-100 dark:bg-[#00437b]' : 'bg-white dark:bg-black'}`}
@@ -283,13 +307,13 @@ const MultiCloudInfra = () => {
                 ) : selectedView === "ACL" ? (
                     <div>
                         <div className="dark:bg-black dark:border-black border-b border-1 border-[#E5E7EB] table-header flex justify-between text-left text-sm font-medium text-gray-700 rounded-lg">
-                            <span className="w-1/4 px-4 py-2 text-center">Name</span>
-                            <span className="w-1/4 px-2 py-2 text-center">ID</span>
-                            <span className="w-1/4 px-1 py-2 text-center">Provider</span>
-                            <span className="w-1/4 px-1 py-2 text-center">Account ID</span>
+                            <span onClick={() => handleSort('name')} className="w-1/4 px-4 py-2 text-center">Name</span>
+                            <span onClick={() => handleSort('id')} className="w-1/4 px-2 py-2 text-center">ID</span>
+                            <span onClick={() => handleSort('provider')} className="w-1/4 px-1 py-2 text-center">Provider</span>
+                            <span onClick={() => handleSort('accountId')} className="w-1/4 px-1 py-2 text-center">Account ID</span>
                         </div>
                         <div>
-                            {aclSearch.map((group, idx) => (
+                            {sortedData(aclSearch).map((group, idx) => (
                                 <div
                                     key={idx}
                                     className={`unselectable cursor-pointer dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 rounded-lg my-2 p-4 shadow ${selectedVpcId === group.id ? 'bg-blue-100 dark:bg-[#00437b]' : 'bg-white dark:bg-black'}`}
@@ -316,13 +340,13 @@ const MultiCloudInfra = () => {
                 ) : selectedView === "Route Table" ? (
                     <div>
                         <div className="dark:bg-black dark:border-black border-b border-1 border-[#E5E7EB] table-header flex justify-between text-left text-sm font-medium text-gray-700 rounded-lg">
-                            <span className="w-1/4 px-4 py-2 text-center">Name</span>
-                            <span className="w-1/4 px-2 py-2 text-center">ID</span>
-                            <span className="w-1/4 px-1 py-2 text-center">Provider</span>
-                            <span className="w-1/4 px-1 py-2 text-center">Account ID</span>
+                            <span onClick={() => handleSort('name')} className="w-1/4 px-4 py-2 text-center">Name</span>
+                            <span onClick={() => handleSort('id')} className="w-1/4 px-2 py-2 text-center">ID</span>
+                            <span onClick={() => handleSort('provider')} className="w-1/4 px-1 py-2 text-center">Provider</span>
+                            <span onClick={() => handleSort('accountId')} className="w-1/4 px-1 py-2 text-center">Account ID</span>
                         </div>
                         <div>
-                            {routeTableSearch.map((group, idx) => (
+                            {sortedData(routeTableSearch).map((group, idx) => (
                                 <div
                                     key={idx}
                                     className={`unselectable cursor-pointer dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 rounded-lg my-2 p-4 shadow ${selectedVpcId === group.id ? 'bg-blue-100 dark:bg-[#00437b]' : 'bg-white dark:bg-black'}`}
@@ -350,13 +374,13 @@ const MultiCloudInfra = () => {
                 ) : selectedView === "VPC Endpoint" ? (
                     <div>
                         <div className="dark:bg-black dark:border-black border-b border-1 border-[#E5E7EB] table-header flex justify-between text-left text-sm font-medium text-gray-700 rounded-lg">
-                            <span className="w-1/4 px-4 py-2 text-center">Name</span>
-                            <span className="w-1/4 px-2 py-2 text-center">ID</span>
-                            <span className="w-1/4 px-1 py-2 text-center">Provider</span>
-                            <span className="w-1/4 px-1 py-2 text-center">Account ID</span>
+                            <span onClick={() => handleSort('name')} className="w-1/4 px-4 py-2 text-center">Name</span>
+                            <span onClick={() => handleSort('id')} className="w-1/4 px-2 py-2 text-center">ID</span>
+                            <span onClick={() => handleSort('provider')} className="w-1/4 px-1 py-2 text-center">Provider</span>
+                            <span onClick={() => handleSort('accountId')} className="w-1/4 px-1 py-2 text-center">Account ID</span>
                         </div>
                         <div>
-                            {vpcEndpointSearch.map((group, idx) => (
+                            {sortedData(vpcEndpointSearch).map((group, idx) => (
                                 <div
                                     key={idx}
                                     className={`unselectable cursor-pointer dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 rounded-lg my-2 p-4 shadow ${selectedVpcId === group.id ? 'bg-blue-100 dark:bg-[#00437b]' : 'bg-white dark:bg-black'}`}
@@ -383,12 +407,12 @@ const MultiCloudInfra = () => {
                 ) : selectedView === 'NAT Gateway' ? (
                     <div>
                         <div className="dark:bg-black dark:border-black border-b border-1 border-[#E5E7EB] table-header flex justify-between text-left text-sm font-medium text-gray-700 rounded-lg">
-                            <span className="w-1/4 px-4 py-2 text-center">Name</span>
-                            <span className="w-1/4 px-2 py-2 text-center">ID</span>
-                            <span className="w-1/4 px-1 py-2 text-center">Account ID</span>
+                            <span onClick={() => handleSort('name')} className="w-1/4 px-4 py-2 text-center">Name</span>
+                            <span onClick={() => handleSort('id')} className="w-1/4 px-2 py-2 text-center">ID</span>
+                            <span onClick={() => handleSort('accountId')} className="w-1/4 px-1 py-2 text-center">Account ID</span>
                         </div>
                         <div>
-                            {natGatewaysSearch.map((group, idx) => (
+                            {sortedData(natGatewaysSearch).map((group, idx) => (
                                 <div
                                     key={idx}
                                     className={`unselectable cursor-pointer dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 rounded-lg my-2 p-4 shadow ${selectedVpcId === group.id ? 'bg-blue-100 dark:bg-[#00437b]' : 'bg-white dark:bg-black'}`}
@@ -415,13 +439,13 @@ const MultiCloudInfra = () => {
                 ) : selectedView === 'Internet Gateway' ? (
                     <div>
                         <div className="dark:bg-black dark:border-black border-b border-1 border-[#E5E7EB] table-header flex justify-between text-left text-sm font-medium text-gray-700 rounded-lg">
-                            <span className="w-1/4 px-4 py-2 text-center">Name</span>
-                            <span className="w-1/4 px-2 py-2 text-center">ID</span>
-                            <span className="w-1/4 px-1 py-2 text-center">Provider</span>
-                            <span className="w-1/4 px-1 py-2 text-center">Account ID</span>
+                            <span onClick={() => handleSort('name')} className="w-1/4 px-4 py-2 text-center">Name</span>
+                            <span onClick={() => handleSort('id')} className="w-1/4 px-2 py-2 text-center">ID</span>
+                            <span onClick={() => handleSort('provider')} className="w-1/4 px-1 py-2 text-center">Provider</span>
+                            <span onClick={() => handleSort('accountId')} className="w-1/4 px-1 py-2 text-center">Account ID</span>
                         </div>
                         <div>
-                            {igsSearch.map((group, idx) => (
+                            {sortedData(igsSearch).map((group, idx) => (
                                 <div
                                     key={idx}
                                     className={`unselectable cursor-pointer dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 rounded-lg my-2 p-4 shadow ${selectedVpcId === group.id ? 'bg-blue-100 dark:bg-[#00437b]' : 'bg-white dark:bg-black'}`}
@@ -483,13 +507,13 @@ const MultiCloudInfra = () => {
                     // Render default vpcSearch table
                     <div>
                         <div className="dark:bg-black dark:border-black border-b border-1 border-[#E5E7EB] table-header flex justify-between text-left text-sm font-medium text-gray-700 rounded-lg">
-                            <span className="w-1/4 px-4 py-2 text-center">ID</span>
-                            <span className="w-1/4 px-2 py-2 text-center">Account ID</span>
-                            <span className="w-1/4 px-1 py-2 text-center">Name</span>
-                            <span className="w-1/4 px-1 py-2 text-center">Region</span>
+                            <span onClick={() => handleSort('id')} className="w-1/4 px-4 py-2 text-center">ID</span>
+                            <span onClick={() => handleSort('accountId')} className="w-1/4 px-2 py-2 text-center">Account ID</span>
+                            <span onClick={() => handleSort('name')} className="w-1/4 px-1 py-2 text-center">Name</span>
+                            <span onClick={() => handleSort('region')} className="w-1/4 px-1 py-2 text-center">Region</span>
                         </div>
                         <div>
-                            {vpcSearch.map((vpc, idx) => (
+                            {sortedData(vpcSearch).map((vpc, idx) => (
                                 <div
                                     key={idx}
                                     className={`unselectable cursor-pointer dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 rounded-lg my-2 p-4 shadow ${selectedVpcId === vpc.id ? 'bg-blue-100 dark:bg-[#00437b]' : 'bg-white dark:bg-black'}`}
