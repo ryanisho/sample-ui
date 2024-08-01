@@ -16,6 +16,7 @@ import {
     useFetchVpcResourceSubnets,
     useFetchVpcResourceVms,
     useFetchVpcResourceSecurityGroups,
+    useFetchVpcResourceRouters,
     useFetchVpcResourceRouteTables,
     useFetchVpcResourceACLs,
     useFetchVpcResourceVpcEndpoints,
@@ -46,6 +47,7 @@ const MultiCloudInfra = () => {
     const { vpcResourceSubnets, fetchVpcResourcesSubnets } = useFetchVpcResourceSubnets(selectedProvider, '', '', selectedAccountId);
     const { vpcResourceSecurityGroups, fetchVpcResourceSecurityGroups } = useFetchVpcResourceSecurityGroups(selectedProvider, '', '', selectedAccountId);
     const { vpcResourceACLs, fetchVpcResourceACLs } = useFetchVpcResourceACLs(selectedProvider, '', '', selectedAccountId);
+    const { vpcResourceRouters, fetchVpcResourceRouters } = useFetchVpcResourceRouters(selectedProvider, '', '', selectedAccountId);
     const { vpcResourceRouteTables, fetchVpcResourceRouteTables } = useFetchVpcResourceRouteTables(selectedProvider, '', '', selectedAccountId);
     const { vpcResourceVpcEndpoints, fetchVpcResourceVPCEndpoints } = useFetchVpcResourceVpcEndpoints(selectedProvider, '', '', selectedAccountId);
     const { vpcResourceNATGateways, fetchVpcResourceNATGateways } = useFetchVpcResourceNATGateways(selectedProvider, '', '', selectedAccountId);
@@ -79,6 +81,7 @@ const MultiCloudInfra = () => {
     const vmKeys = ['id', 'name', 'accountId', 'provider', 'owner', 'project', 'type', 'subnetId', 'publicIp', 'state', 'compliant'];
     const subnetKeys = ['id', 'name', 'cidrblock', 'provider', 'accountId', 'region', 'vpcId', 'zone'];
     const aclKeys = ['id', 'name', 'provider', 'accountId', 'region', 'vpcId'];
+    const routerKeys = ['id', 'name', 'provider', 'accountId', 'region', 'vpcId'];
     const routeTableKeys = ['id', 'name', 'provider', 'accountId', 'region', 'vpcId'];
     const vpcEndpointKeys = ['id', 'name', 'provider', 'accountId', 'region', 'vpcId', 'routeTableIds', 'subnetIds', 'service'];
     const natGatewaysKeys = ['id', 'name', 'accountId', 'vpcId', 'region', 'state', 'publicIp', 'privateIp', 'subnetId'];
@@ -91,6 +94,7 @@ const MultiCloudInfra = () => {
     const vmSearch = search(vpcResourceVms, searchTerm, vmKeys);
     const subnetSearch = search(vpcResourceSubnets, searchTerm, subnetKeys);
     const aclSearch = search(vpcResourceACLs, searchTerm, aclKeys);
+    const routerSearch = search(vpcResourceRouters, searchTerm, routerKeys);
     const routeTableSearch = search(vpcResourceRouteTables, searchTerm, routeTableKeys);
     const vpcEndpointSearch = search(vpcResourceVpcEndpoints, searchTerm, vpcEndpointKeys);
     const natGatewaysSearch = search(vpcResourceNATGateways, searchTerm, natGatewaysKeys);
@@ -139,6 +143,7 @@ const MultiCloudInfra = () => {
         { name: 'Subnet', fetchFunction: fetchVpcResourcesSubnets },
         { name: 'Security Group', fetchFunction: fetchVpcResourceSecurityGroups },
         { name: 'ACL', fetchFunction: fetchVpcResourceACLs },
+        { name: 'Router', fetchFunction: fetchVpcResourceRouters },
         { name: 'Route Table', fetchFunction: fetchVpcResourceRouteTables },
         { name: 'VPC Endpoint', fetchFunction: fetchVpcResourceVPCEndpoints },
         { name: 'NAT Gateway', fetchFunction: fetchVpcResourceNATGateways },
@@ -518,6 +523,35 @@ const MultiCloudInfra = () => {
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.region}</span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.vpcId}</span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.state}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                ) : selectedView === 'Routers' ? (
+                    <div>
+                        <div className="dark:bg-black dark:border-black border-b border-1 border-[#E5E7EB] table-header flex justify-between text-left text-sm font-medium text-gray-700 rounded-lg">
+                            <span onClick={() => handleSort('name')} className="w-1/4 px-4 py-2 text-center">Name</span>
+                            <span onClick={() => handleSort('id')} className="w-1/4 px-2 py-2 text-center">ID</span>
+                            <span onClick={() => handleSort('accountId')} className="w-1/4 px-1 py-2 text-center">Account ID</span>
+                            <span onClick={() => handleSort('vpcId')} className="w-1/4 px-2 py-2 text-center">VPC ID</span>
+                            <span onClick={() => handleSort('provider')} className="w-1/4 px-1 py-2 text-center">Provider</span>
+                        </div>
+                        <div>
+                            {sortedData(routerSearch).map((group, idx) => (
+                                <div
+                                    key={idx}
+                                    className={`unselectable cursor-pointer dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 rounded-lg my-2 p-4 shadow ${selectedVpcId === group.id ? 'bg-blue-100 dark:bg-gray-600' : 'bg-white dark:bg-gray-700'}`}
+                                    onClick={() => {
+                                        handleVpcSelect(group);
+                                    }}
+                                    onDoubleClick={() => {
+                                        handleOpenModal(group);
+                                    }}>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.name}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.id}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.accountId}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.vpcId}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.provider}</span>
                                 </div>
                             ))}
                         </div>

@@ -114,12 +114,6 @@ const ModalComponent: React.FC<ModalComponentProps> = ({ isModalOpen, onRequestC
                         <div style={{ backgroundColor: '#FFFFFF', padding: '10px', boxShadow: '0px 1px 1px rgba(0, 0, 0, 0.2)', border: '1px solid #F5F5F5', borderTopColor: '#F0F0F0' }}>
                             <div className="grid grid-cols-3 gap-5 text-sm ml-1">
                                 <div className="text-gray-400 mt-5">
-                                    Name
-                                    <div className="text-black" >
-                                        {selectedVpc.name}
-                                    </div>
-                                </div>
-                                <div className="text-gray-400 mt-5">
                                     VPC ID
                                     <div className="text-black" >
                                         {selectedVpc.id}
@@ -132,58 +126,39 @@ const ModalComponent: React.FC<ModalComponentProps> = ({ isModalOpen, onRequestC
                                     </div>
                                 </div>
                                 <div className="text-gray-400 mt-5">
-                                    Owner
+                                    State
                                     <div className="text-black" >
-                                        {selectedVpc && "project" in selectedVpc.labels ? selectedVpc.labels["owner"] : "N/A"}
+                                        {selectedVpc.state}
                                     </div>
                                 </div>
                                 <div className="text-gray-400 mt-5">
-                                    Project
+                                    Public IP
                                     <div className="text-black" >
-                                        {selectedVpc && "project" in selectedVpc.labels ? selectedVpc.labels["project"] : "N/A"}
+                                        {selectedVpc.publicIp}
                                     </div>
                                 </div>
-                                <div className="text-gray-400 mt-2">
-                                    IPv4 CIDR
+                                <div className="text-gray-400 mt-5">
+                                    Private IP
                                     <div className="text-black" >
-                                        {selectedVpc.ipv4}
+                                        {selectedVpc.privateIp}
                                     </div>
                                 </div>
-                                <div className="text-gray-400 mt-2">
-                                    IPv6 CIDR
+                                <div className="text-gray-400 mt-5">
+                                    Subnet ID
                                     <div className="text-black" >
-                                        {selectedVpc.ipv6 || 'N/A'}
-                                    </div>
-                                </div>
-                                <div className="text-gray-400 mt-2">
-                                    Compliant Tags
-                                    <div className="text-black" >
-                                        {selectedVpc.labels && "project" in selectedVpc.labels && "owner" in selectedVpc.labels ? (
-                                            <p>Yes</p>
-                                        ) : (
-                                            <p>No</p>
-                                        )}
-                                    </div>
-                                </div>
-                                <div className="text-gray-400 mt-2">
-                                    Notify Account Owner
-                                    <div className="text-black" >
-                                        {selectedVpc.labels && "project" in selectedVpc.labels && "owner" in selectedVpc.labels ? (
-                                            <p>Notification Not Requred</p>) : (
-                                            <button>Click Here</button>
-                                        )}
+                                        {selectedVpc.subnetId}
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                         <div className="flex text-black-900 font-semibold text-sm" style={{ backgroundColor: '#F5F5F5', padding: '10px', boxShadow: '0px 1px 1px rgba(0, 0, 0, 0.2)', border: '1px solid #F5F5F5' }}>
-                            <div className={`flex-1 text-center border-r border-gray-400 cursor-pointer px-2 ${selectedTab === 1 ? 'pb-2 border-b-2 border-black' : ''}`} onClick={() => setSelectedTab(1)}>Tags</div>
-                            <div className={`flex-1 text-center border-r border-gray-400 cursor-pointer px-2 ${selectedTab === 3 ? 'pb-2 border-b-2 border-black' : ''}`} onClick={() => setSelectedTab(3)}>Status</div>
-                            <div className={`flex-1 text-center cursor-pointer px-2 ${selectedTab === 2 ? 'pb-2 border-b-2 border-black' : ''}`} onClick={() => setSelectedTab(2)}>Networking</div>
+                            <div className={`flex-1 text-center border-r border-gray-400 cursor-pointer px-2 ${selectedTab === 1 ? 'pb-2 border-b-2 border-black' : ''}`} onClick={() => setSelectedTab(1)}>Status</div>
+                            <div className={`flex-1 text-center border-r border-gray-400 cursor-pointer px-2 ${selectedTab === 2 ? 'pb-2 border-b-2 border-black' : ''}`} onClick={() => setSelectedTab(2)}>Networking</div>
+                            <div className={`flex-1 text-center cursor-pointer px-2 ${selectedTab === 3 ? 'pb-2 border-b-2 border-black' : ''}`} onClick={() => setSelectedTab(3)}>Tags</div>
                         </div>
                         <div style={{ backgroundColor: '#FFFFFF', padding: '10px', boxShadow: '0px 1px 1px rgba(0, 0, 0, 0.2)', border: '1px solid #F5F5F5' }}>
-                            {selectedTab === 3 &&
+                            {selectedTab === 1 &&
                                 <div>
                                     <h2 className="text-black font-semibold">Status Information</h2>
                                     <div className="flex grid grid-cols-2">
@@ -207,7 +182,7 @@ const ModalComponent: React.FC<ModalComponentProps> = ({ isModalOpen, onRequestC
                                     <h2 className="text-black font-semibold">Networking Information</h2>
 
                                 </div>}
-                            {selectedTab === 1 &&
+                            {selectedTab === 3 &&
                                 <div>
                                     <h2 className="text-black font-semibold">Tag Information</h2>
                                     {renderLabelsTable(selectedVpc.labels)}
