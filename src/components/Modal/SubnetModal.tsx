@@ -126,52 +126,15 @@ const ModalComponent: React.FC<ModalComponentProps> = ({ isModalOpen, onRequestC
                                     </div>
                                 </div>
                                 <div className="text-gray-400 mt-5">
-                                    Owner
-                                    <div className="text-black" >
-                                        {selectedVpc && "project" in selectedVpc.labels ? selectedVpc.labels["owner"] : "N/A"}
+                                    CIDR Block
+                                    <div className="text-black">
+                                        {selectedVpc.cidrblock}
                                     </div>
                                 </div>
                                 <div className="text-gray-400 mt-5">
-                                    Project
-                                    <div className="text-black" >
-                                        {selectedVpc && "project" in selectedVpc.labels ? selectedVpc.labels["project"] : "N/A"}
-                                    </div>
-                                </div>
-                                <div className="text-gray-400 mt-2">
-                                    IPv4 CIDR
-                                    <div className="text-black" >
-                                        {selectedVpc.ipv4}
-                                    </div>
-                                </div>
-                                <div className="text-gray-400 mt-2">
-                                    IPv6 CIDR
-                                    <div className="text-black" >
-                                        {selectedVpc.ipv6}
-                                    </div>
-                                </div>
-                                <div className="text-gray-400 mt-2">
-                                    Compliant Tags
-                                    <div className="text-black" >
-                                        {selectedVpc.labels && "project" in selectedVpc.labels && "owner" in selectedVpc.labels ? (
-                                            <p>Yes</p>
-                                        ) : (
-                                            <p>No</p>
-                                        )}
-                                    </div>
-                                </div>
-                                <div className="text-gray-400 mt-2">
-                                    Notify Account Owner
-                                    <div className="text-black" >
-                                        {selectedVpc.labels && "project" in selectedVpc.labels && "owner" in selectedVpc.labels ? (
-                                            <p>Notification Not Requred</p>) : (
-                                            <button>Click Here</button>
-                                        )}
-                                    </div>
-                                </div>
-                                <div className="text-gray-400 mt-2">
-                                    Hostname Type
-                                    <div className="text-black" >
-                                        N/A
+                                    Zone
+                                    <div className="text-black">
+                                        {selectedVpc.zone}
                                     </div>
                                 </div>
                             </div>

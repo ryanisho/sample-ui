@@ -4,7 +4,14 @@ import { RootState } from "@/store/store";
 import Breadcrumb from '../../components/Breadcrumbs/Breadcrumb';
 import ProviderButtons from '@/components/ProviderRegion/ProviderRegionBar';
 import DefaultLayout from '../../layout/DefaultLayout';
-import ModalComponent from '../../components/Modal/VpcModal';
+import VpcModal from '../../components/Modal/VpcModal';
+import InternetGatewayModal from '../../components/Modal/InternetGatewayModal';
+import NatGatewayModal from '../../components/Modal/NatGatewayModal';
+import VpcEndpointModal from '../../components/Modal/VpcEndpointModal';
+import RouteTableModal from '../../components/Modal/RouteTableModal';
+import SubnetModal from '../../components/Modal/SubnetModal';
+import VMModal from '../../components/Modal/VMModal';
+
 import {
     useFetchVpcResourceSubnets,
     useFetchVpcResourceVms,
@@ -17,6 +24,9 @@ import {
     useFetchVpcResourcePublicIPs,
 } from "@/common/hooks";
 import '../../css/vpc.css';
+
+import { Route } from "react-router-dom";
+import { Subnet } from "@/_proto/grpc-service/ts/cloud_request";
 
 const MultiCloudInfra = () => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -113,6 +123,7 @@ const MultiCloudInfra = () => {
     ];
 
     const handleButtonClick = async (name, fetchFunction) => {
+        setIsModalOpen(false);
         setSelectedView(name);
         setLastUpdated(new Date());
         if (fetchFunction) {
@@ -177,9 +188,6 @@ const MultiCloudInfra = () => {
                             <span className="w-1/4 px-4 py-2 text-center">Name</span>
                             <span className="w-1/4 px-2 py-2 text-center">Account ID</span>
                             <span className="w-1/4 px-2 py-2 text-center">ID</span>
-                            <span className="w-1/4 px-1 py-2 text-center">Region</span>
-                            <span className="w-1/4 px-1 py-2 text-center">VPC ID</span>
-                            {/* <span className="w-1/4 px-1 py-2 text-center">Labels</span> */}
                         </div>
                         <div>
                             {sgSearch.map((group, idx) => (
@@ -196,12 +204,14 @@ const MultiCloudInfra = () => {
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.name}</span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.accountId}</span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.id}</span>
-                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.region}</span>
-                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.vpcId}</span>
-                                    {/* <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.labels}</span> */}
                                 </div>
                             ))}
                         </div>
+                        <RouteTableModal
+                            isModalOpen={isModalOpen}
+                            onRequestClose={() => setIsModalOpen(false)}
+                            selectedVpc={selectedVpc}
+                        />
                     </div>
                 ) : selectedView === 'VM' ? (
                     <div>
@@ -210,13 +220,6 @@ const MultiCloudInfra = () => {
                             <span className="w-1/4 px-4 py-2 text-center">ID</span>
                             <span className="w-1/4 px-2 py-2 text-center">Account ID</span>
                             <span className="w-1/4 px-2 py-2 text-center">Provider</span>
-                            <span className="w-1/4 px-2 py-2 text-center">Owner</span>
-                            <span className="w-1/4 px-2 py-2 text-center">Project</span>
-                            <span className="w-1/4 px-2 py-2 text-center">Type</span>
-                            <span className="w-1/4 px-2 py-2 text-center">Subnet ID</span>
-                            <span className="w-1/4 px-2 py-2 text-center">Public IP</span>
-                            <span className="w-1/4 px-2 py-2 text-center">State</span>
-                            <span className="w-1/4 px-1 py-2 text-center">Compliancy</span>
 
                         </div>
                         <div>
@@ -235,28 +238,22 @@ const MultiCloudInfra = () => {
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.id}</span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.accountId}</span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.provider}</span>
-                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.owner}</span>
-                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.project}</span>
-                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.type}</span>
-                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.subnetId}</span>
-                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.publicIp}</span>
-                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.state}</span>
-                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.compliant}</span>
                                 </div>
                             ))}
                         </div>
+                        <VMModal
+                            isModalOpen={isModalOpen}
+                            onRequestClose={() => setIsModalOpen(false)}
+                            selectedVpc={selectedVpc}
+                        />
                     </div>
                 ) : selectedView === 'Subnet' ? (
                     <div>
                         <div className="dark:bg-black dark:border-black border-b border-1 border-[#E5E7EB] table-header flex justify-between text-left text-sm font-medium text-gray-700 rounded-lg">
                             <span className="w-1/4 px-4 py-2 text-center">ID</span>
                             <span className="w-1/4 px-2 py-2 text-center">Name</span>
-                            <span className="w-1/4 px-1 py-2 text-center">CIDR Block</span>
                             <span className="w-1/4 px-1 py-2 text-center">Provider</span>
                             <span className="w-1/4 px-1 py-2 text-center">Account ID</span>
-                            <span className="w-1/4 px-1 py-2 text-center">Region</span>
-                            <span className="w-1/4 px-1 py-2 text-center">VPC ID</span>
-                            <span className="w-1/4 px-1 py-2 text-center">Zone</span>
                         </div>
                         <div>
                             {subnetSearch.map((group, idx) => (
@@ -272,15 +269,16 @@ const MultiCloudInfra = () => {
                                 >
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.id}</span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.name}</span>
-                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.cidrblock}</span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.provider}</span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.accountId}</span>
-                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.region}</span>
-                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.vpcId}</span>
-                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.zone}</span>
                                 </div>
                             ))}
                         </div>
+                        <SubnetModal
+                            isModalOpen={isModalOpen}
+                            onRequestClose={() => setIsModalOpen(false)}
+                            selectedVpc={selectedVpc}
+                        />
                     </div>
                 ) : selectedView === "ACL" ? (
                     <div>
@@ -289,8 +287,6 @@ const MultiCloudInfra = () => {
                             <span className="w-1/4 px-2 py-2 text-center">ID</span>
                             <span className="w-1/4 px-1 py-2 text-center">Provider</span>
                             <span className="w-1/4 px-1 py-2 text-center">Account ID</span>
-                            <span className="w-1/4 px-1 py-2 text-center">Region</span>
-                            <span className="w-1/4 px-1 py-2 text-center">VPC ID</span>
                         </div>
                         <div>
                             {aclSearch.map((group, idx) => (
@@ -308,11 +304,14 @@ const MultiCloudInfra = () => {
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.id}</span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.provider}</span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.accountId}</span>
-                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.region}</span>
-                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.vpcId}</span>
                                 </div>
                             ))}
                         </div>
+                        <RouteTableModal
+                            isModalOpen={isModalOpen}
+                            onRequestClose={() => setIsModalOpen(false)}
+                            selectedVpc={selectedVpc}
+                        />
                     </div>
                 ) : selectedView === "Route Table" ? (
                     <div>
@@ -321,8 +320,6 @@ const MultiCloudInfra = () => {
                             <span className="w-1/4 px-2 py-2 text-center">ID</span>
                             <span className="w-1/4 px-1 py-2 text-center">Provider</span>
                             <span className="w-1/4 px-1 py-2 text-center">Account ID</span>
-                            <span className="w-1/4 px-1 py-2 text-center">Region</span>
-                            <span className="w-1/4 px-1 py-2 text-center">VPC ID</span>
                         </div>
                         <div>
                             {routeTableSearch.map((group, idx) => (
@@ -341,11 +338,14 @@ const MultiCloudInfra = () => {
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.id}</span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.provider}</span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.accountId}</span>
-                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.region}</span>
-                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.vpcId}</span>
                                 </div>
                             ))}
                         </div>
+                        <RouteTableModal
+                            isModalOpen={isModalOpen}
+                            onRequestClose={() => setIsModalOpen(false)}
+                            selectedVpc={selectedVpc}
+                        />
                     </div>
                 ) : selectedView === "VPC Endpoint" ? (
                     <div>
@@ -354,11 +354,6 @@ const MultiCloudInfra = () => {
                             <span className="w-1/4 px-2 py-2 text-center">ID</span>
                             <span className="w-1/4 px-1 py-2 text-center">Provider</span>
                             <span className="w-1/4 px-1 py-2 text-center">Account ID</span>
-                            <span className="w-1/4 px-1 py-2 text-center">Region</span>
-                            <span className="w-1/4 px-1 py-2 text-center">VPC ID</span>
-                            <span className="w-1/4 px-1 py-2 text-center">Route Table IDs</span>
-                            <span className="w-1/4 px-1 py-2 text-center">Subnet IDs</span>
-                            <span className="w-1/4 px-1 py-2 text-center">Service</span>
                         </div>
                         <div>
                             {vpcEndpointSearch.map((group, idx) => (
@@ -376,18 +371,14 @@ const MultiCloudInfra = () => {
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.id}</span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.provider}</span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.accountId}</span>
-                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.region}</span>
-                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.vpcId}</span>
-                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.routeTableIds}</span>
-                                    <span className="w-1/4 px-4 py-2 text-center justify-center">
-                                        {group.subnetIds.split(',').map((id, index) => (
-                                            <span key={index} className="block">{id}</span>
-                                        ))}
-                                    </span>
-                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.service}</span>
                                 </div>
                             ))}
                         </div>
+                        <VpcEndpointModal
+                            isModalOpen={isModalOpen}
+                            onRequestClose={() => setIsModalOpen(false)}
+                            selectedVpc={selectedVpc}
+                        />
                     </div>
                 ) : selectedView === 'NAT Gateway' ? (
                     <div>
@@ -395,12 +386,6 @@ const MultiCloudInfra = () => {
                             <span className="w-1/4 px-4 py-2 text-center">Name</span>
                             <span className="w-1/4 px-2 py-2 text-center">ID</span>
                             <span className="w-1/4 px-1 py-2 text-center">Account ID</span>
-                            <span className="w-1/4 px-1 py-2 text-center">VPC ID</span>
-                            <span className="w-1/4 px-1 py-2 text-center">Region</span>
-                            <span className="w-1/4 px-1 py-2 text-center">State</span>
-                            <span className="w-1/4 px-1 py-2 text-center">Public IP</span>
-                            <span className="w-1/4 px-1 py-2 text-center">Private IP</span>
-                            <span className="w-1/4 px-1 py-2 text-center">Subnet ID</span>
                         </div>
                         <div>
                             {natGatewaysSearch.map((group, idx) => (
@@ -417,15 +402,15 @@ const MultiCloudInfra = () => {
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.name}</span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.id}</span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.accountId}</span>
-                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.vpcId}</span>
-                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.region}</span>
-                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.state}</span>
-                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.publicIp}</span>
-                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.privateIp}</span>
-                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.subnetId}</span>
+
                                 </div>
                             ))}
                         </div>
+                        <NatGatewayModal
+                            isModalOpen={isModalOpen}
+                            onRequestClose={() => setIsModalOpen(false)}
+                            selectedVpc={selectedVpc}
+                        />
                     </div>
                 ) : selectedView === 'Internet Gateway' ? (
                     <div>
@@ -434,9 +419,6 @@ const MultiCloudInfra = () => {
                             <span className="w-1/4 px-2 py-2 text-center">ID</span>
                             <span className="w-1/4 px-1 py-2 text-center">Provider</span>
                             <span className="w-1/4 px-1 py-2 text-center">Account ID</span>
-                            <span className="w-1/4 px-1 py-2 text-center">Region</span>
-                            <span className="w-1/4 px-1 py-2 text-center">VPC ID</span>
-                            <span className="w-1/4 px-1 py-2 text-center">State</span>
                         </div>
                         <div>
                             {igsSearch.map((group, idx) => (
@@ -446,17 +428,23 @@ const MultiCloudInfra = () => {
                                     onClick={() => {
                                         handleVpcSelect(group);
                                     }}
+                                    onDoubleClick={() => {
+                                        handleOpenModal(group);
+                                    }
+                                    }
                                 >
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.name}</span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.id}</span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.provider}</span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.accountId}</span>
-                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.region}</span>
-                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.vpcId}</span>
-                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.state}</span>
                                 </div>
                             ))}
                         </div>
+                        <InternetGatewayModal
+                            isModalOpen={isModalOpen}
+                            onRequestClose={() => setIsModalOpen(false)}
+                            selectedVpc={selectedVpc}
+                        />
                     </div>
                 ) : selectedView === 'Public IP' ? (
                     <div>
@@ -518,14 +506,13 @@ const MultiCloudInfra = () => {
                                 </div>
                             ))}
                         </div>
-
+                        <VpcModal
+                            isModalOpen={isModalOpen}
+                            onRequestClose={() => setIsModalOpen(false)}
+                            selectedVpc={selectedVpc}
+                        />
                     </div >
                 )}
-                <ModalComponent
-                    isModalOpen={isModalOpen}
-                    onRequestClose={() => setIsModalOpen(false)}
-                    selectedVpc={selectedVpc}
-                />
             </div >
         </DefaultLayout >
     );

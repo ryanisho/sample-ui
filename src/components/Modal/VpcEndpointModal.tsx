@@ -112,7 +112,7 @@ const ModalComponent: React.FC<ModalComponentProps> = ({ isModalOpen, onRequestC
                             <h1 style={{ fontWeight: 'bold', color: 'black', fontSize: '1em' }}>Resource summary for {selectedVpc.name} ({selectedVpc.id})</h1>
                         </div>
                         <div style={{ backgroundColor: '#FFFFFF', padding: '10px', boxShadow: '0px 1px 1px rgba(0, 0, 0, 0.2)', border: '1px solid #F5F5F5', borderTopColor: '#F0F0F0' }}>
-                            <div className="grid grid-cols-3 gap-5 text-sm ml-1">
+                            <div className="grid grid-cols-2 gap-5 text-sm ml-1">
                                 <div className="text-gray-400 mt-5">
                                     VPC ID
                                     <div className="text-black" >
@@ -126,52 +126,21 @@ const ModalComponent: React.FC<ModalComponentProps> = ({ isModalOpen, onRequestC
                                     </div>
                                 </div>
                                 <div className="text-gray-400 mt-5">
-                                    Owner
-                                    <div className="text-black" >
-                                        {selectedVpc && "project" in selectedVpc.labels ? selectedVpc.labels["owner"] : "N/A"}
+                                    Route Table ID
+                                    <div className="text-black">
+                                        {selectedVpc.routeTableIds || "N/A"}
                                     </div>
                                 </div>
                                 <div className="text-gray-400 mt-5">
-                                    Project
-                                    <div className="text-black" >
-                                        {selectedVpc && "project" in selectedVpc.labels ? selectedVpc.labels["project"] : "N/A"}
+                                    Service
+                                    <div className="text-black whitespace-nowrap" >
+                                        {selectedVpc.service}
                                     </div>
                                 </div>
-                                <div className="text-gray-400 mt-2">
-                                    IPv4 CIDR
-                                    <div className="text-black" >
-                                        {selectedVpc.ipv4}
-                                    </div>
-                                </div>
-                                <div className="text-gray-400 mt-2">
-                                    IPv6 CIDR
-                                    <div className="text-black" >
-                                        {selectedVpc.ipv6}
-                                    </div>
-                                </div>
-                                <div className="text-gray-400 mt-2">
-                                    Compliant Tags
-                                    <div className="text-black" >
-                                        {selectedVpc.labels && "project" in selectedVpc.labels && "owner" in selectedVpc.labels ? (
-                                            <p>Yes</p>
-                                        ) : (
-                                            <p>No</p>
-                                        )}
-                                    </div>
-                                </div>
-                                <div className="text-gray-400 mt-2">
-                                    Notify Account Owner
-                                    <div className="text-black" >
-                                        {selectedVpc.labels && "project" in selectedVpc.labels && "owner" in selectedVpc.labels ? (
-                                            <p>Notification Not Requred</p>) : (
-                                            <button>Click Here</button>
-                                        )}
-                                    </div>
-                                </div>
-                                <div className="text-gray-400 mt-2">
-                                    Hostname Type
-                                    <div className="text-black" >
-                                        N/A
+                                <div className="text-gray-400 mt-5">
+                                    Subnet ID
+                                    <div className="text-black">
+                                        <span className="block whitespace-nowrap">{selectedVpc.subnetIds}</span>
                                     </div>
                                 </div>
                             </div>
