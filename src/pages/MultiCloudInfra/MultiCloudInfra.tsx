@@ -210,8 +210,8 @@ const MultiCloudInfra = () => {
                     <div>
                         <div className="dark:bg-black dark:border-black border-b border-1 border-[#E5E7EB] table-header flex justify-between text-left text-sm font-medium text-gray-700 rounded-lg">
                             <span onClick={() => handleSort('name')} className="w-1/4 px-4 py-2 text-center">Name</span>
-                            <span onClick={() => handleSort('accountId')} className="w-1/4 px-2 py-2 text-center">Account ID</span>
                             <span onClick={() => handleSort('id')} className="w-1/4 px-2 py-2 text-center">ID</span>
+                            <span onClick={() => handleSort('accountId')} className="w-1/4 px-2 py-2 text-center">Account ID</span>
                             <span onClick={() => handleSort('vpcId')} className="w-1/4 px-2 py-2 text-center">VPC ID</span>
 
                         </div>
@@ -228,8 +228,8 @@ const MultiCloudInfra = () => {
                                     }}
                                 >
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.name}</span>
-                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.accountId}</span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.id}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.accountId}</span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.vpcId}</span>
                                 </div>
                             ))}
@@ -279,8 +279,8 @@ const MultiCloudInfra = () => {
                 ) : selectedView === 'Subnet' ? (
                     <div>
                         <div className="dark:bg-black dark:border-black border-b border-1 border-[#E5E7EB] table-header flex justify-between text-left text-sm font-medium text-gray-700 rounded-lg">
-                            <span onClick={() => handleSort('id')} className="w-1/4 px-4 py-2 text-center">ID</span>
                             <span onClick={() => handleSort('name')} className="w-1/4 px-2 py-2 text-center">Name</span>
+                            <span onClick={() => handleSort('id')} className="w-1/4 px-4 py-2 text-center">ID</span>
                             <span onClick={() => handleSort('accountId')} className="w-1/4 px-1 py-2 text-center">Account ID</span>
                             <span onClick={() => handleSort('vpcId')} className="w-1/4 px-1 py-2 text-center">VPC ID</span>
                             <span onClick={() => handleSort('provider')} className="w-1/4 px-1 py-2 text-center">Provider</span>
@@ -297,10 +297,11 @@ const MultiCloudInfra = () => {
                                         handleOpenModal(group);
                                     }}
                                 >
-                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.id}</span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.name}</span>
-                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.provider}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.id}</span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.accountId}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.vpcId}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.provider}</span>
                                 </div>
                             ))}
                         </div>
@@ -315,8 +316,10 @@ const MultiCloudInfra = () => {
                         <div className="dark:bg-black dark:border-black border-b border-1 border-[#E5E7EB] table-header flex justify-between text-left text-sm font-medium text-gray-700 rounded-lg">
                             <span onClick={() => handleSort('name')} className="w-1/4 px-4 py-2 text-center">Name</span>
                             <span onClick={() => handleSort('id')} className="w-1/4 px-2 py-2 text-center">ID</span>
-                            <span onClick={() => handleSort('provider')} className="w-1/4 px-1 py-2 text-center">Provider</span>
                             <span onClick={() => handleSort('accountId')} className="w-1/4 px-1 py-2 text-center">Account ID</span>
+                            <span onClick={() => handleSort('vpcId')} className="w-1/4 px-2 py-2 text-center">VPC ID</span>
+                            <span onClick={() => handleSort('provider')} className="w-1/4 px-1 py-2 text-center">Provider</span>
+
                         </div>
                         <div>
                             {sortedData(aclSearch).map((group, idx) => (
@@ -332,8 +335,10 @@ const MultiCloudInfra = () => {
                                 >
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.name}</span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.id}</span>
-                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.provider}</span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.accountId}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.vpcId}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.provider}</span>
+
                                 </div>
                             ))}
                         </div>
@@ -348,8 +353,9 @@ const MultiCloudInfra = () => {
                         <div className="dark:bg-black dark:border-black border-b border-1 border-[#E5E7EB] table-header flex justify-between text-left text-sm font-medium text-gray-700 rounded-lg">
                             <span onClick={() => handleSort('name')} className="w-1/4 px-4 py-2 text-center">Name</span>
                             <span onClick={() => handleSort('id')} className="w-1/4 px-2 py-2 text-center">ID</span>
-                            <span onClick={() => handleSort('provider')} className="w-1/4 px-1 py-2 text-center">Provider</span>
                             <span onClick={() => handleSort('accountId')} className="w-1/4 px-1 py-2 text-center">Account ID</span>
+                            <span onClick={() => handleSort('vpcId')} className="w-1/4 px-2 py-2 text-center">VPC ID</span>
+                            <span onClick={() => handleSort('provider')} className="w-1/4 px-1 py-2 text-center">Provider</span>
                         </div>
                         <div>
                             {sortedData(routeTableSearch).map((group, idx) => (
@@ -366,8 +372,9 @@ const MultiCloudInfra = () => {
                                 >
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.name}</span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.id}</span>
-                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.provider}</span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.accountId}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.vpcId}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.provider}</span>
                                 </div>
                             ))}
                         </div>
@@ -382,8 +389,9 @@ const MultiCloudInfra = () => {
                         <div className="dark:bg-black dark:border-black border-b border-1 border-[#E5E7EB] table-header flex justify-between text-left text-sm font-medium text-gray-700 rounded-lg">
                             <span onClick={() => handleSort('name')} className="w-1/4 px-4 py-2 text-center">Name</span>
                             <span onClick={() => handleSort('id')} className="w-1/4 px-2 py-2 text-center">ID</span>
-                            <span onClick={() => handleSort('provider')} className="w-1/4 px-1 py-2 text-center">Provider</span>
                             <span onClick={() => handleSort('accountId')} className="w-1/4 px-1 py-2 text-center">Account ID</span>
+                            <span onClick={() => handleSort('vpcId')} className="w-1/4 px-2 py-2 text-center">VPC ID</span>
+                            <span onClick={() => handleSort('provider')} className="w-1/4 px-1 py-2 text-center">Provider</span>
                         </div>
                         <div>
                             {sortedData(vpcEndpointSearch).map((group, idx) => (
@@ -399,8 +407,9 @@ const MultiCloudInfra = () => {
                                 >
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.name}</span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.id}</span>
-                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.provider}</span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.accountId}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.vpcId}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.provider}</span>
                                 </div>
                             ))}
                         </div>
@@ -416,6 +425,7 @@ const MultiCloudInfra = () => {
                             <span onClick={() => handleSort('name')} className="w-1/4 px-4 py-2 text-center">Name</span>
                             <span onClick={() => handleSort('id')} className="w-1/4 px-2 py-2 text-center">ID</span>
                             <span onClick={() => handleSort('accountId')} className="w-1/4 px-1 py-2 text-center">Account ID</span>
+                            <span onClick={() => handleSort('vpcId')} className="w-1/4 px-2 py-2 text-center">VPC ID</span>
                         </div>
                         <div>
                             {sortedData(natGatewaysSearch).map((group, idx) => (
@@ -432,6 +442,7 @@ const MultiCloudInfra = () => {
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.name}</span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.id}</span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.accountId}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.vpcId}</span>
 
                                 </div>
                             ))}
@@ -447,8 +458,9 @@ const MultiCloudInfra = () => {
                         <div className="dark:bg-black dark:border-black border-b border-1 border-[#E5E7EB] table-header flex justify-between text-left text-sm font-medium text-gray-700 rounded-lg">
                             <span onClick={() => handleSort('name')} className="w-1/4 px-4 py-2 text-center">Name</span>
                             <span onClick={() => handleSort('id')} className="w-1/4 px-2 py-2 text-center">ID</span>
-                            <span onClick={() => handleSort('provider')} className="w-1/4 px-1 py-2 text-center">Provider</span>
                             <span onClick={() => handleSort('accountId')} className="w-1/4 px-1 py-2 text-center">Account ID</span>
+                            <span onClick={() => handleSort('vpcId')} className="w-1/4 px-2 py-2 text-center">VPC ID</span>
+                            <span onClick={() => handleSort('provider')} className="w-1/4 px-1 py-2 text-center">Provider</span>
                         </div>
                         <div>
                             {sortedData(igsSearch).map((group, idx) => (
@@ -465,8 +477,9 @@ const MultiCloudInfra = () => {
                                 >
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.name}</span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.id}</span>
-                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.provider}</span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.accountId}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.vpcId}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.provider}</span>
                                 </div>
                             ))}
                         </div>
@@ -513,9 +526,9 @@ const MultiCloudInfra = () => {
                     // Render default vpcSearch table
                     <div>
                         <div className="dark:bg-black dark:border-black border-b border-1 border-[#E5E7EB] table-header flex justify-between text-left text-sm font-medium text-gray-700 rounded-lg">
-                            <span onClick={() => handleSort('id')} className="w-1/4 px-4 py-2 text-center">ID</span>
-                            <span onClick={() => handleSort('accountId')} className="w-1/4 px-2 py-2 text-center">Account ID</span>
                             <span onClick={() => handleSort('name')} className="w-1/4 px-1 py-2 text-center">Name</span>
+                            <span onClick={() => handleSort('id')} className="w-1/4 px-4 py-2 text-center">VPC ID</span>
+                            <span onClick={() => handleSort('accountId')} className="w-1/4 px-2 py-2 text-center">Account ID</span>
                             <span onClick={() => handleSort('region')} className="w-1/4 px-1 py-2 text-center">Region</span>
                         </div>
                         <div>
@@ -529,9 +542,9 @@ const MultiCloudInfra = () => {
                                     onDoubleClick={() => {
                                         handleOpenModal(vpc);
                                     }}>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{vpc.name}</span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{vpc.id}</span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{vpc.accountId}</span>
-                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{vpc.name}</span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{vpc.region}</span>
                                 </div>
                             ))}

@@ -52,9 +52,10 @@ export const useFetchVpcResourceVms = (provider: string, region: string, id: str
             const subnetId = instance.getSubnetid();
             const publicIp = instance.getPublicip();
             const privateIp = instance.getPrivateip();
-            const state     = instance.getState();
+            const state = instance.getState();
             const labels: any = {};
             const labelsMap = instance.getLabelsMap();
+            const vpcId = instance.getVpcid();
             let project = ""
             let owner = ""
             let compliant = "No"
@@ -65,15 +66,16 @@ export const useFetchVpcResourceVms = (provider: string, region: string, id: str
             if (labels && (("project" in labels) || ("Project" in labels))) {
               project = labels["project"];
             }
-              if (labels && (("owner" in labels)|| ("Owner" in labels))) {
-                owner = labels["owner"];
+            if (labels && (("owner" in labels) || ("Owner" in labels))) {
+              owner = labels["owner"];
             }
-            if ( owner && project ) {
+            if (owner && project) {
               compliant = "Yes"
             }
-            
+
             return {
               name,
+              vpcId,
               id,
               accountId,
               provider,

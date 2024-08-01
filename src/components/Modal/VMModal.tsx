@@ -114,7 +114,7 @@ const ModalComponent: React.FC<ModalComponentProps> = ({ isModalOpen, onRequestC
                         <div style={{ backgroundColor: '#FFFFFF', padding: '10px', boxShadow: '0px 1px 1px rgba(0, 0, 0, 0.2)', border: '1px solid #F5F5F5', borderTopColor: '#F0F0F0' }}>
                             <div className="grid grid-cols-3 gap-5 text-sm ml-1">
                                 <div className="text-gray-400 mt-5">
-                                    VPC ID
+                                    Instance ID
                                     <div className="text-black" >
                                         {selectedVpc.id}
                                     </div>
