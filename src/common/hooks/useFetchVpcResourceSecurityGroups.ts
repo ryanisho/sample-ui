@@ -50,6 +50,7 @@ export const useFetchVpcResourceSecurityGroups = (provider: string, region: stri
             const accountId = securityGroup.getAccountId();
             const vpcId = securityGroup.getVpcId();
             const region = securityGroup.getRegion();
+            const project = securityGroup.getProject();
 
             const labels: any = {};
             const labelsMap = securityGroup.getLabelsMap();
@@ -72,6 +73,7 @@ export const useFetchVpcResourceSecurityGroups = (provider: string, region: stri
               vpcId,
               //rules,
               labels,
+              project,
             };
           });
 
