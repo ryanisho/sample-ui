@@ -82,31 +82,25 @@ const ProviderRegionBar: React.FC<ProviderButtonsProps> = ({ onProviderButtonCli
                     dispatch(setInfraVpcs([]));
                     dispatch(setSelectedProvider(InfraResourceProvider.AWS));
                     setLastClickedProvider(InfraResourceProvider.AWS);
-                    setTimeout(() => {
-                        fetchAccounts()
-                        fetchVpcs();
-                        fetchRegions();
-                    }, 1000);
+                    fetchAccounts()
+                    fetchVpcs();
+                    fetchRegions();
                     break;
                 case InfraResourceProvider.GCP:
                     dispatch(setInfraVpcs([]));
                     dispatch(setSelectedProvider(InfraResourceProvider.GCP));
                     setLastClickedProvider(InfraResourceProvider.GCP);
-                    setTimeout(() => {
-                        fetchAccounts()
-                        fetchVpcs();
-                        fetchRegions();
-                    }, 1000);
+                    fetchAccounts()
+                    fetchVpcs();
+                    fetchRegions();
                     break;
                 case InfraResourceProvider.AZURE:
                     dispatch(setInfraVpcs([]));
                     dispatch(setSelectedProvider(InfraResourceProvider.AZURE));
                     setLastClickedProvider(InfraResourceProvider.AZURE);
-                    setTimeout(() => {
-                        fetchAccounts()
-                        fetchVpcs();
-                        fetchRegions();
-                    }, 1000);
+                    fetchAccounts()
+                    fetchVpcs();
+                    fetchRegions();
                     break;
 
                 case InfraResourceProvider.CISCO_ISE:

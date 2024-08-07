@@ -25,6 +25,8 @@ import {
     useFetchVpcResourcePublicIPs,
 } from "@/common/hooks";
 import '../../css/vpc.css';
+import { setAccountIds } from "@/store/infra-resources-slice/infraResourcesSlice";
+import { setSelectedAccountId } from "@/store/selectedRegionAccountId-slice/selectedRegionAccountIdSlice";
 
 const MultiCloudInfra = () => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -36,20 +38,20 @@ const MultiCloudInfra = () => {
     const [lastUpdated, setLastUpdated] = useState<Date | null>(null);
     const [timeSinceUpdate, setTimeSinceUpdate] = useState<string>('just now');
     const [sortConfig, setSortConfig] = useState<{ key: string, direction: 'ascending' | 'descending' } | null>(null);
-
     // api
-    const { vpcs } = useSelector((state: RootState) => state.infraResources); // retrieve vpcs from api
     const { selectedProvider, selectedAccountId } = useSelector((state: RootState) => state.selectedResources);
+    const [previousAccountId, setPreviousAccountId] = useState(selectedAccountId);
+    const { vpcs } = useSelector((state: RootState) => state.infraResources); // retrieve vpcs from api
     const { vpcResourceVms, fetchVpcResourcesVms } = useFetchVpcResourceVms(selectedProvider, '', selectedVpcId, selectedAccountId);
-    const { vpcResourceSubnets, fetchVpcResourcesSubnets } = useFetchVpcResourceSubnets(selectedProvider, '', '', selectedAccountId);
-    const { vpcResourceSecurityGroups, fetchVpcResourceSecurityGroups } = useFetchVpcResourceSecurityGroups(selectedProvider, '', '', selectedAccountId);
-    const { vpcResourceACLs, fetchVpcResourceACLs } = useFetchVpcResourceACLs(selectedProvider, '', '', selectedAccountId);
+    const { vpcResourceSubnets, fetchVpcResourcesSubnets } = useFetchVpcResourceSubnets(selectedProvider, '', selectedVpcId, selectedAccountId);
+    const { vpcResourceSecurityGroups, fetchVpcResourceSecurityGroups } = useFetchVpcResourceSecurityGroups(selectedProvider, '', selectedVpcId, selectedAccountId);
+    const { vpcResourceACLs, fetchVpcResourceACLs } = useFetchVpcResourceACLs(selectedProvider, '', selectedVpcId, selectedAccountId);
     const { vpcResourceRouters, fetchVpcResourceRouters } = useFetchVpcResourceRouters(selectedProvider, '', '', selectedAccountId);
-    const { vpcResourceRouteTables, fetchVpcResourceRouteTables } = useFetchVpcResourceRouteTables(selectedProvider, '', '', selectedAccountId);
-    const { vpcResourceVpcEndpoints, fetchVpcResourceVPCEndpoints } = useFetchVpcResourceVpcEndpoints(selectedProvider, '', '', selectedAccountId);
-    const { vpcResourceNATGateways, fetchVpcResourceNATGateways } = useFetchVpcResourceNATGateways(selectedProvider, '', '', selectedAccountId);
+    const { vpcResourceRouteTables, fetchVpcResourceRouteTables } = useFetchVpcResourceRouteTables(selectedProvider, '', selectedVpcId, selectedAccountId);
+    const { vpcResourceVpcEndpoints, fetchVpcResourceVPCEndpoints } = useFetchVpcResourceVpcEndpoints(selectedProvider, '', selectedVpcId, selectedAccountId);
+    const { vpcResourceNATGateways, fetchVpcResourceNATGateways } = useFetchVpcResourceNATGateways(selectedProvider, '', selectedVpcId, selectedAccountId);
     const { vpcResourceInternetGateways, fetchVpcResourceInternetGateways } = useFetchVpcResourceInternetGateways(selectedProvider, '', '', selectedAccountId);
-    const { vpcResourcePublicIPs, fetchVpcResourcePublicIPs } = useFetchVpcResourcePublicIPs(selectedProvider, '', '', selectedAccountId);
+    const { vpcResourcePublicIPs, fetchVpcResourcePublicIPs } = useFetchVpcResourcePublicIPs(selectedProvider, '', selectedVpcId, selectedAccountId);
 
     const vpcData = vpcs.map(vpc => ({
         id: vpc.id,
@@ -111,6 +113,22 @@ const MultiCloudInfra = () => {
         }
     }, [lastUpdated]);
 
+    useEffect(() => {
+        if (selectedAccountId !== previousAccountId) {
+            setPreviousAccountId(selectedAccountId);
+            fetchVpcResourceACLs();
+            fetchVpcResourceInternetGateways();
+            fetchVpcResourceNATGateways();
+            fetchVpcResourcePublicIPs();
+            fetchVpcResourceRouters();
+            fetchVpcResourceRouteTables();
+            fetchVpcResourceSecurityGroups();
+            fetchVpcResourcesSubnets();
+            fetchVpcResourcesVms();
+            fetchVpcResourceVPCEndpoints();
+        }
+    }, [selectedAccountId]);
+
     // sorting funciton
     const sortedData = (data) => {
         if (!sortConfig) return data;
@@ -151,9 +169,10 @@ const MultiCloudInfra = () => {
     const handleButtonClick = async (name, fetchFunction) => {
         setIsModalOpen(false);
         setSelectedView(name);
+        setSelectedAccountId(selectedAccountId);
         setLastUpdated(new Date());
         if (fetchFunction) {
-            await fetchFunction();
+            fetchFunction();
         }
     };
 
