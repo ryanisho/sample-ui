@@ -26,14 +26,11 @@ import {
 } from "@/common/hooks";
 import '../../css/vpc.css';
 
-import { Route } from "react-router-dom";
-import { Subnet } from "@/_proto/grpc-service/ts/cloud_request";
-
 const MultiCloudInfra = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedVpc, setSelectedVpc] = useState(null); // track current vpc
-    const [selectedVpcId, setSelectedVpcId] = useState<number | null>(null); // track current vpc id (for modal)
+    const [selectedVpcId, setSelectedVpcId] = useState(''); // track current vpc id (for modal)
     const [selectedView, setSelectedView] = useState('VPC');
 
     const [lastUpdated, setLastUpdated] = useState<Date | null>(null);
@@ -43,7 +40,7 @@ const MultiCloudInfra = () => {
     // api
     const { vpcs } = useSelector((state: RootState) => state.infraResources); // retrieve vpcs from api
     const { selectedProvider, selectedAccountId } = useSelector((state: RootState) => state.selectedResources);
-    const { vpcResourceVms, fetchVpcResourcesVms } = useFetchVpcResourceVms(selectedProvider, '', '', selectedAccountId);
+    const { vpcResourceVms, fetchVpcResourcesVms } = useFetchVpcResourceVms(selectedProvider, '', selectedVpcId, selectedAccountId);
     const { vpcResourceSubnets, fetchVpcResourcesSubnets } = useFetchVpcResourceSubnets(selectedProvider, '', '', selectedAccountId);
     const { vpcResourceSecurityGroups, fetchVpcResourceSecurityGroups } = useFetchVpcResourceSecurityGroups(selectedProvider, '', '', selectedAccountId);
     const { vpcResourceACLs, fetchVpcResourceACLs } = useFetchVpcResourceACLs(selectedProvider, '', '', selectedAccountId);
@@ -175,7 +172,7 @@ const MultiCloudInfra = () => {
     const handleVPCView = () => {
         setSelectedView('VPC');
         setIsModalOpen(false);
-        setSelectedVpcId(null);
+        setSelectedVpcId('');
     }
 
     return (

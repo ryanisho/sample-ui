@@ -103,7 +103,7 @@ const Sidebar = ({
               paddingBottom: "5px",
             }}
           >
-            AWI
+            ANI
           </h1>
           <p style={{ color: "#049FD9" }}>by Cisco</p>
         </NavLink>
