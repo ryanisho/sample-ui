@@ -9,11 +9,11 @@ import InternetGatewayModal from '../../components/Modal/InternetGatewayModal';
 import NatGatewayModal from '../../components/Modal/NatGatewayModal';
 import VpcEndpointModal from '../../components/Modal/VpcEndpointModal';
 import RouteTableModal from '../../components/Modal/RouteTableModal';
+import RouterModal from '../../components/Modal/RouterModal';
 import SubnetModal from '../../components/Modal/SubnetModal';
 import VMModal from '../../components/Modal/VMModal';
 
 import {
-    useFetchVpcsResources,
     useFetchVpcResourceSubnets,
     useFetchVpcResourceVms,
     useFetchVpcResourceSecurityGroups,
@@ -26,7 +26,6 @@ import {
     useFetchVpcResourcePublicIPs,
 } from "@/common/hooks";
 import '../../css/vpc.css';
-import { setAccountIds } from "@/store/infra-resources-slice/infraResourcesSlice";
 import { setSelectedAccountId } from "@/store/selectedRegionAccountId-slice/selectedRegionAccountIdSlice";
 
 const MultiCloudInfra = () => {
@@ -151,7 +150,7 @@ const MultiCloudInfra = () => {
         { name: 'Subnet', fetchFunction: fetchVpcResourcesSubnets },
         { name: 'Security Group', fetchFunction: fetchVpcResourceSecurityGroups },
         { name: 'ACL', fetchFunction: fetchVpcResourceACLs },
-        { name: 'Router', fetchFunction: fetchVpcResourceRouters },
+        { name: 'Routers', fetchFunction: fetchVpcResourceRouters },
         { name: 'Route Table', fetchFunction: fetchVpcResourceRouteTables },
         { name: 'VPC Endpoint', fetchFunction: fetchVpcResourceVPCEndpoints },
         { name: 'NAT Gateway', fetchFunction: fetchVpcResourceNATGateways },
@@ -564,6 +563,11 @@ const MultiCloudInfra = () => {
                                 </div>
                             ))}
                         </div>
+                        <RouterModal
+                            isModalOpen={isModalOpen}
+                            onRequestClose={() => setIsModalOpen(false)}
+                            selectedVpc={selectedVpc}
+                        />
                     </div>
                 ) : (
                     // Render default vpcSearch table

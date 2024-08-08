@@ -180,7 +180,26 @@ const ModalComponent: React.FC<ModalComponentProps> = ({ isModalOpen, onRequestC
                             {selectedTab === 2 &&
                                 <div>
                                     <h2 className="text-black font-semibold">Networking Information</h2>
-
+                                    <table className="min-w-full bg-white">
+                                        <tbody>
+                                            <tr>
+                                                <td className="py-2 px-4 border-b border-gray-200">
+                                                    Public IP
+                                                </td>
+                                                <td className="py-2 px-4 border-b border-gray-200">
+                                                    {selectedVpc.publicIp || "N/A"}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td className="py-2 px-4 border-b border-gray-200">
+                                                    Private IP
+                                                </td>
+                                                <td className="py-2 px-4 border-b border-gray-200">
+                                                    {selectedVpc.privateIp || "N/A"}
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>}
                             {selectedTab === 3 &&
                                 <div>

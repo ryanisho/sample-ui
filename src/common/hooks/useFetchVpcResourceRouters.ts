@@ -53,6 +53,7 @@ export const useFetchVpcResourceRouters = (provider: string, region: string, id:
             const advertised_group = router.getAdvertisedGroup()
             const labels: any = {};
             const labelsMap = router.getLabelsMap();
+            const provider = router.getProvider();
 
             labelsMap.forEach((value: string, key: string) => {
               labels[key] = value;
@@ -63,6 +64,7 @@ export const useFetchVpcResourceRouters = (provider: string, region: string, id:
               id,
               accountId,
               region,
+              provider,
               vpcId,
               asn,
               advertised_group,
