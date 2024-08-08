@@ -61,8 +61,14 @@ const ProviderRegionBar: React.FC<ProviderButtonsProps> = ({ onProviderButtonCli
         return uniqueIds;
     }, []);
 
+    useEffect(() => {
+        handleProviderSelect(selectedButton)
+    }, [selectedAccountId]);
+
     const handleAccountIdChange = (value: string) => {
+        // console.log('VALUE: ' + value)
         setSelectedAccountIdState(value)
+        // console.log('SELECTED ACCOUNT ID: ' + selectedAccountId);
         dispatch(setSelectedAccountId(value));
         handleProviderSelect(selectedButton)
     };

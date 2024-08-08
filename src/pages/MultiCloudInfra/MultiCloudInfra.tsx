@@ -13,6 +13,7 @@ import SubnetModal from '../../components/Modal/SubnetModal';
 import VMModal from '../../components/Modal/VMModal';
 
 import {
+    useFetchVpcsResources,
     useFetchVpcResourceSubnets,
     useFetchVpcResourceVms,
     useFetchVpcResourceSecurityGroups,
@@ -39,9 +40,10 @@ const MultiCloudInfra = () => {
     const [timeSinceUpdate, setTimeSinceUpdate] = useState<string>('just now');
     const [sortConfig, setSortConfig] = useState<{ key: string, direction: 'ascending' | 'descending' } | null>(null);
     // api
+    const { vpcs } = useSelector((state: RootState) => state.infraResources); // retrieve vpcs from api
     const { selectedProvider, selectedAccountId } = useSelector((state: RootState) => state.selectedResources);
     const [previousAccountId, setPreviousAccountId] = useState(selectedAccountId);
-    const { vpcs } = useSelector((state: RootState) => state.infraResources); // retrieve vpcs from api
+
     const { vpcResourceVms, fetchVpcResourcesVms } = useFetchVpcResourceVms(selectedProvider, '', selectedVpcId, selectedAccountId);
     const { vpcResourceSubnets, fetchVpcResourcesSubnets } = useFetchVpcResourceSubnets(selectedProvider, '', selectedVpcId, selectedAccountId);
     const { vpcResourceSecurityGroups, fetchVpcResourceSecurityGroups } = useFetchVpcResourceSecurityGroups(selectedProvider, '', selectedVpcId, selectedAccountId);
@@ -116,16 +118,7 @@ const MultiCloudInfra = () => {
     useEffect(() => {
         if (selectedAccountId !== previousAccountId) {
             setPreviousAccountId(selectedAccountId);
-            fetchVpcResourceACLs();
-            fetchVpcResourceInternetGateways();
-            fetchVpcResourceNATGateways();
-            fetchVpcResourcePublicIPs();
-            fetchVpcResourceRouters();
-            fetchVpcResourceRouteTables();
-            fetchVpcResourceSecurityGroups();
-            fetchVpcResourcesSubnets();
-            fetchVpcResourcesVms();
-            fetchVpcResourceVPCEndpoints();
+            setSelectedView('VPC');
         }
     }, [selectedAccountId]);
 
@@ -172,7 +165,7 @@ const MultiCloudInfra = () => {
         setSelectedAccountId(selectedAccountId);
         setLastUpdated(new Date());
         if (fetchFunction) {
-            fetchFunction();
+            await fetchFunction();
         }
     };
 
