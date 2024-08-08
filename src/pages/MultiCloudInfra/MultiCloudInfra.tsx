@@ -33,6 +33,7 @@ const MultiCloudInfra = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedVpc, setSelectedVpc] = useState(null); // track current vpc
     const [selectedVpcId, setSelectedVpcId] = useState(''); // track current vpc id (for modal)
+    const [selectedRow, setSelectedRow] = useState(null);
     const [selectedView, setSelectedView] = useState('VPC');
 
     const [lastUpdated, setLastUpdated] = useState<Date | null>(null);
@@ -160,20 +161,15 @@ const MultiCloudInfra = () => {
 
     const handleButtonClick = async (name, fetchFunction) => {
         setIsModalOpen(false);
-        setSelectedView(name);
         setSelectedAccountId(selectedAccountId);
+        setSelectedView(name);
         setLastUpdated(new Date());
         if (fetchFunction) {
             await fetchFunction();
         }
     };
 
-    const handleVpcSelect = (vpc) => {
-        setSelectedVpcId(vpc.id); // row select css
-    };
-
     const handleOpenModal = (vpc) => {
-        setSelectedVpcId(vpc.id); // row select css
         setSelectedVpc(vpc);
         if (!isModalOpen) {
             setIsModalOpen(true);
@@ -232,9 +228,9 @@ const MultiCloudInfra = () => {
                             {sortedData(sgSearch).map((group, idx) => (
                                 <div
                                     key={idx}
-                                    className={`unselectable cursor-pointer dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 rounded-lg my-2 p-4 shadow ${selectedVpcId === group.id ? 'bg-blue-100 dark:bg-[#00437b]' : 'bg-white dark:bg-black'}`}
+                                    className={`unselectable cursor-pointer dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 rounded-lg my-2 p-4 shadow ${selectedRow === group.id ? 'bg-blue-100 dark:bg-[#00437b]' : 'bg-white dark:bg-black'}`}
                                     onClick={() => {
-                                        handleVpcSelect(group);
+                                        setSelectedRow(group.id);
                                     }}
                                     onDoubleClick={() => {
                                         handleOpenModal(group);
@@ -267,9 +263,9 @@ const MultiCloudInfra = () => {
                             {sortedData(vmSearch).map((group, idx) => (
                                 <div
                                     key={idx}
-                                    className={`unselectable cursor-pointer dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 rounded-lg my-2 p-4 shadow ${selectedVpcId === group.id ? 'bg-blue-100 dark:bg-[#00437b]' : 'bg-white dark:bg-black'}`}
+                                    className={`unselectable cursor-pointer dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 rounded-lg my-2 p-4 shadow ${selectedRow === group.id ? 'bg-blue-100 dark:bg-[#00437b]' : 'bg-white dark:bg-black'}`}
                                     onClick={() => {
-                                        handleVpcSelect(group);
+                                        setSelectedRow(group.id);
                                     }}
                                     onDoubleClick={() => {
                                         handleOpenModal(group);
@@ -302,9 +298,9 @@ const MultiCloudInfra = () => {
                             {sortedData(subnetSearch).map((group, idx) => (
                                 <div
                                     key={idx}
-                                    className={`unselectable cursor-pointer dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 rounded-lg my-2 p-4 shadow ${selectedVpcId === group.id ? 'bg-blue-100 dark:bg-[#00437b]' : 'bg-white dark:bg-black'}`}
+                                    className={`unselectable cursor-pointer dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 rounded-lg my-2 p-4 shadow ${selectedRow === group.id ? 'bg-blue-100 dark:bg-[#00437b]' : 'bg-white dark:bg-black'}`}
                                     onClick={() => {
-                                        handleVpcSelect(group);
+                                        setSelectedRow(group.id);
                                     }}
                                     onDoubleClick={() => {
                                         handleOpenModal(group);
@@ -338,9 +334,9 @@ const MultiCloudInfra = () => {
                             {sortedData(aclSearch).map((group, idx) => (
                                 <div
                                     key={idx}
-                                    className={`unselectable cursor-pointer dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 rounded-lg my-2 p-4 shadow ${selectedVpcId === group.id ? 'bg-blue-100 dark:bg-[#00437b]' : 'bg-white dark:bg-black'}`}
+                                    className={`unselectable cursor-pointer dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 rounded-lg my-2 p-4 shadow ${selectedRow === group.id ? 'bg-blue-100 dark:bg-[#00437b]' : 'bg-white dark:bg-black'}`}
                                     onClick={() => {
-                                        handleVpcSelect(group);
+                                        setSelectedRow(group.id);
                                     }}
                                     onDoubleClick={() => {
                                         handleOpenModal(group);
@@ -374,10 +370,10 @@ const MultiCloudInfra = () => {
                             {sortedData(routeTableSearch).map((group, idx) => (
                                 <div
                                     key={idx}
-                                    className={`unselectable cursor-pointer dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 rounded-lg my-2 p-4 shadow ${selectedVpcId === group.id ? 'bg-blue-100 dark:bg-[#00437b]' : 'bg-white dark:bg-black'}`}
+                                    className={`unselectable cursor-pointer dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 rounded-lg my-2 p-4 shadow ${selectedRow === group.id ? 'bg-blue-100 dark:bg-[#00437b]' : 'bg-white dark:bg-black'}`}
 
                                     onClick={() => {
-                                        handleVpcSelect(group);
+                                        setSelectedRow(group.id);
                                     }}
                                     onDoubleClick={() => {
                                         handleOpenModal(group);
@@ -410,9 +406,9 @@ const MultiCloudInfra = () => {
                             {sortedData(vpcEndpointSearch).map((group, idx) => (
                                 <div
                                     key={idx}
-                                    className={`unselectable cursor-pointer dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 rounded-lg my-2 p-4 shadow ${selectedVpcId === group.id ? 'bg-blue-100 dark:bg-[#00437b]' : 'bg-white dark:bg-black'}`}
+                                    className={`unselectable cursor-pointer dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 rounded-lg my-2 p-4 shadow ${selectedRow === group.id ? 'bg-blue-100 dark:bg-[#00437b]' : 'bg-white dark:bg-black'}`}
                                     onClick={() => {
-                                        handleVpcSelect(group);
+                                        setSelectedRow(group.id);
                                     }}
                                     onDoubleClick={() => {
                                         handleOpenModal(group);
@@ -444,9 +440,9 @@ const MultiCloudInfra = () => {
                             {sortedData(natGatewaysSearch).map((group, idx) => (
                                 <div
                                     key={idx}
-                                    className={`unselectable cursor-pointer dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 rounded-lg my-2 p-4 shadow ${selectedVpcId === group.id ? 'bg-blue-100 dark:bg-[#00437b]' : 'bg-white dark:bg-black'}`}
+                                    className={`unselectable cursor-pointer dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 rounded-lg my-2 p-4 shadow ${selectedRow === group.id ? 'bg-blue-100 dark:bg-[#00437b]' : 'bg-white dark:bg-black'}`}
                                     onClick={() => {
-                                        handleVpcSelect(group);
+                                        setSelectedRow(group.id);
                                     }}
                                     onDoubleClick={() => {
                                         handleOpenModal(group);
@@ -479,9 +475,9 @@ const MultiCloudInfra = () => {
                             {sortedData(igsSearch).map((group, idx) => (
                                 <div
                                     key={idx}
-                                    className={`unselectable cursor-pointer dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 rounded-lg my-2 p-4 shadow ${selectedVpcId === group.id ? 'bg-blue-100 dark:bg-[#00437b]' : 'bg-white dark:bg-black'}`}
+                                    className={`unselectable cursor-pointer dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 rounded-lg my-2 p-4 shadow ${selectedRow === group.id ? 'bg-blue-100 dark:bg-[#00437b]' : 'bg-white dark:bg-black'}`}
                                     onClick={() => {
-                                        handleVpcSelect(group);
+                                        setSelectedRow(group.id);
                                     }}
                                     onDoubleClick={() => {
                                         handleOpenModal(group);
@@ -517,9 +513,9 @@ const MultiCloudInfra = () => {
                             {publicIPsSearch.map((group, idx) => (
                                 <div
                                     key={idx}
-                                    className={`unselectable cursor-pointer dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 rounded-lg my-2 p-4 shadow ${selectedVpcId === group.id ? 'bg-blue-100 dark:bg-gray-600' : 'bg-white dark:bg-gray-700'}`}
+                                    className={`unselectable cursor-pointer dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 rounded-lg my-2 p-4 shadow ${selectedRow === group.id ? 'bg-blue-100 dark:bg-gray-600' : 'bg-white dark:bg-gray-700'}`}
                                     onClick={() => {
-                                        handleVpcSelect(group);
+                                        setSelectedRow(group.id);
                                     }}
                                     onDoubleClick={() => {
                                         handleOpenModal(group);
@@ -548,9 +544,9 @@ const MultiCloudInfra = () => {
                             {sortedData(routerSearch).map((group, idx) => (
                                 <div
                                     key={idx}
-                                    className={`unselectable cursor-pointer dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 rounded-lg my-2 p-4 shadow ${selectedVpcId === group.id ? 'bg-blue-100 dark:bg-gray-600' : 'bg-white dark:bg-gray-700'}`}
+                                    className={`unselectable cursor-pointer dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 rounded-lg my-2 p-4 shadow ${selectedRow === group.id ? 'bg-blue-100 dark:bg-gray-600' : 'bg-white dark:bg-gray-700'}`}
                                     onClick={() => {
-                                        handleVpcSelect(group);
+                                        setSelectedRow(group.id);
                                     }}
                                     onDoubleClick={() => {
                                         handleOpenModal(group);
@@ -582,9 +578,10 @@ const MultiCloudInfra = () => {
                             {sortedData(vpcSearch).map((vpc, idx) => (
                                 <div
                                     key={idx}
-                                    className={`unselectable cursor-pointer dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 rounded-lg my-2 p-4 shadow ${selectedVpcId === vpc.id ? 'bg-blue-100 dark:bg-[#00437b]' : 'bg-white dark:bg-black'}`}
+                                    className={`unselectable cursor-pointer dark:bg-black dark:text-white flex items-center justify-between text-left text-sm font-medium text-gray-700 rounded-lg my-2 p-4 shadow ${selectedRow === vpc.id ? 'bg-blue-100 dark:bg-[#00437b]' : 'bg-white dark:bg-black'}`}
                                     onClick={() => {
-                                        handleVpcSelect(vpc);
+                                        setSelectedRow(vpc.id);
+                                        setSelectedVpcId(vpc.id);
                                     }}
                                     onDoubleClick={() => {
                                         handleOpenModal(vpc);
