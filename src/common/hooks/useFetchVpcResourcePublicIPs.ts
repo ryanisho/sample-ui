@@ -53,6 +53,8 @@ export const useFetchVpcResourcePublicIPs = (provider: string, region: string, i
             const provider = PublicIP.getProvider().toUpperCase();
             const accountId = PublicIP.getAccountId();
             const region = PublicIP.getRegion();
+
+
             return {
               id,
               provider,

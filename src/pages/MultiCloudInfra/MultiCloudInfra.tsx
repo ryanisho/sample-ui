@@ -501,13 +501,11 @@ const MultiCloudInfra = () => {
                 ) : selectedView === 'Public IP' ? (
                     <div>
                         <div className="dark:bg-black dark:border-black border-b border-1 border-[#E5E7EB] table-header flex justify-between text-left text-sm font-medium text-gray-700 rounded-lg">
-                            <span className="w-1/4 px-4 py-2 text-center">Name</span>
-                            <span className="w-1/4 px-2 py-2 text-center">ID</span>
-                            <span className="w-1/4 px-1 py-2 text-center">Provider</span>
                             <span className="w-1/4 px-1 py-2 text-center">Account ID</span>
-                            <span className="w-1/4 px-1 py-2 text-center">Region</span>
+                            <span className="w-1/4 px-1 py-2 text-center">Provider</span>
                             <span className="w-1/4 px-1 py-2 text-center">VPC ID</span>
-                            <span className="w-1/4 px-1 py-2 text-center">State</span>
+                            <span className="w-1/4 px-1 py-2 text-center">Region</span>
+                            <span className="w-1/4 px-1 py-2 text-center">Public IP</span>
                         </div>
                         <div>
                             {publicIPsSearch.map((group, idx) => (
@@ -520,13 +518,12 @@ const MultiCloudInfra = () => {
                                     onDoubleClick={() => {
                                         handleOpenModal(group);
                                     }}>
-                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.name}</span>
-                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.id}</span>
-                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.provider}</span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.accountId}</span>
-                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.region}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.provider}</span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.vpcId}</span>
-                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.state}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.region}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.publicIP}</span>
+
                                 </div>
                             ))}
                         </div>
