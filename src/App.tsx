@@ -41,7 +41,7 @@ import { RoutePaths } from "@/common/enum";
 import { ApplicationConnectionPolicies } from "@/components/views/applications-connection-policies";
 import { ApplicationPolicyCreator } from "@/components/views/application-policy-creator";
 import { ApplicationPolicyAttachment } from "@/components/views/application-policy-attachment";
-import LoginPage from './pages/Login/Login';
+import { LoginPage } from "@/components/views/login-page/LoginPage";
 // import { Dashboard } from "@/components/views/dashboard";
 import Home from './pages/Dashboard/Home';
 import { VPCConnectionDashboard } from "@/components/views/vpc-connection-dashboard";
