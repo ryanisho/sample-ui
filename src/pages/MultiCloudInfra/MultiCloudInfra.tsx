@@ -425,7 +425,7 @@ const MultiCloudInfra = () => {
                         <VpcEndpointModal
                             isModalOpen={isModalOpen}
                             onRequestClose={() => setIsModalOpen(false)}
-                            selectedVpc={selectedVpc}
+                            selectedVpcEndpoint={selectedVpc}
                         />
                     </div>
                 ) : selectedView === 'NAT Gateway' ? (

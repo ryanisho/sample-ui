@@ -176,7 +176,7 @@ const ModalComponent: React.FC<ModalComponentProps> = ({ isModalOpen, onRequestC
                                 <div className="text-gray-400 mt-5">
                                     Created
                                     <div className="text-black" >
-                                        {(selectedRouter.createdAt.array[0] / (365.25 * 86400)).toFixed(2) + " years ago" || "N/A"}
+                                        {selectedRouter.createdAt && (selectedRouter.createdAt.array[0] / (365.25 * 86400)).toFixed(2) + " years ago" || "N/A"}
                                     </div>
                                 </div>
                                 <div className="text-gray-400 mt-5">

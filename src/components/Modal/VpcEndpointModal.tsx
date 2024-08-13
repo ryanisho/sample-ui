@@ -7,10 +7,10 @@ import '../../css/vpc.css';
 interface ModalComponentProps {
     isModalOpen: boolean;
     onRequestClose: () => void;
-    selectedVpc: any;
+    selectedVpcEndpoint: any;
 }
 
-const ModalComponent: React.FC<ModalComponentProps> = ({ isModalOpen, onRequestClose, selectedVpc }) => {
+const ModalComponent: React.FC<ModalComponentProps> = ({ isModalOpen, onRequestClose, selectedVpcEndpoint }) => {
 
     const [selectedTab, setSelectedTab] = useState(1);
     const [showCopiedPopup, setShowCopiedPopup] = useState(false);
@@ -106,41 +106,41 @@ const ModalComponent: React.FC<ModalComponentProps> = ({ isModalOpen, onRequestC
                 transition={{ duration: 0.2 }}
                 style={{ textAlign: 'left', marginTop: '50px' }} // Align text to the left
             >
-                {selectedVpc ? (
+                {selectedVpcEndpoint ? (
                     <>
                         <div style={{ backgroundColor: '#F5F5F5', padding: '10px', boxShadow: '0px 1px 1px rgba(0, 0, 0, 0.2)', border: '1px solid #F5F5F5' }}>
-                            <h1 style={{ fontWeight: 'bold', color: 'black', fontSize: '1em' }}>Resource summary for {selectedVpc.name} ({selectedVpc.id})</h1>
+                            <h1 style={{ fontWeight: 'bold', color: 'black', fontSize: '1em' }}>Resource summary for {selectedVpcEndpoint.name} ({selectedVpcEndpoint.id})</h1>
                         </div>
                         <div style={{ backgroundColor: '#FFFFFF', padding: '10px', boxShadow: '0px 1px 1px rgba(0, 0, 0, 0.2)', border: '1px solid #F5F5F5', borderTopColor: '#F0F0F0' }}>
                             <div className="grid grid-cols-2 gap-5 text-sm ml-1">
                                 <div className="text-gray-400 mt-5">
                                     VPC ID
                                     <div className="text-black" >
-                                        {selectedVpc.id}
+                                        {selectedVpcEndpoint.id}
                                     </div>
                                 </div>
                                 <div className="text-gray-400 mt-5">
                                     Region
                                     <div className="text-black">
-                                        {selectedVpc.region}
+                                        {selectedVpcEndpoint.region}
                                     </div>
                                 </div>
                                 <div className="text-gray-400 mt-5">
                                     Route Table ID
                                     <div className="text-black">
-                                        {selectedVpc.routeTableIds || "N/A"}
+                                        {selectedVpcEndpoint.routeTableIds || "N/A"}
                                     </div>
                                 </div>
                                 <div className="text-gray-400 mt-5">
                                     Service
                                     <div className="text-black whitespace-nowrap" >
-                                        {selectedVpc.service}
+                                        {selectedVpcEndpoint.service}
                                     </div>
                                 </div>
                                 <div className="text-gray-400 mt-5">
                                     Subnet ID
                                     <div className="text-black">
-                                        <span className="block whitespace-nowrap">{selectedVpc.subnetIds}</span>
+                                        <span className="block whitespace-nowrap">{selectedVpcEndpoint.subnetIds}</span>
                                     </div>
                                 </div>
                             </div>
@@ -181,7 +181,7 @@ const ModalComponent: React.FC<ModalComponentProps> = ({ isModalOpen, onRequestC
                                                     Public IP
                                                 </td>
                                                 <td className="py-2 px-4 border-b border-gray-200">
-                                                    {selectedVpc.publicIp || "N/A"}
+                                                    {selectedVpcEndpoint.publicIp || "N/A"}
                                                 </td>
                                             </tr>
                                             <tr>
@@ -189,7 +189,7 @@ const ModalComponent: React.FC<ModalComponentProps> = ({ isModalOpen, onRequestC
                                                     Private IP
                                                 </td>
                                                 <td className="py-2 px-4 border-b border-gray-200">
-                                                    {selectedVpc.privateIp || "N/A"}
+                                                    {selectedVpcEndpoint.privateIp || "N/A"}
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -198,7 +198,7 @@ const ModalComponent: React.FC<ModalComponentProps> = ({ isModalOpen, onRequestC
                             {selectedTab === 3 &&
                                 <div>
                                     <h2 className="text-black font-semibold">Tag Information</h2>
-                                    {renderLabelsTable(selectedVpc.labels)}
+                                    {renderLabelsTable(selectedVpcEndpoint.labels)}
                                 </div>
                             }
                         </div>

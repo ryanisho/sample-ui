@@ -140,7 +140,7 @@ const ModalComponent: React.FC<ModalComponentProps> = ({ isModalOpen, onRequestC
                                 <div className="text-gray-400 mt-5">
                                     Attatched Instances
                                     <div className="text-black">
-                                        {selectedSecurityGroup.attatchedInstances.length}
+                                        {selectedSecurityGroup.attatchedInstances && selectedSecurityGroup.attatchedInstances.length}
                                     </div>
                                 </div>
                                 <div className="text-gray-400 mt-2">
