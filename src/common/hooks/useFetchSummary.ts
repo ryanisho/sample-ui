@@ -33,12 +33,17 @@ const { SummaryRequest } = require("@/_proto/infra-sdk/output/cloud_pb");
 const { CloudProviderServiceClient } = require("@/_proto/infra-sdk/output/cloud_grpc_web_pb");
 const infraSdkResourcesClient = new CloudProviderServiceClient(BACKEND_API_PREFIX, null, null);
 
-export const useFetchSummary = () => {
+export const useFetchSummary = (accountId, vpcId) => {
   const dispatch = useDispatch<AppDispatch>();
 
   const fetchProvider = (provider: typeof CloudProviders[number]) => {
     const summaryRequest = new SummaryRequest()
+
     summaryRequest.setProvider(provider)
+    // fetch based on account id
+    summaryRequest.setAccountId(accountId);
+    summaryRequest.setVpcId(vpcId);
+
     infraSdkResourcesClient.summary(summaryRequest, {}, (err: any, response: any) => {
       if (err) console.error(err)
       if (response) {

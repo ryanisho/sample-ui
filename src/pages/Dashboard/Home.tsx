@@ -3,11 +3,15 @@ import CardMedium from '../../components/Cards/CardMedium';
 import CardLarge from '../../components/Cards/CardLarge';
 import PieChart from '../../components/Charts/PieChart';
 import DefaultLayout from '../../layout/DefaultLayout';
+import ProviderRegionBar from '@/components/ProviderRegion/ProviderRegionBar';
 
 import { Source } from "@/store/summary-slice/summarySlice";
 import { useFetchSummary } from "@/common/hooks/useFetchSummary";
-import { useSelector } from "react-redux";
-import { RootState } from "@/store/store";
+import { useSelector, useDispatch } from "react-redux";
+import { RootState, AppDispatch } from "@/store/store";
+import { setSelectedProvider } from "@/store/selectedRegionAccountId-slice/selectedRegionAccountIdSlice";
+import { InfraResourceProvider } from '@/common/enum';
+
 
 /**
  * Home Page Component
@@ -17,27 +21,27 @@ import { RootState } from "@/store/store";
  */
 
 const Home: React.FC = () => {
+    const dispatch = useDispatch<AppDispatch>();
+
     // State
-    const [selectedProvider, setSelectedProvider] = useState<Source>('All Providers');
-    const { fetchSummary } = useFetchSummary()
+    const { selectedProvider, selectedAccountId } = useSelector((state: RootState) => state.selectedResources);
+    dispatch(setSelectedProvider(InfraResourceProvider.AWS));
+    const { fetchSummary } = useFetchSummary(selectedAccountId, '');
     const { count, status } = useSelector((state: RootState) => state.summary);
     const [renderCharts, setRenderCharts] = useState(false);
 
-
     // Effect
     useEffect(() => {
-        fetchSummary()
+        fetchSummary();
+    }, [selectedAccountId]);
+
+    useEffect(() => {
         const timer = setTimeout(() => {
             // render pie charts later since api call has fetch latency.
             setRenderCharts(true);
         }, 200);
         return () => clearTimeout(timer);
     }, []);
-
-    const handleSelect = (provider: Source) => {
-        fetchSummary()
-        setSelectedProvider(provider);
-    };
 
     const cloudResources = [
         { label: 'VPC', value: count[selectedProvider].VPC },
@@ -69,22 +73,19 @@ const Home: React.FC = () => {
     // pie chart data
     const statusData = status[selectedProvider]
 
-    console.log('statusData', statusData);
-
     return (
         <DefaultLayout>
-            <div style={{ marginBottom: "10px", justifyContent: "space-between" }}>
-                <div className="flex justify-end">
-                    {['AWS', 'GCP', 'Azure', 'Enterprise', 'All Providers'].map((buttonName) => (
-                        <button
-                            className={`dark:text-white dark:border-white button-blue ${selectedProvider === buttonName ? 'selected' : ''}`}
-                            key={buttonName}
-                            onClick={() => handleSelect(buttonName as Source)}
-                        >
-                            {buttonName}
-                        </button>
-                    ))}
+            <div className="flex justify-between">
+                <div className="flex flex-col w-1/6">
+                    <input
+                        type="text"
+                        placeholder="Search by id, name, etc."
+                        className="input-field dark:bg-black"
+                    />
                 </div>
+                {/* Temporary empty arrow function */}
+                <ProviderRegionBar onProviderButtonClick={() => { }} />
+
             </div>
             <div className="gap-4 md:grid-cols-2 md:gap-6 xl:grid-cols-4 2xl:gap-7.5 mb-4">
                 <CardLarge title="Cloud Resources" data={cloudResources} />

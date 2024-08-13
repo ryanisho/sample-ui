@@ -53,7 +53,7 @@ export const useFetchVpcsResources = (provider: InfraResourceProvider, accountId
     try {
       infraSdkResourcesClient.listVPC(vpcRequest, {}, (err: any, response: any) => {
         const data = response?.getVpcsList();
-        console.log(data[0]);
+
         if (data) {
           const infraVpcs = data.map((vpc: any) => {
             const name = vpc.getName();

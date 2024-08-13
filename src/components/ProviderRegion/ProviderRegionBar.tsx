@@ -66,9 +66,7 @@ const ProviderRegionBar: React.FC<ProviderButtonsProps> = ({ onProviderButtonCli
     }, [selectedAccountId]);
 
     const handleAccountIdChange = (value: string) => {
-        // console.log('VALUE: ' + value)
         setSelectedAccountIdState(value)
-        // console.log('SELECTED ACCOUNT ID: ' + selectedAccountId);
         dispatch(setSelectedAccountId(value));
         handleProviderSelect(selectedButton)
     };

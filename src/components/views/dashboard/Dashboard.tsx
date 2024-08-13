@@ -42,7 +42,8 @@ const resourceCategories:
 
 export const Dashboard: React.FC = () => {
   const [selectedProvider, setSelectedProvider] = useState<Source>('All Providers');
-  const { fetchSummary } = useFetchSummary()
+  // OLD UI: blank strings for temporary error handling
+  const { fetchSummary } = useFetchSummary('', '')
   const { count, status } = useSelector((state: RootState) => state.summary);
 
   useEffect(() => fetchSummary(), [])
