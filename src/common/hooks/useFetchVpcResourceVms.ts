@@ -58,9 +58,13 @@ export const useFetchVpcResourceVms = (provider: string, region: string, id: str
             const labelsMap = instance.getLabelsMap();
             const vpcId = instance.getVpcid();
             const zone = instance.getZone();
+            const securityGroups = instance.getSecuritygroupidsList();
+            const interfaceIds = instance.getInterfaceidsList();
             let project = ""
             let owner = ""
             let compliant = "No"
+
+            const selfLink = instance.getSelfLink();
 
             labelsMap.forEach((value: string, key: string) => {
               labels[key] = value;
@@ -91,6 +95,9 @@ export const useFetchVpcResourceVms = (provider: string, region: string, id: str
               state,
               labels,
               compliant,
+              selfLink,
+              securityGroups,
+              interfaceIds,
               zone,
             };
           });

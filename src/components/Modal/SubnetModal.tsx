@@ -7,10 +7,10 @@ import '../../css/vpc.css';
 interface ModalComponentProps {
     isModalOpen: boolean;
     onRequestClose: () => void;
-    selectedVpc: any;
+    selectedSubnet: any;
 }
 
-const ModalComponent: React.FC<ModalComponentProps> = ({ isModalOpen, onRequestClose, selectedVpc }) => {
+const ModalComponent: React.FC<ModalComponentProps> = ({ isModalOpen, onRequestClose, selectedSubnet }) => {
 
     const [selectedTab, setSelectedTab] = useState(1);
     const [showCopiedPopup, setShowCopiedPopup] = useState(false);
@@ -106,47 +106,59 @@ const ModalComponent: React.FC<ModalComponentProps> = ({ isModalOpen, onRequestC
                 transition={{ duration: 0.2 }}
                 style={{ textAlign: 'left', marginTop: '50px' }} // Align text to the left
             >
-                {selectedVpc ? (
+                {selectedSubnet ? (
                     <>
                         <div style={{ backgroundColor: '#F5F5F5', padding: '10px', boxShadow: '0px 1px 1px rgba(0, 0, 0, 0.2)', border: '1px solid #F5F5F5' }}>
-                            <h1 style={{ fontWeight: 'bold', color: 'black', fontSize: '1em' }}>Resource summary for {selectedVpc.name} ({selectedVpc.id})</h1>
+                            <h1 style={{ fontWeight: 'bold', color: 'black', fontSize: '1em' }}>Resource summary for {selectedSubnet.name} ({selectedSubnet.id})</h1>
                         </div>
                         <div style={{ backgroundColor: '#FFFFFF', padding: '10px', boxShadow: '0px 1px 1px rgba(0, 0, 0, 0.2)', border: '1px solid #F5F5F5', borderTopColor: '#F0F0F0' }}>
                             <div className="grid grid-cols-3 gap-5 text-sm ml-1">
                                 <div className="text-gray-400 mt-5">
                                     Name
                                     <div className="text-black" >
-                                        {selectedVpc.name || 'N/A'}
+                                        {selectedSubnet.name || 'N/A'}
                                     </div>
                                 </div>
                                 <div className="text-gray-400 mt-5">
-                                    VPC ID
+                                    Subnet ID
                                     <div className="text-black" >
-                                        {selectedVpc.id}
+                                        {selectedSubnet.id}
                                     </div>
                                 </div>
                                 <div className="text-gray-400 mt-5">
                                     Region
                                     <div className="text-black">
-                                        {selectedVpc.region}
+                                        {selectedSubnet.region}
                                     </div>
                                 </div>
                                 <div className="text-gray-400 mt-5">
                                     CIDR Block
                                     <div className="text-black">
-                                        {selectedVpc.cidrblock}
+                                        {selectedSubnet.cidrblock}
                                     </div>
                                 </div>
                                 <div className="text-gray-400 mt-5">
                                     Zone
                                     <div className="text-black">
-                                        {selectedVpc.zone}
+                                        {selectedSubnet.zone}
                                     </div>
                                 </div>
                                 <div className="text-gray-400 mt-5">
                                     Provider
                                     <div className="text-black">
-                                        {selectedVpc.provider}
+                                        {selectedSubnet.provider}
+                                    </div>
+                                </div>
+                                <div className="text-gray-400 mt-5">
+                                    Project
+                                    <div className="text-black">
+                                        {selectedSubnet.project || "N/A"}
+                                    </div>
+                                </div>
+                                <div className="text-gray-400 mt-5">
+                                    Self Link
+                                    <div className="text-blue-500 hover:text-blue-400" >
+                                        <a target="_blank" href={selectedSubnet.selfLink}>Click Here</a>
                                     </div>
                                 </div>
                             </div>
@@ -180,31 +192,15 @@ const ModalComponent: React.FC<ModalComponentProps> = ({ isModalOpen, onRequestC
                             {selectedTab === 2 &&
                                 <div>
                                     <h2 className="text-black font-semibold">Networking Information</h2>
-                                    <table className="min-w-full bg-white">
+                                    <table className="text-sm mt-3" style={{ padding: '10px', boxShadow: '0px 1px 1px rgba(0, 0, 0, 0.2)', border: '1px solid #F5F5F5', width: "100%" }}>
+                                        <thead style={{ backgroundColor: "rgb(245, 245, 245)" }}>
+                                            <th className="p-2">Internet Protocol Addresses</th>
+                                            <th className="p-2"></th>
+                                        </thead>
                                         <tbody>
-                                            <tr>
-                                                <td className="py-2 px-4 border-b border-gray-200">
-                                                    IPv4 Address
-                                                </td>
-                                                <td className="py-2 px-4 border-b border-gray-200">
-                                                    {selectedVpc.ipv4 || "N/A"}
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td className="py-2 px-4 border-b border-gray-200">
-                                                    IPv6 Address
-                                                </td>
-                                                <td className="py-2 px-4 border-b border-gray-200">
-                                                    {selectedVpc.ipv6 || "N/A"}
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td className="py-2 px-4 border-b border-gray-200">
-                                                    CIDR Block
-                                                </td>
-                                                <td className="py-2 px-4 border-b border-gray-200">
-                                                    {selectedVpc.cidrblock}
-                                                </td>
+                                            <tr className="even:bg-gray-100">
+                                                <td className="p-2">CIDR Block</td>
+                                                <td className="p-2">{selectedSubnet.cidrblock || "N/A"}</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -213,7 +209,7 @@ const ModalComponent: React.FC<ModalComponentProps> = ({ isModalOpen, onRequestC
                             {selectedTab === 1 &&
                                 <div>
                                     <h2 className="text-black font-semibold">Tag Information</h2>
-                                    {renderLabelsTable(selectedVpc.labels)}
+                                    {renderLabelsTable(selectedSubnet.labels)}
                                 </div>
                             }
                         </div>

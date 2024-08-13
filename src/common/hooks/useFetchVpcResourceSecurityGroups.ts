@@ -51,29 +51,32 @@ export const useFetchVpcResourceSecurityGroups = (provider: string, region: stri
             const vpcId = securityGroup.getVpcId();
             const region = securityGroup.getRegion();
             const project = securityGroup.getProject();
+            const attatchedInstances = securityGroup.getAttachedRunningInstancesList();
+            const selfLink = securityGroup.getSelfLink();
 
             const labels: any = {};
             const labelsMap = securityGroup.getLabelsMap();
-            //const rules: any = {};
-            //const rulesMap = securityGroup.getRules();
+            const rules: any = {};
+            const rulesMap = securityGroup.getRulesList();
 
             labelsMap.forEach((value: string, key: string) => {
               labels[key] = value;
             });
-            //rulesMap.forEach((value: string, key: string) => {
-            //rulesMap[key] = value;
-            //});
-
+            rulesMap.forEach((value: string, key: string) => {
+              rules[key] = value;
+            });
             return {
               name,
               id,
               provider,
               accountId,
+              attatchedInstances,
               region,
               vpcId,
-              //rules,
+              rules,
               labels,
               project,
+              selfLink,
             };
           });
 

@@ -53,6 +53,7 @@ export const useFetchVpcResourceSubnets = (provider: string, region: string, id:
             const provider = subnet.getProvider().toUpperCase();
             const vpcId = subnet.getVpcId();
             const project = subnet.getProject();
+            const selfLink = subnet.getSelfLink();
             const labels: any = {};
             const labelsMap = subnet.getLabelsMap();
             labelsMap.forEach((value: string, key: string) => {
@@ -68,6 +69,7 @@ export const useFetchVpcResourceSubnets = (provider: string, region: string, id:
               region,
               vpcId,
               project,
+              selfLink,
               zone,
               labels,
             };

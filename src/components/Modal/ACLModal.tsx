@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Modal from 'react-modal';
 import '../../css/vpc.css';
@@ -7,10 +7,10 @@ import '../../css/vpc.css';
 interface ModalComponentProps {
     isModalOpen: boolean;
     onRequestClose: () => void;
-    selectedRouteTable: any;
+    selectedACL: any;
 }
 
-const ModalComponent: React.FC<ModalComponentProps> = ({ isModalOpen, onRequestClose, selectedRouteTable }) => {
+const ModalComponent: React.FC<ModalComponentProps> = ({ isModalOpen, onRequestClose, selectedACL }) => {
 
     const [selectedTab, setSelectedTab] = useState(1);
     const [showCopiedPopup, setShowCopiedPopup] = useState(false);
@@ -106,53 +106,47 @@ const ModalComponent: React.FC<ModalComponentProps> = ({ isModalOpen, onRequestC
                 transition={{ duration: 0.2 }}
                 style={{ textAlign: 'left', marginTop: '50px' }} // Align text to the left
             >
-                {selectedRouteTable ? (
+                {selectedACL ? (
                     <>
                         <div style={{ backgroundColor: '#F5F5F5', padding: '10px', boxShadow: '0px 1px 1px rgba(0, 0, 0, 0.2)', border: '1px solid #F5F5F5' }}>
-                            <h1 style={{ fontWeight: 'bold', color: 'black', fontSize: '1em' }}>Resource summary for {selectedRouteTable.name} ({selectedRouteTable.id})</h1>
+                            <h1 style={{ fontWeight: 'bold', color: 'black', fontSize: '1em' }}>Resource summary for {selectedACL.name} ({selectedACL.id})</h1>
                         </div>
                         <div style={{ backgroundColor: '#FFFFFF', padding: '10px', boxShadow: '0px 1px 1px rgba(0, 0, 0, 0.2)', border: '1px solid #F5F5F5', borderTopColor: '#F0F0F0' }}>
                             <div className="grid grid-cols-2 gap-5 text-sm ml-1">
                                 <div className="text-gray-400 mt-5">
                                     Name
                                     <div className="text-black" >
-                                        {selectedRouteTable.name || 'N/A'}
+                                        {selectedACL.name || 'N/A'}
                                     </div>
                                 </div>
                                 <div className="text-gray-400 mt-5">
-                                    Route Table ID
+                                    ACL ID
                                     <div className="text-black" >
-                                        {selectedRouteTable.id}
-                                    </div>
-                                </div>
-                                <div className="text-gray-400 mt-5">
-                                    VPC ID
-                                    <div className="text-black" >
-                                        {selectedRouteTable.vpcId}
+                                        {selectedACL.id}
                                     </div>
                                 </div>
                                 <div className="text-gray-400 mt-5">
                                     Region
                                     <div className="text-black">
-                                        {selectedRouteTable.region}
+                                        {selectedACL.region}
                                     </div>
                                 </div>
                                 <div className="text-gray-400 mt-5">
                                     Provider
                                     <div className="text-black">
-                                        {selectedRouteTable.provider}
+                                        {selectedACL.provider}
                                     </div>
                                 </div>
                                 <div className="text-gray-400 mt-5">
                                     Project
-                                    <div className="text-black" >
-                                        {selectedRouteTable.project || "N/A"}
+                                    <div className="text-black">
+                                        {selectedACL.project || "N/A"}
                                     </div>
                                 </div>
                                 <div className="text-gray-400 mt-2">
                                     Self Link
                                     <div className="text-blue-500 hover:text-blue-400" >
-                                        <a target="_blank" href={selectedRouteTable.selfLink}>Click Here</a>
+                                        <a target="_blank" href={selectedACL.selfLink}>Click Here</a>
                                     </div>
                                 </div>
                             </div>
@@ -160,7 +154,7 @@ const ModalComponent: React.FC<ModalComponentProps> = ({ isModalOpen, onRequestC
 
                         <div className="flex text-black-900 font-semibold text-sm" style={{ backgroundColor: '#F5F5F5', padding: '10px', boxShadow: '0px 1px 1px rgba(0, 0, 0, 0.2)', border: '1px solid #F5F5F5' }}>
                             <div className={`flex-1 text-center border-r border-gray-400 cursor-pointer px-2 ${selectedTab === 1 ? 'pb-2 border-b-2 border-black' : ''}`} onClick={() => setSelectedTab(1)}>Tags</div>
-                            <div className={`flex-1 text-center border-r border-gray-400 cursor-pointer px-2 ${selectedTab === 2 ? 'pb-2 border-b-2 border-black' : ''}`} onClick={() => setSelectedTab(2)}>Routes</div>
+                            <div className={`flex-1 text-center border-r border-gray-400 cursor-pointer px-2 ${selectedTab === 2 ? 'pb-2 border-b-2 border-black' : ''}`} onClick={() => setSelectedTab(2)}>Rules</div>
                             <div className={`flex-1 text-center cursor-pointer px-2 ${selectedTab === 3 ? 'pb-2 border-b-2 border-black' : ''}`} onClick={() => setSelectedTab(3)}>Status</div>
                         </div>
                         <div style={{ backgroundColor: '#FFFFFF', padding: '10px', boxShadow: '0px 1px 1px rgba(0, 0, 0, 0.2)', border: '1px solid #F5F5F5' }}>
@@ -185,21 +179,31 @@ const ModalComponent: React.FC<ModalComponentProps> = ({ isModalOpen, onRequestC
                             }
                             {selectedTab === 2 &&
                                 <div>
-                                    <h2 className="text-black font-semibold">Route List</h2>
+                                    <h2 className="text-black font-semibold">Rules Information</h2>
                                     <table className="text-sm mt-3" style={{ padding: '10px', boxShadow: '0px 1px 1px rgba(0, 0, 0, 0.2)', border: '1px solid #F5F5F5', width: "100%" }}>
                                         <thead style={{ backgroundColor: "rgb(245, 245, 245)" }}>
-                                            <th className="p-2">Destination</th>
-                                            <th className="p-2">Target</th>
-                                            <th className="p-2">Status</th>
+                                            <th className="p-2">Source Ranges</th>
+                                            <th className="p-2">Destination Ranges</th>
+                                            <th className="p-2">Number</th>
+                                            <th className="p-2">Protocol</th>
+                                            <th className="p-2">Port Range</th>
+                                            <th className="p-2">Action</th>
+                                            <th className="p-2">Direction</th>
                                         </thead>
                                         <tbody>
-                                            {selectedRouteTable.routes ? (
-                                                Object.values(selectedRouteTable.routes).map((route, index, array) => (
+                                            {selectedACL.rules && typeof selectedACL.rules === 'object' ? (
+                                                Object.values(selectedACL.rules).map((rule, index, array) => (
                                                     <React.Fragment key={index}>
                                                         <tr className="even:bg-gray-100">
-                                                            <td className="p-2">{(route as any).array[0]}</td>
-                                                            <td className="p-2">{(route as any).array[1]}</td>
-                                                            <td className="p-2">{(route as any).array[2]}</td>
+                                                            <td className="p-2" style={{ wordBreak: 'break-word', whiteSpace: 'normal' }}>
+                                                                {(rule as any).array[7]}</td>
+                                                            <td className="p-2">{(rule as any).array[4]}</td>
+                                                            <td className="p-2">{(rule as any).array[0]}</td>
+                                                            <td className="p-2">{(rule as any).array[1]}</td>
+                                                            <td className="p-2">{(rule as any).array[2]}</td>
+                                                            <td className="p-2">{(rule as any).array[5]}</td>
+                                                            <td className="p-2">{(rule as any).array[6]}</td>
+
                                                         </tr>
                                                         {index !== array.length - 1 && (
                                                             <tr>
@@ -215,11 +219,12 @@ const ModalComponent: React.FC<ModalComponentProps> = ({ isModalOpen, onRequestC
                                             )}
                                         </tbody>
                                     </table>
-                                </div>}
+                                </div>
+                            }
                             {selectedTab === 1 &&
                                 <div>
                                     <h2 className="text-black font-semibold">Tag Information</h2>
-                                    {renderLabelsTable(selectedRouteTable.labels)}
+                                    {renderLabelsTable(selectedACL.labels)}
                                 </div>
                             }
                         </div>

@@ -185,13 +185,34 @@ const ModalComponent: React.FC<ModalComponentProps> = ({ isModalOpen, onRequestC
                                         {selectedVpc.zone}
                                     </div>
                                 </div>
+                                <div className="text-gray-400 mt-2">
+                                    Self Link
+                                    <div className="text-blue-500 hover:text-blue-400" >
+                                        <a target="_blank" href={selectedVpc.selfLink}>Click Here</a>
+                                    </div>
+                                </div>
+                                <div className="text-gray-400 mt-2">
+                                    Interface IDs
+                                    <div className="text-black" >
+                                        <div className="text-black">
+                                            {selectedVpc.interfaceIds && selectedVpc.interfaceIds.length > 0 ? (
+                                                selectedVpc.interfaceIds.map((id, index) => (
+                                                    <div key={index + 1}>{id}</div>
+                                                ))
+                                            ) : (
+                                                <div>N/A</div>
+                                            )}
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
                         <div className="flex text-black-900 font-semibold text-sm" style={{ backgroundColor: '#F5F5F5', padding: '10px', boxShadow: '0px 1px 1px rgba(0, 0, 0, 0.2)', border: '1px solid #F5F5F5' }}>
                             <div className={`flex-1 text-center border-r border-gray-400 cursor-pointer px-2 ${selectedTab === 1 ? 'pb-2 border-b-2 border-black' : ''}`} onClick={() => setSelectedTab(1)}>Tags</div>
                             <div className={`flex-1 text-center border-r border-gray-400 cursor-pointer px-2 ${selectedTab === 2 ? 'pb-2 border-b-2 border-black' : ''}`} onClick={() => setSelectedTab(2)}>Networking</div>
-                            <div className={`flex-1 text-center cursor-pointer px-2 ${selectedTab === 3 ? 'pb-2 border-b-2 border-black' : ''}`} onClick={() => setSelectedTab(3)}>Status</div>
+                            <div className={`flex-1 text-center border-r border-gray-400 cursor-pointer px-2 ${selectedTab === 3 ? 'pb-2 border-b-2 border-black' : ''}`} onClick={() => setSelectedTab(3)}>Status</div>
+                            <div className={`flex-1 text-center cursor-pointer px-2 ${selectedTab === 4 ? 'pb-2 border-b-2 border-black' : ''}`} onClick={() => setSelectedTab(4)}>Security Groups</div>
                         </div>
                         <div style={{ backgroundColor: '#FFFFFF', padding: '10px', boxShadow: '0px 1px 1px rgba(0, 0, 0, 0.2)', border: '1px solid #F5F5F5' }}>
                             {selectedTab === 3 &&
@@ -216,23 +237,22 @@ const ModalComponent: React.FC<ModalComponentProps> = ({ isModalOpen, onRequestC
                             {selectedTab === 2 &&
                                 <div>
                                     <h2 className="text-black font-semibold">Networking Information</h2>
-                                    <table className="min-w-full bg-white">
+                                    <table className="text-sm mt-3" style={{ padding: '10px', boxShadow: '0px 1px 1px rgba(0, 0, 0, 0.2)', border: '1px solid #F5F5F5', width: "100%" }}>
+                                        <thead style={{ backgroundColor: "rgb(245, 245, 245)" }}>
+                                            <th className="p-2">Internet Protocol Addresses</th>
+                                            <th className="p-2"></th>
+                                        </thead>
                                         <tbody>
-                                            <tr>
-                                                <td className="py-2 px-4 border-b border-gray-200">
-                                                    Public IP
-                                                </td>
-                                                <td className="py-2 px-4 border-b border-gray-200">
-                                                    {selectedVpc.publicIp || "N/A"}
-                                                </td>
+                                            <tr className="even:bg-gray-100">
+                                                <td className="p-2">Public IP Address</td>
+                                                <td className="p-2">{selectedVpc.publicIp || "N/A"}</td>
                                             </tr>
                                             <tr>
-                                                <td className="py-2 px-4 border-b border-gray-200">
-                                                    Private IP
-                                                </td>
-                                                <td className="py-2 px-4 border-b border-gray-200">
-                                                    {selectedVpc.privateIp || "N/A"}
-                                                </td>
+                                                <td style={{ color: 'rgb(245, 245, 245)' }} colSpan={2}><hr /></td>
+                                            </tr>
+                                            <tr className="even:bg-gray-100">
+                                                <td className="p-2">Private IP Address</td>
+                                                <td className="p-2">{selectedVpc.privateIp || "N/A"}</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -244,13 +264,39 @@ const ModalComponent: React.FC<ModalComponentProps> = ({ isModalOpen, onRequestC
                                     {renderLabelsTable(selectedVpc.labels)}
                                 </div>
                             }
+                            {selectedTab === 4 &&
+                                <div>
+                                    <h2 className="text-black font-semibold">Security Group Information</h2>
+                                    <table className="text-sm mt-3" style={{ padding: '10px', boxShadow: '0px 1px 1px rgba(0, 0, 0, 0.2)', border: '1px solid #F5F5F5', width: "100%" }}>
+                                        <thead style={{ backgroundColor: "rgb(245, 245, 245)" }}>
+                                            <th className="p-2">Security Group Protocols</th>
+                                            <th className="p-2"></th>
+                                        </thead>
+                                        <tbody>
+                                            {Object.entries(selectedVpc.securityGroups).map(([key, value], index, array) => (
+                                                <React.Fragment key={index}>
+                                                    <tr className="even:bg-gray-100" onClick={() => handleCopyToClipboard(`${key}: ${value}`)}>
+                                                        <td className="p-2">Security Group {key}</td>
+                                                        <td className="p-2">{String(value)}</td>
+                                                    </tr>
+                                                    {index !== array.length - 1 && (
+                                                        <tr>
+                                                            <td style={{ color: 'rgb(245, 245, 245)' }} colSpan={2}><hr /></td>
+                                                        </tr>
+                                                    )}
+                                                </React.Fragment>
+                                            ))}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            }
                         </div>
                     </>
                 ) : (
                     <p style={{ color: 'red' }}>An error has occured. Please refresh your page.</p>
                 )}
             </motion.div>
-        </Modal>
+        </Modal >
     );
 };
 

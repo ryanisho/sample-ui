@@ -11,6 +11,8 @@ import VpcEndpointModal from '../../components/Modal/VpcEndpointModal';
 import RouteTableModal from '../../components/Modal/RouteTableModal';
 import RouterModal from '../../components/Modal/RouterModal';
 import SubnetModal from '../../components/Modal/SubnetModal';
+import SecurityGroupModal from '../../components/Modal/SecurityGroupModal';
+import ACLModal from '../../components/Modal/ACLModal';
 import VMModal from '../../components/Modal/VMModal';
 
 import {
@@ -64,7 +66,7 @@ const MultiCloudInfra = () => {
         ipv6: vpc.ipv6_cidr,
         labels: vpc["labels"],
         compliant: vpc.compliant,
-        // selfLink: vpc.selfLink,
+        selfLink: vpc.selfLink,
         project: vpc.project,
     }));
 
@@ -243,10 +245,10 @@ const MultiCloudInfra = () => {
                                 </div>
                             ))}
                         </div>
-                        <RouteTableModal
+                        <SecurityGroupModal
                             isModalOpen={isModalOpen}
                             onRequestClose={() => setIsModalOpen(false)}
-                            selectedVpc={selectedVpc}
+                            selectedSecurityGroup={selectedVpc}
                         />
                     </div>
                 ) : selectedView === 'VM' ? (
@@ -317,13 +319,12 @@ const MultiCloudInfra = () => {
                         <SubnetModal
                             isModalOpen={isModalOpen}
                             onRequestClose={() => setIsModalOpen(false)}
-                            selectedVpc={selectedVpc}
+                            selectedSubnet={selectedVpc}
                         />
                     </div>
                 ) : selectedView === "ACL" ? (
                     <div>
                         <div className="dark:bg-black dark:border-black border-b border-1 border-[#E5E7EB] table-header flex justify-between text-left text-sm font-medium text-gray-700 rounded-lg">
-                            <span onClick={() => handleSort('name')} className="w-1/4 px-4 py-2 text-center">Name</span>
                             <span onClick={() => handleSort('id')} className="w-1/4 px-2 py-2 text-center">ID</span>
                             <span onClick={() => handleSort('accountId')} className="w-1/4 px-1 py-2 text-center">Account ID</span>
                             <span onClick={() => handleSort('vpcId')} className="w-1/4 px-2 py-2 text-center">VPC ID</span>
@@ -342,7 +343,6 @@ const MultiCloudInfra = () => {
                                         handleOpenModal(group);
                                     }}
                                 >
-                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.name}</span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.id}</span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.accountId}</span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.vpcId}</span>
@@ -351,10 +351,10 @@ const MultiCloudInfra = () => {
                                 </div>
                             ))}
                         </div>
-                        <RouteTableModal
+                        <ACLModal
                             isModalOpen={isModalOpen}
                             onRequestClose={() => setIsModalOpen(false)}
-                            selectedVpc={selectedVpc}
+                            selectedACL={selectedVpc}
                         />
                     </div>
                 ) : selectedView === "Route Table" ? (
@@ -390,7 +390,7 @@ const MultiCloudInfra = () => {
                         <RouteTableModal
                             isModalOpen={isModalOpen}
                             onRequestClose={() => setIsModalOpen(false)}
-                            selectedVpc={selectedVpc}
+                            selectedRouteTable={selectedVpc}
                         />
                     </div>
                 ) : selectedView === "VPC Endpoint" ? (
@@ -534,7 +534,6 @@ const MultiCloudInfra = () => {
                             <span onClick={() => handleSort('name')} className="w-1/4 px-4 py-2 text-center">Name</span>
                             <span onClick={() => handleSort('id')} className="w-1/4 px-2 py-2 text-center">ID</span>
                             <span onClick={() => handleSort('accountId')} className="w-1/4 px-1 py-2 text-center">Account ID</span>
-                            <span onClick={() => handleSort('vpcId')} className="w-1/4 px-2 py-2 text-center">VPC ID</span>
                             <span onClick={() => handleSort('provider')} className="w-1/4 px-1 py-2 text-center">Provider</span>
                         </div>
                         <div>
@@ -551,7 +550,6 @@ const MultiCloudInfra = () => {
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.name}</span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.id}</span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.accountId}</span>
-                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.vpcId}</span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.provider}</span>
                                 </div>
                             ))}
@@ -559,7 +557,7 @@ const MultiCloudInfra = () => {
                         <RouterModal
                             isModalOpen={isModalOpen}
                             onRequestClose={() => setIsModalOpen(false)}
-                            selectedVpc={selectedVpc}
+                            selectedRouter={selectedVpc}
                         />
                     </div>
                 ) : (

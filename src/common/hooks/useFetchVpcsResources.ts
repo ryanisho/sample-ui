@@ -53,6 +53,7 @@ export const useFetchVpcsResources = (provider: InfraResourceProvider, accountId
     try {
       infraSdkResourcesClient.listVPC(vpcRequest, {}, (err: any, response: any) => {
         const data = response?.getVpcsList();
+        console.log(data[0]);
         if (data) {
           const infraVpcs = data.map((vpc: any) => {
             const name = vpc.getName();
@@ -66,6 +67,7 @@ export const useFetchVpcsResources = (provider: InfraResourceProvider, accountId
             const labels: any = {};
 
             const labelsMap = vpc.getLabelsMap();
+            const selfLink = `https://${region}.console.aws.amazon.com/vpcconsole/home?region=${region}#VpcDetails:VpcId=${id}`;
 
             labelsMap.forEach((value: string, key: string) => {
               labels[key] = value;
@@ -80,6 +82,7 @@ export const useFetchVpcsResources = (provider: InfraResourceProvider, accountId
               ipv4_cidr,
               ipv6_cidr,
               labels,
+              selfLink,
               accountId,
             };
           });
