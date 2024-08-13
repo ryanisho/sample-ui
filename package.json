@@ -29,6 +29,7 @@
     "flatpickr": "^4.6.13",
     "flowbite": "^2.3.0",
     "framer-motion": "^11.2.11",
+    "googlemaps": "^1.12.0",
     "js-yaml": "^4.1.0",
     "nice-grpc-common": "^2.0.2",
     "nice-grpc-web": "^3.3.0",

@@ -39,13 +39,13 @@ const SignIn: React.FC = () => {
                     <div className="flex flex-wrap items-center">
                         <div className="hidden w-full xl:block xl:w-1/2">
                             <div className="py-17.5 px-26 text-center">
-                                <img src={Cisco} alt="Cisco Logo" style={{ maxWidth: '50%', display: 'block', marginLeft: 'auto', marginRight: 'auto' }} />
+                                {/* <img src={Cisco} alt="Cisco Logo" style={{ maxWidth: '50%', display: 'block', marginLeft: 'auto', marginRight: 'auto' }} /> */}
                             </div>
                         </div>
 
                         <div className="w-full border-stroke dark:border-strokedark xl:w-1/2 xl:border-l-2">
                             <div className="w-full p-4 sm:p-12.5 xl:p-17.5">
-                                <span className="mb-1.5 block font-medium">Developed by Cisco</span>
+                                {/* <span className="mb-1.5 block font-medium">Developed by Cisco</span> */}
                                 <h2 className="mb-9 text-2xl font-bold text-black dark:text-white sm:text-title-xl2">
                                     Sign-in to AWI Cloud Platform
                                 </h2>
