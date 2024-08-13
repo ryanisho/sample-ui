@@ -495,7 +495,7 @@ const MultiCloudInfra = () => {
                         <InternetGatewayModal
                             isModalOpen={isModalOpen}
                             onRequestClose={() => setIsModalOpen(false)}
-                            selectedVpc={selectedVpc}
+                            selectedIGW={selectedVpc}
                         />
                     </div>
                 ) : selectedView === 'Public IP' ? (
