@@ -53,7 +53,17 @@ export const useFetchVpcResourcePublicIPs = (provider: string, region: string, i
             const provider = PublicIP.getProvider().toUpperCase();
             const accountId = PublicIP.getAccountId();
             const region = PublicIP.getRegion();
+            const byoip = PublicIP.getByoip();
+            const project = PublicIP.getProject();
 
+            const labelsMap = PublicIP.getLabelsMap();
+            const labels: any = {};
+
+            labelsMap.forEach((value: any, key: any) => {
+              labels[key] = value;
+            });
+
+            const selfLink = PublicIP.getSelfLink();
 
             return {
               id,
@@ -65,6 +75,10 @@ export const useFetchVpcResourcePublicIPs = (provider: string, region: string, i
               publicIP,
               privateIP,
               type,
+              labels,
+              project,
+              byoip,
+              selfLink,
             };
           });
 

@@ -12,6 +12,7 @@ import RouteTableModal from '../../components/Modal/RouteTableModal';
 import RouterModal from '../../components/Modal/RouterModal';
 import SubnetModal from '../../components/Modal/SubnetModal';
 import SecurityGroupModal from '../../components/Modal/SecurityGroupModal';
+import PublicIPModal from '../../components/Modal/PublicIPModal';
 import ACLModal from '../../components/Modal/ACLModal';
 import VMModal from '../../components/Modal/VMModal';
 
@@ -501,11 +502,10 @@ const MultiCloudInfra = () => {
                 ) : selectedView === 'Public IP' ? (
                     <div>
                         <div className="dark:bg-black dark:border-black border-b border-1 border-[#E5E7EB] table-header flex justify-between text-left text-sm font-medium text-gray-700 rounded-lg">
+                            <span className="w-1/4 px-1 py-2 text-center">ID</span>
                             <span className="w-1/4 px-1 py-2 text-center">Account ID</span>
-                            <span className="w-1/4 px-1 py-2 text-center">Provider</span>
                             <span className="w-1/4 px-1 py-2 text-center">VPC ID</span>
-                            <span className="w-1/4 px-1 py-2 text-center">Region</span>
-                            <span className="w-1/4 px-1 py-2 text-center">Public IP</span>
+                            <span className="w-1/4 px-1 py-2 text-center">Provider</span>
                         </div>
                         <div>
                             {publicIPsSearch.map((group, idx) => (
@@ -518,15 +518,19 @@ const MultiCloudInfra = () => {
                                     onDoubleClick={() => {
                                         handleOpenModal(group);
                                     }}>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.id}</span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.accountId}</span>
+                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.vpcId || "N/A"}</span>
                                     <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.provider}</span>
-                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.vpcId}</span>
-                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.region}</span>
-                                    <span className="w-1/4 px-4 py-2 flex text-center justify-center">{group.publicIP}</span>
 
                                 </div>
                             ))}
                         </div>
+                        <PublicIPModal
+                            isModalOpen={isModalOpen}
+                            onRequestClose={() => setIsModalOpen(false)}
+                            selectedPublicIp={selectedVpc}
+                        />
                     </div>
                 ) : selectedView === 'Routers' ? (
                     <div>
