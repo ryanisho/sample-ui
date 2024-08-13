@@ -459,7 +459,7 @@ const MultiCloudInfra = () => {
                         <NatGatewayModal
                             isModalOpen={isModalOpen}
                             onRequestClose={() => setIsModalOpen(false)}
-                            selectedVpc={selectedVpc}
+                            selectedNATGateway={selectedVpc}
                         />
                     </div>
                 ) : selectedView === 'Internet Gateway' ? (
