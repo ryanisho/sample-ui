@@ -24,16 +24,16 @@ const Home: React.FC = () => {
     const dispatch = useDispatch<AppDispatch>();
 
     // State
-    const { selectedProvider, selectedAccountId } = useSelector((state: RootState) => state.selectedResources);
+    const { selectedProvider, selectedAccountId, selectedVpc } = useSelector((state: RootState) => state.selectedResources);
     dispatch(setSelectedProvider(InfraResourceProvider.AWS));
-    const { fetchSummary } = useFetchSummary(selectedAccountId, '');
+    const { fetchSummary } = useFetchSummary(selectedAccountId, selectedVpc);
     const { count, status } = useSelector((state: RootState) => state.summary);
     const [renderCharts, setRenderCharts] = useState(false);
 
     // Effect
     useEffect(() => {
         fetchSummary();
-    }, [selectedAccountId]);
+    }, [selectedAccountId, selectedVpc]);
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -77,14 +77,10 @@ const Home: React.FC = () => {
         <DefaultLayout>
             <div className="flex justify-between">
                 <div className="flex flex-col w-1/6">
-                    <input
-                        type="text"
-                        placeholder="Search by id, name, etc."
-                        className="input-field dark:bg-black"
-                    />
+                    {/* spacer */}
                 </div>
                 {/* Temporary empty arrow function */}
-                <ProviderRegionBar onProviderButtonClick={() => { }} />
+                <ProviderRegionBar home={true} onProviderButtonClick={() => { }} />
 
             </div>
             <div className="gap-4 md:grid-cols-2 md:gap-6 xl:grid-cols-4 2xl:gap-7.5 mb-4">

@@ -4,12 +4,14 @@ interface SelectedResourcesState {
     selectedAccountId: string;
     selectedRegion: string;
     selectedProvider: string;
+    selectedVpc: string;
 }
 
 const initialState: SelectedResourcesState = {
     selectedAccountId: '',
     selectedRegion: '',
     selectedProvider: '',
+    selectedVpc: ''
 };
 
 export const selectedResourcesSlice = createSlice({
@@ -25,9 +27,12 @@ export const selectedResourcesSlice = createSlice({
         setSelectedRegion: (state, action: PayloadAction<string>) => {
             state.selectedRegion = action.payload;
         },
+        setSelectedVpc: (state, action: PayloadAction<string>) => {
+            state.selectedVpc = action.payload;
+        }
     },
 });
 
-export const { setSelectedAccountId, setSelectedRegion, setSelectedProvider } = selectedResourcesSlice.actions;
+export const { setSelectedAccountId, setSelectedRegion, setSelectedProvider, setSelectedVpc } = selectedResourcesSlice.actions;
 
 export default selectedResourcesSlice.reducer;

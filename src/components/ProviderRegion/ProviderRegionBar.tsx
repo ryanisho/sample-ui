@@ -6,13 +6,14 @@ import { useFetchVpcAccounts, useFetchRegions, useFetchVpcsResources } from "@/c
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "@/store/store";
 import { setInfraVpcs } from "@/store/infra-resources-slice/infraResourcesSlice";
-import { setSelectedAccountId, setSelectedProvider, setSelectedRegion } from '@/store/selectedRegionAccountId-slice/selectedRegionAccountIdSlice';
+import { setSelectedAccountId, setSelectedProvider, setSelectedRegion, setSelectedVpc } from '@/store/selectedRegionAccountId-slice/selectedRegionAccountIdSlice';
 
 interface ProviderButtonsProps {
     onProviderButtonClick: () => void;
+    home?: boolean;
 }
 
-const ProviderRegionBar: React.FC<ProviderButtonsProps> = ({ onProviderButtonClick }) => {
+const ProviderRegionBar: React.FC<ProviderButtonsProps> = ({ onProviderButtonClick, home = false }) => {
 
     const dispatch = useDispatch<AppDispatch>();
 
@@ -23,10 +24,11 @@ const ProviderRegionBar: React.FC<ProviderButtonsProps> = ({ onProviderButtonCli
     const [selectedAccountId, setSelectedAccountIdState] = useState('');
     const [selectedRegion, setSelectedRegionState] = useState('');
     const [selectedButton, setLastClickedProvider] = useState<InfraResourceProvider>(InfraResourceProvider.AWS);
+    const [selectedVpc, setSelectedVpcLocal] = useState('');
 
     // api calls 
     const { fetchAccounts } = useFetchVpcAccounts(selectedButton);
-    const { fetchVpcs } = useFetchVpcsResources(selectedButton, selectedAccountId, selectedRegion); // optional params.
+    const { vpcs, fetchVpcs } = useFetchVpcsResources(selectedButton, selectedAccountId, selectedRegion); // optional params.
     const { fetchRegions } = useFetchRegions(selectedButton);
 
     useEffect(() => {
@@ -61,6 +63,18 @@ const ProviderRegionBar: React.FC<ProviderButtonsProps> = ({ onProviderButtonCli
         return uniqueIds;
     }, []);
 
+    const vpcIds: any[] = vpcs.reduce((uniqueIds: any[], vpc: any, index: number) => {
+        const vpcId = vpc.id;
+        if (!uniqueIds.some((item: any) => item.value === vpcId)) {
+            uniqueIds.push({
+                label: vpcId,
+                value: vpcId,
+                key: vpcId + index,
+            });
+        }
+        return uniqueIds;
+    }, []);
+
     useEffect(() => {
         handleProviderSelect(selectedButton)
     }, [selectedAccountId]);
@@ -75,6 +89,13 @@ const ProviderRegionBar: React.FC<ProviderButtonsProps> = ({ onProviderButtonCli
         setSelectedRegionState(value)
         dispatch(setSelectedRegion(value));
         handleProviderSelect(selectedButton)
+    };
+
+    const handleVpcChange = (value: string) => {
+
+        setSelectedVpcLocal(value)
+        dispatch(setSelectedVpc(value));
+        // handleProviderSelect(selectedButton)
     };
 
     const handleProviderSelect = (value: any) => {
@@ -128,6 +149,7 @@ const ProviderRegionBar: React.FC<ProviderButtonsProps> = ({ onProviderButtonCli
     return (
         <>
             <div style={{ marginBottom: "10px", justifyContent: "space-between" }}>
+                {/* Provider buttons */}
                 <div className="flex justify-end">
                     {[
                         { name: 'AWS', enum: InfraResourceProvider.AWS },
@@ -146,6 +168,7 @@ const ProviderRegionBar: React.FC<ProviderButtonsProps> = ({ onProviderButtonCli
                     ))}
                 </div>
             </div>
+            {/* account id and region selection */}
             <div className="flex flex-col w-1/6">
                 <select
                     value={selectedAccountId}
@@ -164,6 +187,22 @@ const ProviderRegionBar: React.FC<ProviderButtonsProps> = ({ onProviderButtonCli
                     <option value="">Select Region</option>
                     {regionNames.map(region => <option key={region.key} value={region.value}>{region.label}</option>)}
                 </select>
+
+                {/* render if only on home page, vpc ids select */}
+                {home && (
+                    <select
+                        value={selectedVpc}
+                        onChange={e => handleVpcChange(e.target.value)}
+                        className="dark:bg-black select-field"
+                    >
+                        <option value="">Select VPC</option>
+                        {vpcIds.map(vpc => (
+                            <option key={vpc.key} value={vpc.value}>
+                                {vpc.label}
+                            </option>
+                        ))}
+                    </select>
+                )}
             </div>
         </>
     );
